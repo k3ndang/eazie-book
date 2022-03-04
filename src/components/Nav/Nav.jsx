@@ -7,6 +7,24 @@ import { useSelector } from 'react-redux';
 function Nav() {
   const user = useSelector((store) => store.user);
 
+
+  /* 
+  Links we think we will use
+  ADMIN === { Home, Client Table, LogOut}
+      * Home links to admin landing page
+      * Client Table links to client table page
+      * LogOut links to the login page
+
+  CLIENT === { Home, LogOut}
+      * Home links to the client landing page
+      * LogOut links to the login page
+
+  RENTER === {Home, Reservations, LogOut}
+      * Home links to the renter landing page
+      * Reservations links to the renter reservation info page
+      * LogOut links to the login page
+  */
+
   return (
     <div className="nav">
       <Link to="/home">
