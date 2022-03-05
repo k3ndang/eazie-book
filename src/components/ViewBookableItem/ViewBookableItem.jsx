@@ -7,16 +7,16 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+function createData(title, summary, details, type, rate, time) {
+    return { title, summary, details, type, rate, time };
 }
 
 const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
+    createData('Zorp', 'zeep', 'heeb', 'hoob', 4.0, 420 ),
+    createData('asdf', 'zeep', 'heeb', 'hoob', 4.0, 420),
+    createData('weroiu', 'zeep', 'heeb', 'hoob', 4.0, 420),
+    createData('sdfjkldfsjlk', 'zeep', 'heeb', 'hoob', 4.0, 420),
+    createData('zap', 'zeep', 'heeb', 'hoob', 4.0, 420),
 ];
 
 function ViewBookableItem() {
@@ -28,25 +28,27 @@ function ViewBookableItem() {
                     <TableHead>
                         <TableRow>
                             <TableCell>Dessert (100g serving)</TableCell>
-                            <TableCell align="right">Calories</TableCell>
-                            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                            <TableCell align="right">Summary</TableCell>
+                            <TableCell align="right">Details</TableCell>
+                            <TableCell align="right">Type</TableCell>
+                            <TableCell align="right">Rate</TableCell>
+                            <TableCell align="right">Time</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow
-                                key={row.name}
+                                key={row.title}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 <TableCell component="th" scope="row">
-                                    {row.name}
+                                    {row.title}
                                 </TableCell>
-                                <TableCell align="right">{row.calories}</TableCell>
-                                <TableCell align="right">{row.fat}</TableCell>
-                                <TableCell align="right">{row.carbs}</TableCell>
-                                <TableCell align="right">{row.protein}</TableCell>
+                                <TableCell align="right">{row.summary}</TableCell>
+                                <TableCell align="right">{row.details}</TableCell>
+                                <TableCell align="right">{row.type}</TableCell>
+                                <TableCell align="right">{row.rate}</TableCell>
+                                <TableCell align="right">{row.time}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
