@@ -1,4 +1,5 @@
 import React from 'react';
+import InviteClient from '../InviteClient/InviteClient';
 
 // This is one of our simplest components
 // It doesn't have local state,
@@ -9,6 +10,7 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
+        <InviteClient />
         <p>This about page is for anyone to read!</p>
       </div>
     </div>

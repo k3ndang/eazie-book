@@ -29,7 +29,7 @@ function InviteClient(){
         event.preventDefault();
 
         console.log('Submit BTN pressed');
-
+        /* data being sent to inviteClient.saga.js */
         dispatch({
             type: 'INVITE_CLIENT',
             payload:{
@@ -45,7 +45,7 @@ function InviteClient(){
                 state: state,
                 zipCode: zipCode,
                 websiteUrl: websiteUrl,
-                authLevel: authLevel,
+                /* authLevel: authLevel, */
             }
         });
 
@@ -61,7 +61,7 @@ function InviteClient(){
         setState('');
         setZipCode('');
         setWebsiteUrl('');
-        setAuthLevel('');
+        /* setAuthLevel(''); */
 
         /* need history.push here */
     }
@@ -74,8 +74,9 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="text"
-                    name="First Name"
+                    name="firstName"
                     value={firstName}
+                    placeholder="First Name"
                     required
                     onChange={(event) => setFirstName(event.target.value)}
                 />
@@ -84,8 +85,9 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="text"
-                    name="Last Name"
+                    name="lastName"
                     value={lastName}
+                    placeholder="Last Name"
                     required
                     onChange={(event) => setLastName(event.target.value)}
                 />
@@ -94,8 +96,9 @@ function InviteClient(){
                 <Input  
                     className="input"
                     type="text"
-                    name="Username"
+                    name="username"
                     value={username}
+                    placeholder="Username"
                     required
                     onChange={(event) => setUsername(event.target.value)}
                 />
@@ -104,8 +107,9 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="password"
-                    name="Password"
+                    name="password"
                     value={password}
+                    placeholder="Password"
                     required
                     onChange={(event) => setPassword(event.target.value)}
                 />
@@ -114,8 +118,9 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="text"
-                    name="Email"
+                    name="email"
                     value={email}
+                    placeholder="Email"
                     required
                     onChange={(event) => setEmail(event.target.value)}
                 />
@@ -124,18 +129,20 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="text"
-                    name="Phone Number"
+                    name="phoneNumber"
                     value={phoneNumber}
+                    placeholder="Phone Number"
                     required
-                    onChange={(event) => setPassword(event.target.value)}
+                    onChange={(event) => setPhoneNumber(event.target.value)}
                 />
             </div>
             <div>
                 <Input
                     className="input"
                     type="text"
-                    name="Company Name"
+                    name="companyName"
                     value={companyName}
+                    placeholder="Company Name"
                     required
                     onChange={(event) => setCompanyName(event.target.value)}
                 />
@@ -144,8 +151,9 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="text"
-                    name="Address"
+                    name="address"
                     value={address}
+                    placeholder="Address"
                     required
                     onChange={(event) => setAddress(event.target.value)}
                 />
@@ -154,8 +162,9 @@ function InviteClient(){
                 <Input 
                     className="input"
                     type="text"
-                    name="City"
+                    name="city"
                     value={city}
+                    placeholder="City"
                     required
                     onChange={(event) => setCity(event.target.value)}
                 />
@@ -164,8 +173,9 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="text"
-                    name="State"
+                    name="state"
                     value={state}
+                    placeholder="State"
                     required
                     onChange={(event) => setState(event.target.value)}
                 />
@@ -174,8 +184,9 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="number"
-                    name="Zip Code"
+                    name="zipCode"
                     value={zipCode}
+                    placeholder="Zip Code"
                     required
                     onChange={(event) => setZipCode(event.target.value)}
                 />
@@ -184,28 +195,35 @@ function InviteClient(){
                 <Input
                     className="input"
                     type="text"
-                    name="Website Url"
+                    name="websiteUrl"
                     value={websiteUrl}
+                    placeholder="Website Url"
                     required
                     onChange={(event) => setWebsiteUrl(event.target.value)}
                 />
             </div>
-            <div>
+           {/*  <div>
                 <Input
                     className="input"
                     type="checkbox"
                     name="Client"
                     value={authLevel}
+                    placeholder="Client"
                     onChange={(event) => setAuthLevel(event.target.value)}
                 />
-            </div>
+            </div> */}
             <div>
                 <Button
+                    variant="outlined"
+                    color="primary"
                     className="submitBtn"
                     type="submit"
                     name="Submit"
                     value="Submit"
-                />
+                    onClick={inviteClient}
+                >
+                Submit
+                </Button>
             </div>
         </Paper>
         </>
