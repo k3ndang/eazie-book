@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
-
+import './LoginForm.css';
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -25,6 +25,8 @@ function LoginForm() {
   }; // end login
 
   return (
+    <>
+    <div className="loginView">
     <form className="formPanel" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
@@ -44,6 +46,7 @@ function LoginForm() {
           />
         </label>
       </div>
+      
       <div>
         <label htmlFor="password">
           Password:
@@ -60,6 +63,20 @@ function LoginForm() {
         <input className="btn" type="submit" name="submit" value="Log In" />
       </div>
     </form>
+        <div className="infoTitle"> 
+        <h2 className="listInfoHeading"> Looking to List Your Rental Equipment on Eazie-Book? </h2>
+     
+
+        <h3 className="listItem" > Contact Dean via email at Dean@calldeans.com  </h3>
+      <img 
+            src= {'https://www.destinvacationboatrentals.com/wp-content/uploads/2013/04/IMG_3081.jpg'}
+            width= {500}
+            height={450}
+            className="OwlPic"
+        />
+      </div>
+      </div>
+      </>
   );
 }
 
