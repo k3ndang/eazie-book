@@ -122,9 +122,9 @@ function Nav() {
             <LogOutButton className="dropbtn" />
           </>
         )}
-        {/* RENTER === {Home, Reservations, LogOut}
-      * Home links to the renter landing page
-      * Reservations links to the renter reservation info page
+    
+  {/* CLIENT === { Home, LogOut}
+      * Home links to the client landing page
       * LogOut links to the login page */}
          {user.authLevel === 'client' && (
           <>
