@@ -53,6 +53,29 @@ function Nav() {
             <LogOutButton className="navLink" />
           </>
         )}
+  {/* ADMIN === { Home, Client Table, LogOut}
+      * Home links to admin landing page
+      * Client Table links to client table page
+      * LogOut links to the login page */}
+        {user.authLevel === 'renter' && (
+          <>
+             <div className="dropdown">
+            <button className="dropbtn"> Manage </button>
+            <div className="dropdown-content">
+              <Link to="/">< a href="#"> Add a Client </a> </Link>
+              <Link to="/"> List of Registered Clients </Link>
+            </div>
+          </div>
+              <div className="dropdown">
+            <button className="dropbtn"> Go To List</button>
+            <div className="dropdown-content">
+              <Link to="/">< a href="#"> Life List </a> </Link>
+              <Link to="/">< a href="#"> Dream List </a> </Link>
+            </div>
+            </div>
+         
+          </>
+        )}
 
         <Link className="navLink" to="/about">
           About
