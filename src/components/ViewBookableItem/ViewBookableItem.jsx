@@ -44,9 +44,10 @@ function ViewBookableItem() {
                             <TableCell>Item</TableCell>
                             <TableCell align="right">Summary</TableCell>
                             <TableCell align="right">Details</TableCell>
-                            <TableCell align="right">Type</TableCell>
                             <TableCell align="right">Rate</TableCell>
                             <TableCell align="right">Time</TableCell>
+                            <TableCell align="right">categoryId</TableCell>
+                            <TableCell align="right">clientId</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -59,10 +60,11 @@ function ViewBookableItem() {
                                     {row.title}
                                 </TableCell>
                                 <TableCell align="right">{row.summary}</TableCell>
-                                <TableCell align="right">{row.details}</TableCell>
-                                <TableCell align="right">{row.type}</TableCell>
+                                <TableCell align="right">{row.detail}</TableCell>
                                 <TableCell align="right">{row.rate}</TableCell>
-                                <TableCell align="right">{row.time}</TableCell>
+                                <TableCell align="right">{row.unitTime}</TableCell>
+                                <TableCell align="right">{row.categoryId}</TableCell>
+                                <TableCell align="right">{row.clientId}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
