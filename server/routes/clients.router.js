@@ -60,4 +60,37 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     })
 })
 
+
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+    console.log('in client.router.put');
+
+    const queryText = `
+        UPDATE "user"
+        SET "firstName" = $1, "lastName" = $2, "email" = $3, "phoneNumber" = $4, "companyName" = $5, "address" = $6, "city" = $7, "state" = $8, "zipcode" = $9, "websiteUrl" = $10
+    `;
+
+    const queryParams = [
+        req.body.firstName,
+        req.body.lastName,
+        req.body.email,
+        req.body.phoneNumber,
+        req.body.companyName,
+        req.body.address,
+        req.body.city,
+        req.body.state,
+        req.body.zipCode,
+        req.body.websiteUrl,
+    ]
+
+    pool.query(queryText, queryParams)
+    .then((result) => {
+        res.sendStatus(201);
+    })
+    .catch((error) => {
+        console.error(`ERROR in making database query ${queryText}`, error);
+        res.sendStatus(500);
+    })
+    
+})
+
 module.exports = router;

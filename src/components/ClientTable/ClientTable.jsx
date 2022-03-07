@@ -96,6 +96,10 @@ function ClientTable(){
         })
     }
 
+    const cancelChanges = () => {
+        setBtnStatus(false);
+    }
+
     const bookableItem = () => {
         history.push('/addBookableItem')
     }
@@ -124,82 +128,86 @@ function ClientTable(){
             </TableHead>
             <TableBody>
                 <TableRow>
+                    <TableCell align="right">
                     <TextField 
                         id="outlined-basic" 
                         size="small"
                         value={lastName}
                         onChange={(event) => setLastName(event.target.value)}/>
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={firstName}
                         onChange={(event) => setFirstName(event.target.value)}/>
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
                     />
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={phoneNumber}
                         onChange={(event) => setPhoneNumber(event.target.value)}
                     />
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={companyName}
                         onChange={(event) => setCompanyName(event.target.value)}
                     />
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={address}
                         onChange={(event) => setAddress(event.target.value)}
                     />
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={city}
                         onChange={(event) => setCity(event.target.value)}
                     />
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={state}
                         onChange={(event) => setState(event.target.value)}
                     />
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={zipCode}
                         onChange={(event) => setZipCode(event.target.value)}
                     />
-                </TableRow>
-                <TableRow>
+                </TableCell>
+                <TableCell align="right">
                     <TextField
                         id="outlined-basic"
                         size="small"
                         value={websiteUrl}
                         onChange={(event) => setWebsiteUrl(event.target.value)}
                     />
+                </TableCell>
+                <TableCell align="right"><button onClick={handleSave}>Save</button></TableCell>
+                <TableCell align="right"><button onClick={cancelChanges}>Cancel</button></TableCell>
                 </TableRow>
             </TableBody>
             </>
