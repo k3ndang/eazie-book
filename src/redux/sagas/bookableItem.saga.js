@@ -4,6 +4,7 @@ import { put, takeLatest, takeEvery } from 'redux-saga/effects';
 function* bookableItemSaga() {
     yield takeEvery('FETCH_BOOKABLE_ITEM', fetchBookableItem);
     yield takeEvery('POST_BOOKABLE_ITEM', postBookableItem);
+    yield takeEvery('POST_PHOTO', postPhoto)
 }
 
 function* fetchBookableItem() {
@@ -19,6 +20,15 @@ function* fetchBookableItem() {
 
     }
 }; //end of fetchBookableItem
+
+function* postPhoto(action) {
+    console.log('payload is', action.payload);
+    yield axios.post(`/api/photos`, action.payload)
+    /* yield put({
+        type: 'FETCH_PHOTOS'
+    }) */
+}
+
 
 function* postBookableItem(action) {
     console.log('post bookableItem saga', action.payload);
