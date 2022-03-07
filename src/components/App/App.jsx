@@ -22,7 +22,6 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
-import ClientEditForm from '../ClientEditForm/ClientEditForm';
 
 
 import './App.css';
@@ -100,13 +99,6 @@ function App() {
             path="/clients"
           >
           <ClientTable />  
-          </ProtectedRoute>
-
-          <ProtectedRoute
-            exact
-            path='/client/edit'
-          >
-          <ClientEditForm />  
           </ProtectedRoute>
 
           <Route

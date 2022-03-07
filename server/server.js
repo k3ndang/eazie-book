@@ -11,7 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const clientInviteRouter = require('./routes/clientInvite.router');
 const bookableItemRouter = require('./routes/bookableItem.router');
-const fetchClientsRouter = require('./routes/fetchClients.router');
+const clientsRouter = require('./routes/clients.router');
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,7 +27,7 @@ app.use(passport.session());
 app.use('/api/bookableItem', bookableItemRouter)
 app.use('/api/user', userRouter);
 app.use('/admin/invite', clientInviteRouter);
-app.use('/clients', fetchClientsRouter);
+app.use('/clients', clientsRouter);
 
 
 // Serve static files

@@ -19,6 +19,21 @@ function ClientTable(){
     const dispatch = useDispatch();
     const history = useHistory();
 
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zipCode, setZipCode] = useState('');
+    const [websiteUrl, setWebsiteUrl] = useState('');
+    const [clientId, setClientId] = useState('');
+
+
+    const [btnStatus, setBtnStatus] = useState(false);
+
     useEffect(() => {
         dispatch({
             type: 'FETCH_CLIENTS'
@@ -38,13 +53,47 @@ function ClientTable(){
         console.log('delete button pressed');
     }
 
-    const editClient = (id) => {
-        dispatch({
-            type: 'FETCH_ACTIVE_CLIENT',
-            payload: {id: id}
-        })
+    const editClient = (client) => {
+        console.log('Edit button clicked');
 
-        history.push('/client/edit');
+        setBtnStatus(true);
+
+        setFirstName(client.firstName);
+        setLastName(client.lastName);
+        setEmail(client.email);
+        setPhoneNumber(client.phoneNumber);
+        setCompanyName(client.companyName);
+        setAddress(client.address);
+        setCity(client.city);
+        setState(client.state);
+        setZipCode(client.zipCode);
+        setWebsiteUrl(client.websiteUrl);
+        setClientId(client.id);
+    }
+
+    const handleSave = () => {
+        console.log('Save button pressed!');
+
+        setBtnStatus(false);
+
+        console.log('save btnStatus is:', btnStatus);
+
+        dispatch({
+            type: 'UPDATE_CLIENT',
+            payload: {
+                id: clientId,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phoneNumber: phoneNumber,
+                companyName: companyName,
+                address: address,
+                city: city,
+                state: state,
+                zipCode: zipCode,
+                websiteUrl: websiteUrl
+            }
+        })
     }
 
     const bookableItem = () => {
@@ -56,7 +105,109 @@ function ClientTable(){
         <div className="clientTable">
             <TableContainer component={Paper}>
             <Table>
-                <TableHead>
+        {
+            btnStatus ? 
+            <>
+            <TableHead>
+                <TableRow>
+                    <TableCell>First Name</TableCell>
+                    <TableCell align="right">Last Name</TableCell>
+                    <TableCell align="right">Email</TableCell>
+                    <TableCell align="right">Phone Number</TableCell>
+                    <TableCell align="right">Company Name</TableCell>
+                    <TableCell align="right">Address</TableCell>
+                    <TableCell align="right">City</TableCell>
+                    <TableCell align="right">State</TableCell>
+                    <TableCell align="right">Zip Code</TableCell>
+                    <TableCell align="right">Website Url</TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TextField 
+                        id="outlined-basic" 
+                        size="small"
+                        value={lastName}
+                        onChange={(event) => setLastName(event.target.value)}/>
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={firstName}
+                        onChange={(event) => setFirstName(event.target.value)}/>
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                    />
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={phoneNumber}
+                        onChange={(event) => setPhoneNumber(event.target.value)}
+                    />
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={companyName}
+                        onChange={(event) => setCompanyName(event.target.value)}
+                    />
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={address}
+                        onChange={(event) => setAddress(event.target.value)}
+                    />
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={city}
+                        onChange={(event) => setCity(event.target.value)}
+                    />
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={state}
+                        onChange={(event) => setState(event.target.value)}
+                    />
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={zipCode}
+                        onChange={(event) => setZipCode(event.target.value)}
+                    />
+                </TableRow>
+                <TableRow>
+                    <TextField
+                        id="outlined-basic"
+                        size="small"
+                        value={websiteUrl}
+                        onChange={(event) => setWebsiteUrl(event.target.value)}
+                    />
+                </TableRow>
+            </TableBody>
+            </>
+
+            :
+
+            <>
+            <TableHead>
                     <TableRow>
                         <TableCell>First Name</TableCell>
                         <TableCell align="right">Last Name</TableCell>
@@ -89,11 +240,15 @@ function ClientTable(){
                             <TableCell align="right">{client.zipcode}</TableCell>
                             <TableCell align="right">{client.websiteUrl}</TableCell>
                             <TableCell align="right"><button onClick={event => bookableItem()}>See Bookable Items</button></TableCell>
-                            <TableCell align="right"><button onClick={event => editClient(client.id)}>Edit</button></TableCell>
+                            <TableCell align="right"><button onClick={event => editClient(client)}>Edit</button></TableCell>
                             <TableCell align="right"><button onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
+            </>
+        
+            
+        }     
             </Table>    
             </TableContainer>
         </div>
