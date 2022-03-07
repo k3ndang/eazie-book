@@ -23,9 +23,9 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
     const queryText = `
         INSERT INTO "user"
-            ("firstName", "lastName", "username", "password", "email", "phoneNumber", "companyName", "address", "city", "state", "zipCode", "websiteUrl", "authLevel")
+            ("firstName", "lastName", "username", "password", "email", "phoneNumber", "companyName", "address", "city", "state", "zipcode", "websiteUrl", "authLevel")
         VALUES
-            ($1 $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, 'client')
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, 'client')
     `;
 
     pool.query(queryText,[

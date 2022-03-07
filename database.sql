@@ -6,7 +6,7 @@
 CREATE TABLE "user" (
   "id" SERIAL PRIMARY KEY,
   "firstName" VARCHAR(256),
-  "lasrName" VARCHAR(256),
+  "lastName" VARCHAR(256),
   "username" VARCHAR (256) UNIQUE NOT NULL,
   "password" VARCHAR (2550) NOT NULL,
   "email" VARCHAR(256),

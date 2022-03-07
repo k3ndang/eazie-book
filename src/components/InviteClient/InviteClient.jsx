@@ -217,7 +217,7 @@ function InviteClient(){
                     variant="outlined"
                     color="primary"
                     className="submitBtn"
-                    type="submit"
+
                     name="Submit"
                     value="Submit"
                     onClick={inviteClient}
