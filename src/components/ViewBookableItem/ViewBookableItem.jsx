@@ -8,7 +8,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import Button from '@mui/material/Button'
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
 /* function createData(title, summary, details, type, rate, time) {
     return { title, summary, details, type, rate, time };
 } */
@@ -27,7 +29,9 @@ import Paper from '@mui/material/Paper';
 function ViewBookableItem() {
     const dispatch = useDispatch()
 
-
+    const handleSubmit = () => {
+        console.log('zorp');
+    }
     const fetchBookableItem = () => {
         dispatch({ type: 'FETCH_BOOKABLE_ITEM' })
     }
@@ -37,6 +41,66 @@ function ViewBookableItem() {
     const rows = useSelector(store => store.bookableItemReducer)
     return(
         <>
+            <Stack
+                component="form"
+                sx={{
+                    width: '25ch',
+                }}
+                spacing={2}
+                noValidate
+                autoComplete="off"
+            >
+                <TextField
+                    hiddenLabel
+                    id="filled-hidden-label-small"
+                    variant="filled"
+                    placeholder='item'
+                    size="small"
+                />
+                <TextField
+                    hiddenLabel
+                    id="filled-hidden-label-small"
+                    variant="filled"
+                    placeholder='summary'
+                    size="small"
+                />
+                <TextField
+                    hiddenLabel
+                    id="filled-hidden-label-small"
+                    variant="filled"
+                    placeholder='details'
+                    size="small"
+                />
+                <TextField
+                    hiddenLabel
+                    id="filled-hidden-label-small"
+                    variant="filled"
+                    placeholder='rate'
+                    size="small"
+                />
+                <TextField
+                    hiddenLabel
+                    id="filled-hidden-label-small"
+                    variant="filled"
+                    placeholder='time'
+                    size="small"
+                />
+                <TextField
+                    hiddenLabel
+                    id="filled-hidden-label-small"
+                    variant="filled"
+                    placeholder='categoryId'
+                    size="small"
+                />
+                <TextField
+                    hiddenLabel
+                    id="filled-hidden-label-small"
+                    variant="filled"
+                    placeholder='clientId'
+                    size="small"
+                />
+                <Button type='submit'>Add item</Button>
+            </Stack>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -65,6 +129,7 @@ function ViewBookableItem() {
                                 <TableCell align="right">{row.unitTime}</TableCell>
                                 <TableCell align="right">{row.categoryId}</TableCell>
                                 <TableCell align="right">{row.clientId}</TableCell>
+                                <Button>Edit</Button>
                             </TableRow>
                         ))}
                     </TableBody>
