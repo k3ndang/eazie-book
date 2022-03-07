@@ -1,10 +1,16 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import './UserPage.css'
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+  const history = useHistory();
+
+  const addClient = () => {
+    history.push("/admin/invite");
+  }
   return (
     <div className="containerBtn">
       <div className="adminHeader"> 
@@ -16,7 +22,7 @@ function UserPage() {
       </div>
 
       <div className="addClientButton">  
-      <button className="addClientButton" > Add Client </button>
+      <button className="addClientButton" onClick={addClient}> Add Client </button>
       </div>
       </div>
 
