@@ -28,7 +28,7 @@ function ClientTable(){
     const clients = useSelector(store => store.clients);
 
     const deleteClient = (id) => {
-        
+        /* still need sweet alerts */
         dispatch({
             type: 'DELETE_SELECTED_CLIENT',
             payload: {id: id}
@@ -39,7 +39,16 @@ function ClientTable(){
     }
 
     const editClient = (id) => {
-        
+        dispatch({
+            type: 'FETCH_ACTIVE_CLIENT',
+            payload: {id: id}
+        })
+
+        history.push('/client/edit');
+    }
+
+    const bookableItem = () => {
+        history.push('/addBookableItem')
     }
 
     return(
@@ -79,8 +88,8 @@ function ClientTable(){
                             <TableCell align="right">{client.state}</TableCell>
                             <TableCell align="right">{client.zipcode}</TableCell>
                             <TableCell align="right">{client.websiteUrl}</TableCell>
-                            <TableCell align="right">See bookable items button</TableCell>
-                            <TableCell align="right"><button onClick={event => editClient(client)}>Edit</button></TableCell>
+                            <TableCell align="right"><button onClick={event => bookableItem()}>See Bookable Items</button></TableCell>
+                            <TableCell align="right"><button onClick={event => editClient(client.id)}>Edit</button></TableCell>
                             <TableCell align="right"><button onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
                         </TableRow>
                     ))}
