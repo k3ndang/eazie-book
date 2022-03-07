@@ -71,6 +71,10 @@ function InviteClient(){
         history.push("/user");
     }
 
+    const goBack = () => {
+        history.push("/user");
+    }
+
     return(
         <>
         <Paper onSubmit={inviteClient}>
