@@ -17,6 +17,7 @@ import TextField from '@mui/material/TextField';
 function ClientTable(){
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     useEffect(() => {
         dispatch({
@@ -25,6 +26,21 @@ function ClientTable(){
     }, [])
 
     const clients = useSelector(store => store.clients);
+
+    const deleteClient = (id) => {
+        
+        dispatch({
+            type: 'DELETE_SELECTED_CLIENT',
+            payload: {id: id}
+        });
+
+        history.push('/user');
+        console.log('delete button pressed');
+    }
+
+    const editClient = (id) => {
+        
+    }
 
     return(
         <>
@@ -45,6 +61,8 @@ function ClientTable(){
                         <TableCell align="right">Zip Code</TableCell>
                         <TableCell align="right">Website URL</TableCell>
                         <TableCell align="right">Bookable Items</TableCell>
+                        <TableCell align="right"></TableCell>
+                        <TableCell align="right"></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -61,6 +79,9 @@ function ClientTable(){
                             <TableCell align="right">{client.state}</TableCell>
                             <TableCell align="right">{client.zipcode}</TableCell>
                             <TableCell align="right">{client.websiteUrl}</TableCell>
+                            <TableCell align="right">See bookable items button</TableCell>
+                            <TableCell align="right"><button onClick={event => editClient(client)}>Edit</button></TableCell>
+                            <TableCell align="right"><button onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
