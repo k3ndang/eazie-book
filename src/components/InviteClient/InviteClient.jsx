@@ -61,9 +61,10 @@ function InviteClient(){
         setState('');
         setZipCode('');
         setWebsiteUrl('');
-        /* setAuthLevel(''); */
+
 
         /* need history.push here */
+    
     }
 
     const goBack = () => {
