@@ -67,7 +67,7 @@ function Nav() {
             <button className="dropbtn"> Manage </button>
             <div className="dropdown-content">
               {/* bring admin to input form to enter client details */}
-              <Link to="/"> Add a Client  </Link>
+              <Link to="/admin/invite"> Add a Client  </Link>
               {/* bring admin to category form */}
               {/* Could also say "edit bookable categories" */}
               <Link to="/"> Edit Categories </Link>
