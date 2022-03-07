@@ -20,7 +20,8 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
-import ViewBookableItem from '../ViewBookableItem/ViewBookableItem'
+import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
+import ClientTable from '../ClientTable/ClientTable';
 
 
 import './App.css';
@@ -91,6 +92,13 @@ function App() {
             path='/admin/invite'
           >
             <InviteClient />  
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact 
+            path="/clients"
+          >
+          <ClientTable />  
           </ProtectedRoute>
 
           <Route

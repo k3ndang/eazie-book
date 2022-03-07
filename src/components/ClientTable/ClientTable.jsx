@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import { useSelector, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -13,7 +15,16 @@ import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 
 function ClientTable(){
-    const clients = useSelector(store => store.clientInvite);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_CLIENTS'
+        })
+    }, [])
+
+    const clients = useSelector(store => store.clients);
 
     return(
         <>
@@ -36,6 +47,23 @@ function ClientTable(){
                         <TableCell align="right">Bookable Items</TableCell>
                     </TableRow>
                 </TableHead>
+                <TableBody>
+                    {clients.map(client => (
+                        <TableRow key={client.id} id={client.id}>
+                            <TableCell>{client.firstName}</TableCell>
+                            <TableCell align="right">{client.lastName}</TableCell>
+                            <TableCell align="right">{client.username}</TableCell>
+                            <TableCell align="right">{client.email}</TableCell>
+                            <TableCell align="right">{client.phoneNumber}</TableCell>
+                            <TableCell align="right">{client.companyName}</TableCell>
+                            <TableCell align="right">{client.address}</TableCell>
+                            <TableCell align="right">{client.city}</TableCell>
+                            <TableCell align="right">{client.state}</TableCell>
+                            <TableCell align="right">{client.zipcode}</TableCell>
+                            <TableCell align="right">{client.websiteUrl}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
             </Table>    
             </TableContainer>
         </div>
