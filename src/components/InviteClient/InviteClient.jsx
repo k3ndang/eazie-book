@@ -67,9 +67,6 @@ function InviteClient(){
     
     }
 
-    const goBack = () => {
-        history.push("/user");
-    }
 
     const goBack = () => {
         history.push("/user");
