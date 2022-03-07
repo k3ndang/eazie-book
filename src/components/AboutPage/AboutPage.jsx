@@ -9,6 +9,9 @@ import './AboutPage.css'
 function AboutPage() {
   return (
     <div className="container">
+
+      <div>
+    
     <div className="infoBoxList">
           <div className="infoTitle"> 
             <h2 className="listInfoHeading"> Technologies Implemented </h2>
@@ -35,6 +38,7 @@ function AboutPage() {
             height={400}
             className="OwlPic"
         />
+
       </div>
         
           <div className="infoTitle"> 
