@@ -1,8 +1,10 @@
 .clientListTableHeadings{
-    width: 100px;
-    display: flex;
+    width: 1000px;
+    font-variant: small-caps ;
     justify-content: center;    
     border: 2px solid black;
+    flex-direction: row;
+
 }
 
 .clientListTableRow{

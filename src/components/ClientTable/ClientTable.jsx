@@ -41,18 +41,18 @@ function ClientTable(){
             <Table>
                 <TableHead>
                     <TableRow >
-                        <TableCell align="center" className="clientListTableHeadings">First Name</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Last Name</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Username</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Email</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Phone Number</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Company Name</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Address</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">City</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">State</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Zip Code</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Website URL</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Bookable Items</TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>First Name </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Last Name  </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Username  </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Email </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Phone Number  </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Company Name </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Address </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>City </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>State </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Zip Code </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Website URL </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Bookable Items </strong></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
