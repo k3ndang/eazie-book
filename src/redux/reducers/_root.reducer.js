@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import clientInvite from './clientInvite.reducer';
-import bookableItem from './bookableItem.reducer'
+import bookableItem from './bookableItem.reducer';
+import clients from './clients.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   clientInvite,
   user,
-  bookableItem // will have an id and username if someone is logged in
+  bookableItem, // will have an id and username if someone is logged in
+  clients
 });
 
 export default rootReducer;
