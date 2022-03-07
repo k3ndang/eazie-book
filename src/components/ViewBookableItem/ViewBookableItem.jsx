@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -29,8 +29,28 @@ import TextField from '@mui/material/TextField';
 function ViewBookableItem() {
     const dispatch = useDispatch()
 
+    let [item, setItem] = useState('')
+    let [summary, setSummary] = useState('')
+    let [details, setDetails] = useState('')
+    let [rate, setRate] = useState(0)
+    let [time, setTime] = useState(0)
+    let [categoryId, setCategoryId] = useState(1)
+    let [clientId, setClientId] = useState(1)
     const handleSubmit = () => {
-        console.log('zorp');
+        console.log('item is', item);
+        console.log('rate is', rate)
+        dispatch({
+            type: 'POST_BOOKABLE_ITEM',
+            payload: {
+                item: item, 
+                summary, summary, 
+                details: details, 
+                rate: rate, 
+                time: time,
+                categoryId: categoryId,
+                clientId: clientId
+            }
+        })
     }
     const fetchBookableItem = () => {
         dispatch({ type: 'FETCH_BOOKABLE_ITEM' })
@@ -41,7 +61,7 @@ function ViewBookableItem() {
     const rows = useSelector(store => store.bookableItemReducer)
     return(
         <>
-            <Stack
+            <Stack onSubmit={handleSubmit}
                 component="form"
                 sx={{
                     width: '25ch',
@@ -56,6 +76,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='item'
                     size="small"
+                    onChange={(e) => setItem(e.target.value)}
                 />
                 <TextField
                     hiddenLabel
@@ -63,6 +84,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='summary'
                     size="small"
+                    onChange={(e) => setSummary(e.target.value)}
                 />
                 <TextField
                     hiddenLabel
@@ -70,6 +92,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='details'
                     size="small"
+                    onChange={(e) => setDetails(e.target.value)}
                 />
                 <TextField
                     hiddenLabel
@@ -77,6 +100,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='rate'
                     size="small"
+                    onChange={(e) => setRate(e.target.value)}
                 />
                 <TextField
                     hiddenLabel
@@ -84,6 +108,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='time'
                     size="small"
+                    onChange={(e) => setTime(e.target.value)}
                 />
                 <TextField
                     hiddenLabel
