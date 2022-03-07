@@ -1,12 +1,19 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import ClientTable from '../ClientTable/ClientTable';
 import './UserPage.css'
 
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+  const history = useHistory();
+
+  const addClient = () => {
+    history.push("/admin/invite");
+  }
   return (
     <div className="containerBtn">
       <div className="adminHeader"> 
@@ -18,7 +25,7 @@ function UserPage() {
       </div>
 
       <div className="addClientButton">  
-      <button className="addClientButton" > Add Client </button>
+      <button className="addClientButton" onClick={addClient}> Add Client </button>
       </div>
       </div>
 
@@ -27,20 +34,21 @@ function UserPage() {
             <div className='adminTableContainer'> 
             <h3 className="adminTableTitle"> Current List of Clients</h3>
             <div class="table-responsive">
-                <table class="table">
+                {/* <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col" className="col">Company</th>
+                    <th scope="col" className="col">Company</th> */}
                     {/* include user.firstName & user.lastName */}
-                    <th scope="col" className="col">Name </th>
+                   {/*  <th scope="col" className="col">Name </th>
                     <th scope="col" className="col">Phone Number</th>
                     <th scope="col" className="col">Email</th>
                     <th scope="col"className="col">Item</th>
                     <th scope="col"className="col">Address</th>
                     <th scope="col"className="col">Link to Website</th>
                   </tr>
-                </thead>
-                <tbody>
+                </thead> */}
+                <ClientTable />
+               {/*  <tbody>
                   <tr className="col"> 
                     <th scope="row">Emeralds</th>
                     <td > Emerald Goshawk</td>
@@ -52,7 +60,7 @@ function UserPage() {
                   </tr>
                  
                 </tbody>
-                </table>
+                </table> */}
               </div>
               </div>
           </>
