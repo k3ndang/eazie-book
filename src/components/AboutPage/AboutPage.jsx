@@ -7,10 +7,12 @@ import './AboutPage.css'
 // or even care what the redux state is'
 
 function AboutPage() {
-  return (
-    <div className="container">
 
-      <div>
+  return (
+    
+    
+
+      <div className='container'>
     
     <div className="infoBoxList">
           <div className="infoTitle"> 
@@ -59,7 +61,8 @@ function AboutPage() {
            
           </div>
     </div>
-  );
+      
+  )
 }
 
 export default AboutPage;
