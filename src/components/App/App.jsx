@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem'
+import BookableItem from '../BookableItem/BookableItem'
 
 
 import './App.css';
@@ -113,6 +114,14 @@ function App() {
               <RegisterPage />
             }
           </Route>
+          
+          <Route
+            exact
+            path="/bookableItem"
+          >
+            <BookableItem />
+          </Route>
+
 
           <Route
             exact

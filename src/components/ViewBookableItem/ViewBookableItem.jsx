@@ -11,6 +11,8 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
+
+
 /* function createData(title, summary, details, type, rate, time) {
     return { title, summary, details, type, rate, time };
 } */
@@ -29,39 +31,43 @@ import TextField from '@mui/material/TextField';
 function ViewBookableItem() {
     const dispatch = useDispatch()
 
-    let title = useSelector(store => store.bookableItem.titleReducer)
-    let summary = useSelector(store => store.bookableItem.summaryReducer)
-    let details = useSelector(store => store.bookableItem.detailReducer)
-    let rate = useSelector(store => store.bookableItem.rateReducer)
-    let time = useSelector(store => store.bookableItem.unitTimeReducer)
-    let categoryId = useSelector(store => store.bookableItem.categoryIdReducer)
-    let clientId = useSelector(store => store.bookableItem.clientIdReducer)
-    const handleSubmit = () => {
+    // let title = useSelector(store => store.bookableItem.titleReducer)
+    // let summary = useSelector(store => store.bookableItem.summaryReducer)
+    // let details = useSelector(store => store.bookableItem.detailReducer)
+    // let rate = useSelector(store => store.bookableItem.rateReducer)
+    // let time = useSelector(store => store.bookableItem.unitTimeReducer)
+    // let categoryId = useSelector(store => store.bookableItem.categoryIdReducer)
+    // let clientId = useSelector(store => store.bookableItem.clientIdReducer)
+    // const handleSubmit = () => {
         
-        dispatch({
-            type: 'POST_BOOKABLE_ITEM',
-            payload: {
-                title: title, 
-                summary, summary, 
-                details: details, 
-                rate: rate, 
-                time: time,
-                location, location,
-                categoryId: categoryId,
-                clientId: clientId
-            }
-        })
-    }
+    //     dispatch({
+    //         type: 'POST_BOOKABLE_ITEM',
+    //         payload: {
+    //             title: title, 
+    //             summary, summary, 
+    //             details: details, 
+    //             rate: rate, 
+    //             time: time,
+    //             location, location,
+    //             categoryId: categoryId,
+    //             clientId: clientId
+    //         }
+    //     })
+    // }
+
+
     const fetchBookableItem = () => {
-        dispatch({ type: 'FETCH_BOOKABLE_ITEM' })
+        // dispatch({ type: 'FETCH_BOOKABLE_ITEM' })
     }
     useEffect(() => {
-        fetchBookableItem()
+        // fetchBookableItem()
     }, [])
-    const rows = useSelector(store => store.bookableItem.bookableItemReducer)
+   
+
+
     return(
         <>
-            <Stack onSubmit={handleSubmit}
+            {/* <Stack onSubmit={handleSubmit}
                 component="form"
                 sx={{
                     width: '25ch',
@@ -135,8 +141,8 @@ function ViewBookableItem() {
                     onChange={(e) => dispatch({ type: 'SET_CLIENT_ID', payload: e.target.value })}
                 />
                 <Button type='submit'>Add item</Button>
-            </Stack>
-            <TableContainer component={Paper}>
+            </Stack> */}
+            {/* <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
@@ -169,7 +175,7 @@ function ViewBookableItem() {
                         ))}
                     </TableBody>
                 </Table>
-            </TableContainer>
+            </TableContainer> */}
 
 
         </>
