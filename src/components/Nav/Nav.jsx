@@ -34,29 +34,124 @@ function Nav() {
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
+          <>
           <Link className="navLink" to="/login">
             Login / Register
           </Link>
+          <div className="dropdown">
+          <Link className="dropbtn" to="/about">
+           About
+          </Link>
+          </div>
+          </>
         )}
 
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-            <Link className="navLink" to="/user">
-              Home
-            </Link>
-
-            <Link className="navLink" to="/info">
+            
+            {/* <Link className="navLink" to="/info">
               Info Page
-            </Link>
+            </Link> */}
 
-            <LogOutButton className="navLink" />
+            
+          </>
+        )}
+  {/* ADMIN === { Home, Client Table, LogOut}
+      * Home links to admin landing page
+      * Client Table links to client table page
+      * LogOut links to the login page */}
+        {user.authLevel === 'admin' && (
+          <>
+             <div className="dropdown">
+            <button className="dropbtn"> Manage </button>
+            <div className="dropdown-content">
+              {/* bring admin to input form to enter client details */}
+              <Link to="/"> Add a Client  </Link>
+              {/* bring admin to category form */}
+              {/* Could also say "edit bookable categories" */}
+              <Link to="/"> Edit Categories </Link>
+              {/* brings admin to list of clients, perhaps this is redundant */}
+              <Link to="/"> Edit Clients </Link>
+            </div>
+          </div>
+              <div className="dropdown">
+            <button className="dropbtn"> View List</button>
+            <div className="dropdown-content">
+              <Link to="/"> Client List </Link>
+              {/* not sure if bookable items is a different page */}
+              <Link to="/"> Bookable Items List </Link>
+            </div>
+            </div>
+            {/* having an about and an info page seems redundant */}
+            <div className="dropdown"> 
+            <Link className="dropbtn" to="/about">
+             About
+            </Link>
+            </div>
+            <LogOutButton className="dropbtn" />
           </>
         )}
 
-        <Link className="navLink" to="/about">
-          About
-        </Link>
+{/* RENTER === {Home, Reservations, LogOut}
+      * Home links to the renter landing page
+      * Reservations links to the renter reservation info page
+      * LogOut links to the login page */}
+        {user.authLevel === 'renter' && (
+          <>
+           
+            <div className="dropdown">
+            <Link className="dropbtn" to="/user">
+              Home
+            </Link>
+            </div>
+              <div className="dropdown">
+            <button className="dropbtn"> Reservations</button>
+            <div className="dropdown-content">
+              <Link to="/"> Make A Reservation </Link>
+              {/* This should be the list of everyone that has rented bookable items  */}
+              <Link to="/"> View Reservations </Link>
+            </div>
+            </div>     
+            <div className="dropdown">
+          <Link className="dropbtn" to="/about">
+           About
+          </Link>
+          </div>       
+         
+            <LogOutButton className="dropbtn" />
+          </>
+        )}
+    
+  {/* CLIENT === { Home, LogOut}
+      * Home links to the client landing page
+      * LogOut links to the login page */}
+         {user.authLevel === 'client' && (
+          <>
+           
+            <div className="dropdown">
+            <Link className="dropbtn" to="/user">
+              Home
+            </Link>
+            </div>
+              <div className="dropdown">
+            <button className="dropbtn"> View List</button>
+            <div className="dropdown-content">
+              <Link to="/"> Bookable Items  </Link>
+              {/* This should be the list of everyone that has rented bookable items  */}
+              <Link to="/"> Renter Info </Link>
+            </div>
+            </div>
+            {/* having an about and an info page seems redundant */}
+            <div className="dropdown"> 
+            <Link className="dropbtn" to="/about">
+             About
+            </Link>
+            </div>
+         
+            <LogOutButton className="dropbtn" />
+          </>
+        )}
       </div>
     </div>
   );

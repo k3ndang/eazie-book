@@ -20,6 +20,8 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
+import ViewBookableItem from '../ViewBookableItem/ViewBookableItem'
+
 
 import './App.css';
 
@@ -47,6 +49,14 @@ function App() {
             path="/about"
           >
             <AboutPage />
+          </Route>
+
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/viewBookableItem"
+          >
+            <ViewBookableItem />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
