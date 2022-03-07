@@ -50,6 +50,7 @@
 .addClientButton:hover{
     background-color: rgb(150, 164, 106);
     border: 7px solid rgb(7, 46, 78);
+    color: rgb(32, 25, 127)
 }
 
 .adminHeader{
