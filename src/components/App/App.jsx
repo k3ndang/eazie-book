@@ -20,7 +20,10 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
-import ViewBookableItem from '../ViewBookableItem/ViewBookableItem'
+import BookableItem from '../BookableItem/BookableItem'
+import AddBookableItem from '../AddBookableItem/AddBookableItem'
+import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
+import ClientTable from '../ClientTable/ClientTable';
 
 
 import './App.css';
@@ -93,6 +96,13 @@ function App() {
             <InviteClient />  
           </ProtectedRoute>
 
+          <ProtectedRoute
+            exact 
+            path="/clients"
+          >
+          <ClientTable />  
+          </ProtectedRoute>
+
           <Route
             exact
             path="/login"
@@ -119,6 +129,20 @@ function App() {
               // Otherwise, show the registration page
               <RegisterPage />
             }
+          </Route>
+          
+          <Route
+            exact
+            path="/bookableItem"
+          >
+            <BookableItem />
+          </Route>
+
+          <Route
+            exact
+            path="/addBookableItem"
+          >
+            <AddBookableItem />
           </Route>
 
           <Route
