@@ -40,11 +40,10 @@ function AboutPage() {
             height={400}
             className="OwlPic"
         />
-
       </div>
         
           <div className="infoTitle"> 
-            <h2 className="listInfoHeading"> Looking to List Your Rental Equipment on Eazie-Book? </h2>
+            <h2 className="listInfoHeading"> Trying to List Your Rental Equipment to ook Via Eazie-Book? </h2>
          
   
             <h3 className="listItem" > Contact Dean via email at Dean@calldeans.com  </h3>

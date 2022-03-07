@@ -1,0 +1,18 @@
+.clientListTableHeadings{
+    width: 100px;
+    display: flex;
+    justify-content: center;    
+    border: 2px solid black;
+}
+
+.clientListTableRow{
+    width: 500px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.clientListButton{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
