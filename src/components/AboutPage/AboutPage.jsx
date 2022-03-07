@@ -43,7 +43,7 @@ function AboutPage() {
       </div>
         
           <div className="infoTitle"> 
-            <h2 className="listInfoHeading"> Trying to List Your Rental Equipment to ook Via Eazie-Book? </h2>
+            <h2 className="listInfoHeading"> Trying to List Your Rental Equipment to Book Via Eazie-Book? </h2>
          
   
             <h3 className="listItem" > Contact Dean via email at Dean@calldeans.com  </h3>
