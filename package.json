@@ -6,12 +6,8 @@
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
-<<<<<<< HEAD
-    "@mui/material": "^5.5.0",
-=======
     "@material-ui/core": "^4.12.3",
     "@mui/material": "^5.4.4",
->>>>>>> 63708f4c5bcd607e53fc1d38ccb9da9a9c142bca
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cookie-session": "^2.0.0",
