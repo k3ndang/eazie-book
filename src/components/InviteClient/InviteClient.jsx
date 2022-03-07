@@ -66,9 +66,14 @@ function InviteClient(){
         /* need history.push here */
     }
 
+    const goBack = () => {
+        history.push("/user");
+    }
+
     return(
         <>
         <Paper onSubmit={inviteClient}>
+            <Button variant="outlined" onClick={goBack}>Back</Button>
             <h2>Invite Client</h2>
             <div>
                 <Input
