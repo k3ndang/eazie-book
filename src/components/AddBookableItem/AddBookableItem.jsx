@@ -26,8 +26,8 @@ function addBookableItem () {
         rate:     '',
         unitTime: '',
         location: '',
-        categoryId: 1,
-        clientId:    1,
+        categoryId: '',
+        clientId:    '',
     });
 
     const [fileData, setFileData] = useState()
@@ -122,7 +122,7 @@ function addBookableItem () {
                         onChange={(evt) => handleChange(evt, "details")}
                     />
                     <Button
-                        // type='file'
+                        type='file'
                         onChange={(e) => setFileData(e.target.files[0])}
                         variant="outlined"
                         color="primary"
