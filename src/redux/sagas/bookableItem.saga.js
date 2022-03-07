@@ -12,8 +12,10 @@ function* fetchBookableItem() {
 
 }
 
-function* postBookableItem() {
-    const res = yield axios.post(`/api/bookableItem`)
+function* postBookableItem(action) {
+    const res = yield axios.post(`/api/bookableItem`, action.payload)
+    console.log('action.payload', action.payload);
+    
     yield put({type: 'FETCH_BOOKABLE_ITEM'})
 }
 

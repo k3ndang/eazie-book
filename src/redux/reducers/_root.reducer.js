@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
-import bookableItemReducer from './bookableItem.reducer'
+import bookableItem from './bookableItem.reducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -12,7 +12,7 @@ import bookableItemReducer from './bookableItem.reducer'
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user,
-  bookableItemReducer // will have an id and username if someone is logged in
+  bookableItem // will have an id and username if someone is logged in
 });
 
 export default rootReducer;

@@ -7,7 +7,7 @@ const bookableItemReducer = (state = [], action) => {
     return state
 }
 
-const titleReducer = (state = [], action) => {
+const titleReducer = (state = '', action) => {
     switch(action.type) {
         case ('SET_TITLE'):
             return action.payload
@@ -15,7 +15,7 @@ const titleReducer = (state = [], action) => {
     return state
 }
 
-const summaryReducer = (state = [], action) => {
+const summaryReducer = (state = '', action) => {
     switch (action.type) {
         case ('SET_SUMMARY'):
             return action.payload
@@ -23,7 +23,7 @@ const summaryReducer = (state = [], action) => {
     return state
 }
 
-const detailReducer = (state = [], action) => {
+const detailReducer = (state = '', action) => {
     switch (action.type) {
         case ('SET_DETAIL'):
             return action.payload
@@ -31,7 +31,7 @@ const detailReducer = (state = [], action) => {
     return state
 }
 
-const rateReducer = (state = [], action) => {
+const rateReducer = (state = 0, action) => {
     switch (action.type) {
         case ('SET_RATE'):
             return action.payload
@@ -39,7 +39,7 @@ const rateReducer = (state = [], action) => {
     return state
 }
 
-const unitTimeReducer = (state = [], action) => {
+const unitTimeReducer = (state = 0, action) => {
     switch (action.type) {
         case ('SET_UNIT_TIME'):
             return action.payload
@@ -47,7 +47,7 @@ const unitTimeReducer = (state = [], action) => {
     return state
 }
 
-const locationReducer = (state = [], action) => {
+const locationReducer = (state = '', action) => {
     switch (action.type) {
         case ('SET_LOCATION'):
             return action.payload
@@ -55,7 +55,7 @@ const locationReducer = (state = [], action) => {
     return state
 }
 
-const categoryIdReducer = (state = [], action) => {
+const categoryIdReducer = (state = 1, action) => {
     switch (action.type) {
         case ('SET_CATEGORY_ID'):
             return action.payload
@@ -63,7 +63,7 @@ const categoryIdReducer = (state = [], action) => {
     return state
 }
 
-const clientIdReducer = (state = [], action) => {
+const clientIdReducer = (state = 1, action) => {
     switch (action.type) {
         case ('SET_CLIENT_ID'):
             return action.payload
@@ -71,4 +71,16 @@ const clientIdReducer = (state = [], action) => {
     return state
 }
 
-export default bookableItemReducer
+const bookableItem = combineReducers({
+    bookableItemReducer,
+    titleReducer,
+    summaryReducer,
+    detailReducer,
+    rateReducer,
+    unitTimeReducer,
+    locationReducer, 
+    categoryIdReducer, 
+    clientIdReducer
+})
+
+export default bookableItem

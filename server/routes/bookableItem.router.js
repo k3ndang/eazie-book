@@ -16,20 +16,21 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     console.log('made it to server', req.body);
-    const item = req.body.item
+    const title = req.body.title
     const summary = req.body.summary
-    const details = req.body.details
+    const detail = req.body.details
     const rate = req.body.rate
-    const time = req.body.time
+    const unitTime = req.body.time
+    const location = req.body.location
     const categoryId = req.body.categoryId
     const clientId = req.body.clientId
-    let queryText = `INSERT INTO bookable_items (item, summary, details, rate, time, categoryId, clientId)
-    VALUES ($1, $2, $3, $4, $5, $6, $7)
+    let queryText = `INSERT INTO bookable_items (title, summary, detail, rate, "unitTime", location, "categoryId", "clientId")
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
     `
-    let queryParams = [item, summary, details, rate, time, categoryId, clientId]
+    let queryParams = [title, summary, detail, rate, unitTime, location, categoryId, clientId]
     pool.query(queryText, queryParams)
         .then((result) => {
-            console.log('query success');
+            console.log('query success', result);
             res.sendStatus(201)
         })
         .catch((error) => {

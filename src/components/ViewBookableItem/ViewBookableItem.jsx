@@ -29,24 +29,24 @@ import TextField from '@mui/material/TextField';
 function ViewBookableItem() {
     const dispatch = useDispatch()
 
-    let [item, setItem] = useState('')
-    let [summary, setSummary] = useState('')
-    let [details, setDetails] = useState('')
-    let [rate, setRate] = useState(0)
-    let [time, setTime] = useState(0)
-    let [categoryId, setCategoryId] = useState(1)
-    let [clientId, setClientId] = useState(1)
+    let title = useSelector(store => store.bookableItem.titleReducer)
+    let summary = useSelector(store => store.bookableItem.summaryReducer)
+    let details = useSelector(store => store.bookableItem.detailReducer)
+    let rate = useSelector(store => store.bookableItem.rateReducer)
+    let time = useSelector(store => store.bookableItem.unitTimeReducer)
+    let categoryId = useSelector(store => store.bookableItem.categoryIdReducer)
+    let clientId = useSelector(store => store.bookableItem.clientIdReducer)
     const handleSubmit = () => {
-        console.log('item is', item);
-        console.log('rate is', rate)
+        
         dispatch({
             type: 'POST_BOOKABLE_ITEM',
             payload: {
-                item: item, 
+                title: title, 
                 summary, summary, 
                 details: details, 
                 rate: rate, 
                 time: time,
+                location, location,
                 categoryId: categoryId,
                 clientId: clientId
             }
@@ -58,7 +58,7 @@ function ViewBookableItem() {
     useEffect(() => {
         fetchBookableItem()
     }, [])
-    const rows = useSelector(store => store.bookableItemReducer)
+    const rows = useSelector(store => store.bookableItem.bookableItemReducer)
     return(
         <>
             <Stack onSubmit={handleSubmit}
@@ -76,7 +76,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='item'
                     size="small"
-                    onChange={(e) => setItem(e.target.value)}
+                    onChange={(e) => dispatch({type: 'SET_TITLE', payload: e.target.value})}
                 />
                 <TextField
                     hiddenLabel
@@ -84,7 +84,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='summary'
                     size="small"
-                    onChange={(e) => setSummary(e.target.value)}
+                    onChange={(e) => dispatch({ type: 'SET_SUMMARY', payload: e.target.value })}
                 />
                 <TextField
                     hiddenLabel
@@ -92,7 +92,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='details'
                     size="small"
-                    onChange={(e) => setDetails(e.target.value)}
+                    onChange={(e) => dispatch({ type: 'SET_DETAIL', payload: e.target.value })}
                 />
                 <TextField
                     hiddenLabel
@@ -100,7 +100,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='rate'
                     size="small"
-                    onChange={(e) => setRate(e.target.value)}
+                    onChange={(e) => dispatch({ type: 'SET_RATE', payload: e.target.value })}
                 />
                 <TextField
                     hiddenLabel
@@ -108,7 +108,15 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='time'
                     size="small"
-                    onChange={(e) => setTime(e.target.value)}
+                    onChange={(e) => dispatch({ type: 'SET_UNIT_TIME', payload: e.target.value })}
+                />
+                <TextField
+                    hiddenLabel
+                    id="filled-hidden-label-small"
+                    variant="filled"
+                    placeholder='location'
+                    size="small"
+                    onChange={(e) => dispatch({ type: 'SET_LOCATION', payload: e.target.value })}
                 />
                 <TextField
                     hiddenLabel
@@ -116,6 +124,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='categoryId'
                     size="small"
+                    onChange={(e) => dispatch({ type: 'SET_CATEGORY_ID', payload: e.target.value })}
                 />
                 <TextField
                     hiddenLabel
@@ -123,6 +132,7 @@ function ViewBookableItem() {
                     variant="filled"
                     placeholder='clientId'
                     size="small"
+                    onChange={(e) => dispatch({ type: 'SET_CLIENT_ID', payload: e.target.value })}
                 />
                 <Button type='submit'>Add item</Button>
             </Stack>
