@@ -3,7 +3,9 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import clientInvite from './clientInvite.reducer';
 import bookableItem from './bookableItem.reducer';
+import selectedBookableItem from './selectedBookableItem.reducer';
 import clients from './clients.reducer';
+import activeClient from './activeClient.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -18,7 +20,9 @@ const rootReducer = combineReducers({
   clientInvite,
   user,
   bookableItem, // will have an id and username if someone is logged in
-  clients
+  selectedBookableItem // selecting this bookableItem by ID to be edit
+  clients,
+  activeClient,
 });
 
 export default rootReducer;
