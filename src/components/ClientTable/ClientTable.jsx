@@ -66,7 +66,7 @@ function ClientTable(){
         setAddress(client.address);
         setCity(client.city);
         setState(client.state);
-        setZipCode(client.zipCode);
+        setZipCode(client.zipcode);
         setWebsiteUrl(client.websiteUrl);
         setClientId(client.id);
     }
