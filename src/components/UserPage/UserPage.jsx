@@ -28,7 +28,7 @@ function UserPage() {
       {user.authLevel === 'admin' && (
           <>
             <div className='adminTableContainer'> 
-            <div class="table-responsive">
+            <div className="table-responsive">
                 <ClientTable />
               </div>
               </div>
