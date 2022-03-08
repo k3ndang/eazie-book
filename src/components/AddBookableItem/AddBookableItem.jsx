@@ -3,7 +3,11 @@ import { Button, Grid } from "@material-ui/core";
 import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 import Box from '@mui/material/Box';
-import { useHistory } from "react-router-dom";
+
+import { useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+
+
 import { useDispatch } from "react-redux";
 import './AddBookableItem.css';
 
@@ -15,6 +19,7 @@ function addBookableItem () {
     */
 
     const dispatch = useDispatch();
+    const params = useParams();
     const history = useHistory();
 
     const [newBookableItem, setNewBookableItem] = useState({
@@ -24,20 +29,35 @@ function addBookableItem () {
         rate:     '',
         unitTime: '',
         location: '',
-        categoryId: '',
-        clientId:    '',
+        categoryId: 1,
+        clientId:    1,
     });
 
+    const [fileData, setFileData] = useState()
+    
     const handleChange = (evt, property) => {
         setNewBookableItem({...newBookableItem, [property]: evt.target.value})
     };
 
+    
     const addNewBookableItem = (evt) => {
         evt.preventDefault();
+
+        
         dispatch({
             type: 'POST_BOOKABLE_ITEM',
             payload:  newBookableItem
         })
+        const data = new FormData();
+        data.append('file', fileData)
+        dispatch({
+            type: 'POST_PHOTO', 
+            payload: {
+                data: data,
+                id: newBookableItem.clientId
+            }
+        })
+
     }
 
 
@@ -106,20 +126,20 @@ function addBookableItem () {
                         value={newBookableItem.details}
                         onChange={(evt) => handleChange(evt, "details")}
                     />
-                    <Input    
-                        required
-                        type="integer"
-                        placeholder="Category"
-                        value={newBookableItem.categoryId}
-                        onChange={(evt) => handleChange(evt, "categoryId")}
+                    <Button
+                        type='file'
+                        onChange={(e) => setFileData(e.target.files[0])}
+                        variant="outlined"
+                        color="primary"
+                        size="small"
+                        component='label'
+                    >Upload a Photo
+                    <input 
+                    
+                    type='file'
+                    hidden
                     />
-                    <Input
-                        required
-                        type="integer"
-                        placeholder="ClientId"
-                        value={newBookableItem.clientId}
-                        onChange={(evt) => handleChange(evt, "clientId")}
-                    />
+                    </Button>
                     <Button
                         type="submit"
                         variant="outlined"

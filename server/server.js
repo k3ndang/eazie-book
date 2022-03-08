@@ -11,7 +11,11 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const clientInviteRouter = require('./routes/clientInvite.router');
 const bookableItemRouter = require('./routes/bookableItem.router');
+
+const photosRouter = require('./routes/photos.router')
+
 const clientsRouter = require('./routes/clients.router');
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,12 +31,16 @@ app.use(passport.session());
 app.use('/api/bookableItem', bookableItemRouter)
 app.use('/api/user', userRouter);
 app.use('/admin/invite', clientInviteRouter);
+
+app.use('/api/photos', photosRouter)
+
 app.use('/clients', clientsRouter);
+
 
 
 // Serve static files
 app.use(express.static('build'));
-
+app.use(express.static('public'));
 // App Set //
 const PORT = process.env.PORT || 5000;
 
