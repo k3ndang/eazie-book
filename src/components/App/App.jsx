@@ -53,13 +53,13 @@ function App() {
           >
             <AboutPage />
           </Route>
-          <Route
+          <ProtectedRoute
             
             exact
             path="/categoryInput"
           >
             <CategoryInput />
-          </Route>
+          </ProtectedRoute>
 
           <Route
             // shows AboutPage at all times (logged in or not)

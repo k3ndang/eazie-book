@@ -4,7 +4,7 @@ import user from './user.reducer';
 import clientInvite from './clientInvite.reducer';
 import bookableItem from './bookableItem.reducer';
 import clients from './clients.reducer';
-
+import itemList from './ItemNames.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,7 +18,8 @@ const rootReducer = combineReducers({
   clientInvite,
   user,
   bookableItem, // will have an id and username if someone is logged in
-  clients
+  clients,
+  itemList // for the Autocomplete on the category input form
 });
 
 export default rootReducer;

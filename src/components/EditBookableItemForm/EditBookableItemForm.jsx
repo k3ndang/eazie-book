@@ -47,7 +47,7 @@ function EditBookableItemForm () {
 
         <form onSubmit={handleSubmit}>
             <Input
-                    {/* Title */}
+                    // {/* Title */}
                 type="text"
                 // value={selectedMember.height}
                 // onChange={(evt) => dispatch({
@@ -56,7 +56,7 @@ function EditBookableItemForm () {
                 // })}
             />
             <TextField
-                    {/* Summary */}
+                    // {/* Summary */}
                 type="text"
                 // value={selectedMember.weight}
                 // onChange={(evt) => dispatch({
@@ -65,7 +65,7 @@ function EditBookableItemForm () {
                 // })}
             />
             <TextField
-                    {/* Detail */}
+                    // {/* Detail */}
                 type="text"
                 // value={selectedMember.weight}
                 // onChange={(evt) => dispatch({
@@ -74,7 +74,7 @@ function EditBookableItemForm () {
                 // })}
             />
             <Input
-                    {/* Rate */}
+                    // {/* Rate */}
                 type="integer"
                 // date-format="MON DD, YYYY"
                 // value={selectedMember.date}
@@ -84,7 +84,7 @@ function EditBookableItemForm () {
                 // })}
             />
             <Input
-                    {/* UnitTime */}
+                    // {/* UnitTime */}
                 type="text"
                 // date-format="MON DD, YYYY"
                 // value={selectedMember.date}
@@ -94,7 +94,7 @@ function EditBookableItemForm () {
                 // })}
             />
             <Input
-                    {/* location */}
+                    // {/* location */}
                 type="text"
                 // date-format="MON DD, YYYY"
                 // value={selectedMember.date}
@@ -104,7 +104,7 @@ function EditBookableItemForm () {
                 // })}
             />
             <Input
-                    {/* Category */}
+                    // {/* Category */}
                 type="integer"
                 // date-format="MON DD, YYYY"
                 // value={selectedMember.date}
