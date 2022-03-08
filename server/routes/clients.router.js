@@ -64,6 +64,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 router.put('/:id', rejectUnauthenticated, (req, res) => {
     console.log('in client.router.put');
 
+
     const queryText = `
         UPDATE "user"
         SET "firstName" = $1, "lastName" = $2, "email" = $3, "phoneNumber" = $4, "companyName" = $5, "address" = $6, "city" = $7, "state" = $8, "zipcode" = $9, "websiteUrl" = $10
