@@ -122,6 +122,8 @@ function ClientTable(){
                         <TableCell align="center" className="clientListTableHeadings"> <strong>Zip Code </strong></TableCell>
                         <TableCell align="center" className="clientListTableHeadings"> <strong>Website URL </strong></TableCell>
                         <TableCell align="center" className="clientListTableHeadings"> <strong>Bookable Items </strong></TableCell>
+                    </TableRow>
+                    </TableHead>
                           
         {
             btnStatus ? 
@@ -269,6 +271,7 @@ function ClientTable(){
                 </TableBody>
             </>
         }     
+
             </Table>    
             </TableContainer>
         </div>
