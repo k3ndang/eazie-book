@@ -108,6 +108,21 @@ function ClientTable(){
         <div className="clientTable">
             <TableContainer component={Paper}>
             <Table>
+                <TableHead>
+                    <TableRow >
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>First Name </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Last Name  </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Username  </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Email </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Phone Number  </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Company Name </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Address </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>City </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>State </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Zip Code </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Website URL </strong></TableCell>
+                        <TableCell align="center" className="clientListTableHeadings"> <strong>Bookable Items </strong></TableCell>
+                          
         {
             btnStatus ? 
             <>

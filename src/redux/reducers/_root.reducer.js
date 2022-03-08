@@ -5,6 +5,8 @@ import clientInvite from './clientInvite.reducer';
 import bookableItem from './bookableItem.reducer';
 import selectedBookableItem from './selectedBookableItem.reducer';
 import clients from './clients.reducer';
+import itemList from './ItemNames.reducer';
+import categoryList from './category.reducer';
 import activeClient from './activeClient.reducer';
 
 
@@ -20,6 +22,9 @@ const rootReducer = combineReducers({
   clientInvite,
   user,
   bookableItem, // will have an id and username if someone is logged in
+  clients,
+  itemList, // for the Autocomplete on the category input form
+  categoryList, //stores all of the categories in the category table
   selectedBookableItem, // selecting this bookableItem by ID to be edit
   clients,
   activeClient,
