@@ -17,12 +17,12 @@ const fileStorageEngine = multer.diskStorage({
 const upload = multer({ storage: fileStorageEngine });
 
 router.post('/', upload.single('file'), (req, res) => {
-    console.log('made it to server', req.body);
-    let filePath = req.file.filename;
-    let fileName = req.file.originalname;
-    let id = req.params.id;
+    console.log('upload is', upload)
+    //let filePath = req.file.filename;
+    // let fileName = req.file.originalname;
+    // let id = req.params.id;
     
-    const queryText = `
+    /* const queryText = `
     INSERT INTO photos
     (url, "itemId")
     `
@@ -30,7 +30,7 @@ router.post('/', upload.single('file'), (req, res) => {
     const queryParams = [
         filePath, 
         id
-    ]
+    ] */
     
     pool.query(queryText, queryParams)
     .then(() => res.sendStatus(201))

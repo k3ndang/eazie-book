@@ -36,11 +36,12 @@ function addBookableItem () {
         setNewBookableItem({...newBookableItem, [property]: evt.target.value})
     };
 
+    const data = new FormData();
+    data.append('file', fileData)
     const addNewBookableItem = (evt) => {
         evt.preventDefault();
 
-        const data = new FormData();
-        data.append('file', fileData)
+        
         dispatch({
             type: 'POST_BOOKABLE_ITEM',
             payload:  newBookableItem
@@ -49,7 +50,7 @@ function addBookableItem () {
             type: 'POST_PHOTO', 
             payload: {
                 data: data, 
-                id: params.id
+                // id: params.id
             }
         })
 
@@ -130,6 +131,7 @@ function addBookableItem () {
                         component='label'
                     >Upload a Photo
                     <input 
+                    
                     type='file'
                     hidden
                     />
