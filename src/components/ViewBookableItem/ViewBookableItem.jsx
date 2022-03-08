@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react'
-import {useSelector, useDispatch} from 'react-redux'
+import {useEffect, useState} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import { useHistory, Link } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -13,23 +14,9 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 
 
-/* function createData(title, summary, details, type, rate, time) {
-    return { title, summary, details, type, rate, time };
-} */
-
-
-/* const rows = [
-    createData('Zorp', 'zeep', 'heeb', 'hoob', 4.0, 420 ),
-    createData('asdf', 'zeep', 'heeb', 'hoob', 4.0, 420),
-    createData('weroiu', 'zeep', 'heeb', 'hoob', 4.0, 420),
-    createData('sdfjkldfsjlk', 'zeep', 'heeb', 'hoob', 4.0, 420),
-    createData('zap', 'zeep', 'heeb', 'hoob', 4.0, 420),
-]; */
-
-
-
 function ViewBookableItem() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const rows = useSelector((store) => store.bookableItem.bookableItemReducer);
     console.log('bookableItem list from store', rows)
@@ -57,6 +44,7 @@ function ViewBookableItem() {
                         <TableCell align="right">Details</TableCell>
                         <TableCell align="right">Rate</TableCell>
                         <TableCell align="right">Time</TableCell>
+                        <TableCell align="right">Location</TableCell>
                         <TableCell align="right">categoryId</TableCell>
                         <TableCell align="right">clientId</TableCell>
                         <TableCell align="right"></TableCell>
@@ -75,9 +63,16 @@ function ViewBookableItem() {
                             <TableCell align="right">{row.detail}</TableCell>
                             <TableCell align="right">{row.rate}</TableCell>
                             <TableCell align="right">{row.unitTime}</TableCell>
+                            <TableCell align="right">{row.location}</TableCell>
                             <TableCell align="right">{row.categoryId}</TableCell>
                             <TableCell align="right">{row.clientId}</TableCell>
-                            <TableCell align="right"><Button>Edit</Button></TableCell> 
+                            <TableCell align="right">
+                                <Link 
+                                    to={`/editBookableItemForm/${row.id}`}
+                                >
+                                    Edit
+                                </Link>
+                            </TableCell> 
                         </TableRow>
                     ))}
                 </TableBody>

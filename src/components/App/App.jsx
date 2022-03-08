@@ -23,7 +23,7 @@ import InviteClient from '../InviteClient/InviteClient';
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem'
 import BookableItem from '../BookableItem/BookableItem'
 import AddBookableItem from '../AddBookableItem/AddBookableItem'
-
+import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 
 import './App.css';
 
@@ -128,6 +128,13 @@ function App() {
             path="/addBookableItem"
           >
             <AddBookableItem />
+          </Route>
+
+          <Route
+            exact
+            path="/editBookableItemForm/:id"
+          >
+            <EditBookableItemForm />
           </Route>
 
           <Route

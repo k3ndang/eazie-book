@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
@@ -13,115 +13,104 @@ import { Button, Grid } from "@material-ui/core";
 function EditBookableItemForm () {
     const dispatch = useDispatch();
     const history = useHistory();
-    // const {idM, idG} = useParams();   // { id: 2 }
-    // console.log('growthId in editForm', idM, idG);
-    // // Grab the "selected member appointment" from the redux store
-    // const selectedMember = useSelector(store => store.selectedMember);
-    // console.log('selcted member for update growth', selectedMember);
-    // useEffect(() => {
-    //     dispatch({
-    //         type: 'FETCH_SELECTED_MEMBER_GROWTH',
-    //         payload: {
-    //             memberId: idM,
-    //             growthId: idG
-    //         }
-    //     });
-    // }, [idM]); // 👈 fetch the member again, if the url changes
+    const params = useParams();   // { id: 2 }
+    console.log('bookableItemId', params);
+    
+    // // Grab the "selected bookableItem" from the redux store
+    const selectedBookableItem = useSelector(store => store.selectedBookableItem);
+    console.log('selected bookableItem for update', selectedBookableItem);
+
+
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_SELECTED_BOOKABLE_ITEM',
+            payload: params.id
+        });
+    }, [params.id]); // 👈 fetch the member again, if the url changes
 
     // Called when the submit button is pressed
     const handleSubmit = (event) => {
         event.preventDefault();
+        dispatch({
+        type: 'SAVE_BOOKABLE_ITEM',
+        payload: selectedBookableItem
+        })
 
-        // dispatch({
-        // type: 'SAVE_MEMBER_GROWTH',
-        // payload: selectedMember
-        // });
-
-        // history.push(`/memberDetails/${idM}`);
+        history.push(`/viewBookableItem`);
     };
 
 
     return (
     <>
         <h2>Edit Bookable Item</h2>
-
         <form onSubmit={handleSubmit}>
             <Input
-                    {/* Title */}
                 type="text"
-                // value={selectedMember.height}
-                // onChange={(evt) => dispatch({
-                // type: 'UPDATE_BOOKABLE_ITEM',
-                // payload: { height: evt.target.value }
-                // })}
+                value={selectedBookableItem.title}
+                onChange={(evt) => dispatch({
+                type: 'UPDATE_BOOKABLE_ITEM',
+                payload: { title: evt.target.value }
+                })}
             />
             <TextField
-                    {/* Summary */}
                 type="text"
-                // value={selectedMember.weight}
-                // onChange={(evt) => dispatch({
-                // type: 'UPDATE_BOOKABLE_ITEM',
-                // payload: { weight: evt.target.value }
-                // })}
+                value={selectedBookableItem.summary}
+                onChange={(evt) => dispatch({
+                type: 'UPDATE_BOOKABLE_ITEM',
+                payload: { summary: evt.target.value }
+                })}
             />
             <TextField
-                    {/* Detail */}
                 type="text"
-                // value={selectedMember.weight}
-                // onChange={(evt) => dispatch({
-                // type: 'UPDATE_BOOKABLE_ITEM',
-                // payload: { weight: evt.target.value }
-                // })}
+                value={selectedBookableItem.detail}
+                onChange={(evt) => dispatch({
+                type: 'UPDATE_BOOKABLE_ITEM',
+                payload: { detail: evt.target.value }
+                })}
             />
             <Input
-                    {/* Rate */}
                 type="integer"
-                // date-format="MON DD, YYYY"
-                // value={selectedMember.date}
-                // onChange={(evt) => dispatch({
-                // type: 'UPDATE_BOOKABLE_ITEM',
-                // payload: { date: evt.target.value }
-                // })}
+                value={selectedBookableItem.rate}
+                onChange={(evt) => dispatch({
+                type: 'UPDATE_BOOKABLE_ITEM',
+                payload: { rate: evt.target.value }
+                })}
             />
             <Input
-                    {/* UnitTime */}
                 type="text"
-                // date-format="MON DD, YYYY"
-                // value={selectedMember.date}
-                // onChange={(evt) => dispatch({
-                // type: 'UPDATE_BOOKABLE_ITEM',
-                // payload: { date: evt.target.value }
-                // })}
+                value={selectedBookableItem.unitTime}
+                onChange={(evt) => dispatch({
+                type: 'UPDATE_BOOKABLE_ITEM',
+                payload: { unitTime: evt.target.value }
+                })}
             />
             <Input
-                    {/* location */}
                 type="text"
-                // date-format="MON DD, YYYY"
-                // value={selectedMember.date}
-                // onChange={(evt) => dispatch({
-                // type: 'UPDATE_BOOKABLE_ITEM',
-                // payload: { date: evt.target.value }
-                // })}
+                value={selectedBookableItem.location}
+                onChange={(evt) => dispatch({
+                type: 'UPDATE_BOOKABLE_ITEM',
+                payload: { location: evt.target.value }
+                })}
             />
             <Input
-                    {/* Category */}
                 type="integer"
-                // date-format="MON DD, YYYY"
-                // value={selectedMember.date}
-                // onChange={(evt) => dispatch({
-                // type: 'UPDATE_BOOKABLE_ITEM',
-                // payload: { date: evt.target.value }
-                // })}
+                value={selectedBookableItem.categoryId}
+                onChange={(evt) => dispatch({
+                type: 'UPDATE_BOOKABLE_ITEM',
+                payload: { category: evt.target.value }
+                })}
             />
-            {/* <input
+            <Button
                 type='submit'
-                value='Update GrowthInfo'
-            /> */}
+                variant="outlined"
+                color="primary"
+                size="small"
+            >
+                Update
+            </Button>
         </form>
-        {/* <Cancel 
-            type="toDetails"
-            memberId={idM}
-        /> */}
+
+        
     </>
     );
 }
