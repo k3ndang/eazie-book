@@ -59,9 +59,14 @@ function addBookableItem () {
 
     }
 
+    const goBack = () => {
+        history.push('/viewBookableItem')
+    }
+
 
     return(
         <>
+        <button onClick={goBack}>Back</button>
             <Box
                 onSubmit={addNewBookableItem}
                 component="form"

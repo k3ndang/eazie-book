@@ -32,9 +32,18 @@ function ViewBookableItem() {
         fetchBookableItem()
     }, []);
 
+    const addItem = () => {
+        history.push('/addBookableItem')
+    }
+
+    const goBack = () => {
+        history.push('/user');
+    }
 
     return(
         <>
+        <button onClick={goBack}>Back</button>
+        <button onClick={addItem}>Add New Item</button>
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
