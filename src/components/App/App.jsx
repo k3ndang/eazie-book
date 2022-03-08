@@ -12,7 +12,7 @@ import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
+import CategoryInput from '../CategoryInput/CategoryInput'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -20,10 +20,11 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
-import ViewBookableItem from '../ViewBookableItem/ViewBookableItem'
 import BookableItem from '../BookableItem/BookableItem'
 import AddBookableItem from '../AddBookableItem/AddBookableItem'
 import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
+import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
+import ClientTable from '../ClientTable/ClientTable';
 
 import './App.css';
 
@@ -51,6 +52,13 @@ function App() {
             path="/about"
           >
             <AboutPage />
+          </Route>
+          <Route
+            
+            exact
+            path="/categoryInput"
+          >
+            <CategoryInput />
           </Route>
 
           <Route
@@ -86,6 +94,13 @@ function App() {
             path='/admin/invite'
           >
             <InviteClient />  
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact 
+            path="/clients"
+          >
+          <ClientTable />  
           </ProtectedRoute>
 
           <Route

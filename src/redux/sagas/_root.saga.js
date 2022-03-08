@@ -4,6 +4,10 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import clientInvite from './clientInvite.saga';
 import bookableItemSaga from './bookableItem.saga'
+import fetchClients from './fetchClients.saga';
+import deleteClientSaga from './deleteClient.saga';
+import editClient from './editClient.saga';
+import updateClientSaga from './updateClient.saga';
 
 
 // rootSaga is the primary saga.
@@ -19,6 +23,10 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     clientInvite(),
-    bookableItemSaga()
+    bookableItemSaga(),
+    fetchClients(),
+    deleteClientSaga(),
+    editClient(),
+    updateClientSaga()
   ]);
 }
