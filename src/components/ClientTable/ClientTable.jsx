@@ -14,6 +14,7 @@ import TextField from '@mui/material/TextField';
 import './ClientTable.css'
 function ClientTable(){
 
+
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -31,11 +32,7 @@ function ClientTable(){
 
 
     const [btnStatus, setBtnStatus] = useState(false);
-
-        const history = useHistory();
-        const dispatch = useDispatch();
-
-
+  
     useEffect(() => {
         dispatch({
             type: 'FETCH_CLIENTS'
@@ -106,25 +103,11 @@ function ClientTable(){
         history.push('/addBookableItem')
     }
 
-        const clients = useSelector(store => store.clients);
-        
-        const addClient = () => {
-            history.push("/admin/invite");
-        }
-
     return(
         <>
         <div className="clientTable">
-            <div className="clientListButton" >
-                <h2>  Current list of Clients </h2>
-                <button className="addClientButton" onClick={addClient}> Add Client </button>
-
-            </div>
-            
-            <h3 className="adminTableTitle"> Client Information</h3>
             <TableContainer component={Paper}>
             <Table>
-
         {
             btnStatus ? 
             <>
@@ -247,28 +230,11 @@ function ClientTable(){
                         <TableCell align="right">Bookable Items</TableCell>
                         <TableCell align="right"></TableCell>
                         <TableCell align="right"></TableCell>
-
-                <TableHead>
-                    <TableRow >
-                        <TableCell align="center" className="clientListTableHeadings">First Name</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Last Name</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Username</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Email</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Phone Number</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Company Name</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Address</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">City</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">State</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Zip Code</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Website URL</TableCell>
-                        <TableCell align="center" className="clientListTableHeadings">Bookable Items</TableCell>
-
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {clients.map(client => (
                         <TableRow key={client.id} id={client.id}>
-
                             <TableCell>{client.firstName}</TableCell>
                             <TableCell align="right">{client.lastName}</TableCell>
                             <TableCell align="right">{client.username}</TableCell>
@@ -283,25 +249,10 @@ function ClientTable(){
                             <TableCell align="right"><button onClick={event => bookableItem()}>See Bookable Items</button></TableCell>
                             <TableCell align="right"><button onClick={event => editClient(client)}>Edit</button></TableCell>
                             <TableCell align="right"><button onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
-
-                            <TableCell align="center" className="clientListTableRow">{client.firstName}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.lastName}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.username}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.email}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.phoneNumber}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.companyName}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.address}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.city}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.state}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.zipcode}</TableCell>
-                            <TableCell align="center" className="clientListTableRow">{client.websiteUrl}</TableCell>
-
                         </TableRow>
                     ))}
                 </TableBody>
             </>
-        
-            
         }     
             </Table>    
             </TableContainer>
