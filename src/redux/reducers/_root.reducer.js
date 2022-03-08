@@ -5,7 +5,7 @@ import clientInvite from './clientInvite.reducer';
 import bookableItem from './bookableItem.reducer';
 import clients from './clients.reducer';
 import itemList from './ItemNames.reducer';
-
+import categoryList from './category.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -19,7 +19,8 @@ const rootReducer = combineReducers({
   user,
   bookableItem, // will have an id and username if someone is logged in
   clients,
-  itemList // for the Autocomplete on the category input form
+  itemList, // for the Autocomplete on the category input form
+  categoryList //stores all of the categories in the category table
 });
 
 export default rootReducer;

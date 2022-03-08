@@ -1,4 +1,4 @@
-import React, { useEffect }  from 'react';
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField';
@@ -16,9 +16,14 @@ function CategoryInput() {
     const dispatch = useDispatch();
         //grab the list of item names from the reducer 
         const itemList = useSelector(store=> store.itemList);
+        const categoryList = useSelector (store=> store.categoryList);
         console.log('item list reducer is ', itemList);
+        
        
-       
+        //useState variables
+        let [parentCategory, setParentCategory]= useState('');
+
+
         useEffect(()=> {
             dispatch({
             type: 'FETCH_ITEM_LIST'
@@ -27,7 +32,20 @@ function CategoryInput() {
 
     return (
         <>
-            <h1 className="categoryInputTitle">Assign Categories For Bookable Items Here </h1>
+         <h1 className="categoryInputTitle">Assign Category For Bookable Item Here </h1>
+           <label> <h3 className="setParentCategory"> Set Parent Categories </h3>
+            <input
+            required
+            type="text"
+            name= "categoryParents"
+            value= {parentCategory}
+            onChange= {(e)=> {
+                setParentCategory(e.target.value)
+            }}
+            />
+            </label>
+           
+           
            {/* Dropdown of bookable items that have been registered with the site */}
            <Autocomplete
             options= {itemList}
