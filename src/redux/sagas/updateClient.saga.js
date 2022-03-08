@@ -4,6 +4,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 function* updateClient(action){
     console.log('in updateClient.saga', action.payload.id);
     try{
+
         yield axios.put(`/client/${action.payload.id}`, action.payload);
 
         yield put({
