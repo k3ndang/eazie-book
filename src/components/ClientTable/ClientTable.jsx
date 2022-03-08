@@ -100,7 +100,7 @@ function ClientTable(){
     }
 
     const bookableItem = () => {
-        history.push('/addBookableItem')
+        history.push('/viewBookableItem')
     }
 
     return(

@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
   clientInvite,
   user,
   bookableItem, // will have an id and username if someone is logged in
-  selectedBookableItem // selecting this bookableItem by ID to be edit
+  selectedBookableItem, // selecting this bookableItem by ID to be edit
   clients,
   activeClient,
 });
