@@ -20,6 +20,8 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
+import BookableItem from '../BookableItem/BookableItem'
+import AddBookableItem from '../AddBookableItem/AddBookableItem'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
 
@@ -127,6 +129,20 @@ function App() {
               // Otherwise, show the registration page
               <RegisterPage />
             }
+          </Route>
+          
+          <Route
+            exact
+            path="/bookableItem"
+          >
+            <BookableItem />
+          </Route>
+
+          <Route
+            exact
+            path="/addBookableItem"
+          >
+            <AddBookableItem />
           </Route>
 
           <Route

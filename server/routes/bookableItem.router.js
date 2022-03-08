@@ -20,14 +20,28 @@ router.post('/', (req, res) => {
     const summary = req.body.summary
     const detail = req.body.details
     const rate = req.body.rate
-    const unitTime = req.body.time
+    const unitTime = req.body.unitTime
     const location = req.body.location
     const categoryId = req.body.categoryId
     const clientId = req.body.clientId
-    let queryText = `INSERT INTO bookable_items (title, summary, detail, rate, "unitTime", location, "categoryId", "clientId")
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-    `
-    let queryParams = [title, summary, detail, rate, unitTime, location, categoryId, clientId]
+
+    let queryText = `
+        INSERT INTO "bookable_items" 
+        ("title", "summary", "detail", "rate", "unitTime", "location", "categoryId", "clientId")
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+    `;
+
+    let queryParams = [
+        title, 
+        summary, 
+        detail, 
+        rate, 
+        unitTime, 
+        location, 
+        categoryId, 
+        clientId
+    ];
+
     pool.query(queryText, queryParams)
         .then((result) => {
             console.log('query success', result);

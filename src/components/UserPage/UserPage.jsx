@@ -4,6 +4,8 @@ import {useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import ClientTable from '../ClientTable/ClientTable';
 import './UserPage.css'
+
+
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
@@ -21,16 +23,11 @@ function UserPage() {
       <p className= "idBox"> Your Auth-Level is: {user.authLevel}</p>
       <LogOutButton className="btn" />
       </div>
-
-      <div className="addClientButton">  
-      <button className="addClientButton" onClick={addClient}> Add Client </button>
-      </div>
       </div>
 
       {user.authLevel === 'admin' && (
           <>
             <div className='adminTableContainer'> 
-            <h3 className="adminTableTitle"> Current List of Clients</h3>
             <div class="table-responsive">
                 {/* <table class="table">
                 <thead>
