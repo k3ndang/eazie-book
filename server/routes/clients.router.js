@@ -7,7 +7,8 @@ const router = express.Router();
 router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = `
         SELECT * FROM "user"
-        WHERE "authLevel" = 'client';
+        WHERE "authLevel" = 'client'
+        ORDER BY "id" ASC;
     `;
 
     pool.query(queryText)
@@ -68,6 +69,7 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
     const queryText = `
         UPDATE "user"
         SET "firstName" = $1, "lastName" = $2, "email" = $3, "phoneNumber" = $4, "companyName" = $5, "address" = $6, "city" = $7, "state" = $8, "zipcode" = $9, "websiteUrl" = $10
+        WHERE "id" = $11
     `;
 
     const queryParams = [
@@ -81,6 +83,7 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
         req.body.state,
         req.body.zipCode,
         req.body.websiteUrl,
+        req.params.id
     ]
 
     pool.query(queryText, queryParams)
