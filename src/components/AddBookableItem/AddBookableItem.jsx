@@ -26,8 +26,8 @@ function addBookableItem () {
         rate:     '',
         unitTime: '',
         location: '',
-        categoryId: '',
-        clientId:    '',
+        categoryId: 1,
+        clientId:    1,
     });
 
     const [fileData, setFileData] = useState()
@@ -36,8 +36,7 @@ function addBookableItem () {
         setNewBookableItem({...newBookableItem, [property]: evt.target.value})
     };
 
-    const data = new FormData();
-    data.append('file', fileData)
+    
     const addNewBookableItem = (evt) => {
         evt.preventDefault();
 
@@ -46,11 +45,13 @@ function addBookableItem () {
             type: 'POST_BOOKABLE_ITEM',
             payload:  newBookableItem
         })
+        const data = new FormData();
+        data.append('file', fileData)
         dispatch({
             type: 'POST_PHOTO', 
             payload: {
-                data: data, 
-                // id: params.id
+                data: data,
+                id: newBookableItem.clientId
             }
         })
 

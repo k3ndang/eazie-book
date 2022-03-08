@@ -22,19 +22,12 @@ function* fetchBookableItem() {
 }; //end of fetchBookableItem
 
 function* postPhoto(action) {
-    const headers = {
-        'content-type': 'multipart/form-data'
-    }
-
-    const imageForm = new FormData();
-    imageForm.append('image', action.payload.selectedFile)
-    const res = yield axios({
-        method: 'POST', 
-        url: 'api/images', 
-        headers: headers, 
-        data: imageForm
-    })
-    console.log('res is ', res);
+    
+    console.log('');
+    
+    yield axios.post(`/api/photos`, action.payload.data)
+    
+    
     
     /* yield put({
         type: 'FETCH_PHOTOS'
