@@ -22,9 +22,9 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
 import BookableItem from '../BookableItem/BookableItem'
 import AddBookableItem from '../AddBookableItem/AddBookableItem'
+import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
-
 
 import './App.css';
 
@@ -143,6 +143,13 @@ function App() {
             path="/addBookableItem"
           >
             <AddBookableItem />
+          </Route>
+
+          <Route
+            exact
+            path="/editBookableItemForm/:id"
+          >
+            <EditBookableItemForm />
           </Route>
 
           <Route

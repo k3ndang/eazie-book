@@ -6,41 +6,46 @@ import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 function LandingPage() {
-  const [heading, setHeading] = useState('Welcome');
   const history = useHistory();
 
-  const onLogin = (event) => {
-    history.push('/login');
-  };
-
+  const boatPage = () => {
+    console.log('boat button');
+    history.push('/watercraft');
+  }
+  
+  const rvPage = () => {
+    console.log('rv button');
+    history.push('/allTerrain');
+  }
   return (
     <div className="container">
-      <h2>{heading}</h2>
-
       <div className="grid">
-        <div className="grid-col grid-col_8">
+        <div className="grid-col grid-col_6">
         <div className="infoTitle"> 
-        <h2 className="listInfoHeading"> Looking to List Your Rental Equipment on Eazie-Book? </h2>
-     
-
-        <h3 className="listItem" > Contact Dean via email at Dean@calldeans.com  </h3>
+        <h2 className="listInfoHeading">Watercraft</h2>
       <img 
             src= {'https://www.destinvacationboatrentals.com/wp-content/uploads/2013/04/IMG_3081.jpg'}
             width= {500}
             height={450}
             className="OwlPic"
+            onClick={boatPage}
         />
       </div>
         </div>
-        <div className="grid-col grid-col_4">
-          <RegisterForm />
+        <div className="grid">
+          <div className="grid-col grid-col_6">
+          <div className="infoTitle">
+            <h2 className="listInfoHeading">All Terrain Vehicles</h2>    
 
-          <center>
-            <h4>Already a Member?</h4>
-            <button className="btn btn_sizeSm" onClick={onLogin}>
-              Login
-            </button>
-          </center>
+            <img 
+              src= {'https://utvactionmag.com/wp-content/uploads/2015/06/ATV-SSV-Family-Shot-in-Woods_MY16_tif.jpg'}
+              width={500}
+              height={450}
+              className="OwlPic"
+              onClick={rvPage}
+            />
+          </div>
+          </div>
         </div>
       </div>
     </div>
