@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
-function* getCategories(action) {
+function* fetchCategories(action) {
     try{
-        const response = yield axios.get('/api/categoryList')
+        const response = yield axios.get('/categoryList')
 
-        yield put({
+        yield put({ 
             type: 'SET_CATEGORY_LIST',
             payload: response.data
         })
@@ -16,7 +16,7 @@ function* getCategories(action) {
 }
 
 function* categorySaga(){
-    yield takeEvery('FETCH_CATEGORIES', getCategories);
+    yield takeEvery('FETCH_CATEGORIES', fetchCategories);
 
 }
 

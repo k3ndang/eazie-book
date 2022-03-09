@@ -18,6 +18,7 @@ const photosRouter = require('./routes/photos.router')
 const clientsRouter = require('./routes/clients.router');
 
 
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,9 +36,10 @@ app.use('/api/user', userRouter);
 app.use('/admin/invite', clientInviteRouter);
 /* app.use('/clients', fetchClientsRouter); */
 app.use('/api/bookableItemNames', fetchNameRouter);
-app.use('/api/categoryList', categoryRouter);
+app.use('/categoryList', categoryRouter);
 app.use('/api/photos', photosRouter)
 app.use('/clients', clientsRouter);
+
 
 
 // Serve static files

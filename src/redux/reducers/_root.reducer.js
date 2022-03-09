@@ -27,7 +27,7 @@ const rootReducer = combineReducers({
   categoryList, //stores all of the categories in the category table
   selectedBookableItem, // selecting this bookableItem by ID to be edit
   clients,
-  activeClient,
+  activeClient
 });
 
 export default rootReducer;
