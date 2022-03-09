@@ -25,6 +25,7 @@ import AddBookableItem from '../AddBookableItem/AddBookableItem'
 import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
+import ClientBookableItems from '../ClientBookableItems/ClientBookableItems'
 
 
 import './App.css';
@@ -152,7 +153,12 @@ function App() {
           >
             <EditBookableItemForm />
           </Route>
-
+            <Route
+            exact
+            path="/clientBookableItems"
+            >
+              <ClientBookableItems />
+            </Route>
           <Route
             exact
             path="/home"

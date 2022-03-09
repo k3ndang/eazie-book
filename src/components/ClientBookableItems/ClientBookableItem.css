@@ -1,0 +1,9 @@
+.clientBookableItem {
+    display : flex;
+    flex-wrap: wrap;
+}
+
+img{
+    border-radius: 8px;
+    width: 400px;
+}
