@@ -1,6 +1,8 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useParams } from 'react-router-dom';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
@@ -39,6 +41,22 @@ const itemData = [
 ];
 
 function ClientBookableItems() {
+      //Hooks
+      const dispatch = useDispatch();
+      const history = useHistory();
+      const params = useParams(); 
+
+    //client selects an image of what they want to book, and sends "item" to handleSelectedItem
+    function handleSelectedItem(item){
+        //declare a dispatch to send the selected item to the selectedItem reducer 
+       dispatch({
+           type: 'SET_DETAIL_ITEM',
+           payload: item, params
+       })
+       //once the item and params are sent to the detail Item reducer, send client to /details page
+     
+   }
+   
     return (
         <>
         <h1>Client Bookable items</h1>
@@ -55,6 +73,7 @@ function ClientBookableItems() {
                                             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                                             alt={item.title}
                                             loading='lazy'
+                                            onClick={() => handleSelectedItem(item)}
                                         />
                                     </ImageListItem>
                                 
