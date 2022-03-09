@@ -35,7 +35,7 @@ app.use('/api/bookableItem', bookableItemRouter)
 app.use('/api/user', userRouter);
 app.use('/admin/invite', clientInviteRouter);
 /* app.use('/clients', fetchClientsRouter); */
-app.use('/api/bookableItemNames', fetchNameRouter);
+app.use('/bookableItemNames', fetchNameRouter);
 app.use('/categoryList', categoryRouter);
 app.use('/api/photos', photosRouter)
 app.use('/clients', clientsRouter);
