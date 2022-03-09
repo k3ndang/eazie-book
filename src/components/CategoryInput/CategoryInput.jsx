@@ -28,6 +28,10 @@ function CategoryInput() {
             dispatch({
             type: 'FETCH_ITEM_LIST'
             });
+
+            dispatch({
+                type: 'FETCH_CATEGORIES'
+            })
         }, []);
 
     return (
@@ -74,12 +78,22 @@ function CategoryInput() {
 
                         }}
                     >
-                        <MenuItem value={'Homes'}>Homes</MenuItem>
+                        {categoryList.map(category => (
+                            <MenuItem value={category.name} key={category.id}>{category.name}</MenuItem>
+                        ))}
+                        {/* <MenuItem value={'Homes'}>Homes</MenuItem>
                         <MenuItem value={'Boats'}>Boats</MenuItem>
-                        <MenuItem value={'Rvs'}>Rvs</MenuItem>
+                        <MenuItem value={'Rvs'}>Rvs</MenuItem> */}
                     </Select>
                 </FormControl>
             </Box></label>
+
+            <select name="categories" onChange={(event) => setCategoryId(event.target.value)}>
+                <option value="" disabled selected>Select Category</option>
+                {categoryList.map(category => (
+                    <option value={category.id} key={category.id} onChange={(event) => setCategoryId(event.target.value)}>{category.name}</option>
+                ))}
+            </select>
            
             
         </>

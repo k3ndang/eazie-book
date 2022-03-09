@@ -17,7 +17,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         console.error('ERROR getting clients in category.reducer', err);
         res.sendStatus(500);
     })
-})
+}) 
 
 router.post('/', rejectUnauthenticated, (req, res) => {
     console.log('req.body is', req.body);

@@ -7,9 +7,9 @@ const categoryList = (state = [], action) => {
                 ...state,
                 ...action.payload,
             };
-            default:
+        default:
             return state;
-    }
+    } 
 }
 
 export default categoryList;
