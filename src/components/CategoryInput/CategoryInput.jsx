@@ -9,6 +9,11 @@ import Select from '@mui/material/Select';
 import './CategoryInput.css'
 import Autocomplete from '@mui/material/Autocomplete';
 
+import TreeView from '@mui/lab/TreeView';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import TreeItem from '@mui/lab/TreeItem'
+
 function CategoryInput() {
 // homes boats and rvs
 // is in figma, not in scope doc 
@@ -23,6 +28,11 @@ function CategoryInput() {
         //useState variables
         let [parentCategory, setParentCategory]= useState('');
 
+        const [parentId, setParentId] = useState('');
+        const [newItem, setNewItem] = useState('');
+
+        console.log('parentId is,', parentId);
+        console.log('newItem is', newItem);
 
         useEffect(()=> {
             dispatch({
@@ -34,42 +44,34 @@ function CategoryInput() {
             })
         }, []);
 
+        const linkItem = () => {
+            dispatch({
+                type: "LINK_ITEM",
+                payload: {
+                    itemId: newItem,
+                    parentId: parentId
+                }
+            })
+        }
+
     return (
         <>
          <h1 className="categoryInputTitle">Assign Category For Bookable Item Here </h1>
-           <label> <h3 className="setParentCategory"> Set Parent Categories </h3>
-            <input
-            required
-            type="text"
-            name= "categoryParents"
-            value= {parentCategory}
-            onChange= {(e)=> {
-                setParentCategory(e.target.value)
-            }}
-            />
-            </label>
-            
+           <label> <h3 className="setParentCategory"> Set Parent Categories </h3></label>
+            <br></br>
             <label> Choose a Category for the Specified Item <Box sx={{ minWidth: 120 }}>
+                <br></br>
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Category</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         label="Age"
-                        onChange= {(e, newValue) => { 
-                            dispatch({
-                                type: 'SET_CATEGORY_ID',
-                                payload: newValue.id
-                            })
-
-                        }}
+                        onChange= {event => setParentId(event.target.value)}
                     >
                         {categoryList.map(category => (
-                            <MenuItem value={category.name} key={category.id}>{category.name}</MenuItem>
+                            <MenuItem value={category.id} key={category.id} onChange= {event => setParentId(event.target.value)}>{category.name}</MenuItem>
                         ))}
-                        {/* <MenuItem value={'Homes'}>Homes</MenuItem>
-                        <MenuItem value={'Boats'}>Boats</MenuItem>
-                        <MenuItem value={'Rvs'}>Rvs</MenuItem> */}
                     </Select>
                 </FormControl>
             </Box></label>  
@@ -81,12 +83,11 @@ function CategoryInput() {
             value= {itemList.label}
             
             renderInput={(params) => <TextField {...params} label="Bookable Items" />}
-            onChange={(e, newValue) => {
-                            dispatch ({ type: 'SET_CATEGORY_ID',
-                                        payload: newValue.id }) }}
-            
-        />         
-        </>
+            onChange={(event, newValue) => setNewItem(newValue.id)}
+            />     
+
+            <button onClick={linkItem}>Link Item To Category</button>
+            </>
     )
 }
 
