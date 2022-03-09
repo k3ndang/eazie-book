@@ -7,60 +7,35 @@ import Grid from '@mui/material/Grid'
 import './ClientBookableItem.css'
 const itemData = [
     {
-        img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-        title: 'Burger',
-        author: '@rollelflex_graphy726',
+        img: 'https://d1nkxkz7ge96ao.cloudfront.net/eyJidWNrZXQiOiJzbW4tbWFpbi1zaXRlLWJ1Y2tldCIsImtleSI6ImltYWdlc1wvaW1hZ2luXC9McktPcmhFcE5FN0FNV3lFQUxRMUpFOE0wTjVsc1VkekxsNU9ZcEZsLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjYwMCwiaGVpZ2h0IjoxMzAwLCJmaXQiOiJjb3ZlciJ9fX0=',
+        title: 'boat 1',
+        rate: '4/20 an hr', 
+        datesAvailable: 'zorp', 
+        detail: 'zeep'
+
     },
     {
-        img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-        title: 'Camera',
-        author: '@helloimnik',
+        img: 'https://media.kare11.com/assets/KARE/images/5da0a2e9-81c3-4169-9cbb-be95fc892207/5da0a2e9-81c3-4169-9cbb-be95fc892207_1920x1080.jpg',
+        title: 'Boat 2',
+        rate: '4/20 an hr',
+        datesAvailable: 'zorp',
+        detail: 'zeep'
     },
     {
         img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
         title: 'Coffee',
-        author: '@nolanissac',
+        rate: '4/20 an hr',
+        datesAvailable: 'zorp',
+        detail: 'zeep'
     },
     {
         img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
         title: 'Hats',
-        author: '@hjrc33',
+        rate: '4/20 an hr',
+        datesAvailable: 'zorp',
+        detail: 'zeep'
     },
-    {
-        img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-        title: 'Honey',
-        author: '@arwinneil',
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-        title: 'Basketball',
-        author: '@tjdragotta',
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-        title: 'Fern',
-        author: '@katie_wasserman',
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-        title: 'Mushrooms',
-        author: '@silverdalex',
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-        title: 'Tomato basil',
-        author: '@shelleypauls',
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-        title: 'Sea star',
-        author: '@peterlaster',
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-        title: 'Bike',
-        author: '@southside_customs',
-    },
+    
 ];
 
 function ClientBookableItems() {
@@ -85,10 +60,10 @@ function ClientBookableItems() {
                                 
 
                                 
-                                    <Typography>{item.title}</Typography>
-                                    <Typography>rate: {item.rate}</Typography>
-                                    <Typography>dates available: {item.datesAvailable}</Typography>
-                                    <Typography>{item.detail}</Typography>
+                                    <Typography variant='h5'>{item.title}</Typography>
+                                    <Typography variant='h5'>rate: {item.rate}</Typography>
+                                    <Typography variant='h5'>dates available: {item.datesAvailable}</Typography>
+                                    <Typography variant='h5'>{item.detail}</Typography>
                                 </Grid>
                             </Grid>
                         </>
