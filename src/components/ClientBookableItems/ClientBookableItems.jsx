@@ -2,13 +2,10 @@ import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Grid'
 import './ClientBookableItem.css'
 const itemData = [
-    {
-        img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-        title: 'Breakfast',
-        author: '@bkristastucchio',
-    },
     {
         img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
         title: 'Burger',
@@ -69,21 +66,38 @@ const itemData = [
 function ClientBookableItems() {
     return (
         <>
+        <h1>Client Bookable items</h1>
+            <ImageList sx={{ width: 900, height: 750 }}>
 
-            <h1>Client bookable items thing</h1>
-            <section className="clientBookableItems">
-                {itemData.map(item => {
-                    return(
+                 {itemData.map(item => {
+                    return (
                         <>
-                        <img
-                            src={item.img}
+                            <Grid container key={item.img}>
+                                <Grid item>
+                                    <ImageListItem>
+                                        <img
+                                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                            alt={item.title}
+                                            loading='lazy'
+                                        />
+                                    </ImageListItem>
+                                
 
-                        />
-                        <h2>{item.title}</h2>
+                                
+                                    <Typography>{item.title}</Typography>
+                                    <Typography>rate: {item.rate}</Typography>
+                                    <Typography>dates available: {item.datesAvailable}</Typography>
+                                    <Typography>{item.detail}</Typography>
+                                </Grid>
+                            </Grid>
                         </>
                     )
                 })}
-            </section>
+
+
+
+            </ImageList>
         </>
     )
 }
