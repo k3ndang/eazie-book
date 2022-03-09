@@ -137,7 +137,7 @@ function Nav() {
               <div className="dropdown">
             <button className="dropbtn"> View List</button>
             <div className="dropdown-content">
-              <Link to="/"> Bookable Items  </Link>
+              <Link to="/clientBookableItems"> Bookable Items  </Link>
               {/* This should be the list of everyone that has rented bookable items  */}
               <Link to="/"> Renter Info </Link>
             </div>
