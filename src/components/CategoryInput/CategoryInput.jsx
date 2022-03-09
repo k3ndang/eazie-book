@@ -48,22 +48,8 @@ function CategoryInput() {
             }}
             />
             </label>
-           
-           
-           {/* Dropdown of bookable items that have been registered with the site */}
-           <Autocomplete
-            options= {itemList}
-            sx={{ width: 350 }}
-            value= {itemList.label}
             
-            renderInput={(params) => <TextField {...params} label="Bookable Items" />}
-            onChange={(e, newValue) => {
-                            dispatch ({ type: 'SET_CATEGORY_ID',
-                                        payload: newValue.id }) }}
-            
-        />
-           
-           <label> Choose a Category for the Specified Item <Box sx={{ minWidth: 120 }}>
+            <label> Choose a Category for the Specified Item <Box sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Category</InputLabel>
                     <Select
@@ -86,16 +72,20 @@ function CategoryInput() {
                         <MenuItem value={'Rvs'}>Rvs</MenuItem> */}
                     </Select>
                 </FormControl>
-            </Box></label>
-
-            <select name="categories" onChange={(event) => setCategoryId(event.target.value)}>
-                <option value="" disabled selected>Select Category</option>
-                {categoryList.map(category => (
-                    <option value={category.id} key={category.id} onChange={(event) => setCategoryId(event.target.value)}>{category.name}</option>
-                ))}
-            </select>
-           
+            </Box></label>  
+           <br></br>
+           {/* Dropdown of bookable items that have been registered with the site */}
+           <Autocomplete
+            options= {itemList}
+            sx={{ width: 350 }}
+            value= {itemList.label}
             
+            renderInput={(params) => <TextField {...params} label="Bookable Items" />}
+            onChange={(e, newValue) => {
+                            dispatch ({ type: 'SET_CATEGORY_ID',
+                                        payload: newValue.id }) }}
+            
+        />         
         </>
     )
 }
