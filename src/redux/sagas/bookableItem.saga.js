@@ -10,8 +10,16 @@ function* bookableItemSaga() {
     yield takeEvery('FETCH_SELECTED_BOOKABLE_ITEM', fetchSelectedBookableItem);
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
+    yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory)
 }
 
+function* fetchRenterHistory() {
+    const result = yield axios.get(`api/renter`)
+    console.log('result is', result);
+    /* yield put({
+        type: 'SET_RENTER_HISTORY'
+    }) */
+}
 function* fetchBookableItem() {
     try {
         const result = yield axios.get(`/api/bookableItem`)

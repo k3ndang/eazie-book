@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {useState, useEffect} from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -12,6 +13,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function RenterHistory() {
 
+    const dispatch = useDispatch()
+    
+    useEffect(() => {
+        fetchRenterHistory()
+    }, []) 
+    
+    const fetchRenterHistory = () => {
+        dispatch({type: 'FETCH_RENTER_HISTORY'})
+    }
     return(
         <>
         <Button >Book Another Item</Button>
@@ -23,7 +33,8 @@ function RenterHistory() {
                             <TableCell align="right">Company Email</TableCell>
                             <TableCell align="right">Company Number</TableCell>
                             <TableCell align="right">Item Name</TableCell>
-                            <TableCell align="right">Dates Booked</TableCell>
+                            <TableCell align="right">Unit Time</TableCell>
+                            <TableCell align="right">Time Booked</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
