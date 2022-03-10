@@ -37,6 +37,8 @@ function addBookableItem () {
 
     const [fileData, setFileData] = useState();
 
+    const[ clientId, setClientId] = useState('');
+
     useEffect(() => {
         dispatch({
             type: 'FETCH_COMPANY_NAME'
@@ -54,7 +56,10 @@ function addBookableItem () {
         
         dispatch({
             type: 'POST_BOOKABLE_ITEM',
-            payload:  newBookableItem
+            payload:  {
+                newBookableItem: newBookableItem,
+                clientId: clientId
+            }
         })
         const data = new FormData();
         data.append('file', fileData)
@@ -77,14 +82,7 @@ function addBookableItem () {
         <>
         <button onClick={goBack}>Back</button>
 
-        <Autocomplete
-            options={clients}
-            sx={{width:350}}
-            value={clients.label}
 
-            renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
-            onChange={(event, newValue) => setClientId(newValue.id)}
-        />
             <Box
                 onSubmit={addNewBookableItem}
                 component="form"
@@ -94,6 +92,14 @@ function addBookableItem () {
                 noValidate
                 autoComplete="off"
             >
+                <Autocomplete
+                    options={clients}
+                    sx={{width:350}}
+                    value={clients.label}
+
+                    renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
+                    onChange={(event, newValue) => setClientId(newValue.id)}
+                />
                 <Grid className="bookableForm">
                     <Input
                         required

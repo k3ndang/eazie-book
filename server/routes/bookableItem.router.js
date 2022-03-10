@@ -41,7 +41,6 @@ router.post('/', upload.single("file"), (req, res) => {
     const unitTime = req.body.newBookableItem.unitTime
     const location = req.body.newBookableItem.location
     const categoryId = req.body.newBookableItem.categoryId
-    const clientId = req.body.newBookableItem.clientId
 
     let queryText = `
         INSERT INTO "bookable_items" 
@@ -57,7 +56,7 @@ router.post('/', upload.single("file"), (req, res) => {
         unitTime, 
         location, 
         categoryId, 
-        clientId
+        req.body.clientId
     ];
 
     pool.query(queryText, queryParams)

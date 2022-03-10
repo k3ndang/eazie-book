@@ -71,7 +71,7 @@ function* saveEditBookableItem (action) {
 }; // end saveEditBookableItem
 
 function* postBookableItem(action) {
-    console.log('post bookableItem saga', action.payload);
+    console.log('post bookableItem saga clientId', action.payload.clientId);
     console.log('post bookableItem picture data', action.payload.data);
 
     try {
