@@ -56,6 +56,8 @@ function ClientBookableItems() {
        //once the item object and params are sent to the detail Item reducer, send client to /clientBookableItems page
        history.push(`/clientBookableItems/:${item.id}`)
    }
+
+   
    
     return (
         <>

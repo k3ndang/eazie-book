@@ -17,7 +17,7 @@ const categoryRouter = require('./routes/category.router');
 const photosRouter = require('./routes/photos.router')
 const clientsRouter = require('./routes/clients.router');
 const linkItem = require('./routes/linkItem.router');
-
+const clientDetailItemRouter = require('./routes/clientDetailItem.router');
 
 
 // Body parser middleware
@@ -41,7 +41,7 @@ app.use('/categoryList', categoryRouter);
 app.use('/api/photos', photosRouter)
 app.use('/clients', clientsRouter);
 app.use('/categoryInput', linkItem);
-
+app.use('/api/client/bookableItem', clientDetailItemRouter)
 
 
 // Serve static files
