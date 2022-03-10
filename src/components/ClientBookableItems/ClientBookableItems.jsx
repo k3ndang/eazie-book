@@ -50,11 +50,11 @@ function ClientBookableItems() {
     function handleSelectedItem(item){
         //declare a dispatch to send the selected item to the selectedItem reducer 
        dispatch({
-           type: 'SET_DETAIL_ITEM',
+           type: 'SET_CLIENT_SELECTED_ITEM',
            payload: item, params
        })
-       //once the item and params are sent to the detail Item reducer, send client to /details page
-       
+       //once the item object and params are sent to the detail Item reducer, send client to /clientBookableItems page
+       history.push(`/clientBookableItems/:${item.id}`)
    }
    
     return (
@@ -80,8 +80,8 @@ function ClientBookableItems() {
 
                                 
                                     <Typography variant='h5'>{item.title}</Typography>
-                                    <Typography variant='h5'>rate: {item.rate}</Typography>
-                                    <Typography variant='h5'>dates available: {item.datesAvailable}</Typography>
+                                    <Typography variant='h5'>Rate: {item.rate}</Typography>
+                                    <Typography variant='h5'>Dates Available: {item.datesAvailable}</Typography>
                                     <Typography variant='h5'>{item.detail}</Typography>
                                 </Grid>
                             </Grid>
