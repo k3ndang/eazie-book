@@ -4,9 +4,7 @@ import { put, takeLatest, takeEvery } from 'redux-saga/effects';
 function* bookableItemSaga() {
     yield takeEvery('FETCH_BOOKABLE_ITEM', fetchBookableItem);
     yield takeEvery('POST_BOOKABLE_ITEM', postBookableItem);
-
     yield takeEvery('POST_PHOTO', postPhoto)
-    
     yield takeEvery('FETCH_SELECTED_BOOKABLE_ITEM', fetchSelectedBookableItem);
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
@@ -16,9 +14,10 @@ function* bookableItemSaga() {
 function* fetchRenterHistory() {
     const result = yield axios.get(`api/renter`)
     console.log('result is', result);
-    /* yield put({
-        type: 'SET_RENTER_HISTORY'
-    }) */
+    yield put({
+        type: 'SET_RENTER_HISTORY', 
+        payload: result.data
+    })
 }
 function* fetchBookableItem() {
     try {

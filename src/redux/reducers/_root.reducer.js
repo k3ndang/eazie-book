@@ -8,7 +8,7 @@ import clients from './clients.reducer';
 import itemList from './ItemNames.reducer';
 import categoryList from './category.reducer';
 import activeClient from './activeClient.reducer';
-
+import renterReducer from './renter.reducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -27,6 +27,7 @@ const rootReducer = combineReducers({
   categoryList, //stores all of the categories in the category table
   selectedBookableItem, // selecting this bookableItem by ID to be edit
   clients,
+  renterReducer,
   activeClient
 });
 
