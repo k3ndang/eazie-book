@@ -25,6 +25,7 @@ import AddBookableItem from '../AddBookableItem/AddBookableItem'
 import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
+import AllTerrainVehicles from '../AllTerrainVehicles/AllTerrainVehicles';
 
 
 import './App.css';
@@ -165,6 +166,13 @@ function App() {
               // Otherwise, show the Landing page
               <LandingPage />
             }
+          </Route>
+
+          <Route
+            exact
+            path='/allTerrain'
+          >
+          <AllTerrainVehicles />  
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

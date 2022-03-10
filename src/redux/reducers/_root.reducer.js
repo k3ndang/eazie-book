@@ -8,6 +8,7 @@ import clients from './clients.reducer';
 import itemList from './ItemNames.reducer';
 import categoryList from './category.reducer';
 import activeClient from './activeClient.reducer';
+import companyName from './companyName.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -27,7 +28,8 @@ const rootReducer = combineReducers({
   categoryList, //stores all of the categories in the category table
   selectedBookableItem, // selecting this bookableItem by ID to be edit
   clients,
-  activeClient
+  activeClient,
+  companyName
 });
 
 export default rootReducer;

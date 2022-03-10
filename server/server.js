@@ -17,6 +17,7 @@ const categoryRouter = require('./routes/category.router');
 const photosRouter = require('./routes/photos.router')
 const clientsRouter = require('./routes/clients.router');
 const linkItem = require('./routes/linkItem.router');
+const companyNameRouter = require('./routes/companyName.router');
 
 
 
@@ -41,6 +42,8 @@ app.use('/categoryList', categoryRouter);
 app.use('/api/photos', photosRouter)
 app.use('/clients', clientsRouter);
 app.use('/categoryInput', linkItem);
+app.use('/companyNames', companyNameRouter);
+
 
 
 

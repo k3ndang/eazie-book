@@ -9,10 +9,6 @@ import Select from '@mui/material/Select';
 import './CategoryInput.css'
 import Autocomplete from '@mui/material/Autocomplete';
 
-import TreeView from '@mui/lab/TreeView';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import TreeItem from '@mui/lab/TreeItem'
 
 function CategoryInput() {
 // homes boats and rvs

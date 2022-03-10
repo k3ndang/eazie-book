@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Button, Grid } from "@material-ui/core";
 import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 import Box from '@mui/material/Box';
+import Autocomplete from '@mui/material/Autocomplete';
 
 import { useHistory, useParams } from "react-router-dom";
 
@@ -21,6 +23,8 @@ function addBookableItem () {
     const params = useParams();
     const history = useHistory();
 
+    const clients = useSelector(store => store.companyName);
+
     const [newBookableItem, setNewBookableItem] = useState({
         title:    '',
         summary:  '',
@@ -28,11 +32,16 @@ function addBookableItem () {
         rate:     '',
         unitTime: '',
         location: '',
-        categoryId: 1,
-        clientId:    1,
+        clientId: ''
     });
 
-    const [fileData, setFileData] = useState()
+    const [fileData, setFileData] = useState();
+
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_COMPANY_NAME'
+        });
+    }, []);
     
     const handleChange = (evt, property) => {
         setNewBookableItem({...newBookableItem, [property]: evt.target.value})
@@ -67,6 +76,15 @@ function addBookableItem () {
     return(
         <>
         <button onClick={goBack}>Back</button>
+
+        <Autocomplete
+            options={clients}
+            sx={{width:350}}
+            value={clients.label}
+
+            renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
+            onChange={(event, newValue) => setClientId(newValue.id)}
+        />
             <Box
                 onSubmit={addNewBookableItem}
                 component="form"
