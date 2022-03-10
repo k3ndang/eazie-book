@@ -110,7 +110,7 @@ function Nav() {
             <div className="dropdown-content">
               <Link to="/"> Make A Reservation </Link>
               {/* This should be the list of everyone that has rented bookable items  */}
-              <Link to="/"> View Reservations </Link>
+              <Link to="/renterHistory"> View Reservations </Link>
             </div>
             </div>     
             <div className="dropdown">
