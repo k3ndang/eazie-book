@@ -9,7 +9,7 @@ import itemList from './ItemNames.reducer';
 import categoryList from './category.reducer';
 import activeClient from './activeClient.reducer';
 import clientSelectedItem from './setClientDetailItem.reducer';
-
+import clientList from './clientList.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -29,6 +29,7 @@ const rootReducer = combineReducers({
   clients,
   activeClient,
   clientSelectedItem,
+  clientList,
 });
 
 export default rootReducer;

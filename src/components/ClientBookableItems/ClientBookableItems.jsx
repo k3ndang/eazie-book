@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from "react";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { useDispatch, useSelector } from "react-redux";
@@ -57,7 +57,13 @@ function ClientBookableItems() {
        history.push(`/clientBookableItems/:${item.id}`)
    }
 
-   
+   // in use effect function FETCH_CLIENT_LIST
+     //on page load, run a GET request to grab the data from the selected item
+     useEffect(()=> {
+        dispatch({
+          type: 'FETCH_CLIENT_LIST'
+        });
+      }, []);
    
     return (
         <>

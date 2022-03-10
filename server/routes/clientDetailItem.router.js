@@ -6,6 +6,7 @@ const router = express.Router();
 
 //router to grab all bookable items according to client id 
 router.get('/', rejectUnauthenticated, (req, res) => {
+  console.log('req.user.id is', req.user.id);
     const queryText = `
                         SELECT 
                         "bookable_items"."title", 
@@ -21,10 +22,10 @@ router.get('/', rejectUnauthenticated, (req, res) => {
                         JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
                         JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
                         JOIN "user" ON "user".id="bookable_items"."clientId" 
-                        WHERE "user"."id"= $1;
+                        WHERE "user".id= $1;
                         `
     const queryParams = [req.user.id]
-    pool.query(queryText)
+    pool.query(queryText, queryParams)
     .then((result) => {
         res.send(result.rows);
     })
@@ -56,7 +57,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
                         WHERE "bookable_items"."id"= $1 AND "user".id= $2 ;
                         `;
     const queryParams = [req.params.id, req.user.id]
-    pool.query(queryText)
+    pool.query(queryText, queryParams)
     .then((result) => {
         res.send(result.rows);
     })
