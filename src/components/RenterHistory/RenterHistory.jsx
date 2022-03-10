@@ -13,6 +13,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function RenterHistory() {
 
+    const renterReducer = useSelector(store => store.renterReducer)
+
+    // console.log('renterReducer is', renterReducer);
     const dispatch = useDispatch()
     
     useEffect(() => {
@@ -38,30 +41,25 @@ function RenterHistory() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {/* {rows.map((row, index) => (
-                            <TableRow
+
+                        {renterReducer.map((row, index) => {
+                            return(
+                                <TableRow
                                 key={index}
                                 sx={{ border: 2, minWidth: 100 }}
-                            >
-                                <TableCell component="th" scope="row">
-                                    {row.title}
-                                </TableCell>
-                                <TableCell align="right">{row.summary}</TableCell>
-                                <TableCell align="right">{row.detail}</TableCell>
-                                <TableCell align="right">{row.rate}</TableCell>
-                                <TableCell align="right">{row.unitTime}</TableCell>
-                                <TableCell align="right">{row.location}</TableCell>
-                                <TableCell align="right">{row.categoryId}</TableCell>
-                                <TableCell align="right">{row.clientId}</TableCell>
-                                <TableCell align="right">
-                                    <Link
-                                        to={`/editBookableItemForm/${row.id}`}
-                                    >
-                                        Edit
-                                    </Link>
-                                </TableCell>
-                            </TableRow>
-                        ))} */}
+                                >
+                                    <TableCell component="th" scope="row">
+                                        {row.companyName}
+                                    </TableCell>
+                                    <TableCell align="right">{row.email}</TableCell>
+                                    <TableCell align="right">{row.phoneNumber}</TableCell>
+                                    <TableCell align="right">{row.companyName}</TableCell>
+                                    <TableCell align="right">{row.unitTime}</TableCell>
+                                    <TableCell align="right">{row.hours_book}</TableCell>
+                                </TableRow>
+                            )
+                        })}
+                        
                     </TableBody>
                 </Table>
             </TableContainer>
