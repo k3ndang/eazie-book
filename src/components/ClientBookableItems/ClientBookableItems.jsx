@@ -54,7 +54,7 @@ function ClientBookableItems() {
            payload: item, params
        })
        //once the item and params are sent to the detail Item reducer, send client to /details page
-     
+       
    }
    
     return (
