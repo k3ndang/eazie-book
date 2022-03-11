@@ -54,58 +54,32 @@ CREATE TABLE "renter_booking" (
 	FOREIGN KEY ("bookableId") REFERENCES "bookable_items"(id)
 );
 
--- CLIENT LIST GET REQUEST SQL QUERY:  DETAIL PAGE
-		--GET REQUEST TO RETRIEVE ALL BOOKABLE ITEMS ACCORDING TO CLIENT ID--
---FOR CLIENT BOOKABLE ITEMS .JSX
-             SELECT 
-				"bookable_items"."id", 
-				"bookable_items"."title", 
-				"bookable_items"."summary", 
-				"bookable_items"."detail", 
-				"bookable_items"."rate", 
-				"bookable_items"."categoryId",
-				"bookable_items"."unitTime", 
-				"bookable_items"."location",
-				"categories"."name", 
-				"photos"."url", 
-				"user"."email",
-				"user"."phoneNumber", 
-				"user"."companyName", 
-				"user"."address",
-				"user"."zipcode", 
-				"user"."websiteUrl"
-				FROM "bookable_items"
-				LEFT JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
-				LEFT JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
-				LEFT JOIN "user" ON "user"."id"="bookable_items"."clientId" 
-				WHERE "user".id= $1 AND "bookable_items"."id"= $2;
+
+INSERT INTO "bookable_items" ("id", "title", "summary", "detail", "rate", "unitTime", "location", "categoryId","clientId") 
+VALUES (1, 'Jetski', 'great for recreational activities', 'please bring life jackets, conditions may be dangerous', 12, 'hour', 'Minneapolis, MN', 4,5);
+
+INSERT INTO "public"."categories"("id","name","parentId")
+VALUES
+(3,E'Boat',1),
+(4,E'Jetski',1),
+(5,E'racecar',2),
+(6,E'Waterskis',1),
+(7,E'Tubing',1);
+
+INSERT INTO "public"."photos"("id","url","itemId")
+VALUES
+(3,E'https://cdn.boatinternational.com/files/2021/11/60349330-4d30-11ec-af96-71b11d1b029c-jetblaster.jpg',1),
+(1,E'https://images.unsplash.com/photo-1533827432537-70133748f5c8',1),
+(2,E'https://merriam-webster.com/assets/mw/images/gallery/gal-wap-slideshow-slide/halcyon-2918-065c753b10c15d2b3e1f7151c5abfe40@1x.jpg',1),
+(4,E'https://eadn-wc04-279213.nxedge.io/cdn/pub/media/mageplaza/blog/post/p/s/psa-tubing-from-towers-cover.jpg',4),
+(5,E'https://cdn.hswstatic.com/gif/water-skiing-10.jpg',3);
 
 
 
-
--- CLIENT LIST GET REQUEST SQL QUERY:  ALL CLIENT BOOKABLE ITEMS PAGE
-		--GET REQUEST TO RETRIEVE ALL BOOKABLE ITEMS ACCORDING TO CLIENT ID--
---FOR CLIENT BOOKABLE ITEMS .JSX
-						`
-                        SELECT 
-                        "bookable_items"."id", 
-                        "bookable_items"."title", 
-                        "bookable_items"."summary", 
-                        "bookable_items"."detail", 
-                        "bookable_items"."rate", 
-                        "bookable_items"."categoryId",
-                        "bookable_items"."unitTime", 
-                        "bookable_items"."location",
-                        "categories"."name", 
-                        "photos"."url",
-                        "user"."email",
-                        "user"."phoneNumber", 
-                        "user"."companyName", 
-                        "user"."address",
-                        "user"."zipcode", 
-                        "user"."websiteUrl"
-                        FROM "bookable_items"
-                        LEFT JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
-                        LEFT JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
-                        LEFT JOIN "user" ON "user".id="bookable_items"."clientId" 
-                        WHERE "user".id= $1;
+INSERT INTO "public"."user"("id","firstName","lastName","username","password","email","phoneNumber","companyName","address","city","state","zipcode","websiteUrl","authLevel")
+VALUES
+(1,E'Opal',E'Nebulosa',E'opalthecat',E'$2a$10$ryhJ5t96YXGJaQDs1r94ROKP2mH2ZbPjQQIaBeAkbh1pmrC3YDMUS',E'opal@cat.com',E'715-355-0741',E'Cats',E'123 cats ave',E'Minneapolis',E'Minnesota',E'55406',E'cats.com',E'admin'),
+(2,E'Opalita',E'Cat',E'opalthecat2',E'$2a$10$8PtI9D5pdjBmD/ZWbciFx.lHcZ4xyoGQnFqzl/IyDrcRlaH9Gt48m',E'opalita@cat.com',E'715-651-2771',E'opals',E'123 diamond ave',E'Minneapolis',E'Minnesota',E'54476',E'opals.com',E'renter'),
+(4,E'Ruby',E'Tanager',E'rubythetanager',E'$2a$10$8Z3NXErUJK4WjJiQiML2Ueo/LuMsKrJqxcFk8gAW7wDqK16Ywct6W',E'ruby@tanager.com',E'612-651-2771',E'birds',E'123 birds ave',E'Minneapolis',E'Minnesota',E'55406',E'birdon.com',E'admin'),
+(5,E'Emerald',E'Goshawk',E'emeraldthegoshawk',E'$2a$10$ru4F8ofccfMwF.am3bLmf.njzU4drPgFfPK7QLlBmdNrgn9FgiCI2',E'emerald@goshawk.com',E'651-212-3310',E'emeralds',E'123 emerald ave',E'Minneapolis',E'Minnesota',E'55414',E'emerald.com',E'client'),
+(6,E'Rowan',E'Boaterson',E'client2',E'$2a$10$WojDFwGlAIeKruZXcFeXuu1J4MBpwZ6rWH/KT1mphF.w.zz3jAAUa',E'boatsandcats@gmail.com',E'715-444-2131',E'Rowboaterson',E'123 row your boat dr',E'Minneapolis',E'Minnesota',E'55406',E'rowanyourboat.com',E'client');
