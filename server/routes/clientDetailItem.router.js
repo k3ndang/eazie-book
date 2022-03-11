@@ -26,9 +26,9 @@ router.get('/', rejectUnauthenticated, (req, res) => {
                         "user"."zipcode", 
                         "user"."websiteUrl"
                         FROM "bookable_items"
-                        JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
-                        JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
-                        JOIN "user" ON "user".id="bookable_items"."clientId" 
+                        LEFT JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
+                        LEFT JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
+                        LEFT JOIN "user" ON "user".id="bookable_items"."clientId" 
                         WHERE "user".id= $1;
                         `
     const queryParams = [req.user.id]
