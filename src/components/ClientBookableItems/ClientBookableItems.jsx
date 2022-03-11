@@ -7,6 +7,8 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import './ClientBookableItem.css'
+
+
 const itemData = [
     {
         img: 'https://d1nkxkz7ge96ao.cloudfront.net/eyJidWNrZXQiOiJzbW4tbWFpbi1zaXRlLWJ1Y2tldCIsImtleSI6ImltYWdlc1wvaW1hZ2luXC9McktPcmhFcE5FN0FNV3lFQUxRMUpFOE0wTjVsc1VkekxsNU9ZcEZsLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjYwMCwiaGVpZ2h0IjoxMzAwLCJmaXQiOiJjb3ZlciJ9fX0=',
@@ -41,7 +43,10 @@ const itemData = [
 ];
 
 function ClientBookableItems() {
-      //Hooks
+    //Reducers 
+    const clientList = useSelector(store=> store.clientList);
+    console.log('client list contains', clientList);
+    //Hooks
       const dispatch = useDispatch();
       const history = useHistory();
       const params = useParams(); 
@@ -57,8 +62,9 @@ function ClientBookableItems() {
        history.push(`/clientBookableItems/:${item.id}`)
    }
 
-   // in use effect function FETCH_CLIENT_LIST
-     //on page load, run a GET request to grab the data from the selected item
+     //  FETCH_CLIENT_LIST
+     // on page load, run a GET request to grab the clients bookable items from the database
+     // list is stored in clientList reducer 
      useEffect(()=> {
         dispatch({
           type: 'FETCH_CLIENT_LIST'
