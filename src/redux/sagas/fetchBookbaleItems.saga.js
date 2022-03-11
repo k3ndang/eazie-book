@@ -14,19 +14,19 @@ function* fetchItemNames(action){
         console.error('ERROR getting bookable items', error);
     }
 }
-//FETCH_CLIENT_LIST function 
+// function that runs when FETCH_CLIENT_LIST is called 
 function* fetchClientList(){
     try{
         const response = yield axios.get('/api/client/bookableItem')
        
-        // data from get request will be put into the clientList reducer
+        // list of bookable items by client ID is stored in the clientList reducer
         yield put({
             type: 'SET_CLIENT_LIST',
             payload: response.data
         })
     }
     catch(error){
-        console.error('ERROR getting bookable items', error);
+        console.error('ERROR getting client bookable items in fetchBookableItems saga', error);
     }
 } // end fetchClientList
 
@@ -38,7 +38,7 @@ function* fetchClientSelectedItem(action){
         })
     }
     catch {
-        console.log('ERROR in Client Detail GET BookableItem saga')
+        console.log('ERROR in retrieving Client Detail data in fetchBookableItem saga')
     } 
 } // end fetchClientSelectedItem
 
@@ -48,7 +48,7 @@ function* fetchBookableItems(){
     //triggered on page load in ClientBookableItems 
     yield takeEvery('FETCH_CLIENT_LIST', fetchClientList)
 
-    //fetch the client's data for the selected detail item 
+    //fetch the client's data for the selected item for detail page
     yield takeEvery('FETCH_CLIENT_SELECTED_ITEM', fetchClientSelectedItem)
 }
 
