@@ -92,3 +92,6 @@ VALUES
 (3,E'WaterSkis',E'oh what fun it is to ski on the water',E'lifejackets required, helmets suggested, participation required',100,E'day',E'Minneapolis, MN',4,5),
 (4,E'Tubing',E'nothing but so much fun ',E'2 people maximum',50,E'day',E'Minneapolis, MN',4,5),
 (5,E'DONKEY BOAT',E'HAPPY STUFF',E'BRING YOUR KIDS',12,E'DAY',E'minneapolis, mn',4,6);
+
+
+-- changes here for a nice pull request
