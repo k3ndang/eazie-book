@@ -49,14 +49,14 @@ function ViewBookableItem() {
                 <TableHead>
                     <TableRow>
                         <TableCell>Item</TableCell>
-                        <TableCell align="right">Summary</TableCell>
-                        <TableCell align="right">Details</TableCell>
-                        <TableCell align="right">Rate</TableCell>
-                        <TableCell align="right">Time</TableCell>
-                        <TableCell align="right">Location</TableCell>
-                        <TableCell align="right">categoryId</TableCell>
-                        <TableCell align="right">clientId</TableCell>
-                        <TableCell align="right"></TableCell>
+                        <TableCell align="center">Summary</TableCell>
+                        <TableCell align="center">Details</TableCell>
+                        <TableCell align="center">Rate</TableCell>
+                        <TableCell align="center">Time</TableCell>
+                        <TableCell align="center">Location</TableCell>
+                        <TableCell align="center">categoryId</TableCell>
+                        <TableCell align="center">clientId</TableCell>
+                        <TableCell align="center"></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -68,14 +68,14 @@ function ViewBookableItem() {
                             <TableCell component="th" scope="row">
                                 {row.title}
                             </TableCell>
-                            <TableCell align="right">{row.summary}</TableCell>
-                            <TableCell align="right">{row.detail}</TableCell>
-                            <TableCell align="right">{row.rate}</TableCell>
-                            <TableCell align="right">{row.unitTime}</TableCell>
-                            <TableCell align="right">{row.location}</TableCell>
-                            <TableCell align="right">{row.categoryId}</TableCell>
-                            <TableCell align="right">{row.clientId}</TableCell>
-                            <TableCell align="right">
+                            <TableCell align="center">{row.summary}</TableCell>
+                            <TableCell align="center">{row.detail}</TableCell>
+                            <TableCell align="center">{row.rate}</TableCell>
+                            <TableCell align="center">{row.unitTime}</TableCell>
+                            <TableCell align="center">{row.location}</TableCell>
+                            <TableCell align="center">{row.categoryId}</TableCell>
+                            <TableCell align="center">{row.clientId}</TableCell>
+                            <TableCell align="center">
                                 <Link 
                                     to={`/editBookableItemForm/${row.id}`}
                                 >

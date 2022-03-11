@@ -19,7 +19,8 @@ const clientsRouter = require('./routes/clients.router');
 const linkItem = require('./routes/linkItem.router');
 const companyNameRouter = require('./routes/companyName.router');
 const fetchSideBySide = require('./routes/fetchSideBySide.router');
-
+const clientDetailItemRouter = require('./routes/clientDetailItem.router');
+const renterRouter = require('./routes/renter.router')
 
 
 // Body parser middleware
@@ -45,7 +46,8 @@ app.use('/clients', clientsRouter);
 app.use('/categoryInput', linkItem);
 app.use('/companyNames', companyNameRouter);
 app.use('/sidebyside', fetchSideBySide);
-
+app.use('/api/client/bookableItem', clientDetailItemRouter)
+app.use('/api/renter', renterRouter)
 
 
 

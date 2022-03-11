@@ -10,6 +10,9 @@ import categoryList from './category.reducer';
 import activeClient from './activeClient.reducer';
 import companyName from './companyName.reducer';
 import sideBySide from './sideBySide.reducer';
+import clientSelectedItem from './setClientDetailItem.reducer';
+import clientList from './clientList.reducer';
+import renterReducer from './renter.reducer'
 
 
 // rootReducer is the primary reducer for our entire project
@@ -30,8 +33,15 @@ const rootReducer = combineReducers({
   selectedBookableItem, // selecting this bookableItem by ID to be edit
   clients,
   activeClient,
+<<<<<<< HEAD
   companyName,
   sideBySide
+=======
+  clientSelectedItem,
+  clientList,
+  renterReducer,
+  activeClient
+>>>>>>> 6593bfa656516d24ecd92f69f2bd36b3f99c95d0
 });
 
 export default rootReducer;

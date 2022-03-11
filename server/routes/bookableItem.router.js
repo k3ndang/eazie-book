@@ -29,6 +29,23 @@ router.get('/', (req, res) => {
         })
 })
 
+router.get('/renterReq/:categoryId', (req, res) => {
+    const categoryId = req.params.categoryId;
+
+    const sqlText = `
+        SELECT * FROM "bookable_items"
+        WHERE "categoryId" = $1;
+    `;
+
+    const sqlParams = [categoryId]
+
+    pool.query(sqlText, sqlParams)
+        .then((result) => {
+            console.log('result is', result.rows);
+            res.send(result.rows)
+        })
+})
+
 router.post('/', upload.single("file"), (req, res) => {
     console.log('made it to server', req.body.newBookableItem);
     console.log('made it to server', req.body.data);

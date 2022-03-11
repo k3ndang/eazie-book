@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
+import RenterHistory from '../RenterHistory/RenterHistory'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import CategoryInput from '../CategoryInput/CategoryInput'
 import AboutPage from '../AboutPage/AboutPage';
@@ -26,6 +26,12 @@ import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
 import AllTerrainVehicles from '../AllTerrainVehicles/AllTerrainVehicles';
+import Watercraft from '../Watercraft/Watercraft';
+import Jetski from '../Watercraft/Jetski/Jetski';
+import Boat from '../Watercraft/Boat/Boat';
+import Pontoon from '../Watercraft/Pontoon/Pontoon';
+import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
+import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
 
 
 import './App.css';
@@ -140,6 +146,12 @@ function App() {
             <BookableItem />
           </Route>
 
+            <Route
+            exact
+            path='/renterHistory'
+            >
+              <RenterHistory />
+            </Route>
           <Route
             exact
             path="/addBookableItem"
@@ -152,6 +164,48 @@ function App() {
             path="/editBookableItemForm/:id"
           >
             <EditBookableItemForm />
+          </Route>
+            <Route
+            exact
+            path="/clientBookableItems"
+            >
+              <ClientBookableItems />
+            </Route>
+
+            <ProtectedRoute
+            exact 
+            path="/clientBookableItems/:id"
+          >
+          <ClientDetailItem />
+
+          </ProtectedRoute>
+
+          <Route
+            exact
+            path="/watercraft"
+          >
+            <Watercraft />
+          </Route>
+
+          <Route 
+            exact
+            path="/jetski/:jetskiId"
+          >
+            <Jetski />
+          </Route>
+
+          <Route 
+            exact
+            path="/boat/:boatId"
+          >
+            <Boat />
+          </Route>
+
+          <Route 
+            exact
+            path="/pontoon/:pontoonId"
+          >
+            <Pontoon />
           </Route>
 
           <Route

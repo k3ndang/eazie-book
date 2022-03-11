@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './LandingPage.css';
 
@@ -7,6 +8,9 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 
 function LandingPage() {
   const history = useHistory();
+  const dispatch = useDispatch();
+  // const category = useSelector ((store) => store.categoryList);
+
 
   const boatPage = () => {
     console.log('boat button');
