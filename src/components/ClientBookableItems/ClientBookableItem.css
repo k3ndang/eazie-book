@@ -1,0 +1,38 @@
+.clientBookableItem {
+    display : flex;
+    flex-wrap: wrap;
+}
+
+img{
+    border-radius: 8px;
+    width: 400px;
+}
+
+.clientItemTitle{
+    display: inline-block;
+    flex-direction: row;
+    font-size: 20px;
+    /* line-height: 1px; */
+    margin-top:0;
+    font-variant: small-caps;
+    line-height: 2px;
+
+}
+.clientItemHeadingTitle{
+    font-variant: small-caps;
+    font-size: larger;
+
+
+}
+.clientItemDescription{
+    display: inline-block; 
+    font-size: 20px;
+    font-variant: small-caps;
+    line-height: 1em;
+
+}
+.clientListGridContainer{
+    
+    margin: 20px;
+    border: 2px solid black;
+}

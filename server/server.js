@@ -16,7 +16,9 @@ const fetchNameRouter = require('./routes/nameRouter.router');
 const categoryRouter = require('./routes/category.router');
 const photosRouter = require('./routes/photos.router')
 const clientsRouter = require('./routes/clients.router');
-
+const linkItem = require('./routes/linkItem.router');
+const clientDetailItemRouter = require('./routes/clientDetailItem.router');
+const renterRouter = require('./routes/renter.router')
 
 
 // Body parser middleware
@@ -35,10 +37,13 @@ app.use('/api/bookableItem', bookableItemRouter)
 app.use('/api/user', userRouter);
 app.use('/admin/invite', clientInviteRouter);
 /* app.use('/clients', fetchClientsRouter); */
-app.use('/api/bookableItemNames', fetchNameRouter);
+app.use('/bookableItemNames', fetchNameRouter);
 app.use('/categoryList', categoryRouter);
 app.use('/api/photos', photosRouter)
 app.use('/clients', clientsRouter);
+app.use('/categoryInput', linkItem);
+app.use('/api/client/bookableItem', clientDetailItemRouter)
+app.use('/api/renter', renterRouter)
 
 
 

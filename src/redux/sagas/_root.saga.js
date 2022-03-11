@@ -9,6 +9,8 @@ import deleteClientSaga from './deleteClient.saga';
 import editClient from './editClient.saga';
 import updateClientSaga from './updateClient.saga';
 import categorySaga from './category.saga';
+import fetchBookableItems from './fetchBookbaleItems.saga';
+import linkItemSaga from './linkItem.saga';
 
 
 // rootSaga is the primary saga.
@@ -30,5 +32,7 @@ export default function* rootSaga() {
     editClient(),
     updateClientSaga(),
     categorySaga(),
+    fetchBookableItems(),
+    linkItemSaga(),
   ]);
 }
