@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import ClientTable from '../ClientTable/ClientTable';
+import ClientBookableItems from '../ClientBookableItems/ClientBookableItems'
 import './UserPage.css'
 
 
@@ -15,6 +16,7 @@ function UserPage() {
     history.push("/admin/invite");
   }
   return (
+    <>
     <div className="containerBtn">
       <div className="adminHeader"> 
       <div className="welcomeBox">
@@ -35,6 +37,19 @@ function UserPage() {
           </>
         )}
     </div>
+        <div>
+        {user.authLevel === 'client' && (
+          <>
+            <div className='clientTableContainer'>
+              <div className="table-responsive">
+                <ClientBookableItems />
+              </div>
+            </div>
+          </>
+        )}
+        </div>
+
+    </>
   );
 }
 

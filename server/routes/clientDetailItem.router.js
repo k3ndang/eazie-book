@@ -26,9 +26,9 @@ router.get('/', rejectUnauthenticated, (req, res) => {
                         "user"."zipcode", 
                         "user"."websiteUrl"
                         FROM "bookable_items"
-                        JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
-                        JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
-                        JOIN "user" ON "user".id="bookable_items"."clientId" 
+                        LEFT JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
+                        LEFT JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
+                        LEFT JOIN "user" ON "user".id="bookable_items"."clientId" 
                         WHERE "user".id= $1;
                         `
     const queryParams = [req.user.id]
@@ -67,15 +67,15 @@ router.get('/:id', (req, res) => {
                         "user"."zipcode", 
                         "user"."websiteUrl"
                         FROM "bookable_items"
-                        JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
-                        JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
-                        JOIN "user" ON "user"."id"="bookable_items"."clientId" 
+                        LEFT JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
+                        LEFT JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
+                        LEFT JOIN "user" ON "user"."id"="bookable_items"."clientId" 
                         WHERE "user".id= $1 AND "bookable_items"."id"= $2;
                         `;
     const queryParams = [req.user.id, req.params.id]
     pool.query(queryText, queryParams)
     .then((result) => {
-        res.send(result.rows);
+        res.send(result.rows[0]);
     })
     .catch((err) => {
         console.error('ERROR in get/:id getting bookable item detail data in clientDetailItem.router', err);
