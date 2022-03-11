@@ -55,3 +55,26 @@ CREATE TABLE "renter_booking" (
 );
 
 -- CLIENT LIST GET REQUEST SQL QUERY: 
+		--GET REQUEST TO RETRIEVE ALL BOOKABLE ITEMS ACCORDING TO CLIENT ID--
+--FOR CLIENT BOOKABLE ITEMS .JSX
+SELECT 
+"bookable_items"."title", 
+"bookable_items"."summary", 
+"bookable_items"."detail", 
+"bookable_items"."rate", 
+"bookable_items"."categoryId",
+"bookable_items"."unitTime", 
+"bookable_items"."location",
+"categories"."name", 
+"photos"."url",
+"user"."email",
+"user"."phoneNumber", 
+"user"."companyName", 
+"user"."address",
+"user"."zipcode", 
+"user"."websiteUrl"
+FROM "bookable_items"
+JOIN "categories" ON "categories"."id" = "bookable_items"."categoryId"
+JOIN "photos" ON "photos"."itemId" = "bookable_items"."id"  
+JOIN "user" ON "user".id ="bookable_items"."clientId" 
+WHERE  "user"."id"= 5 ;
