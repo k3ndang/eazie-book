@@ -53,3 +53,5 @@ CREATE TABLE "renter_booking" (
 	"bookableId" INTEGER,
 	FOREIGN KEY ("bookableId") REFERENCES "bookable_items"(id)
 );
+
+-- CLIENT LIST GET REQUEST SQL QUERY: 

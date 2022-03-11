@@ -7,3 +7,18 @@ img{
     border-radius: 8px;
     width: 400px;
 }
+
+.clientItemTitle{
+    display: inline-block;
+    flex-direction: row;
+    font-size: 20px;
+    /* line-height: 1px; */
+    margin-top:0;
+}
+
+.clientListGridContainer{
+    height: auto;
+    margin: 20px;
+    align-items: center;
+    text-align: center;
+}

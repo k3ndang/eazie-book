@@ -17,7 +17,13 @@ router.get('/', rejectUnauthenticated, (req, res) => {
                         "bookable_items"."unitTime", 
                         "bookable_items"."location",
                         "categories"."name", 
-                        "photos"."url"
+                        "photos"."url",
+                        "user"."email",
+                        "user"."phoneNumber", 
+                        "user"."companyName", 
+                        "user"."address",
+                        "user"."zipcode", 
+                        "user"."websiteUrl"
                         FROM "bookable_items"
                         JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
                         JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  

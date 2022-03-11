@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid'
 import './ClientBookableItem.css'
 
 
-const itemData = [
+const LitemData = [
     {
         img: 'https://d1nkxkz7ge96ao.cloudfront.net/eyJidWNrZXQiOiJzbW4tbWFpbi1zaXRlLWJ1Y2tldCIsImtleSI6ImltYWdlc1wvaW1hZ2luXC9McktPcmhFcE5FN0FNV3lFQUxRMUpFOE0wTjVsc1VkekxsNU9ZcEZsLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjYwMCwiaGVpZ2h0IjoxMzAwLCJmaXQiOiJjb3ZlciJ9fX0=',
         title: 'boat 1',
@@ -44,8 +44,8 @@ const itemData = [
 
 function ClientBookableItems() {
     //Reducers 
-    const clientList = useSelector(store=> store.clientList);
-    console.log('client list contains', clientList);
+    const itemData = useSelector(store=> store.clientList);
+  //  console.log('client list contains', clientList);
     //Hooks
       const dispatch = useDispatch();
       const history = useHistory();
@@ -79,7 +79,7 @@ function ClientBookableItems() {
                  {itemData.map(item => {
                     return (
                         <>
-                            <Grid container key={item.img}>
+                            <Grid container key={item.img} className="clientListGridContainer">
                                 <Grid item>
                                     <ImageListItem>
                                         <img
@@ -93,10 +93,13 @@ function ClientBookableItems() {
                                 
 
                                 
-                                    <Typography variant='h5'>{item.title}</Typography>
-                                    <Typography variant='h5'>Rate: {item.rate}</Typography>
-                                    <Typography variant='h5'>Dates Available: {item.datesAvailable}</Typography>
-                                    <Typography variant='h5'>{item.detail}</Typography>
+                                    <h4>{item.title}</h4>
+                                    <h4 className="clientItemTitle">Category: {item.name}</h4>
+                                    <h4 className="clientItemTitle"> Summary: {item.summary}</h4>
+                                    <h4 className="clientItemTitle">Rate: {item.rate}</h4>
+                                    <h4 className="clientItemTitle">Unit Time: {item.unitTime} </h4>
+                                    <h4 className="clientItemTitle">Location: {item.location}</h4>
+                                    <h4 className="clientItemTitle">Details Regarding Rental: {item.detail}</h4>
                                 </Grid>
                             </Grid>
                         </>
