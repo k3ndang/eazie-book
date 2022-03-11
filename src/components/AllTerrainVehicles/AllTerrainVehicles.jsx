@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Card from '@mui/material/Card';
 
@@ -10,6 +11,20 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 
 
 function AllTerrainVehicles(){
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const categoryId = useSelector(store => store.categoryList);
+    console.log('categoryId is', categoryId);
+
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_CATEGORIES'
+        })  
+    }, [])
+
+   
 
     return(
         <>
@@ -62,6 +77,7 @@ function AllTerrainVehicles(){
                 width={500}
                 height={450}
                 className="OwlPic"
+                onClick={event => history.push(`/sidebyside/${categoryId[6]?.id}`)}
             />    
         </div>
         </div>    

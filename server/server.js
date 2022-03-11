@@ -18,6 +18,7 @@ const photosRouter = require('./routes/photos.router')
 const clientsRouter = require('./routes/clients.router');
 const linkItem = require('./routes/linkItem.router');
 const companyNameRouter = require('./routes/companyName.router');
+const fetchSideBySide = require('./routes/fetchSideBySide.router');
 
 
 
@@ -43,6 +44,7 @@ app.use('/api/photos', photosRouter)
 app.use('/clients', clientsRouter);
 app.use('/categoryInput', linkItem);
 app.use('/companyNames', companyNameRouter);
+app.use('/sidebyside', fetchSideBySide);
 
 
 
