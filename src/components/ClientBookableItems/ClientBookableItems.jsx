@@ -74,8 +74,9 @@ function ClientBookableItems() {
    
     return (
         <>
-       
-        <h1> {itemData[0].companyName}, Your List of Bookable items</h1>
+           {/* itemData[0].companyName breaks page not sure how to render client name once  */}
+           {/* Category name not properly rendering  */}
+        <h1> {itemData.companyName}, Your List of Bookable items</h1>
             <ImageList sx={{ width: 1300, height: 750 }}>
 
                  {itemData.map(item => {
@@ -98,8 +99,7 @@ function ClientBookableItems() {
                                     <h2 className="clientItemHeadingTitle">{item.title}</h2>
                                     <h4 className="clientItemTitle"> Category:</h4>  <div className="clientItemDescription">{item.name} </div> <br/>
                                     <h4 className="clientItemTitle"> Summary: </h4> <div className="clientItemDescription"> {item.summary} </div> <br/>
-                                    <h4 className="clientItemTitle"> Rate: </h4> <div className="clientItemDescription">      {item.rate} </div> <br/>
-                                    <h4 className="clientItemTitle"> Unit Time: </h4> <div className="clientItemDescription"> {item.unitTime} </div> <br/>
+                                    <h4 className="clientItemTitle"> Rate: </h4> <div className="clientItemDescription">  {item.rate}  per {item.unitTime} </div> <br/>
                                     <h4 className="clientItemTitle"> Location: </h4> <div className="clientItemDescription">  {item.location} </div> <br/>
                                     <h4 className="clientItemTitle"> Details Regarding Rental: </h4> <div className="clientItemDescription"> {item.detail} </div> <br/>
                                 </Grid>

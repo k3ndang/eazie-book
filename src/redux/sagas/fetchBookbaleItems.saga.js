@@ -35,8 +35,8 @@ function* fetchClientList(){
 // based on client clicking on image div in clientBookableItems 
 function* fetchClientSelectedItem(action){
     try {
-        console.log('this is hte action .. expect to see a payload with a number', action);
-        yield axios.get(`/api/client/bookableItem/${action.payload}`);
+     
+        let response= yield axios.get(`/api/client/bookableItem/${action.payload}`);
         yield put({
             type: 'SET_CLIENT_SELECTED_ITEM',
             payload: response.data
