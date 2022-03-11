@@ -45,6 +45,7 @@ const LitemData = [
 function ClientBookableItems() {
     //Reducers 
     const itemData = useSelector(store=> store.clientList);
+    console.log('itemData is', itemData);
   //  console.log('client list contains', clientList);
     //Hooks
       const dispatch = useDispatch();
@@ -73,7 +74,8 @@ function ClientBookableItems() {
    
     return (
         <>
-        <h1>Client Bookable items</h1>
+       
+        <h1> {itemData[0].companyName}, Your List of Bookable items</h1>
             <ImageList sx={{ width: 1300, height: 750 }}>
 
                  {itemData.map(item => {
