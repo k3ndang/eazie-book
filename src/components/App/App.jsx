@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
+import RenterHistory from '../RenterHistory/RenterHistory'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import CategoryInput from '../CategoryInput/CategoryInput'
 import AboutPage from '../AboutPage/AboutPage';
@@ -140,6 +140,12 @@ function App() {
             <BookableItem />
           </Route>
 
+            <Route
+            exact
+            path='/renterHistory'
+            >
+              <RenterHistory />
+            </Route>
           <Route
             exact
             path="/addBookableItem"
