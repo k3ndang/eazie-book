@@ -1,49 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, useSelector } from 'react-router-dom';
-
-import Card from '@mui/material/Card';
-
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { useEffect } from 'react';
+import { useHistory, useParams }  from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Grid';
 
 
 function SideBySide(){
 
-    useEffect(() => {
-        dispatchEvent({
-            type: 'FETCH_SIDEBYSIDE'
+    const history = useHistory();
+    const params = useParams();
+    console.log("categoryId is", params);
+    const dispatch = useDispatch();
+
+    const sideBySideList = useSelector((store) => store.bookableItem.bookableItemReducer);
+
+    useEffect(() => { 
+        dispatch({
+            type: 'FETCH_SIDEBYSIDE',
+            payload: params.sideBySideId
         })
-    }, []);
+    }, [params.sideBySideId]);
 
     const sideBySide = useSelector(store => store.sideBySide);
 
     return(
         <>
-        <Card sx={{ maxWidth: 345}}>
-            <CardActionArea>
-            {sideBySide.map(item => (
-            <>
-            <CardMedia
-                components="img"
-                height="140"
-                src={item.url}
-                alt={item.title}
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5">
-                {item.title}    
-                </Typography>
-                <Typography gutterBottom variant="h5">
-                    {item.summary}
-                </Typography>
-            </CardContent>
-            </>
+        <h2>Side-By-Side</h2>
+        <ImageList sx={{width: 900, height: 750}}>
+            {sideBySideList.map((item) => (
+                <Grid container key={item.id}>
+                    <Grid item>
+                        <ImageListItem>
+                            <img
+                                src="https://www.windsongboatrentals.com/images/boats/black-lexington/gallery_files/vlb_images1/dji_20200904_132131.jpg"
+                                alt={item.title}
+                            />
+                        </ImageListItem>
+                        <Typography variant="h4">{item.title}</Typography>
+                        <Typography variant="h6">Summary: {item.summary}</Typography>
+                        <Typography variant="h6">Detail: {item.detail}</Typography>
+                        <Typography variant="h6">Rate: {item.rate}</Typography>
+                    </Grid>
+                </Grid>
             ))}
-            
-            </CardActionArea>
-        </Card>
+        </ImageList>
         </>
     )
 }

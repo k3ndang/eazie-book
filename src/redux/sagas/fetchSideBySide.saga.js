@@ -8,7 +8,7 @@ function* fetchSideBySide(action){
         yield put({
             type: 'SET_SIDEBYSIDE',
             payload: response.data
-        })
+        }) 
     }
     catch(error){
         console.error('ERROR getting data in fetchSideBySide', error);
