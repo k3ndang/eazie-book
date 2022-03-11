@@ -75,7 +75,7 @@ router.get('/:id', (req, res) => {
     const queryParams = [req.user.id, req.params.id]
     pool.query(queryText, queryParams)
     .then((result) => {
-        res.send(result.rows);
+        res.send(result.rows[0]);
     })
     .catch((err) => {
         console.error('ERROR in get/:id getting bookable item detail data in clientDetailItem.router', err);

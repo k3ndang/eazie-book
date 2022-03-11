@@ -6,7 +6,7 @@ import './ClientDetailItem.css'
 function ClientDetailItem(){
     // retrieve selected client item from store
     const selectedItem = useSelector((store)=> store.clientSelectedItem)
-     console.log('selectedItem is', selectedItem[0]);
+     console.log('selectedItem is', selectedItem.id);
     //Hooks
      const dispatch = useDispatch();
      const params = useParams(); 
