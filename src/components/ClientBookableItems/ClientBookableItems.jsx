@@ -76,7 +76,7 @@ function ClientBookableItems() {
         <>
            {/* itemData[0].companyName breaks page not sure how to render client name once  */}
            {/* Category name not properly rendering  */}
-        <h1> {itemData.companyName}, Your List of Bookable items</h1>
+        <h1> {itemData[0]?.companyName}, Your List of Bookable items</h1>
             <ImageList sx={{ width: 1300, height: 750 }}>
 
                  {itemData.map(item => {
@@ -86,7 +86,7 @@ function ClientBookableItems() {
                                 <Grid item>
                                     <ImageListItem>
                                         <img
-                                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                                            src={`${item.url}?w=248&fit=crop&auto=format`}
                                             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                                             alt={item.title}
                                             loading='lazy'
@@ -97,7 +97,7 @@ function ClientBookableItems() {
 
                                 
                                     <h2 className="clientItemHeadingTitle">{item.title}</h2>
-                                    <h4 className="clientItemTitle"> Category:</h4>  <div className="clientItemDescription">{item.name} </div> <br/>
+                                    <h4 className="clientItemTitle"> Category:</h4>   <div className="clientItemDescription">{item.name} </div> <br/>
                                     <h4 className="clientItemTitle"> Summary: </h4> <div className="clientItemDescription"> {item.summary} </div> <br/>
                                     <h4 className="clientItemTitle"> Rate: </h4> <div className="clientItemDescription">  {item.rate}  per {item.unitTime} </div> <br/>
                                     <h4 className="clientItemTitle"> Location: </h4> <div className="clientItemDescription">  {item.location} </div> <br/>
