@@ -1,4 +1,5 @@
 const express = require('express');
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 const pool = require('../modules/pool');
 const router = express.Router();
 
@@ -17,7 +18,7 @@ const upload = multer({ storage: fileStorageEngine });
 
 
 
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
     const sqlText = 
     `SELECT * FROM bookable_items`
 
@@ -27,9 +28,13 @@ router.get('/', (req, res) => {
             
             res.send(result.rows)
         })
+        .catch((err) => {
+            console.error('ERROR in getting bookable_items', err);
+            res.sendStatus(500);
+        })
 })
 
-router.get('/renterReq/:categoryId', (req, res) => {
+router.get('/renterReq/:categoryId',  rejectUnauthenticated, (req, res) => {
     const categoryId = req.params.categoryId;
 
     const sqlText = `
@@ -44,6 +49,10 @@ router.get('/renterReq/:categoryId', (req, res) => {
             console.log('result is', result.rows);
             res.send(result.rows)
         })
+        .catch((err) => {
+            console.error('ERROR getting by id in bookableItem', err);
+            res.sendStatus(500);
+        })
 })
 
 router.post('/', upload.single("file"), (req, res) => {
@@ -51,14 +60,14 @@ router.post('/', upload.single("file"), (req, res) => {
     console.log('made it to server', req.body.data);
 
 
-    const title = req.body.newBookableItem.title
-    const summary = req.body.newBookableItem.summary
-    const detail = req.body.newBookableItem.details
-    const rate = req.body.newBookableItem.rate
-    const unitTime = req.body.newBookableItem.unitTime
-    const location = req.body.newBookableItem.location
-    const categoryId = req.body.newBookableItem.categoryId
-    const clientId = req.body.newBookableItem.clientId
+    const title = req.body.title
+    const summary = req.body.summary
+    const detail = req.body.details
+    const rate = req.body.rate
+    const unitTime = req.body.unitTime
+    const location = req.body.location
+    const categoryId = req.body.categoryId
+    const clientId = req.body.clientId
 
     let queryText = `
         INSERT INTO "bookable_items" 

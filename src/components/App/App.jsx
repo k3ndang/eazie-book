@@ -150,6 +150,7 @@ function App() {
             >
               <RenterHistory />
             </Route>
+            
           <Route
             exact
             path="/addBookableItem"
