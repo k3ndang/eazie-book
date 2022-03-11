@@ -45,6 +45,9 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 // Router to grab the specific bookable item on the client detail page 
 router.get('/:id', rejectUnauthenticated, (req, res) => {
+    console.log('this is req.user', req.user);
+    console.log('this is req.body', req.body);
+    console.log('req.params are', req.params);
     const queryText = ` 
                         SELECT 
                         "bookable_items"."title", 
@@ -55,7 +58,13 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
                         "bookable_items"."unitTime", 
                         "bookable_items"."location",
                         "categories"."name", 
-                        "photos"."url"
+                        "photos"."url", 
+                        "user"."email",
+                        "user"."phoneNumber", 
+                        "user"."companyName", 
+                        "user"."address",
+                        "user"."zipcode", 
+                        "user"."websiteUrl"
                         FROM "bookable_items"
                         JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
                         JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
