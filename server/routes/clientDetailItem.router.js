@@ -9,6 +9,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   console.log('req.user.id is', req.user.id);
     const queryText = `
                         SELECT 
+                        "bookable_items"."id", 
                         "bookable_items"."title", 
                         "bookable_items"."summary", 
                         "bookable_items"."detail", 
@@ -44,12 +45,12 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 
 // Router to grab the specific bookable item on the client detail page 
-router.get('/:id', rejectUnauthenticated, (req, res) => {
+router.get('/:id', (req, res) => {
     console.log('this is req.user', req.user);
-    console.log('this is req.body', req.body);
     console.log('req.params are', req.params);
     const queryText = ` 
                         SELECT 
+                        "bookable_items"."id", 
                         "bookable_items"."title", 
                         "bookable_items"."summary", 
                         "bookable_items"."detail", 
@@ -68,10 +69,10 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
                         FROM "bookable_items"
                         JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
                         JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
-                        JOIN "user" ON "user".id="bookable_items"."clientId" 
-                        WHERE "bookable_items"."id"= $1 AND "user".id= $2 ;
+                        JOIN "user" ON "user"."id"="bookable_items"."clientId" 
+                        WHERE "user".id= $1 AND "bookable_items"."id"= $2;
                         `;
-    const queryParams = [req.params.id, req.user.id]
+    const queryParams = [req.user.id, req.params.id]
     pool.query(queryText, queryParams)
     .then((result) => {
         res.send(result.rows);

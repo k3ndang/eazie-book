@@ -59,7 +59,7 @@ function ClientBookableItems() {
            payload: item, params
        })
        //once the item object and params are sent to the detail Item reducer, send client to /clientBookableItems page
-       history.push(`/clientBookableItems/:${item.id}`)
+       history.push(`/clientBookableItems/${item.id}`)
    }
 
      //  FETCH_CLIENT_LIST

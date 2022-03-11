@@ -30,11 +30,16 @@ function* fetchClientList(){
     }
 } // end fetchClientList
 
+
+//Selected item is retrieved from clientDetailItem router 
+// based on client clicking on image div in clientBookableItems 
 function* fetchClientSelectedItem(action){
     try {
-        yield axios.get(`/api/client/bookableItem/:id`, action.payload);
+        console.log('this is hte action .. expect to see a payload with a number', action);
+        yield axios.get(`/api/client/bookableItem/${action.payload}`);
         yield put({
-            type: 'SET_CLIENT_SELECTED_ITEM'
+            type: 'SET_CLIENT_SELECTED_ITEM',
+            payload: response.data
         })
     }
     catch {
