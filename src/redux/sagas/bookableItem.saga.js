@@ -7,10 +7,28 @@ function* bookableItemSaga() {
 
     yield takeEvery('POST_PHOTO', postPhoto)
     
+    yield takeEvery('RENTER_FETCH_BOOKABLEITEM', renterFetchBookableItem)
+
     yield takeEvery('FETCH_SELECTED_BOOKABLE_ITEM', fetchSelectedBookableItem);
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
 }
+
+function* renterFetchBookableItem (action) {
+    try {
+        const result = yield axios.get(`/api/bookableItem/renterReq/${action.payload}`)
+        console.log('result from renter fetch', result.data)
+
+        yield put({
+            type: "SET_RENTER_FETCH_BOOKABLEITEM",
+            payload: result.data
+        })
+    }
+    catch {
+        console.log('ERROR in GET renter fetchBookableItem')
+    }
+} 
+
 
 function* fetchBookableItem() {
     try {

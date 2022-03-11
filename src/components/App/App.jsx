@@ -25,7 +25,10 @@ import AddBookableItem from '../AddBookableItem/AddBookableItem'
 import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
-
+import Watercraft from '../Watercraft/Watercraft';
+import Jetski from '../Watercraft/Jetski/Jetski';
+import Boat from '../Watercraft/Boat/Boat';
+import Pontoon from '../Watercraft/Pontoon/Pontoon';
 
 import './App.css';
 
@@ -151,6 +154,34 @@ function App() {
             path="/editBookableItemForm/:id"
           >
             <EditBookableItemForm />
+          </Route>
+
+          <Route
+            exact
+            path="/watercraft"
+          >
+            <Watercraft />
+          </Route>
+
+          <Route 
+            exact
+            path="/jetski/:jetskiId"
+          >
+            <Jetski />
+          </Route>
+
+          <Route 
+            exact
+            path="/boat/:boatId"
+          >
+            <Boat />
+          </Route>
+
+          <Route 
+            exact
+            path="/pontoon/:pontoonId"
+          >
+            <Pontoon />
           </Route>
 
           <Route
