@@ -14,11 +14,24 @@ img{
     font-size: 20px;
     /* line-height: 1px; */
     margin-top:0;
-}
+    font-variant: small-caps;
+    line-height: 2px;
 
+}
+.clientItemHeadingTitle{
+    font-variant: small-caps;
+    font-size: larger;
+
+
+}
+.clientItemDescription{
+    display: inline-block; 
+    font-size: 20px;
+    font-variant: small-caps;
+    line-height: 1em;
+align-items: ;
+}
 .clientListGridContainer{
     height: auto;
     margin: 20px;
-    align-items: center;
-    text-align: center;
 }

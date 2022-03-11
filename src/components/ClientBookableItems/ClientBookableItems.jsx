@@ -74,7 +74,7 @@ function ClientBookableItems() {
     return (
         <>
         <h1>Client Bookable items</h1>
-            <ImageList sx={{ width: 900, height: 750 }}>
+            <ImageList sx={{ width: 1300, height: 750 }}>
 
                  {itemData.map(item => {
                     return (
@@ -93,13 +93,13 @@ function ClientBookableItems() {
                                 
 
                                 
-                                    <h4>{item.title}</h4>
-                                    <h4 className="clientItemTitle">Category: {item.name}</h4>
-                                    <h4 className="clientItemTitle"> Summary: {item.summary}</h4>
-                                    <h4 className="clientItemTitle">Rate: {item.rate}</h4>
-                                    <h4 className="clientItemTitle">Unit Time: {item.unitTime} </h4>
-                                    <h4 className="clientItemTitle">Location: {item.location}</h4>
-                                    <h4 className="clientItemTitle">Details Regarding Rental: {item.detail}</h4>
+                                    <h2 className="clientItemHeadingTitle">{item.title}</h2>
+                                    <h4 className="clientItemTitle"> Category:</h4>  <div className="clientItemDescription">{item.name} </div> <br/>
+                                    <h4 className="clientItemTitle"> Summary: </h4> <div className="clientItemDescription"> {item.summary} </div> <br/>
+                                    <h4 className="clientItemTitle"> Rate: </h4> <div className="clientItemDescription">      {item.rate} </div> <br/>
+                                    <h4 className="clientItemTitle"> Unit Time: </h4> <div className="clientItemDescription"> {item.unitTime} </div> <br/>
+                                    <h4 className="clientItemTitle"> Location: </h4> <div className="clientItemDescription">  {item.location} </div> <br/>
+                                    <h4 className="clientItemTitle"> Details Regarding Rental: </h4> <div className="clientItemDescription"> {item.detail} </div> <br/>
                                 </Grid>
                             </Grid>
                         </>
