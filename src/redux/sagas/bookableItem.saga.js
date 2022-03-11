@@ -11,8 +11,6 @@ function* bookableItemSaga() {
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
 
-    //fetch the client's data for the selected detail item 
-    yield takeEvery('FETCH_CLIENT_SELECTED_ITEM', fetchClientSelectedItem)
 }
 
 function* fetchBookableItem() {
@@ -89,16 +87,5 @@ function* postBookableItem(action) {
 }; // end of postBookableItem
 
 
-function* fetchClientSelectedItem(action){
-    try {
-        yield axios.get(`/api/client/bookableItem/:id`, action.payload);
-        yield put({
-            type: 'SET_CLIENT_SELECTED_ITEM'
-        })
-    }
-    catch {
-        console.log('ERROR in Client Detail GET BookableItem saga')
-    } 
-}
 
 export default bookableItemSaga;
