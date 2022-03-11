@@ -25,8 +25,8 @@ import AddBookableItem from '../AddBookableItem/AddBookableItem'
 import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
-import ClientBookableItems from '../ClientBookableItems/ClientBookableItems'
-
+import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
+import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
 
 import './App.css';
 
@@ -165,6 +165,15 @@ function App() {
             >
               <ClientBookableItems />
             </Route>
+
+            <ProtectedRoute
+            exact 
+            path="/clientBookableItems/:id"
+          >
+          <ClientDetailItem />
+
+          </ProtectedRoute>
+
           <Route
             exact
             path="/home"
