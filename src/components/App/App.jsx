@@ -25,12 +25,15 @@ import AddBookableItem from '../AddBookableItem/AddBookableItem'
 import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
+import AllTerrainVehicles from '../AllTerrainVehicles/AllTerrainVehicles';
 import Watercraft from '../Watercraft/Watercraft';
 import Jetski from '../Watercraft/Jetski/Jetski';
 import Boat from '../Watercraft/Boat/Boat';
 import Pontoon from '../Watercraft/Pontoon/Pontoon';
 import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
 import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
+import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
+
 
 import './App.css';
 
@@ -208,6 +211,20 @@ function App() {
 
           <Route
             exact
+            path='/allTerrain'
+          >
+          <AllTerrainVehicles />  
+          </Route>
+
+          <Route
+            exact
+            path='/sidebyside/:sidebysideId'
+          >
+          <SideBySide />
+          </Route>
+
+          <Route
+            exact
             path="/home"
           >
             {user.id ?
@@ -219,6 +236,8 @@ function App() {
               <LandingPage />
             }
           </Route>
+
+          
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

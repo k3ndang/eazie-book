@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid'
 import './ClientBookableItem.css'
 
 
-const LitemData = [
+const litemData = [
     {
         img: 'https://d1nkxkz7ge96ao.cloudfront.net/eyJidWNrZXQiOiJzbW4tbWFpbi1zaXRlLWJ1Y2tldCIsImtleSI6ImltYWdlc1wvaW1hZ2luXC9McktPcmhFcE5FN0FNV3lFQUxRMUpFOE0wTjVsc1VkekxsNU9ZcEZsLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjYwMCwiaGVpZ2h0IjoxMzAwLCJmaXQiOiJjb3ZlciJ9fX0=',
         title: 'boat 1',
@@ -78,7 +78,7 @@ function ClientBookableItems() {
            {/* Category name not properly rendering  */}
         <h1> {itemData.companyName}, Your List of Bookable items</h1>
             <ImageList sx={{ width: 1300, height: 750 }}>
-
+ 
                  {itemData.map(item => {
                     return (
                         <>
