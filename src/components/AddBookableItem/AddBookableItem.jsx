@@ -36,7 +36,6 @@ function addBookableItem () {
         rate:     '',
         unitTime: '',
         location: '',
-        clientId: '',
         categoryId: ''
     });
 
