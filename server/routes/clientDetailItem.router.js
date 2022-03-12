@@ -45,7 +45,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 
 // Router to grab the specific bookable item on the client detail page 
-router.get('/:id', (req, res) => {
+router.get('/:id', rejectUnauthenticated, (req, res) => {
     console.log('this is req.user', req.user);
     console.log('req.params are', req.params);
     const queryText = ` 

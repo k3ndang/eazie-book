@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 // NEED TO PUT THIS BACK >>> ", rejectUnauthenticated"
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = `
         SELECT * FROM "categories"
     `;
