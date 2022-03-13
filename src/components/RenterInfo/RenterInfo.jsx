@@ -11,7 +11,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 function RenterInfo() {
-
+    const info = useSelector(store => store.renter.renterInfo)
     useEffect(() => {
         dispatch({
             type: 'FETCH_RENTER_INFO'
@@ -29,9 +29,30 @@ function RenterInfo() {
                             <TableCell align="center" className="clientListTableHeadings"> <strong>Email</strong></TableCell>
                             <TableCell align="center" className="clientListTableHeadings"> <strong>Phone Number</strong></TableCell>
                             <TableCell align="center" className="clientListTableHeadings"> <strong>Item Name </strong></TableCell>
-                            <TableCell align="center" className="clientListTableHeadings"> <strong>Reserving Time</strong></TableCell>
+                            <TableCell align="center" className="clientListTableHeadings"> <strong>Unit Time</strong></TableCell>
+                            <TableCell align="center" className="clientListTableHeadings"> <strong>Time Booked</strong></TableCell>
                         </TableRow>
                     </TableHead>
+            <TableBody>
+                {info.map((row, index) => {
+                    return(
+                        <TableRow
+                        key={index}
+                        sx={{ border: 2, minWidth: 100 }}
+                        >
+                            <TableCell component="th" scope='row'>
+                            {row.username}
+                            </TableCell>
+                            <TableCell align='right'>{row.email}</TableCell>
+                            <TableCell align='right'>{row.phoneNumber}</TableCell>
+                            <TableCell align='right'>{row.item_name}</TableCell>
+                            <TableCell align='right'>{row.unitTime}</TableCell>
+                            <TableCell align='right'>{row.time_booked}</TableCell>
+                        </TableRow>
+                    )
+                })}
+
+            </TableBody>
 
 
                 </Table>

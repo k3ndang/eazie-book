@@ -37,18 +37,18 @@ pool.query(sqlText, sqlParams)
 router.get('/info', (req, res) => {
     const sqlText = `
     SELECT 
-        "user"."name",
+        "user"."username",
         "user"."email",
         "user"."phoneNumber",
-        "bookable_items"."name" AS item_name,
-        "bookable_items"."unit_time", 
+        "bookable_items"."title" AS item_name,
+        "bookable_items"."unitTime", 
         "renter_booking"."hours_book" AS time_booked
-        FROM user 
-        LEFT JOIN "bookable_items"
-	ON "bookable_items"."clientId" = "user"."id"
+        FROM "user" 
 LEFT JOIN "renter_booking"
+	ON "renter_booking"."renterId" = "user"."id"
+LEFT JOIN "bookable_items"
 	ON "renter_booking"."bookableId" = "bookable_items"."id"
-    WHERE "user"."authLevel" = renter
+    WHERE "user"."authLevel" = 'renter';
     `
 
     pool.query(sqlText)
