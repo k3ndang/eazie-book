@@ -80,7 +80,7 @@ function Nav() {
             <div className="dropdown-content">
               <Link to="/clients"> Client List </Link>
               {/* not sure if bookable items is a different page */}
-              <Link to="/"> Bookable Items List </Link>
+              <Link to="/viewBookableItem"> Bookable Items List </Link>
             </div>
             </div>
             {/* having an about and an info page seems redundant */}

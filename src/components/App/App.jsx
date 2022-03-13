@@ -33,6 +33,7 @@ import Pontoon from '../Watercraft/Pontoon/Pontoon';
 import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
 import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
 import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
+import BookableItemList from '../BookableItemsList/BookableItemsList'
 
 
 import './App.css';
@@ -147,6 +148,7 @@ function App() {
             <BookableItem />
           </Route>
 
+            
             <Route
             exact
             path='/renterHistory'
@@ -201,6 +203,12 @@ function App() {
           >
             <Boat />
           </Route>
+            <ProtectedRoute
+            exact 
+            path='/bookableItemList'
+            >
+
+            </ProtectedRoute>
 
           <Route 
             exact
