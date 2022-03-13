@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Table from '@mui/material/Table';
@@ -11,6 +12,11 @@ import Paper from '@mui/material/Paper';
 
 function RenterInfo() {
 
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_RENTER_INFO'
+        });
+    }, []);
     const dispatch = useDispatch();
     return (
         <>
@@ -26,7 +32,7 @@ function RenterInfo() {
                             <TableCell align="center" className="clientListTableHeadings"> <strong>Reserving Time</strong></TableCell>
                         </TableRow>
                     </TableHead>
-                    
+
 
                 </Table>
 

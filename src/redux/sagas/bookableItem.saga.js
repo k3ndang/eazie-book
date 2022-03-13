@@ -9,7 +9,7 @@ function* bookableItemSaga() {
     yield takeEvery('FETCH_SELECTED_BOOKABLE_ITEM', fetchSelectedBookableItem);
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
-    yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory)
+    yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory);
 }
 
 

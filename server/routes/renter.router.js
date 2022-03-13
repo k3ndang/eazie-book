@@ -34,5 +34,35 @@ pool.query(sqlText, sqlParams)
     })
 })
 
+router.get('/info', (req, res) => {
+    const sqlText = `
+    SELECT 
+        "user"."name",
+        "user"."email",
+        "user"."phoneNumber",
+        "bookable_items"."name" AS item_name,
+        "bookable_items"."unit_time", 
+        "renter_booking"."hours_book" AS time_booked
+        FROM user 
+        LEFT JOIN "bookable_items"
+	ON "bookable_items"."clientId" = "user"."id"
+LEFT JOIN "renter_booking"
+	ON "renter_booking"."bookableId" = "bookable_items"."id"
+    WHERE "user"."authLevel" = renter
+    `
+
+    pool.query(sqlText)
+        .then((result) => {
+            console.log('result is', result.rows)
+
+            res.send(result.rows)
+        })
+        .catch(err => {
+            console.log('infoQuery error', err);
+            res.sendStatus(500)
+            
+        })
+})
+
 
 module.exports = router;

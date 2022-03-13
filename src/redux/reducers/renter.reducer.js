@@ -1,4 +1,6 @@
-const renterReducer = (state = [], action) => {
+import { combineReducers } from 'redux';
+
+const renterHistory = (state = [], action) => {
     switch (action.type) {
         case 'SET_RENTER_HISTORY':
             return action.payload;
@@ -6,4 +8,15 @@ const renterReducer = (state = [], action) => {
     return state;
 }
 
-export default renterReducer;
+const renterInfo = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_RENTER_INFO':
+            return action.payload;
+    }
+    return state;
+}
+
+export default combineReducers({
+    renterHistory, 
+    renterInfo, 
+});
