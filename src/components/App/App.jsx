@@ -34,7 +34,7 @@ import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
 import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
 import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
 import BookableItemList from '../BookableItemsList/BookableItemsList'
-
+import RenterInfo from '../RenterInfo/RenterInfo'
 
 import './App.css';
 
@@ -78,6 +78,12 @@ function App() {
           >
             <ViewBookableItem />
           </Route>
+          <ProtectedRoute
+          exact 
+          path="/renterInfo"
+          >
+            <RenterInfo />
+          </ProtectedRoute>
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
