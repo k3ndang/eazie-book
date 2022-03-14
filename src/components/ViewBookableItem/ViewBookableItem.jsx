@@ -75,6 +75,8 @@ function ViewBookableItem() {
                             <TableCell align="center">{row.location}</TableCell>
                             <TableCell align="center">{row.name}</TableCell>
                             <TableCell align="center">{row.companyName}</TableCell>
+                            <TableCell align="center"><Link to={`/addPhotos/${row.id}`} >Add Photo</Link></TableCell>
+
                             <TableCell align="center">
                                 <Link 
                                     to={`/editBookableItemForm/${row.id}`}
