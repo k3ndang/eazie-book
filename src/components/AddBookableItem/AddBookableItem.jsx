@@ -166,10 +166,7 @@ function addBookableItem () {
                         label="Summary"
                         color="secondary"
                         focused
-                        fullWidth
-                        multiline
                         rows={3}
-                        variant="outlined"
                         value={newBookableItem.summary}
                         onChange={(evt) => handleChange(evt, "summary")}
                     />
@@ -216,13 +213,8 @@ function addBookableItem () {
                         placeholder='ENTER DETAILS HERE'
                         required
                         type="text"
-                        label="Detail"
-                        color="secondary"
-                        focused
                         multiline
-                        fullWidth
                         rows={2}
-                        variant="outlined"
                         value={newBookableItem.details}
                         onChange={(evt) => handleChange(evt, "details")}
                     />
@@ -238,7 +230,6 @@ function addBookableItem () {
                         sx={{ width: 400 }}
                         id="demo-simple-select"
                         text="SELECT CATEGORY HERE"
-                        label="Age"
                         className="selectCategoryPlaceholder"
                         onChange= {event => setParentId(event.target.value)}
                     >
