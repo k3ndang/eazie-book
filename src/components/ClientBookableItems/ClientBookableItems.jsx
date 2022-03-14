@@ -42,8 +42,8 @@ function ClientBookableItems() {
         <>
            {/* itemData[0].companyName breaks page not sure how to render client name once  */}
            {/* Category name not properly rendering  */}
-        <h1> {itemData.companyName}, Your List of Bookable items</h1>
-            <ImageList sx={{ width: 1300, height: 750 }}>
+        <h1 className="BookableItemsTitle"> List of Bookable items</h1>
+            <ImageList sx={{ width: 1300, height: 750 }} className="imageContainer">
 
                  {itemData.map(item => {
                     return (
