@@ -4,6 +4,7 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
+//grabs all clients from the database 
 router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = `
         SELECT * FROM "user"
@@ -22,7 +23,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 })
 
 
-
+//deletes a client with a specified id from the database 
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
     console.log('req.params.id in delete is', req.params.id);
 
@@ -42,7 +43,7 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
 })
 
 
-
+//grabs a client with a specific id from the database 
 router.get('/:id', rejectUnauthenticated, (req, res) => {
     console.log('req.params.id in get active client is', req.params.id);
 
@@ -61,7 +62,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     })
 })
 
-
+//modifies a client with a specified id
 router.put('/:id', rejectUnauthenticated, (req, res) => {
     console.log('in client.router.put');
 
