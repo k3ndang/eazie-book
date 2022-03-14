@@ -22,33 +22,33 @@ function ClientDetailItem(){
       }, [params.id]);
     return(
         <>
-        
-        <h1 className="ClientDetailPageTitle"> Here we are in the client detail item Page</h1>
-
-       
-        {/* <div className= "detailPageTitle">
-        {selectedItem.map((item, index => {
-     
-        <h2 key={index}> Name of Company: {item.companyName} </h2>
-   
+        <div className="ClientDetailContainer"> 
+        <h2 className="ClientDetailPageCompanyName"> Company Name:</h2> <div className= "ClientDetailPageCompanyName"> {selectedItem.companyName} </div>
+        <br/>
+        <br/>
+       <div> 
         <img 
-            src= {item.url}
-            width= {600}
-            height={450}
+            src= {selectedItem.url}
+            width= {400}
+            height={400}
         />
-         <div className="ClientDetailPageContactInfo" > 
-            <h3> Contact Information: </h3>
-            <h3> Address of Equipment: {item.address}, {item.location}, {item.zipcode} </h3>
-            <h3> Phone Number: {item.phoneNumber} </h3> 
-          
-        </div> */}
+      </div>
+      
        
-         <div> 
-            <h3> Item Information: </h3>
+         <div className="ClientDetailItemInfo"> 
+            <h3 className="ClientDetailInfoTitle"> Item Information: </h3>
+            <h3 className="ClientDetailInfo"> Category: </h3> <div className="ClientDetailInfo"> {selectedItem.name}</div>  <br/>
+            <h3 className="ClientDetailInfo"> Summary: </h3> <div className="ClientDetailInfo"> {selectedItem.summary}</div>  <br/>
+            <h3 className="ClientDetailInfo"> Rate: </h3> <div className="ClientDetailInfo"> ${selectedItem.rate} per {selectedItem.unitTime}</div>  <br/>
+            <h3 className="ClientDetailInfo"> Details Regarding Rental: </h3> <div className="ClientDetailInfo"> {selectedItem.detail} </div>  <br/>
          </div>
-
-        {/* </div>
-        ))} */}
+         <div className="ClientDetailPageContactInfo" > 
+            <h3 className="ClientDetailInfoTitle"> Contact Information: </h3>
+            <h3 className="ClientDetailContactInfo"> Address of Equipment: </h3>   <div className="ClientDetailContactInfo"> {selectedItem.address}, {selectedItem.location}, {selectedItem.zipcode} </div> <br/>
+            <h3 className="ClientDetailContactInfo"> Phone Number: </h3>           <div className="ClientDetailContactInfo"> {selectedItem.phoneNumber} </div>
+          
+        </div> 
+        </div>
         </>
     )
 };

@@ -2,3 +2,62 @@
     text-align: center;
     
 }
+
+.ClientDetailPageCompanyName{
+    display: inline-block; 
+    font-size: 30px;
+    font-variant: small-caps;
+    line-height: 1em;
+    text-align: center;
+    
+
+}
+
+.ClientDetailInfoTitle{
+    font-variant: small-caps;
+    font-size: 30px;
+    text-decoration: underline;
+    margin-bottom: 0.5em;
+
+}
+.ClientDetailContactInfo{
+    display: inline; 
+    font-size: 24px;
+   word-spacing: 2px;
+    line-height: 1.5em;
+    margin: auto;
+  
+}
+
+.ClientDetailPageContactInfo{
+    display: inline;
+    align-items: center;
+  
+}
+
+.ClientDetailContactInfoTitle{
+    display: flex;
+    align-items: center;
+}
+
+.ClientDetailItemInfo{
+    display: inline;
+    align-items: center;
+    font-size: 24px;
+
+}
+
+.ClientDetailContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ClientDetailInfo{
+    display: inline; 
+    font-size: 24px;
+   word-spacing: 2px;
+    line-height: 1.5em;
+    margin: auto;
+}
