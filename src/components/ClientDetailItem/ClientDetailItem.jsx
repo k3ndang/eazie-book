@@ -60,8 +60,8 @@ function ClientDetailItem(){
         <br/>
         <div className="returnToHome" onClick={goToClientList}>  <h4>  Return to <br/> Bookable Item List </h4>
         <HomeIcon sx={{ fontSize: 50 }} >  </HomeIcon>
-        
         </div>
+        
         </div>
         </>
     )

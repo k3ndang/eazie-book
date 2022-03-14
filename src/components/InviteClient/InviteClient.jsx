@@ -5,6 +5,7 @@ import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
+import './InviteClient.css'
 
 function InviteClient(){
     const history = useHistory();
@@ -74,139 +75,143 @@ function InviteClient(){
 
     return(
         <>
-        <Paper onSubmit={inviteClient}>
-            <Button variant="outlined" onClick={goBack}>Back</Button>
-            <h2>Invite Client</h2>
-            <div>
+       
+        <Paper onSubmit={inviteClient} className="ClientInviteContainer">
+           
+            <Button variant="outlined" onClick={goBack} className="ClientInviteBackButton">Back</Button>
+            <h2 className="ClientInviteTitle">Invite Client</h2>
+            <div className="ClientInviteInputFields">
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
                     name="firstName"
                     value={firstName}
-                    placeholder="First Name"
+                    placeholder="FIRST NAME"
                     required
                     onChange={(event) => setFirstName(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
                     name="lastName"
                     value={lastName}
-                    placeholder="Last Name"
+                    placeholder="LAST NAME"
                     required
                     onChange={(event) => setLastName(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input  
                     className="input"
                     type="text"
                     name="username"
                     value={username}
-                    placeholder="Username"
+                    placeholder="USERNAME"
                     required
                     onChange={(event) => setUsername(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="password"
                     name="password"
                     value={password}
-                    placeholder="Password"
+                    placeholder="PASSWORD"
                     required
                     onChange={(event) => setPassword(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
                     name="email"
                     value={email}
-                    placeholder="Email"
+                    placeholder="EMAIL"
                     required
                     onChange={(event) => setEmail(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
                     name="phoneNumber"
                     value={phoneNumber}
-                    placeholder="Phone Number"
+                    placeholder="PHONE NUMBER"
                     required
                     onChange={(event) => setPhoneNumber(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
                     name="companyName"
                     value={companyName}
-                    placeholder="Company Name"
+                    placeholder="COMPANY NAME"
                     required
                     onChange={(event) => setCompanyName(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
                     name="address"
                     value={address}
-                    placeholder="Address"
+                    placeholder="ADDRESS"
                     required
                     onChange={(event) => setAddress(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input 
                     className="input"
                     type="text"
                     name="city"
                     value={city}
-                    placeholder="City"
+                    placeholder="CITY"
                     required
                     onChange={(event) => setCity(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
                     name="state"
                     value={state}
-                    placeholder="State"
+                    placeholder="STATE"
                     required
                     onChange={(event) => setState(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="number"
                     name="zipCode"
                     value={zipCode}
-                    placeholder="Zip Code"
+                    placeholder="ZIP CODE"
                     required
                     onChange={(event) => setZipCode(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
                     name="websiteUrl"
                     value={websiteUrl}
-                    placeholder="Website Url"
+                    placeholder="WEBSITE URL"
                     required
                     onChange={(event) => setWebsiteUrl(event.target.value)}
+                    
                 />
             </div>
            {/*  <div>
@@ -219,6 +224,8 @@ function InviteClient(){
                     onChange={(event) => setAuthLevel(event.target.value)}
                 />
             </div> */}
+             </div>
+             <br/>
             <div>
                 <Button
                     variant="outlined"
