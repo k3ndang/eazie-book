@@ -25,7 +25,7 @@
     font-size: 24px;
    word-spacing: 2px;
     line-height: 1.5em;
-    margin: auto;
+   
   
 }
 
@@ -35,10 +35,6 @@
   
 }
 
-.ClientDetailContactInfoTitle{
-    display: flex;
-    align-items: center;
-}
 
 .ClientDetailItemInfo{
     display: inline;
@@ -48,11 +44,10 @@
 }
 
 .ClientDetailContainer{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     margin-top: 20px;
-}
+    margin-left: 25%;
+} 
 
 .ClientDetailInfo{
     display: inline; 

@@ -23,9 +23,11 @@ function ClientDetailItem(){
     return(
         <>
         <div className="ClientDetailContainer"> 
-        <h2 className="ClientDetailPageCompanyName"> Company Name:</h2> <div className= "ClientDetailPageCompanyName"> {selectedItem.companyName} </div>
+
+        <h2 className="ClientDetailInfoTitle"> Company Name: </h2> <div className= "ClientDetailInfo"> {selectedItem.companyName} </div>
         <br/>
         <br/>
+        
        <div> 
         <img 
             src= {selectedItem.url}
@@ -37,10 +39,10 @@ function ClientDetailItem(){
        
          <div className="ClientDetailItemInfo"> 
             <h3 className="ClientDetailInfoTitle"> Item Information: </h3>
-            <h3 className="ClientDetailInfo"> Category: </h3> <div className="ClientDetailInfo"> {selectedItem.name}</div>  <br/>
-            <h3 className="ClientDetailInfo"> Summary: </h3> <div className="ClientDetailInfo"> {selectedItem.summary}</div>  <br/>
-            <h3 className="ClientDetailInfo"> Rate: </h3> <div className="ClientDetailInfo"> ${selectedItem.rate} per {selectedItem.unitTime}</div>  <br/>
-            <h3 className="ClientDetailInfo"> Details Regarding Rental: </h3> <div className="ClientDetailInfo"> {selectedItem.detail} </div>  <br/>
+            <h3 className="ClientDetailInfo">  <u> Category:</u> </h3> <div className="ClientDetailInfo"> {selectedItem.name}</div>  <br/>
+            <h3 className="ClientDetailInfo"> <u> Summary: </u></h3> <div className="ClientDetailInfo"> {selectedItem.summary}</div>  <br/>
+            <h3 className="ClientDetailInfo"> <u> Rate:</u> </h3> <div className="ClientDetailInfo"> ${selectedItem.rate} per {selectedItem.unitTime}</div>  <br/>
+            <h3 className="ClientDetailInfo"> <u> Details Regarding Rental: </u></h3> <div className="ClientDetailInfo"> {selectedItem.detail} </div>  <br/>
          </div>
          <div className="ClientDetailPageContactInfo" > 
             <h3 className="ClientDetailInfoTitle"> Contact Information: </h3>
