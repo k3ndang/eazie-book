@@ -75,8 +75,10 @@ function InviteClient(){
 
     return(
         <>
+       
         <Paper onSubmit={inviteClient} className="ClientInviteContainer">
-            <Button variant="outlined" onClick={goBack}>Back</Button>
+           
+            <Button variant="outlined" onClick={goBack} className="ClientInviteBackButton">Back</Button>
             <h2 className="ClientInviteTitle">Invite Client</h2>
             <div className="ClientInviteInputFields">
             <div className="ClientInviteIndividualInput">
@@ -85,7 +87,7 @@ function InviteClient(){
                     type="text"
                     name="firstName"
                     value={firstName}
-                    placeholder="First Name"
+                    placeholder="FIRST NAME"
                     required
                     onChange={(event) => setFirstName(event.target.value)}
                 />
@@ -96,7 +98,7 @@ function InviteClient(){
                     type="text"
                     name="lastName"
                     value={lastName}
-                    placeholder="Last Name"
+                    placeholder="LAST NAME"
                     required
                     onChange={(event) => setLastName(event.target.value)}
                 />
@@ -107,7 +109,7 @@ function InviteClient(){
                     type="text"
                     name="username"
                     value={username}
-                    placeholder="Username"
+                    placeholder="USERNAME"
                     required
                     onChange={(event) => setUsername(event.target.value)}
                 />
@@ -118,7 +120,7 @@ function InviteClient(){
                     type="password"
                     name="password"
                     value={password}
-                    placeholder="Password"
+                    placeholder="PASSWORD"
                     required
                     onChange={(event) => setPassword(event.target.value)}
                 />
@@ -129,7 +131,7 @@ function InviteClient(){
                     type="text"
                     name="email"
                     value={email}
-                    placeholder="Email"
+                    placeholder="EMAIL"
                     required
                     onChange={(event) => setEmail(event.target.value)}
                 />
@@ -140,7 +142,7 @@ function InviteClient(){
                     type="text"
                     name="phoneNumber"
                     value={phoneNumber}
-                    placeholder="Phone Number"
+                    placeholder="PHONE NUMBER"
                     required
                     onChange={(event) => setPhoneNumber(event.target.value)}
                 />
@@ -151,7 +153,7 @@ function InviteClient(){
                     type="text"
                     name="companyName"
                     value={companyName}
-                    placeholder="Company Name"
+                    placeholder="COMPANY NAME"
                     required
                     onChange={(event) => setCompanyName(event.target.value)}
                 />
@@ -162,7 +164,7 @@ function InviteClient(){
                     type="text"
                     name="address"
                     value={address}
-                    placeholder="Address"
+                    placeholder="ADDRESS"
                     required
                     onChange={(event) => setAddress(event.target.value)}
                 />
@@ -173,7 +175,7 @@ function InviteClient(){
                     type="text"
                     name="city"
                     value={city}
-                    placeholder="City"
+                    placeholder="CITY"
                     required
                     onChange={(event) => setCity(event.target.value)}
                 />
@@ -184,7 +186,7 @@ function InviteClient(){
                     type="text"
                     name="state"
                     value={state}
-                    placeholder="State"
+                    placeholder="STATE"
                     required
                     onChange={(event) => setState(event.target.value)}
                 />
@@ -195,7 +197,7 @@ function InviteClient(){
                     type="number"
                     name="zipCode"
                     value={zipCode}
-                    placeholder="Zip Code"
+                    placeholder="ZIP CODE"
                     required
                     onChange={(event) => setZipCode(event.target.value)}
                 />
@@ -206,9 +208,10 @@ function InviteClient(){
                     type="text"
                     name="websiteUrl"
                     value={websiteUrl}
-                    placeholder="Website Url"
+                    placeholder="WEBSITE URL"
                     required
                     onChange={(event) => setWebsiteUrl(event.target.value)}
+                    
                 />
             </div>
            {/*  <div>
@@ -222,6 +225,7 @@ function InviteClient(){
                 />
             </div> */}
              </div>
+             <br/>
             <div>
                 <Button
                     variant="outlined"
