@@ -56,7 +56,6 @@ function CategoryInput() {
     return (
         <>
          <h1 className="categoryInputTitle">Assign Category For Bookable Item Here </h1>
-           <label> <h3 className="setParentCategory"> Set Parent Categories </h3></label>
             <br></br>
             <label> Choose a Category for the Specified Item <Box sx={{ minWidth: 120 }}>
                 <br></br>
