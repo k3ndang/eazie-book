@@ -31,7 +31,8 @@
     font-size: 20px;
     font-variant: small-caps;
     line-height: 1em;
-    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 
 }
 
@@ -71,6 +72,8 @@
     color: black;
     font-weight: 800;
     justify-content: center;
+    font-variant: small-caps;
+    font-size: 20px;
 }
 
 
