@@ -115,7 +115,6 @@ function* saveEditBookableItem (action) {
 
 function* postBookableItem(action) {
     console.log('post bookableItem saga clientId', action.payload.clientId);
-    console.log('post bookableItem picture data', action.payload.data);
 
     try {
         yield axios.post(`/api/bookableItem`, action.payload);

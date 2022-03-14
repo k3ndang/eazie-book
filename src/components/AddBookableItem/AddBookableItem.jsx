@@ -39,7 +39,6 @@ function addBookableItem () {
         categoryId: ''
     });
 
-    const [fileData, setFileData] = useState();
 
     const[ clientId, setClientId] = useState('');
 
@@ -69,17 +68,6 @@ function addBookableItem () {
                 clientId: clientId
             }
         })
-        /* const data = new FormData();
-        data.append('file', fileData)
-        const imageToSend = {
-            data: data,
-            newBookableItem: newBookableItem
-        }
-        dispatch({
-            type: 'POST_PHOTO', 
-            payload: imageToSend
-        }) */
-
     }
 
     const goBack = () => {

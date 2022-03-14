@@ -40,7 +40,6 @@ const rootReducer = combineReducers({
   sideBySide,
   clientSelectedItem,
   clientList,
-  renterReducer,
   activeClient,
   renterBooking,
   renter,
