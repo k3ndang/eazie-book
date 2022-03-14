@@ -36,3 +36,14 @@ img{
     margin: 20px;
     border: 2px solid black;
 }
+
+.imageContainer{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border: 2px solid black;
+}
+
+.BookableItemsTitle{
+    text-align: center;
+}
