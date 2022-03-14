@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
 import './ClientDetailItem.css'
 
 function ClientDetailItem(){
@@ -20,6 +21,11 @@ function ClientDetailItem(){
           payload: params.id
         });
       }, [params.id]);
+
+      //function to bring the client to bookable item list page
+      function goToClientList(){
+        history.push('/clientBookableItems')
+      }
     return(
         <>
         <div className="ClientDetailContainer"> 
@@ -52,7 +58,10 @@ function ClientDetailItem(){
         </div> 
         <br/>
         <br/>
-        <button>  Return Back to List of Bookable Items </button>
+        <div className="returnToHome" onClick={goToClientList}>  <h4>  Return to <br/> Bookable Item List </h4>
+        <HomeIcon sx={{ fontSize: 50 }} >  </HomeIcon>
+        
+        </div>
         </div>
         </>
     )

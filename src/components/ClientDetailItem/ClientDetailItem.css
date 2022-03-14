@@ -59,3 +59,16 @@
 body{
     background-color: rgb(158, 190, 216);
 }
+
+.returnToHome{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+    text-align: center;
+    border: 2px solid black;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+    font-size: large;
+    
+}
