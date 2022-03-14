@@ -81,16 +81,7 @@ function addBookableItem () {
                 clientId: clientId
             }
         })
-        const data = new FormData();
-        data.append('file', fileData)
-        dispatch({
-            type: 'POST_PHOTO', 
-            payload: {
-                data: data,
-                id: newBookableItem.clientId
-            }
-        })
-
+       
     }
 
     const goBack = () => {
@@ -242,33 +233,6 @@ function addBookableItem () {
             </div>
            
          <br/> 
-           {/* Dropdown of bookable items that have been registered with the site */}
-{/* 
-          <div className="BookableItemContainer"> 
-           <Autocomplete
-            options= {itemList}
-            sx={{ width: 420 }}
-            value= {itemList.label}
-            renderInput={(params) => <TextField {...params} label="Bookable Items" />}
-            onChange={(event, newValue) => setNewItem(newValue.id)}
-            />     
-            </div>
-          */}
-            
-            <Button
-                type='file'
-                onChange={(e) => setFileData(e.target.files[0])}
-                variant="outlined"
-                size="large"
-                component='label'
-                
-            >Upload a Photo
-            <input 
-            type='file'
-            hidden
-            />
-            </Button>
-          
             <br/>
             <br/>
             <br/>
