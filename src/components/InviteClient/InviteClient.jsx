@@ -5,6 +5,7 @@ import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
+import './InviteClient.css'
 
 function InviteClient(){
     const history = useHistory();
@@ -74,7 +75,7 @@ function InviteClient(){
 
     return(
         <>
-        <Paper onSubmit={inviteClient}>
+        <Paper onSubmit={inviteClient} className="ClientInviteContainer">
             <Button variant="outlined" onClick={goBack}>Back</Button>
             <h2>Invite Client</h2>
             <div>
