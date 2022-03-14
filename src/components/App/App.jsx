@@ -143,13 +143,8 @@ function App() {
             >
               <RenterHistory />
             </Route>
-          <Route
-
-          {/* ROUTE for category input */}
           <ProtectedRoute
-            
-
-            exact
+           exact
             path="/categoryInput"
           >
             <CategoryInput />
