@@ -71,3 +71,7 @@ img{
 .css-11lq3yg-MuiGrid-root:hover{
     background-color: rgb(158, 216, 189);
 }
+
+.css-11lq3yg-MuiGrid-root{
+    padding: 0;
+}
