@@ -16,7 +16,7 @@ const fileStorageEngine = multer.diskStorage({
 
 const upload = multer({ storage: fileStorageEngine });
 
-router.post('/', upload.single('file'), (req, res) => {
+router.post('/', upload.single('file'), rejectUnauthenticated, (req, res) => {
     console.log('req.file is', req.file);
     
     let filePath = req.file.path;
