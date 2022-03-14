@@ -31,6 +31,9 @@ import Boat from '../Watercraft/Boat/Boat';
 import Pontoon from '../Watercraft/Pontoon/Pontoon';
 import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
 import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
+import BookableItemDetail from "../BookableItemDetail/BookableItemDetail";
+import RenterReviewPage from '../RenterReviewPage/RenterReviewPage';
+import ThankYou from '../ThankYou/ThankYou';
 
 import './App.css';
 
@@ -163,14 +166,15 @@ function App() {
           >
             <EditBookableItemForm />
           </Route>
-            <Route
+
+          <Route
             exact
             path="/clientBookableItems"
-            >
-              <ClientBookableItems />
-            </Route>
+          >
+            <ClientBookableItems />
+          </Route>
 
-            <ProtectedRoute
+          <ProtectedRoute
             exact 
             path="/clientBookableItems/:id"
           >
@@ -201,9 +205,30 @@ function App() {
 
           <Route 
             exact
+            path="/detail/:id"
+          >
+            <BookableItemDetail />
+          </Route>
+
+          <Route 
+            exact
             path="/pontoon/:pontoonId"
           >
             <Pontoon />
+          </Route>
+
+          <Route
+            exact
+            path="/renterReviewPage"
+          >
+            <RenterReviewPage />
+          </Route>
+
+          <Route 
+            exact
+            path="/thankyou"
+          >
+            <ThankYou />
           </Route>
 
           <Route

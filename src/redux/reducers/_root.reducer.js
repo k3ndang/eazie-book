@@ -10,7 +10,8 @@ import categoryList from './category.reducer';
 import activeClient from './activeClient.reducer';
 import clientSelectedItem from './setClientDetailItem.reducer';
 import clientList from './clientList.reducer';
-import renterReducer from './renter.reducer'
+import renterReducer from './renter.reducer';
+import renterBooking from './renterBooking.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -34,7 +35,8 @@ const rootReducer = combineReducers({
   clientSelectedItem,
   clientList,
   renterReducer,
-  activeClient
+  activeClient,
+  renterBooking,
 });
 
 export default rootReducer;

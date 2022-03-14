@@ -5,6 +5,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid';
+import BoatDetail from '../../BookableItemDetail/BookableItemDetail'
 
 
 
@@ -18,7 +19,7 @@ function BoatList () {
 
     useEffect (() => {
         dispatch({
-            type: "RENTER_FETCH_BOOKABLEITEM",
+            type: "RENTER_FETCH_BOOKABLE_ITEM",
             payload: params.boatId
         });
     }, [params.boatId])
@@ -30,6 +31,7 @@ function BoatList () {
             {boatList.map((boat) => (
                 <Grid container key={boat.id}>
                     <Grid item>
+                        
                         <ImageListItem>
                             <img 
                                 src="https://www.amfam.com/-/media/images/amfam/products/boat/product-page-speed-and-power-boats---m.jpg"
@@ -41,6 +43,7 @@ function BoatList () {
                         <Typography variant='h6'>Detail: {boat.detail}</Typography>
                         <Typography variant='h6'>Rate: {boat.rate}</Typography>
                     </Grid>
+                    <button onClick={(evt) => history.push(`/detail/${boat.id}`)}>Full Detail</button>
                 </Grid>
             ))}
         </ImageList>

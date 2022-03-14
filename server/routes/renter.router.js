@@ -35,4 +35,35 @@ pool.query(sqlText, sqlParams)
 })
 
 
+router.post('/', (req, res) => {
+    console.log('renter posting', req.body)
+    let bookableItem = req.body.selectedItem;
+    let clientId = req.body.clientId;
+    let dateTime = req.body.date;
+    let bookingDuration = req.body.hourRenting;
+
+    const sqlText = `
+        INSERT INTO "renter_booking"
+        ("startDate", "hours_book", "renterId", "bookableId")
+        VALUES
+        ($1, $2, $3, $4);
+    `;
+
+    const sqlParams = [
+        dateTime,
+        bookingDuration,
+        clientId,
+        bookableItem.id
+    ]
+
+    pool.query(sqlText, sqlParams)
+        .then(dbRes => {
+            res.sendStatus(201)
+        })
+        .catch(err => {
+            console.error('ERROR in confirming booking', err)
+            res.sendStatus(500)
+        })
+})
+
 module.exports = router;
