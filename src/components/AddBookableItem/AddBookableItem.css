@@ -109,7 +109,7 @@
     background-color: rgb(205, 227, 255);
 }
 
-
+/* sets the font for input field labels */
 .InputFieldTitle{
     margin-top: 10px;
     margin: 5px;
