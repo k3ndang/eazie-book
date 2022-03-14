@@ -60,7 +60,7 @@ function CategoryInput() {
             <br></br>
             <label> Choose a Category for the Specified Item <Box sx={{ minWidth: 120 }}>
                 <br></br>
-                <FormControl fullWidth>
+                <FormControl class="adminCategoryInputContainer">
                     <InputLabel id="demo-simple-select-label">Category</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"

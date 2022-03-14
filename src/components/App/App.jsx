@@ -145,7 +145,7 @@ function App() {
             </Route>
           <ProtectedRoute
            exact
-            path="/categoryInput"
+            path="/admin/categoryInput"
           >
             <CategoryInput />
           </ProtectedRoute>
