@@ -54,8 +54,8 @@ function ViewBookableItem() {
                         <TableCell align="center">Rate</TableCell>
                         <TableCell align="center">Time</TableCell>
                         <TableCell align="center">Location</TableCell>
-                        <TableCell align="center">categoryId</TableCell>
-                        <TableCell align="center">clientId</TableCell>
+                        <TableCell align="center">Category</TableCell>
+                        <TableCell align="center">Company Name</TableCell>
                         <TableCell align="center"></TableCell>
                     </TableRow>
                 </TableHead>
