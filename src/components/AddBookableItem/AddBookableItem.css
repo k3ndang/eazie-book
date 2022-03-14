@@ -36,7 +36,7 @@
 
 }
 .selectCompanyName{
-    margin: 10px;
+    margin-top: 40px;
     text-align: center;
     font-size: 40px;
    display: flex;
@@ -104,21 +104,22 @@
     align-items: center;
     text-align: center;
 }
-
+/* sets the background color of the select category and select company name inputs */
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
     background-color: rgb(205, 227, 255);
 }
 
 
 .InputFieldTitle{
+    margin-top: 10px;
     margin: 5px;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .SelectCategoryTitle{
     margin: 10px;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
    
 }
 .FormSubmitBtn{
@@ -128,7 +129,7 @@
 .SelectCategoryTitlePlaceholder{
     text-align: center;
     margin-left: 250px;
-    font-size: 23px;
+    font-size: 40px;
     font-weight: 800;
     
 }
