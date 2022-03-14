@@ -63,13 +63,7 @@ function App() {
           >
             <AboutPage />
           </Route>
-          <ProtectedRoute
-            
-            exact
-            path="/categoryInput"
-          >
-            <CategoryInput />
-          </ProtectedRoute>
+
 
           <Route
             // shows AboutPage at all times (logged in or not)
@@ -85,6 +79,10 @@ function App() {
             <RenterInfo />
           </ProtectedRoute>
 
+
+          {/* ROUTES FOR ADMIN */}
+
+
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
@@ -97,6 +95,67 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
+          {/* ROUTE for client invite page */}
+          <ProtectedRoute 
+            exact
+            path='/admin/invite'
+          >
+            <InviteClient />  
+          </ProtectedRoute>
+
+          {/* ROUTE for client table */}
+          <ProtectedRoute
+            exact 
+            path="/clients"
+          >
+            <ClientTable />  
+          </ProtectedRoute>
+
+          {/* ROUTE for bookableItem page */}
+          <ProtectedRoute
+            exact
+            path="/viewBookableItem"
+          >
+            <ViewBookableItem />
+          </ProtectedRoute>
+
+          {/* ROUTE for add bookable item */}
+          <Route
+            exact
+            path="/addBookableItem"
+          >
+            <AddBookableItem />
+          </Route>
+
+          {/* ROUTE for editing an item */}
+          <Route
+            exact
+            path="/editBookableItemForm/:id"
+          >
+            <EditBookableItemForm />
+          </Route>
+
+
+            
+            <Route
+            exact
+            path='/renterHistory'
+            >
+              <RenterHistory />
+            </Route>
+          <Route
+
+          {/* ROUTE for category input */}
+          <ProtectedRoute
+            
+
+            exact
+            path="/categoryInput"
+          >
+            <CategoryInput />
+          </ProtectedRoute>
+
+          {/* ROUTE for info page */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
@@ -105,19 +164,110 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
-          <ProtectedRoute 
+          {/* END OF ROUTES FOR ADMIN */}
+         
+
+
+
+
+
+
+
+
+          {/* ROUTES FOR CLIENT */}
+
+          {/* ROUTE for client bookable items */}
+          <ProtectedRoute
             exact
-            path='/admin/invite'
+            path="/clientBookableItems"
           >
-            <InviteClient />  
+            <ClientBookableItems />
           </ProtectedRoute>
 
+          {/* ROUTE for specific client bookable items */}
           <ProtectedRoute
             exact 
-            path="/clients"
+            path="/clientBookableItems/:id"
           >
-          <ClientTable />  
+            <ClientDetailItem />
           </ProtectedRoute>
+
+          {/* END OF ROUTES FOR CLIENT */}
+
+
+
+
+
+
+
+
+          {/* ROUTES FOR RENTER */}
+
+          {/* ROUTE for renter history */}
+          <Route
+            exact
+            path='/renterHistory'
+          >
+              <RenterHistory />
+          </Route>
+
+          {/* ROUTE for renter watercraft */}
+          <Route
+            exact
+            path="/watercraft"
+          >
+            <Watercraft />
+          </Route>
+
+          {/* ROUTE for renter jetski's */}
+          <Route 
+            exact
+            path="/jetski/:jetskiId"
+          >
+            <Jetski />
+          </Route>
+
+          {/* ROUTE for renter boat's */}
+          <Route 
+            exact
+            path="/boat/:boatId"
+          >
+            <Boat />
+          </Route>
+            <ProtectedRoute
+            exact 
+            path='/bookableItemList'
+            >
+
+            </ProtectedRoute>
+
+          {/* ROUTE for renter pontoon's */}
+          <Route 
+            exact
+            path="/pontoon/:pontoonId"
+          >
+            <Pontoon />
+          </Route>
+
+          {/* ROUTE for renter all terrain vehicles */}
+          <Route
+            exact
+            path='/allTerrain'
+          >
+            <AllTerrainVehicles />  
+          </Route>
+
+          {/* ROUTE for renter Side-By-Side's */}
+          <Route
+            exact
+            path='/sidebyside/:sidebysideId'
+          >
+            <SideBySide />
+          </Route>
+
+          {/* END OF ROUTES FOR RENTER */}
+
+          
 
           <Route
             exact
@@ -146,96 +296,7 @@ function App() {
               <RegisterPage />
             }
           </Route>
-          
-          <Route
-            exact
-            path="/bookableItem"
-          >
-            <BookableItem />
-          </Route>
-
-            
-            <Route
-            exact
-            path='/renterHistory'
-            >
-              <RenterHistory />
-            </Route>
-          <Route
-            exact
-            path="/addBookableItem"
-          >
-            <AddBookableItem />
-          </Route>
-
-          <Route
-            exact
-            path="/editBookableItemForm/:id"
-          >
-            <EditBookableItemForm />
-          </Route>
-            <Route
-            exact
-            path="/clientBookableItems"
-            >
-              <ClientBookableItems />
-            </Route>
-
-            <ProtectedRoute
-            exact 
-            path="/clientBookableItems/:id"
-          >
-          <ClientDetailItem />
-
-          </ProtectedRoute>
-
-          <Route
-            exact
-            path="/watercraft"
-          >
-            <Watercraft />
-          </Route>
-
-          <Route 
-            exact
-            path="/jetski/:jetskiId"
-          >
-            <Jetski />
-          </Route>
-
-          <Route 
-            exact
-            path="/boat/:boatId"
-          >
-            <Boat />
-          </Route>
-            <ProtectedRoute
-            exact 
-            path='/bookableItemList'
-            >
-
-            </ProtectedRoute>
-
-          <Route 
-            exact
-            path="/pontoon/:pontoonId"
-          >
-            <Pontoon />
-          </Route>
-
-          <Route
-            exact
-            path='/allTerrain'
-          >
-          <AllTerrainVehicles />  
-          </Route>
-
-          <Route
-            exact
-            path='/sidebyside/:sidebysideId'
-          >
-          <SideBySide />
-          </Route>
+      
 
           <Route
             exact

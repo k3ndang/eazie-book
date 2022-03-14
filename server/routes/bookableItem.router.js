@@ -1,5 +1,6 @@
 const express = require('express');
 const pool = require('../modules/pool');
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 const router = express.Router();
 
 const multer  = require('multer');
@@ -17,7 +18,7 @@ const upload = multer({ storage: fileStorageEngine });
 
 
 
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
     const sqlText = 
     `SELECT * FROM bookable_items`
 
@@ -29,7 +30,7 @@ router.get('/', (req, res) => {
         })
 })
 
-router.get('/renterReq/:categoryId', (req, res) => {
+router.get('/renterReq/:categoryId', rejectUnauthenticated, (req, res) => {
     const categoryId = req.params.categoryId;
 
     const sqlText = `
@@ -46,7 +47,7 @@ router.get('/renterReq/:categoryId', (req, res) => {
         })
 })
 
-router.post('/', upload.single("file"), (req, res) => {
+router.post('/', upload.single("file"), rejectUnauthenticated, (req, res) => {
     console.log('made it to server', req.body.newBookableItem);
     console.log('made it to server', req.body.data);
 
@@ -88,7 +89,7 @@ router.post('/', upload.single("file"), (req, res) => {
 })
 
 // Selected bookableItem by ID so it can be edit
-router.get('/selected/:id', (req, res) => {
+router.get('/selected/:id', rejectUnauthenticated, (req, res) => {
     console.log('bookableItemId', req.params.id);
     let bookableItemId = req.params.id
     const sqlText = `
@@ -105,7 +106,7 @@ router.get('/selected/:id', (req, res) => {
         })
 }); // end of GET /selected/:id
 
-router.put('/', (req, res) => {
+router.put('/', rejectUnauthenticated, (req, res) => {
     let updateBookableItem = req.body;
 
     const sqlText = `
