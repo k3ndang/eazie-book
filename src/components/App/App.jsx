@@ -33,7 +33,8 @@ import Pontoon from '../Watercraft/Pontoon/Pontoon';
 import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
 import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
 import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
-
+import BookableItemList from '../BookableItemsList/BookableItemsList'
+import RenterInfo from '../RenterInfo/RenterInfo'
 
 import './App.css';
 
@@ -64,7 +65,23 @@ function App() {
           </Route>
 
 
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/viewBookableItem"
+          >
+            <ViewBookableItem />
+          </Route>
+          <ProtectedRoute
+          exact 
+          path="/renterInfo"
+          >
+            <RenterInfo />
+          </ProtectedRoute>
+
+
           {/* ROUTES FOR ADMIN */}
+
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -118,9 +135,20 @@ function App() {
             <EditBookableItemForm />
           </Route>
 
+
+            
+            <Route
+            exact
+            path='/renterHistory'
+            >
+              <RenterHistory />
+            </Route>
+          <Route
+
           {/* ROUTE for category input */}
           <ProtectedRoute
             
+
             exact
             path="/categoryInput"
           >
@@ -206,6 +234,12 @@ function App() {
           >
             <Boat />
           </Route>
+            <ProtectedRoute
+            exact 
+            path='/bookableItemList'
+            >
+
+            </ProtectedRoute>
 
           {/* ROUTE for renter pontoon's */}
           <Route 

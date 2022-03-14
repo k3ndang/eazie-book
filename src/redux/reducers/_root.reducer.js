@@ -12,7 +12,7 @@ import companyName from './companyName.reducer';
 import sideBySide from './sideBySide.reducer';
 import clientSelectedItem from './setClientDetailItem.reducer';
 import clientList from './clientList.reducer';
-import renterReducer from './renter.reducer'
+import renter from './renter.reducer'
 
 
 // rootReducer is the primary reducer for our entire project
@@ -37,7 +37,7 @@ const rootReducer = combineReducers({
   sideBySide,
   clientSelectedItem,
   clientList,
-  renterReducer,
+  renter,
   activeClient
 });
 

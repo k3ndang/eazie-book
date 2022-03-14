@@ -70,9 +70,9 @@ function Nav() {
               <Link to="/admin/invite"> Add a Client  </Link>
               {/* bring admin to category form */}
               {/* Could also say "edit bookable categories" */}
-              <Link to="/"> Edit Categories </Link>
+              <Link to="/categoryInput"> Edit Categories </Link>
               {/* brings admin to list of clients, perhaps this is redundant */}
-              <Link to="/"> Edit Clients </Link>
+              {/* <Link to="/"> Edit Clients </Link> */}
             </div>
           </div>
               <div className="dropdown">
@@ -80,7 +80,7 @@ function Nav() {
             <div className="dropdown-content">
               <Link to="/clients"> Client List </Link>
               {/* not sure if bookable items is a different page */}
-              <Link to="/"> Bookable Items List </Link>
+              <Link to="/viewBookableItem"> Bookable Items List </Link>
             </div>
             </div>
             {/* having an about and an info page seems redundant */}
@@ -108,7 +108,7 @@ function Nav() {
               <div className="dropdown">
             <button className="dropbtn"> Reservations</button>
             <div className="dropdown-content">
-              <Link to="/"> Make A Reservation </Link>
+              <Link to="/watercraft"> Make A Reservation </Link>
               {/* This should be the list of everyone that has rented bookable items  */}
               <Link to="/renterHistory"> View Reservations </Link>
             </div>
@@ -139,7 +139,7 @@ function Nav() {
             <div className="dropdown-content">
               <Link to="/clientBookableItems"> Bookable Items  </Link>
               {/* This should be the list of everyone that has rented bookable items  */}
-              <Link to="/"> Renter Info </Link>
+              <Link to="/renterInfo"> Renter Info </Link>
             </div>
             </div>
             {/* having an about and an info page seems redundant */}
