@@ -113,13 +113,14 @@ function addBookableItem () {
                 noValidate
                 autoComplete="off"
             >
-                <div className="addBookableItemContainer">  
+
+                <div className="selectCompanyName">  
                 <h3 className="InputFieldTitle"> Select Client Company Name </h3>
                 <Autocomplete
                     options={clients}
-                    sx={{width:420}}
+                    sx={{width:620}}
                     value={clients.label}
-
+                    font-size="20px"
                     renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
                     onChange={(event, newValue) => setClientId(newValue.id)}
                 />
@@ -203,7 +204,7 @@ function addBookableItem () {
                         className='bookableItemsInput'
                         required
                         type="text"
-                        placeholder="UnitTime"
+                        placeholder="Unit of Time"
                         value={newBookableItem.unitTime}
                         onChange={(evt) => handleChange(evt, "unitTime")}
                     />
@@ -234,7 +235,7 @@ function addBookableItem () {
                     <InputLabel id="demo-simple-select-label" className="SelectCategoryTitlePlaceholder">Category</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
-                        sx={{ width: 300 }}
+                        sx={{ width: 400 }}
                         id="demo-simple-select"
                         text="SELECT CATEGORY HERE"
                         label="Age"
