@@ -1,27 +1,4 @@
-.bookableForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* .submitBtn {
-    display: flex;
-    justify-content: flex-end;
-} */
-
-.TitleNameBookableForm{
-    font-variant: small-caps;
-    font-weight: 900;
-}
-
-.BookableItemFormButtons{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    justify-content:center ;    
-
-
-}
+/* container holding all of the input fields (the MUI paper) */
 .addBookableItemContainer{
     display: flex;
     flex-direction: column;
@@ -33,8 +10,8 @@
     line-height: 1em;
     margin-bottom: 20px;
     margin-top: 20px;
-
 }
+/* client name input field and title  */
 .selectCompanyName{
     margin-top: 40px;
     text-align: center;
@@ -44,32 +21,21 @@
    align-items: center;
    
 }
-.BookableItemContainer{
-    display: flex;
- 
-}
 
 
-.bookableItemBtn:hover{
-    background-color: rgb(158, 216, 216);
-    border:rgb(56, 10, 107) 5px solid; 
-}
-
-
+/* very small adjustment for company name input fields */
 .css-17i7n9v .MuiTextField-root{
-    width: 600px;
+ 
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-}
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
-    width: 600px;
-    display: flex;
-    justify-content: center;
+    
+    
 }
 
 
 
+/* input fields : title, summary, rate, unit time, details */
 .bookableItemsInput{
     width: 615px;
     height: 50px;
@@ -118,6 +84,13 @@
 .categoryAutocomplete{
     display: flex;
     width: 600px;
+}
+
+/* client company name and select category input fields */
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    width: 600px;
+    display: flex;
+    justify-content: center;
 }
 /* spacing for each input section */
 .adminCategoryInputContainer{
