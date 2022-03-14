@@ -55,15 +55,18 @@ function CategoryInput() {
 
     return (
         <>
+        <div className="categoryInputOne"> 
          <h1 className="categoryInputTitle">Assign Category For Bookable Item Here </h1>
-            <br></br>
-            <label> Choose a Category for the Specified Item <Box sx={{ minWidth: 120 }}>
+            
+             <Box sx={{ minWidth: 120 }}>
                 <br></br>
                 <FormControl class="adminCategoryInputContainer">
                     <InputLabel id="demo-simple-select-label">Category</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
+                        text="SELECT CATEGORY HERE"
+                        className="adminCategoryDropdown"
                         label="Age"
                         onChange= {event => setParentId(event.target.value)}
                     >
@@ -72,7 +75,8 @@ function CategoryInput() {
                         ))}
                     </Select>
                 </FormControl>
-            </Box></label>  
+            </Box>  
+            </div>
            <br></br>
            {/* Dropdown of bookable items that have been registered with the site */}
            <Autocomplete

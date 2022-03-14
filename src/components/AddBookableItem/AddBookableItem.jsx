@@ -9,7 +9,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import CategoryInput from '../CategoryInput/CategoryInput'
 import { useHistory, useParams } from "react-router-dom";
 
 
@@ -108,7 +108,7 @@ function addBookableItem () {
                     renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
                     onChange={(event, newValue) => setClientId(newValue.id)}
                 />
-                <label>Choose a category for the Item<Box sx={{ minWidth: 120}}>
+                {/* <label>Choose a category for the Item<Box sx={{ minWidth: 120}}>
                     <FormControl sx={{ m: 1, minWidth: 150 }}>
                         <InputLabel id="demo-simple-select-autowidth-label">Category</InputLabel>
                         <Select
@@ -122,7 +122,10 @@ function addBookableItem () {
                             ))}
                         </Select>
                     </FormControl>
-                </Box></label>
+                                  
+                            </Box></label> */}
+                 {/* CATEGORY INPUT COMPONENT IMPORTED INTO CLIENT INVITE FORM */}
+                        <CategoryInput />
                 <Grid className="bookableForm">
                     <Input
                         required
@@ -177,6 +180,7 @@ function addBookableItem () {
                         value={newBookableItem.details}
                         onChange={(evt) => handleChange(evt, "details")}
                     />
+  
                     <Button
                         type='file'
                         onChange={(e) => setFileData(e.target.files[0])}
@@ -199,6 +203,8 @@ function addBookableItem () {
                     >
                         Submit
                     </Button>
+                    
+
                 </Grid>
             </Box>
         </>

@@ -5,7 +5,7 @@ import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
-import CategoryInput from '../CategoryInput/CategoryInput'
+
 
 import './InviteClient.css'
 
@@ -227,8 +227,7 @@ function InviteClient(){
                 />
             </div> */}
              </div>
-            {/* CATEGORY INPUT COMPONENT IMPORTED INTO CLIENT INVITE FORM */}
-             <CategoryInput />
+         
              <br/>
             <div>
                 <Button
