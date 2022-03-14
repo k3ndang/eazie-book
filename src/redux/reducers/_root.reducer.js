@@ -14,6 +14,9 @@ import clientSelectedItem from './setClientDetailItem.reducer';
 import clientList from './clientList.reducer';
 import renter from './renter.reducer';
 import photos from './photos.reducer';
+import renterBooking from './renterBooking.reducer';
+
+
 
 
 // rootReducer is the primary reducer for our entire project
@@ -32,14 +35,15 @@ const rootReducer = combineReducers({
   itemList, // for the Autocomplete on the category input form
   categoryList, //stores all of the categories in the category table
   selectedBookableItem, // selecting this bookableItem by ID to be edit
-  clients,
   activeClient,
   companyName,
   sideBySide,
   clientSelectedItem,
   clientList,
-  renter,
+  renterReducer,
   activeClient,
+  renterBooking,
+  renter,
   photos
 });
 

@@ -5,7 +5,7 @@ function* bookableItemSaga() {
     yield takeEvery('FETCH_BOOKABLE_ITEM', fetchBookableItem);
     yield takeEvery('POST_BOOKABLE_ITEM', postBookableItem);
     yield takeEvery('POST_PHOTO', postPhoto)
-    yield takeEvery('RENTER_FETCH_BOOKABLEITEM', renterFetchBookableItem)
+    yield takeEvery('RENTER_FETCH_BOOKABLE_ITEM', renterFetchBookableItem)
     yield takeEvery('FETCH_SELECTED_BOOKABLE_ITEM', fetchSelectedBookableItem);
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
