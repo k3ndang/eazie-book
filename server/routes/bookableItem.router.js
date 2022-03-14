@@ -1,6 +1,6 @@
 const express = require('express');
-const pool = require('../modules/pool');
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+const pool = require('../modules/pool');
 const router = express.Router();
 
 const multer  = require('multer');
@@ -20,14 +20,21 @@ const upload = multer({ storage: fileStorageEngine });
 //grabs data from the bookable items in the database 
 //comes from the fetchBookable item saga
 router.get('/', rejectUnauthenticated, (req, res) => {
-    const sqlText = 
-    `SELECT * FROM bookable_items`
+    const sqlText = `
+        SELECT * FROM bookable_items
+        JOIN "user" ON "bookable_items"."clientId" = "user"."id"
+        JOIN "categories" ON "bookable_items"."categoryId" = "categories"."id"
+    `;
 
     pool.query(sqlText)
         .then((result) => {
             console.log('result is', result.rows);
             
             res.send(result.rows)
+        })
+        .catch((err) => {
+            console.error('ERROR in getting bookable_items', err);
+            res.sendStatus(500);
         })
 })
 
@@ -47,6 +54,10 @@ router.get('/renterReq/:categoryId', rejectUnauthenticated, (req, res) => {
         .then((result) => {
             console.log('result is', result.rows);
             res.send(result.rows)
+        })
+        .catch((err) => {
+            console.error('ERROR getting by id in bookableItem', err);
+            res.sendStatus(500);
         })
 })
 
