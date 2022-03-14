@@ -1,0 +1,102 @@
+.ClientInviteContainer{
+    
+    background-color: rgb(158, 190, 216);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:5px solid black;
+    width: 600px;
+    margin-left: 33%;
+    margin-top: 10px;
+    font-variant: small-caps;
+
+}
+
+.ClientInviteTitle{
+    text-align: center;
+    background-color: rgb(158, 190, 216);
+    width: 500px;
+    padding: 10px;
+    
+
+}
+
+.ClientInviteIndividualInput{
+    background-color: rgb(158, 190, 216);
+    width: 100%;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    border-left: black solid 2px;
+    border-right: black solid 2px;
+    border-top: black solid 2px;
+    margin-bottom: 10px;
+    
+}
+
+Input{
+    text-align: center;
+    color:rgb(2, 2, 5);
+
+}
+
+.input{
+    width: 500px;
+    color:rgb(2, 2, 5);
+    font-weight: 900;
+
+}
+
+.ClientInviteInputFields{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:rgb(2, 2, 5);
+    
+}
+
+.ClientInviteBackButton{
+    margin-top: 10px;
+    border: 5px solid;
+    color: rgb(2, 2, 5);
+    font-weight: 900;
+}
+
+.submitBtn{
+    margin-bottom: 20px;
+    border: 5px solid;
+    color: rgb(2, 2, 5);
+    font-weight: 900;
+
+}
+
+
+.ClientInviteBackButton:hover{
+    margin-top: 10px;
+    border: 5px solid;
+    color: rgb(1, 7, 5);
+    font-weight: 900;
+    background-color: rgb(158, 216, 189);
+
+}
+
+
+.submitBtn:hover{
+    border: 5px solid;
+    color: rgb(1, 7, 5);
+    font-weight: 900;
+    background-color: rgb(158, 216, 189);
+
+}
+
+.ClientInviteIndividualInput:hover{
+    background-color: rgb(158, 216, 189);
+    width: 100%;
+    align-items: center;
+    display: flex;
+    border-left: black solid 2px;
+    border-right: black solid 2px;
+    border-top: black solid 2px;
+    margin-bottom: 10px;
+    
+}
