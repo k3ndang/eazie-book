@@ -311,7 +311,7 @@ function App() {
 
           <Route 
             exact
-            path="/thankyou"
+            path="/thankyou/:id"
           >
             <ThankYou />
           </Route>

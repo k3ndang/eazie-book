@@ -16,7 +16,7 @@ function RenterReviewPage () {
             type: "BOOKING_CONFIRM",
             payload: reviewBooking
         })
-        history.push('/thankyou')
+        history.push(`/thankyou/${reviewBooking.clientId}`)
     }
 
     return(

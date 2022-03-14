@@ -51,6 +51,7 @@ CREATE TABLE "renter_booking" (
 	"renterId" INTEGER,
 	FOREIGN KEY ("renterId") REFERENCES "user"(id),
 	"bookableId" INTEGER,
-	FOREIGN KEY ("bookableId") REFERENCES "bookable_items"(id)
+	FOREIGN KEY ("bookableId") REFERENCES "bookable_items"(id),
+	"confirmationNumber" TEXT NOT NULL DEFAULT substring(md5(random()::TEXT), 0, 14)
 );
 
