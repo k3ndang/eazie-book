@@ -29,7 +29,6 @@ function CategoryInput() {
 
         const [parentId, setParentId] = useState('');
         const [newItem, setNewItem] = useState('');
-
         console.log('parentId is,', parentId);
         console.log('newItem is', newItem);
 

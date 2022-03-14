@@ -9,8 +9,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import CategoryInput from '../CategoryInput/CategoryInput'
 import { useHistory, useParams } from "react-router-dom";
+import Paper from '@mui/material/Paper';
 
 
 import { useDispatch } from "react-redux";
@@ -28,7 +28,10 @@ function addBookableItem () {
 
     const clients = useSelector(store => store.companyName);
     const categoryList = useSelector(store => store.categoryList);
-
+    //grab the list of item names from the reducer 
+    const itemList = useSelector(store=> store.itemList);
+  
+   
     const [newBookableItem, setNewBookableItem] = useState({
         title:    '',
         summary:  '',
@@ -42,7 +45,12 @@ function addBookableItem () {
     const [fileData, setFileData] = useState();
 
     const[ clientId, setClientId] = useState('');
+    
+    //category input state variables 
+    const [parentId, setParentId] = useState('');
+    const [newItem, setNewItem] = useState('');
 
+    
     useEffect(() => {
         dispatch({
             type: 'FETCH_COMPANY_NAME'
@@ -51,6 +59,10 @@ function addBookableItem () {
         dispatch({
             type: 'FETCH_CATEGORIES'
         });
+
+        dispatch({
+            type: 'FETCH_ITEM_LIST'
+            });
     }, []);
     
     const handleChange = (evt, property) => {
@@ -90,7 +102,8 @@ function addBookableItem () {
         <>
         <button onClick={goBack}>Back</button>
 
-
+        <Paper className="addBookableItemContainer">
+            
             <Box
                 onSubmit={addNewBookableItem}
                 component="form"
@@ -100,14 +113,18 @@ function addBookableItem () {
                 noValidate
                 autoComplete="off"
             >
+                <div className="addBookableItemContainer">  
+                <h3 className="InputFieldTitle"> Select Client Company Name </h3>
                 <Autocomplete
                     options={clients}
-                    sx={{width:350}}
+                    sx={{width:420}}
                     value={clients.label}
 
                     renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
                     onChange={(event, newValue) => setClientId(newValue.id)}
                 />
+                </div>
+
                 {/* <label>Choose a category for the Item<Box sx={{ minWidth: 120}}>
                     <FormControl sx={{ m: 1, minWidth: 150 }}>
                         <InputLabel id="demo-simple-select-autowidth-label">Category</InputLabel>
@@ -124,89 +141,158 @@ function addBookableItem () {
                     </FormControl>
                                   
                             </Box></label> */}
-                 {/* CATEGORY INPUT COMPONENT IMPORTED INTO CLIENT INVITE FORM */}
-                        <CategoryInput />
-                <Grid className="bookableForm">
-                    <Input
+                  
+                <Grid className="addBookableItemContainer">
+                <div className="adminCategoryInputContainer">
+                <h3 className="InputFieldTitle"> Enter Bookable Item Title:</h3>
+                    <input
                         required
+                        className="bookableItemsInput"
                         type="text"
                         placeholder="Title"
                         value={newBookableItem.title}
                         onChange={(evt) => handleChange(evt, "title")}
                     />
-                    <TextField
+                    </div>
+
+                    <div className="adminCategoryInputContainer">
+                    <h3 className="InputFieldTitle"> Enter Summary of Item: </h3>
+                    <textarea
+                        placeholder="ENTER SUMMARY HERE"
+                        className='bookableItemsInput'
                         required
                         type="text"
                         label="Summary"
                         color="secondary"
                         focused
+                        fullWidth
                         multiline
-                        rows={4}
+                        rows={3}
                         variant="outlined"
                         value={newBookableItem.summary}
                         onChange={(evt) => handleChange(evt, "summary")}
                     />
-                    <Input
-                        required
-                        type="text"
-                        placeholder="UnitTime"
-                        value={newBookableItem.unitTime}
-                        onChange={(evt) => handleChange(evt, "unitTime")}
-                    />
-                    <Input
+                    </div>
+
+                    <div className="adminCategoryInputContainer">
+                    <h3 className="InputFieldTitle"> Enter Street Address of Equipment:</h3>
+                    <input
+                        className='bookableItemsInput'
                         required
                         type="text"
                         placeholder="Location"
                         value={newBookableItem.location}
                         onChange={(evt) => handleChange(evt, "location")}
                     />
-                    <Input
+                    </div>
+                    <div className="adminCategoryInputContainer">
+                    <h3 className="InputFieldTitle"> Rental Rate Here:</h3>
+                    <input
+                        className='bookableItemsInput'
                         required
-                        
                         type="integer"
                         placeholder="Rate"
                         value={newBookableItem.rate}
                         onChange={(evt) => handleChange(evt, "rate")}
                     />
-                    <TextField
+                    </div>
+
+                    <div className="adminCategoryInputContainer">
+                    <h3 className="InputFieldTitle"> Select Unit of Time: </h3>
+                    <input
+                        className='bookableItemsInput'
+                        required
+                        type="text"
+                        placeholder="UnitTime"
+                        value={newBookableItem.unitTime}
+                        onChange={(evt) => handleChange(evt, "unitTime")}
+                    />
+                    </div>
+                    <div className="adminCategoryInputContainer">
+                    <h3 className="InputFieldTitle"> Enter Details of Bookable Item:</h3>
+                    <textarea
+                        className="bookableItemsInput"
+                        placeholder='ENTER DETAILS HERE'
                         required
                         type="text"
                         label="Detail"
                         color="secondary"
                         focused
                         multiline
-                        rows={4}
+                        fullWidth
+                        rows={2}
                         variant="outlined"
                         value={newBookableItem.details}
                         onChange={(evt) => handleChange(evt, "details")}
                     />
-  
-                    <Button
-                        type='file'
-                        onChange={(e) => setFileData(e.target.files[0])}
-                        variant="outlined"
-                        color="primary"
-                        size="small"
-                        component='label'
-                    >Upload a Photo
-                    <input 
+                  </div>
                     
-                    type='file'
-                    hidden
-                    />
-                    </Button>
-                    <Button
-                        type="submit"
-                        variant="outlined"
-                        color="primary"
-                        size="small"
+            <div className="adminCategoryInputContainer">
+            <h3 className="SelectCategoryTitle"> Select Category </h3>
+             <Box sx={{ minWidth: 400 }} className="categoryAutocomplete">
+                <FormControl >
+                    <InputLabel id="demo-simple-select-label" className="SelectCategoryTitlePlaceholder">Category</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        sx={{ width: 300 }}
+                        id="demo-simple-select"
+                        text="SELECT CATEGORY HERE"
+                        label="Age"
+                        className="selectCategoryPlaceholder"
+                        onChange= {event => setParentId(event.target.value)}
                     >
-                        Submit
-                    </Button>
-                    
-
+                        {categoryList.map(category => (
+                            <MenuItem value={category.id} key={category.id} onChange= {event => setParentId(event.target.value)}>{category.name}</MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+            </Box>  
+            </div>
+           
+         <br/> 
+           {/* Dropdown of bookable items that have been registered with the site */}
+{/* 
+          <div className="BookableItemContainer"> 
+           <Autocomplete
+            options= {itemList}
+            sx={{ width: 420 }}
+            value= {itemList.label}
+            renderInput={(params) => <TextField {...params} label="Bookable Items" />}
+            onChange={(event, newValue) => setNewItem(newValue.id)}
+            />     
+            </div>
+          */}
+            
+            <Button
+                type='file'
+                onChange={(e) => setFileData(e.target.files[0])}
+                variant="outlined"
+                size="large"
+                component='label'
+                
+            >Upload a Photo
+            <input 
+            type='file'
+            hidden
+            />
+            </Button>
+          
+            <br/>
+            <br/>
+            <br/>
+            <Button
+                type="submit"
+                variant="outlined"
+                size="large"
+                className="FormSubmitBtn"
+            >
+                Submit
+            </Button>
+           
+            
                 </Grid>
             </Box>
+            </Paper>
         </>
     )
 };
