@@ -34,7 +34,8 @@ import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
 import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
 import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
 import BookableItemList from '../BookableItemsList/BookableItemsList'
-import RenterInfo from '../RenterInfo/RenterInfo'
+import RenterInfo from '../RenterInfo/RenterInfo';
+import AddPhoto from '../AddPhoto/AddPhoto';
 
 import './App.css';
 
@@ -72,6 +73,7 @@ function App() {
           >
             <ViewBookableItem />
           </Route>
+
           <ProtectedRoute
           exact 
           path="/renterInfo"
@@ -134,20 +136,25 @@ function App() {
           >
             <EditBookableItemForm />
           </Route>
-
-
             
-            <Route
+          <ProtectedRoute
             exact
             path='/renterHistory'
-            >
+          >
               <RenterHistory />
-            </Route>
+            </ProtectedRoute>
           <ProtectedRoute
            exact
             path="/categoryInput"
           >
             <CategoryInput />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/addPhotos/:id"
+          >
+            <AddPhoto />
           </ProtectedRoute>
 
           {/* ROUTE for info page */}

@@ -12,7 +12,8 @@ import companyName from './companyName.reducer';
 import sideBySide from './sideBySide.reducer';
 import clientSelectedItem from './setClientDetailItem.reducer';
 import clientList from './clientList.reducer';
-import renter from './renter.reducer'
+import renter from './renter.reducer';
+import photos from './photos.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -38,7 +39,8 @@ const rootReducer = combineReducers({
   clientSelectedItem,
   clientList,
   renter,
-  activeClient
+  activeClient,
+  photos
 });
 
 export default rootReducer;

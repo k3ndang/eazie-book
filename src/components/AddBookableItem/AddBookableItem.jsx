@@ -69,15 +69,16 @@ function addBookableItem () {
                 clientId: clientId
             }
         })
-        const data = new FormData();
+        /* const data = new FormData();
         data.append('file', fileData)
+        const imageToSend = {
+            data: data,
+            newBookableItem: newBookableItem
+        }
         dispatch({
             type: 'POST_PHOTO', 
-            payload: {
-                data: data,
-                id: newBookableItem.clientId
-            }
-        })
+            payload: imageToSend
+        }) */
 
     }
 
@@ -177,7 +178,7 @@ function addBookableItem () {
                         value={newBookableItem.details}
                         onChange={(evt) => handleChange(evt, "details")}
                     />
-                    <Button
+                   {/*  <Button
                         type='file'
                         onChange={(e) => setFileData(e.target.files[0])}
                         variant="outlined"
@@ -190,7 +191,7 @@ function addBookableItem () {
                     type='file'
                     hidden
                     />
-                    </Button>
+                    </Button> */}
                     <Button
                         type="submit"
                         variant="outlined"

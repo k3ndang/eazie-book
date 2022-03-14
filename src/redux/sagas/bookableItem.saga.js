@@ -10,8 +10,23 @@ function* bookableItemSaga() {
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
     yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory);
+    yield takeEvery('FETCH_ITEM_PHOTOS', fetchItemPhotos);
 }
 
+
+function* fetchItemPhotos(action){
+    try{
+        const response = yield axios.get(`/api/photos/${action.payload}`);
+
+        yield put({
+            type: 'SET_ITEM_PHOTOS',
+            payload: response.data,
+        });
+    }
+    catch(error) {
+        console.error('ERROR getting photos for item', error);
+    }
+}
 
 function* renterFetchBookableItem (action) {
     try {
@@ -55,16 +70,17 @@ function* fetchBookableItem() {
 
 
 function* postPhoto(action) {
-    
-    console.log('');
-    
-    yield axios.post(`/api/photos`, action.payload.data)
-    
-    
-    
-    /* yield put({
-        type: 'FETCH_PHOTOS'
-    }) */
+    try{
+        const config = {
+            headers: {"Contents-Type": "application/json"},
+            withCredentials: true,
+        };
+
+        yield axios.post(`/api/photos/:id`, action.payload, config);
+    }
+    catch (error) {
+        console.error('ADD photo failed', error);
+    }
 }
 
 

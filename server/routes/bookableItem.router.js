@@ -1,7 +1,6 @@
 const express = require('express');
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 const pool = require('../modules/pool');
-const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 const router = express.Router();
 
 const multer  = require('multer');
