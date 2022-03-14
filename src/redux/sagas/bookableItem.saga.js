@@ -91,7 +91,7 @@ function* saveEditBookableItem (action) {
         yield put({
             type: 'FETCH_BOOKABLE_ITEM',
         });
-    }
+    } 
     catch (err) {
         console.log('FAILED update selected bookableItem', err);
     }
