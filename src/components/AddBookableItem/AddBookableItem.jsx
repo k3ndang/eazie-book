@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Button, Grid } from "@material-ui/core";
 import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 import Box from '@mui/material/Box';
+import Autocomplete from '@mui/material/Autocomplete';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 import { useHistory, useParams } from "react-router-dom";
 
 
 import { useDispatch } from "react-redux";
 import './AddBookableItem.css';
-
 
 function addBookableItem () {
     /**
@@ -21,6 +26,9 @@ function addBookableItem () {
     const params = useParams();
     const history = useHistory();
 
+    const clients = useSelector(store => store.companyName);
+    const categoryList = useSelector(store => store.categoryList);
+
     const [newBookableItem, setNewBookableItem] = useState({
         title:    '',
         summary:  '',
@@ -28,11 +36,22 @@ function addBookableItem () {
         rate:     '',
         unitTime: '',
         location: '',
-        categoryId: 1,
-        clientId:    1,
+        categoryId: ''
     });
 
-    const [fileData, setFileData] = useState()
+    const [fileData, setFileData] = useState();
+
+    const[ clientId, setClientId] = useState('');
+
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_COMPANY_NAME'
+        });
+
+        dispatch({
+            type: 'FETCH_CATEGORIES'
+        });
+    }, []);
     
     const handleChange = (evt, property) => {
         setNewBookableItem({...newBookableItem, [property]: evt.target.value})
@@ -45,7 +64,10 @@ function addBookableItem () {
         
         dispatch({
             type: 'POST_BOOKABLE_ITEM',
-            payload:  newBookableItem
+            payload:  {
+                newBookableItem: newBookableItem,
+                clientId: clientId
+            }
         })
         const data = new FormData();
         data.append('file', fileData)
@@ -67,6 +89,8 @@ function addBookableItem () {
     return(
         <>
         <button onClick={goBack}>Back</button>
+
+
             <Box
                 onSubmit={addNewBookableItem}
                 component="form"
@@ -76,6 +100,29 @@ function addBookableItem () {
                 noValidate
                 autoComplete="off"
             >
+                <Autocomplete
+                    options={clients}
+                    sx={{width:350}}
+                    value={clients.label}
+
+                    renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
+                    onChange={(event, newValue) => setClientId(newValue.id)}
+                />
+                <label>Choose a category for the Item<Box sx={{ minWidth: 120}}>
+                    <FormControl sx={{ m: 1, minWidth: 150 }}>
+                        <InputLabel id="demo-simple-select-autowidth-label">Category</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-autowidth-label"
+                            id="demo-simple-select-autowidth"
+                            label="Category"
+                            onChange={(evt) => handleChange(evt, "categoryId")}
+                        >
+                            {categoryList.map(category => (
+                                <MenuItem value={category.id} key={category.id} onChange={(evt) => handleChange(evt, "categoryId")}>{category.name}</MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Box></label>
                 <Grid className="bookableForm">
                     <Input
                         required

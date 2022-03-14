@@ -42,8 +42,8 @@ function ViewBookableItem() {
 
     return(
         <>
-        <button onClick={goBack}>Back</button>
-        <button onClick={addItem}>Add New Item</button>
+        <Button onClick={goBack}>Back</Button>
+        <Button onClick={addItem}>Add New Item</Button>
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>

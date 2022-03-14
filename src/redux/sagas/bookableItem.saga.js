@@ -9,7 +9,7 @@ function* bookableItemSaga() {
     yield takeEvery('FETCH_SELECTED_BOOKABLE_ITEM', fetchSelectedBookableItem);
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
-    yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory)
+    yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory);
 }
 
 
@@ -91,14 +91,14 @@ function* saveEditBookableItem (action) {
         yield put({
             type: 'FETCH_BOOKABLE_ITEM',
         });
-    }
+    } 
     catch (err) {
         console.log('FAILED update selected bookableItem', err);
     }
 }; // end saveEditBookableItem
 
 function* postBookableItem(action) {
-    console.log('post bookableItem saga', action.payload);
+    console.log('post bookableItem saga clientId', action.payload.clientId);
     console.log('post bookableItem picture data', action.payload.data);
 
     try {

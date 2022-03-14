@@ -4,6 +4,7 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
+//modifies a category for a specific bookable item
 router.put('/:id', rejectUnauthenticated, (req, res) => {
     const queryText = `
         UPDATE "bookable_items"
