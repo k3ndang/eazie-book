@@ -15,10 +15,7 @@ function BookableItemDetail () {
     const dispatch = useDispatch();
     const selectedItem = useSelector(store => store.selectedBookableItem)
     console.log('bookItem', selectedItem)
-    // const [checkoutItem, setCheckoutItem] = useState({
-    //     startDate: "",
-    //     hours_book: ""
-    // });
+    const user = useSelector(store => store.user)
     const [selectedDate, handleDateChange] = useState(new Date());
 
     const hours = [
@@ -58,7 +55,7 @@ function BookableItemDetail () {
             payload: {
                 selectedItem,
                 date: selectedDate,
-                clientId: 3,
+                clientId: user.id,
                 hourRenting
             }
         })

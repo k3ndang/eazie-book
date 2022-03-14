@@ -5,7 +5,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid';
-import BoatDetail from '../BookableItemDetail/BookableItemDetail'
+import BoatDetail from '../../BookableItemDetail/BookableItemDetail'
 
 
 
