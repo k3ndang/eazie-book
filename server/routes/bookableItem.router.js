@@ -17,7 +17,8 @@ const upload = multer({ storage: fileStorageEngine });
 
 
 
-
+//grabs data from the bookable items in the database 
+//comes from the fetchBookable item saga
 router.get('/', rejectUnauthenticated, (req, res) => {
     const sqlText = 
     `SELECT * FROM bookable_items`
@@ -30,6 +31,8 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         })
 })
 
+//allows client to grab a specific category of item from the database 
+//comes from the bookable item saga
 router.get('/renterReq/:categoryId', rejectUnauthenticated, (req, res) => {
     const categoryId = req.params.categoryId;
 
@@ -46,6 +49,7 @@ router.get('/renterReq/:categoryId', rejectUnauthenticated, (req, res) => {
             res.send(result.rows)
         })
 })
+
 
 router.post('/', upload.single("file"), rejectUnauthenticated, (req, res) => {
     console.log('made it to server', req.body.newBookableItem);
@@ -106,6 +110,7 @@ router.get('/selected/:id', rejectUnauthenticated, (req, res) => {
         })
 }); // end of GET /selected/:id
 
+// allows the user to modify a specific bookable item based on id 
 router.put('/', rejectUnauthenticated, (req, res) => {
     let updateBookableItem = req.body;
 

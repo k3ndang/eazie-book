@@ -3,6 +3,7 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
+//grabs photos for a nested component in the landing page
 router.get('/:id', (req, res) => {
     const queryText = `
         SELECT * FROM "bookable_items"
