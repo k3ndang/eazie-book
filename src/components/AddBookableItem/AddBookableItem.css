@@ -85,25 +85,7 @@
 }
 
 
-.adminCategoryInputContainer{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    width: 650px;
-    margin-top: 10px;
-    margin: 0;
-    line-height: 1;
-    margin: 2px;
-    margin-top:10px;
-}
 
-.categoryAutocomplete{
-    display: flex;
-    width: 600px;
-    align-items: center;
-    text-align: center;
-}
 /* sets the background color of the select category and select company name inputs */
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
     background-color: rgb(205, 227, 255);
@@ -116,24 +98,37 @@
     font-size: 35px;
 }
 
+/* select category title  */
 .SelectCategoryTitle{
     margin: 10px;
     text-align: center;
     font-size: 35px;
-   
 }
+/* submit button  */
 .FormSubmitBtn{
     width: 200px;
 }
-
+/* placeholder text for select category placeholder */
 .SelectCategoryTitlePlaceholder{
     text-align: center;
-    margin-left: 250px;
-    font-size: 40px;
-    font-weight: 800;
-    
+    margin-left: 250px;  
 }
 
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
-    font-size: 10em;
+/* select category input field  */
+.categoryAutocomplete{
+    display: flex;
+    width: 600px;
+}
+/* spacing for each input section */
+.adminCategoryInputContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 650px;
+    margin-top: 10px;
+    margin: 0;
+    line-height: 1;
+    margin: 2px;
+    margin-top:10px;
 }
