@@ -11,7 +11,7 @@ import updateClientSaga from './updateClient.saga';
 import categorySaga from './category.saga';
 import fetchBookableItems from './fetchBookableItems.saga';
 import linkItemSaga from './linkItem.saga';
-import renterBooking from './renterBooking.saga';
+import renterBooking from './renterbooking.saga';
 import fetchCompanyName from './fetchCompanyName.saga';
 import fetchSideBySideSage from './fetchSideBySide.saga';
 import renterSaga from './renter.saga'
