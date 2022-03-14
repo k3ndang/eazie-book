@@ -77,8 +77,9 @@ function InviteClient(){
         <>
         <Paper onSubmit={inviteClient} className="ClientInviteContainer">
             <Button variant="outlined" onClick={goBack}>Back</Button>
-            <h2>Invite Client</h2>
-            <div>
+            <h2 className="ClientInviteTitle">Invite Client</h2>
+            <div className="ClientInviteInputFields">
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
@@ -89,7 +90,7 @@ function InviteClient(){
                     onChange={(event) => setFirstName(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
@@ -100,7 +101,7 @@ function InviteClient(){
                     onChange={(event) => setLastName(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input  
                     className="input"
                     type="text"
@@ -111,7 +112,7 @@ function InviteClient(){
                     onChange={(event) => setUsername(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="password"
@@ -122,7 +123,7 @@ function InviteClient(){
                     onChange={(event) => setPassword(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
@@ -133,7 +134,7 @@ function InviteClient(){
                     onChange={(event) => setEmail(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
@@ -144,7 +145,7 @@ function InviteClient(){
                     onChange={(event) => setPhoneNumber(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
@@ -155,7 +156,7 @@ function InviteClient(){
                     onChange={(event) => setCompanyName(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
@@ -166,7 +167,7 @@ function InviteClient(){
                     onChange={(event) => setAddress(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input 
                     className="input"
                     type="text"
@@ -177,7 +178,7 @@ function InviteClient(){
                     onChange={(event) => setCity(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
@@ -188,7 +189,7 @@ function InviteClient(){
                     onChange={(event) => setState(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="number"
@@ -199,7 +200,7 @@ function InviteClient(){
                     onChange={(event) => setZipCode(event.target.value)}
                 />
             </div>
-            <div>
+            <div className="ClientInviteIndividualInput">
                 <Input
                     className="input"
                     type="text"
@@ -220,6 +221,7 @@ function InviteClient(){
                     onChange={(event) => setAuthLevel(event.target.value)}
                 />
             </div> */}
+             </div>
             <div>
                 <Button
                     variant="outlined"
