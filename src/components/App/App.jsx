@@ -77,7 +77,7 @@ function App() {
           </Route>
           <ProtectedRoute
           exact 
-          path="/renterInfo"
+          path="/client/renterInfo"
           >
             <RenterInfo />
           </ProtectedRoute>
@@ -109,7 +109,7 @@ function App() {
           {/* ROUTE for client table */}
           <ProtectedRoute
             exact 
-            path="/clients"
+            path="/admin/clients"
           >
             <ClientTable />  
           </ProtectedRoute>
@@ -117,7 +117,7 @@ function App() {
           {/* ROUTE for bookableItem page */}
           <ProtectedRoute
             exact
-            path="/viewBookableItem"
+            path="/admin/viewBookableItem"
           >
             <ViewBookableItem />
           </ProtectedRoute>
@@ -139,13 +139,13 @@ function App() {
           </Route>
           <Route
             exact
-            path='/renterHistory'
+            path='/renter/history'
             >
               <RenterHistory />
             </Route>
           <ProtectedRoute
            exact
-            path="/categoryInput"
+            path="/admin/categoryInput"
           >
             <CategoryInput />
           </ProtectedRoute>
@@ -173,7 +173,7 @@ function App() {
           {/* ROUTE for client bookable items */}
           <ProtectedRoute
             exact
-            path="/clientBookableItems"
+            path="/client/bookableItems"
           >
           <Route>
             <ClientBookableItems />
@@ -184,7 +184,7 @@ function App() {
           {/* ROUTE for specific client bookable items */}
           <ProtectedRoute
             exact 
-            path="/clientBookableItems/:id"
+            path="/client/bookableItems/:id"
           >
             <ClientDetailItem />
           </ProtectedRoute>
@@ -211,7 +211,7 @@ function App() {
           {/* ROUTE for renter watercraft */}
           <Route
             exact
-            path="/watercraft"
+            path="/renter/reservations"
           >
             <Watercraft />
           </Route>

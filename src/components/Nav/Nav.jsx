@@ -70,7 +70,7 @@ function Nav() {
               <Link to="/admin/invite"> Add a Client  </Link>
               {/* bring admin to category form */}
               {/* Could also say "edit bookable categories" */}
-              <Link to="/categoryInput"> Edit Categories </Link>
+              <Link to="/admin/categoryInput"> Edit Categories </Link>
               {/* brings admin to list of clients, perhaps this is redundant */}
               {/* <Link to="/"> Edit Clients </Link> */}
             </div>
@@ -78,9 +78,9 @@ function Nav() {
               <div className="dropdown">
             <button className="dropbtn"> View List</button>
             <div className="dropdown-content">
-              <Link to="/clients"> Client List </Link>
+              <Link to="/admin/clients"> Client List </Link>
               {/* not sure if bookable items is a different page */}
-              <Link to="/viewBookableItem"> Bookable Items List </Link>
+              <Link to="/admin/viewBookableItem"> Bookable Items List </Link>
             </div>
             </div>
             {/* having an about and an info page seems redundant */}
@@ -108,9 +108,9 @@ function Nav() {
               <div className="dropdown">
             <button className="dropbtn"> Reservations</button>
             <div className="dropdown-content">
-              <Link to="/watercraft"> Make A Reservation </Link>
+              <Link to="/renter/reservations"> Make A Reservation </Link>
               {/* This should be the list of everyone that has rented bookable items  */}
-              <Link to="/renterHistory"> View Reservations </Link>
+              <Link to="/renter/history"> View Reservations </Link>
             </div>
             </div>     
             <div className="dropdown">
@@ -137,9 +137,9 @@ function Nav() {
               <div className="dropdown">
             <button className="dropbtn"> View List</button>
             <div className="dropdown-content">
-              <Link to="/clientBookableItems"> Bookable Items  </Link>
+                <Link to="/client/bookableItems"> Bookable Items  </Link>
               {/* This should be the list of everyone that has rented bookable items  */}
-              <Link to="/renterInfo"> Renter Info </Link>
+              <Link to="/client/renterInfo"> Renter Info </Link>
             </div>
             </div>
             {/* having an about and an info page seems redundant */}
