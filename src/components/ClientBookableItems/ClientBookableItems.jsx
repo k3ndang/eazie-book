@@ -49,7 +49,7 @@ function ClientBookableItems() {
                     return (
                         <>
                             <Grid container key={item.img} className="clientListGridContainer">
-                                <Grid item>
+                                <Grid item className="clientListGridItem">
                                     <ImageListItem>
                                         <img
                                             src={`${item.url}?w=248&fit=crop&auto=format`}
@@ -61,13 +61,14 @@ function ClientBookableItems() {
                                     </ImageListItem>
                                 
 
-                                
+                                    <div className="clientItemTextBox"> 
                                     <h2 className="clientItemHeadingTitle">{item.title}</h2>
                                     <h4 className="clientItemTitle"> Category:</h4>  <div className="clientItemDescription">{item.name} </div> <br/>
                                     <h4 className="clientItemTitle"> Summary: </h4> <div className="clientItemDescription"> {item.summary} </div> <br/>
                                     <h4 className="clientItemTitle"> Rate: </h4> <div className="clientItemDescription">  {item.rate}  per {item.unitTime} </div> <br/>
                                     <h4 className="clientItemTitle"> Location: </h4> <div className="clientItemDescription">  {item.location} </div> <br/>
                                     <h4 className="clientItemTitle"> Details Regarding Rental: </h4> <div className="clientItemDescription"> {item.detail} </div> <br/>
+                                    </div>
                                 </Grid>
                             </Grid>
                         </>
