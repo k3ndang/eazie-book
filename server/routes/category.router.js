@@ -3,8 +3,9 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 const pool = require('../modules/pool');
 
 const router = express.Router();
+//all comes from the category saga
 
-// NEED TO PUT THIS BACK >>> ", rejectUnauthenticated"
+//grabs categories from the database 
 router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = `
         SELECT * FROM "categories"
@@ -20,9 +21,10 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     })
 }) 
 
+//posts a category to the database 
 router.post('/', rejectUnauthenticated, (req, res) => {
     console.log('req.body is', req.body);
-    const insertBirdQuery = `
+    const queryText = `
                                 INSERT INTO categories (
                                     "id", 
                                     "name", 
@@ -36,7 +38,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
                                 req.body.name,
                                 req.body.parentId
                                 ]
-              pool.query(insertBirdQuery, queryParams)
+              pool.query(queryText, queryParams)
               .then(dbRes => {
                   res.sendStatus(200);
               })

@@ -3,6 +3,8 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//selects all fields for the client list (requires 3 part join)
+//currently in the bookable item sage (note to fix that)
 router.get('/', (req, res) => {
 const sqlText = `
 SELECT
@@ -34,6 +36,7 @@ pool.query(sqlText, sqlParams)
     })
 })
 
+//grabs data for the renter info table, comes from the renter saga
 router.get('/info', (req, res) => {
     const sqlText = `
     SELECT 

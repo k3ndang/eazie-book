@@ -1,12 +1,12 @@
-const express = require('express');
+/* const express = require('express');
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 const encryptLib = require('../modules/encryption');
 const pool = require('../modules/pool');
 
 const router = express.Router();
-
+ */
 /* POST request to the database */
-router.post('/', rejectUnauthenticated, (req, res) => {
+/* router.post('/', rejectUnauthenticated, (req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const username = req.body.username;
@@ -19,7 +19,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     const state = req.body.state;
     const zipCode = req.body.zipCode;
     const websiteUrl = req.body.websiteUrl;
-    /* const authLevel = req.body.authLevel; */
+    
 
     const queryText = `
         INSERT INTO "user"
@@ -49,4 +49,5 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     })
 })
 
-module.exports = router;
+module.exports = router; */
+
