@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function RenterHistory() {
 
-    const renterReducer = useSelector(store => store.renterReducer)
+    const renterReducer = useSelector(store => store.renter.renterHistory)
 
     // console.log('renterReducer is', renterReducer);
     const dispatch = useDispatch()

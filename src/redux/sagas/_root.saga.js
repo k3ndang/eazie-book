@@ -11,7 +11,9 @@ import updateClientSaga from './updateClient.saga';
 import categorySaga from './category.saga';
 import fetchBookableItems from './fetchBookbaleItems.saga';
 import linkItemSaga from './linkItem.saga';
-
+import fetchCompanyName from './fetchCompanyName.saga';
+import fetchSideBySideSage from './fetchSideBySide.saga';
+import renterSaga from './renter.saga'
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -34,5 +36,8 @@ export default function* rootSaga() {
     categorySaga(),
     fetchBookableItems(),
     linkItemSaga(),
+    fetchCompanyName(),
+    fetchSideBySideSage(),
+    renterSaga()
   ]);
 }

@@ -29,11 +29,11 @@ function UserPage() {
 
       {user.authLevel === 'admin' && (
           <>
-            <div className='adminTableContainer'> 
+            {/* <div className='adminTableContainer'> 
             <div className="table-responsive">
                 <ClientTable />
               </div>
-              </div>
+              </div> */}
           </>
         )}
     </div>

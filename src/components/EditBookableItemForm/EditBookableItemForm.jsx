@@ -11,6 +11,9 @@ import { Button, Grid } from "@material-ui/core";
 // import Cancel from './CancelBtn'
 
 function EditBookableItemForm () {
+    const goBack = () => {
+        history.push('/viewBookableItem')
+    }
     const dispatch = useDispatch();
     const history = useHistory();
     const params = useParams();   // { id: 2 }
@@ -43,6 +46,7 @@ function EditBookableItemForm () {
     return (
     <>
         <h2>Edit Bookable Item</h2>
+        <Button onClick={goBack}>back</Button>
         <form onSubmit={handleSubmit}>
             <Input
                 type="text"

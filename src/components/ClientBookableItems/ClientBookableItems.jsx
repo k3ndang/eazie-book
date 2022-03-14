@@ -42,8 +42,10 @@ function ClientBookableItems() {
         <>
            {/* itemData[0].companyName breaks page not sure how to render client name once  */}
            {/* Category name not properly rendering  */}
+
         <h1 className="BookableItemsTitle"> List of Bookable items</h1>
             <ImageList sx={{ width: 1300, height: 750 }} className="imageContainer">
+
 
                  {itemData.map(item => {
                     return (
@@ -63,7 +65,7 @@ function ClientBookableItems() {
 
                                 
                                     <h2 className="clientItemHeadingTitle">{item.title}</h2>
-                                    <h4 className="clientItemTitle"> Category:</h4>  <div className="clientItemDescription">{item.name} </div> <br/>
+                                    <h4 className="clientItemTitle"> Category:</h4>   <div className="clientItemDescription">{item.name} </div> <br/>
                                     <h4 className="clientItemTitle"> Summary: </h4> <div className="clientItemDescription"> {item.summary} </div> <br/>
                                     <h4 className="clientItemTitle"> Rate: </h4> <div className="clientItemDescription">  {item.rate}  per {item.unitTime} </div> <br/>
                                     <h4 className="clientItemTitle"> Location: </h4> <div className="clientItemDescription">  {item.location} </div> <br/>
