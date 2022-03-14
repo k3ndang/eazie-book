@@ -73,8 +73,8 @@ function ViewBookableItem() {
                             <TableCell align="center">{row.rate}</TableCell>
                             <TableCell align="center">{row.unitTime}</TableCell>
                             <TableCell align="center">{row.location}</TableCell>
-                            <TableCell align="center">{row.categoryId}</TableCell>
-                            <TableCell align="center">{row.clientId}</TableCell>
+                            <TableCell align="center">{row.name}</TableCell>
+                            <TableCell align="center">{row.companyName}</TableCell>
                             <TableCell align="center">
                                 <Link 
                                     to={`/editBookableItemForm/${row.id}`}
