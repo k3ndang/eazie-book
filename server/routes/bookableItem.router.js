@@ -1,4 +1,5 @@
 const express = require('express');
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 const pool = require('../modules/pool');
 const router = express.Router();
 
@@ -16,10 +17,14 @@ const upload = multer({ storage: fileStorageEngine });
 
 
 
-
-router.get('/', (req, res) => {
-    const sqlText = 
-    `SELECT * FROM bookable_items`
+//grabs data from the bookable items in the database 
+//comes from the fetchBookable item saga
+router.get('/', rejectUnauthenticated, (req, res) => {
+    const sqlText = `
+        SELECT * FROM bookable_items
+        JOIN "user" ON "bookable_items"."clientId" = "user"."id"
+        JOIN "categories" ON "bookable_items"."categoryId" = "categories"."id"
+    `;
 
     pool.query(sqlText)
         .then((result) => {
@@ -27,9 +32,15 @@ router.get('/', (req, res) => {
             
             res.send(result.rows)
         })
+        .catch((err) => {
+            console.error('ERROR in getting bookable_items', err);
+            res.sendStatus(500);
+        })
 })
 
-router.get('/renterReq/:categoryId', (req, res) => {
+//allows client to grab a specific category of item from the database 
+//comes from the bookable item saga
+router.get('/renterReq/:categoryId', rejectUnauthenticated, (req, res) => {
     const categoryId = req.params.categoryId;
 
     const sqlText = `
@@ -44,9 +55,14 @@ router.get('/renterReq/:categoryId', (req, res) => {
             console.log('result is', result.rows);
             res.send(result.rows)
         })
+        .catch((err) => {
+            console.error('ERROR getting by id in bookableItem', err);
+            res.sendStatus(500);
+        })
 })
 
-router.post('/', upload.single("file"), (req, res) => {
+
+router.post('/', upload.single("file"), rejectUnauthenticated, (req, res) => {
     console.log('made it to server', req.body.newBookableItem);
     console.log('made it to server', req.body.data);
 
@@ -58,7 +74,6 @@ router.post('/', upload.single("file"), (req, res) => {
     const unitTime = req.body.newBookableItem.unitTime
     const location = req.body.newBookableItem.location
     const categoryId = req.body.newBookableItem.categoryId
-    const clientId = req.body.newBookableItem.clientId
 
     let queryText = `
         INSERT INTO "bookable_items" 
@@ -74,7 +89,7 @@ router.post('/', upload.single("file"), (req, res) => {
         unitTime, 
         location, 
         categoryId, 
-        clientId
+        req.body.clientId
     ];
 
     pool.query(queryText, queryParams)
@@ -89,7 +104,7 @@ router.post('/', upload.single("file"), (req, res) => {
 })
 
 // Selected bookableItem by ID so it can be edit
-router.get('/selected/:id', (req, res) => {
+router.get('/selected/:id', rejectUnauthenticated, (req, res) => {
     console.log('bookableItemId', req.params.id);
     let bookableItemId = req.params.id
     const sqlText = `
@@ -106,7 +121,8 @@ router.get('/selected/:id', (req, res) => {
         })
 }); // end of GET /selected/:id
 
-router.put('/', (req, res) => {
+// allows the user to modify a specific bookable item based on id 
+router.put('/', rejectUnauthenticated, (req, res) => {
     let updateBookableItem = req.body;
 
     const sqlText = `

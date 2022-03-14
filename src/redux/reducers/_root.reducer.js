@@ -8,10 +8,13 @@ import clients from './clients.reducer';
 import itemList from './ItemNames.reducer';
 import categoryList from './category.reducer';
 import activeClient from './activeClient.reducer';
+import companyName from './companyName.reducer';
+import sideBySide from './sideBySide.reducer';
 import clientSelectedItem from './setClientDetailItem.reducer';
 import clientList from './clientList.reducer';
 import renterReducer from './renter.reducer';
 import renterBooking from './renterBooking.reducer';
+import renter from './renter.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -30,13 +33,15 @@ const rootReducer = combineReducers({
   itemList, // for the Autocomplete on the category input form
   categoryList, //stores all of the categories in the category table
   selectedBookableItem, // selecting this bookableItem by ID to be edit
-  clients,
   activeClient,
+  companyName,
+  sideBySide,
   clientSelectedItem,
   clientList,
   renterReducer,
   activeClient,
   renterBooking,
+  renter,
 });
 
 export default rootReducer;

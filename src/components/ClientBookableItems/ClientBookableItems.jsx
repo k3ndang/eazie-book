@@ -8,40 +8,6 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import './ClientBookableItem.css'
 
-
-const LitemData = [
-    {
-        img: 'https://d1nkxkz7ge96ao.cloudfront.net/eyJidWNrZXQiOiJzbW4tbWFpbi1zaXRlLWJ1Y2tldCIsImtleSI6ImltYWdlc1wvaW1hZ2luXC9McktPcmhFcE5FN0FNV3lFQUxRMUpFOE0wTjVsc1VkekxsNU9ZcEZsLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjYwMCwiaGVpZ2h0IjoxMzAwLCJmaXQiOiJjb3ZlciJ9fX0=',
-        title: 'boat 1',
-        rate: '4/20 an hr', 
-        datesAvailable: 'zorp', 
-        detail: 'zeep'
-
-    },
-    {
-        img: 'https://media.kare11.com/assets/KARE/images/5da0a2e9-81c3-4169-9cbb-be95fc892207/5da0a2e9-81c3-4169-9cbb-be95fc892207_1920x1080.jpg',
-        title: 'Boat 2',
-        rate: '4/20 an hr',
-        datesAvailable: 'zorp',
-        detail: 'zeep'
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-        title: 'Coffee',
-        rate: '4/20 an hr',
-        datesAvailable: 'zorp',
-        detail: 'zeep'
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-        title: 'Hats',
-        rate: '4/20 an hr',
-        datesAvailable: 'zorp',
-        detail: 'zeep'
-    },
-    
-];
-
 function ClientBookableItems() {
     //Reducers 
     const itemData = useSelector(store=> store.clientList);
@@ -76,17 +42,19 @@ function ClientBookableItems() {
         <>
            {/* itemData[0].companyName breaks page not sure how to render client name once  */}
            {/* Category name not properly rendering  */}
-        <h1> {itemData.companyName}, Your List of Bookable items</h1>
-            <ImageList sx={{ width: 1300, height: 750 }}>
+
+        <h1 className="BookableItemsTitle"> List of Bookable items</h1>
+            <ImageList sx={{ width: 1300, height: 750 }} className="imageContainer">
+
 
                  {itemData.map(item => {
                     return (
                         <>
                             <Grid container key={item.img} className="clientListGridContainer">
-                                <Grid item>
+                                <Grid item className="clientListGridItem">
                                     <ImageListItem>
                                         <img
-                                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                                            src={`${item.url}?w=248&fit=crop&auto=format`}
                                             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                                             alt={item.title}
                                             loading='lazy'
@@ -95,13 +63,14 @@ function ClientBookableItems() {
                                     </ImageListItem>
                                 
 
-                                
+                                    <div className="clientItemTextBox"> 
                                     <h2 className="clientItemHeadingTitle">{item.title}</h2>
-                                    <h4 className="clientItemTitle"> Category:</h4>  <div className="clientItemDescription">{item.name} </div> <br/>
+                                    <h4 className="clientItemTitle"> Category:</h4>   <div className="clientItemDescription">{item.name} </div> <br/>
                                     <h4 className="clientItemTitle"> Summary: </h4> <div className="clientItemDescription"> {item.summary} </div> <br/>
                                     <h4 className="clientItemTitle"> Rate: </h4> <div className="clientItemDescription">  {item.rate}  per {item.unitTime} </div> <br/>
                                     <h4 className="clientItemTitle"> Location: </h4> <div className="clientItemDescription">  {item.location} </div> <br/>
                                     <h4 className="clientItemTitle"> Details Regarding Rental: </h4> <div className="clientItemDescription"> {item.detail} </div> <br/>
+                                    </div>
                                 </Grid>
                             </Grid>
                         </>

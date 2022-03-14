@@ -3,6 +3,8 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 const pool = require('../modules/pool');
 const router = express.Router();
 
+//selects all fields for the client list (requires 3 part join)
+//currently in the bookable item sage (note to fix that)
 router.get('/', (req, res) => {
 const sqlText = `
 SELECT
@@ -32,6 +34,37 @@ pool.query(sqlText, sqlParams)
         console.log('renterQuery error', err);
         res.sendStatus(500)
     })
+})
+
+//grabs data for the renter info table, comes from the renter saga
+router.get('/info', (req, res) => {
+    const sqlText = `
+    SELECT 
+        "user"."username",
+        "user"."email",
+        "user"."phoneNumber",
+        "bookable_items"."title" AS item_name,
+        "bookable_items"."unitTime", 
+        "renter_booking"."hours_book" AS time_booked
+        FROM "user" 
+LEFT JOIN "renter_booking"
+	ON "renter_booking"."renterId" = "user"."id"
+LEFT JOIN "bookable_items"
+	ON "renter_booking"."bookableId" = "bookable_items"."id"
+    WHERE "user"."authLevel" = 'renter';
+    `
+
+    pool.query(sqlText)
+        .then((result) => {
+            console.log('result is', result.rows)
+
+            res.send(result.rows)
+        })
+        .catch(err => {
+            console.log('infoQuery error', err);
+            res.sendStatus(500)
+            
+        })
 })
 
 

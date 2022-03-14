@@ -12,6 +12,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
+
 function CategoryInput() {
 // homes boats and rvs
 // is in figma, not in scope doc 

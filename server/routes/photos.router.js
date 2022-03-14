@@ -16,10 +16,12 @@ const fileStorageEngine = multer.diskStorage({
 
 const upload = multer({ storage: fileStorageEngine });
 
-router.post('/', upload.single('file'), (req, res) => {
+//uploads a file (photo) to the database 
+router.post('/', upload.single('file'), rejectUnauthenticated, (req, res) => {
     console.log('req.file is', req.file);
     
     let filePath = req.file.path;
+    //chops off the first 7 characters 
     let file = filePath.slice(7)
     console.log('file is', file);
     let id = req.body.id

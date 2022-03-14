@@ -47,7 +47,7 @@ function Watercraft () {
             <CardActions>
                 <Button 
                     size="small"
-                    onClick={(evt) => history.push(`/boat/${category[2]?.id}`)}
+                    onClick={(evt) => history.push(`/boat/${category[3]?.id}`)}
                 >
                     See More
                 </Button>
@@ -76,7 +76,7 @@ function Watercraft () {
             <CardActions>
                 <Button 
                     size="small"
-                    onClick={(evt) => history.push(`/jetski/${category[1]?.id}`)}
+                    onClick={(evt) => history.push(`/jetski/${category[4]?.id}`)}
                 >
                     See More
                 </Button>
@@ -84,7 +84,7 @@ function Watercraft () {
         </Card>
         </div>
         <br />
-        <div className="potoon">
+        <div className="pontoon">
         <Card sx={{ maxWidth: 345}}>
             <CardMedia
                 component="img"
@@ -106,7 +106,7 @@ function Watercraft () {
             <CardActions>
                 <Button 
                     size="small"
-                    onClick={(evt) => history.push(`/pontoon/${category[3]?.id}`)}
+                    onClick={(evt) => history.push(`/pontoon/${category[7]?.id}`)}
                 >
                     See More
                 </Button>
