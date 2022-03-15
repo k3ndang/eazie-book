@@ -106,10 +106,11 @@ function addBookableItem () {
                 <div className="selectCompanyName">  
                 <h3 className="InputFieldTitle"> Select Client Company Name </h3>
                 <Autocomplete
+                    
                     options={clients}
                     sx={{width:620}}
                     value={clients.label}
-                    font-size="20px"
+                    fontSize="20px"
                     renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
                     onChange={(event, newValue) => setClientId(newValue.id)}
                 />
@@ -148,13 +149,12 @@ function addBookableItem () {
                     <div className="adminCategoryInputContainer">
                     <h3 className="InputFieldTitle"> Enter Summary of Item: </h3>
                     <textarea
-                        placeholder="ENTER SUMMARY HERE"
+                        placeholder="Enter Summary Here"
                         className='bookableItemsInput'
                         required
                         type="text"
                         label="Summary"
                         color="secondary"
-                        focused
                         rows={3}
                         value={newBookableItem.summary}
                         onChange={(evt) => handleChange(evt, "summary")}
@@ -199,10 +199,9 @@ function addBookableItem () {
                     <h3 className="InputFieldTitle"> Enter Details of Bookable Item:</h3>
                     <textarea
                         className="bookableItemsInput"
-                        placeholder='ENTER DETAILS HERE'
+                        placeholder='Enter Details Here'
                         required
                         type="text"
-                        multiline
                         rows={2}
                         value={newBookableItem.details}
                         onChange={(evt) => handleChange(evt, "details")}
@@ -224,12 +223,11 @@ function addBookableItem () {
                 
                     >
                         <br/>
-                        <br/>
-                        <br/>
-                 
+                        <div className="AutocompleteMapped">
                         {categoryList.map(category => (
-                            <MenuItem value={category.id} key={category.id} onChange= {event => setParentId(event.target.value)}>{category.name}</MenuItem>
+                            <MenuItem className="AutocompleteValues" value={category.id} key={category.id} onChange= {event => setParentId(event.target.value)}>{category.name}</MenuItem>
                         ))}
+                        </div>
                     </Select>
                 </FormControl>
             </Box>  

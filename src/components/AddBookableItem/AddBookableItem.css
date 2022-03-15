@@ -8,18 +8,19 @@
     font-size: 5px;
     font-variant: small-caps;
     line-height: 1em;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    -bottom: 20px;
+    background-color: rgb(132, 158, 156);
 }
 /* client name input field and title  */
 .selectCompanyName{
-    margin-top: 40px;
+    padding-top: 40px;
     text-align: center;
     font-size: 40px;
    display: flex;
    flex-direction: column;
    align-items: center;
-   
+   background-color: rgb(132, 158, 156);
+
 }
 
 
@@ -44,19 +45,35 @@
     display: flex;
     background-color: rgb(205, 227, 255);
     color: black;
-    font-weight: 800;
+    font-weight: 400;
     justify-content: center;
     font-variant: small-caps;
     font-size: 25px;
 }
-
-
+/* input field text-placeholders: title, summary, rate, unit time, details */
+.bookableItemsInput::placeholder{
+    color: rgba(39, 38, 38, 0.979);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    font-size: 30px;
+}
 
 /* sets the background color of the select category and select company name inputs */
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
     background-color: rgb(205, 227, 255);
 }
 
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline::placeholder{
+    color: rgba(39, 38, 38, 0.979);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+font-size: larger ;
+}
 /* sets the font for input field labels */
 .InputFieldTitle{
     margin-top: 10px;
@@ -83,7 +100,9 @@
 /* select category input field  */
 .categoryAutocomplete{
     display: flex;
+    flex-direction: column;
     width: 600px;
+    background-color: red;
 }
 
 /* client company name and select category input fields */
@@ -104,4 +123,28 @@
     line-height: 1;
     margin: 2px;
     margin-top:10px;
+}
+
+
+.AutocompleteMapped{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    font-size: 20px;
+}
+
+.AutocompleteMapped:hover{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.AutocompleteValues{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    font-size: 20px;
+   
+}
+.selectCategoryPlaceholder{
+    background-color: red;
 }
