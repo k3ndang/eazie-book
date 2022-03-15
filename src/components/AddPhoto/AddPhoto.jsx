@@ -82,7 +82,7 @@ function AddPhoto(){
                 <CardMedia 
                     component="img"
                     height="200"
-                    image={`photos/${photo.url}`}
+                    image={`${photo.url}`}
                 />
             </Card>
 

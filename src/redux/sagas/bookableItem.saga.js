@@ -79,7 +79,7 @@ function* postPhoto(action) {
             headers: {"Contents-Type": "application/json"},
             withCredentials: true,
         };
-
+        
         yield axios.post(`/api/photos/:id`, action.payload, config);
     }
     catch (error) {
