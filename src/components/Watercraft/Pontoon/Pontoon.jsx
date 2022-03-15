@@ -19,7 +19,7 @@ function PontoonList () {
 
     useEffect (() => {
         dispatch({
-            type: "RENTER_FETCH_BOOKABLEITEM",
+            type: "RENTER_FETCH_BOOKABLE_ITEM",
             payload: params.pontoonId
         });
     }, [params.pontoonId])
@@ -42,6 +42,7 @@ function PontoonList () {
                         <Typography variant='h6'>Detail: {pontoon.detail}</Typography>
                         <Typography variant='h6'>Rate: {pontoon.rate}</Typography>
                     </Grid>
+                    <button onClick={(evt) => history.push(`/detail/${pontoon.id}`)}>Full Detail</button>
                 </Grid>
             ))}
         </ImageList>

@@ -11,10 +11,11 @@ import updateClientSaga from './updateClient.saga';
 import categorySaga from './category.saga';
 import fetchBookableItems from './fetchBookableItems.saga';
 import linkItemSaga from './linkItem.saga';
+import renterBooking from './renterbooking.saga';
 import fetchCompanyName from './fetchCompanyName.saga';
 import fetchSideBySideSage from './fetchSideBySide.saga';
 import renterSaga from './renter.saga'
-
+import clientSaga from './client.saga'
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -27,17 +28,19 @@ export default function* rootSaga() {
     loginSaga(), // login saga is now registered
     registrationSaga(),
     userSaga(),
-    clientInvite(),
     bookableItemSaga(),
+    updateClientSaga(),
+    categorySaga(),
+    clientSaga(),
+    fetchBookableItems(),
+    linkItemSaga(),
+    renterBooking(),
+    fetchCompanyName(),
+    fetchSideBySideSage(),
+    renterSaga(),
+    clientInvite(),
     fetchClients(),
     deleteClientSaga(),
     editClient(),
-    updateClientSaga(),
-    categorySaga(),
-    fetchBookableItems(),
-    linkItemSaga(),
-    fetchCompanyName(),
-    fetchSideBySideSage(),
-    renterSaga()
   ]);
 }

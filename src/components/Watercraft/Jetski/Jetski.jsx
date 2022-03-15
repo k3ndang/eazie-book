@@ -17,7 +17,7 @@ function JetskiList () {
 
     useEffect (() => {
         dispatch({
-            type: "RENTER_FETCH_BOOKABLEITEM",
+            type: "RENTER_FETCH_BOOKABLE_ITEM",
             payload: params.jetskiId
         });
     }, [params.jetskiId])
@@ -40,6 +40,7 @@ function JetskiList () {
                         <Typography variant='h6'>Detail: {jetski.detail}</Typography>
                         <Typography variant='h6'>Rate: {jetski.rate}</Typography>
                     </Grid>
+                    <button onClick={(evt) => history.push(`/detail/${jetski.id}`)}>Full Detail</button>
                 </Grid>
             ))}
 

@@ -33,9 +33,13 @@ import Boat from '../Watercraft/Boat/Boat';
 import Pontoon from '../Watercraft/Pontoon/Pontoon';
 import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
 import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
+import BookableItemDetail from "../BookableItemDetail/BookableItemDetail";
+import RenterReviewPage from '../RenterReviewPage/RenterReviewPage';
+import ThankYou from '../ThankYou/ThankYou';
 import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
 import BookableItemList from '../BookableItemsList/BookableItemsList'
-import RenterInfo from '../RenterInfo/RenterInfo'
+import RenterInfo from '../RenterInfo/RenterInfo';
+import AddPhoto from '../AddPhoto/AddPhoto';
 
 import './App.css';
 
@@ -73,6 +77,7 @@ function App() {
           >
             <ViewBookableItem />
           </Route>
+
           <ProtectedRoute
           exact 
           path="/renterInfo"
@@ -136,19 +141,26 @@ function App() {
             <EditBookableItemForm />
           </Route>
 
-
             
-            <Route
+          <ProtectedRoute
+
             exact
             path='/renterHistory'
-            >
+          >
               <RenterHistory />
-            </Route>
+            </ProtectedRoute>
           <ProtectedRoute
            exact
             path="/admin/categoryInput"
           >
            
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/addPhotos/:id"
+          >
+            <AddPhoto />
           </ProtectedRoute>
 
           {/* ROUTE for info page */}
@@ -157,18 +169,17 @@ function App() {
             exact
             path="/info"
           >
+          <Route>
+            <EditBookableItemForm />
+          </Route>
+
+          <Route>
             <InfoPage />
+          </Route>
+            
           </ProtectedRoute>
 
           {/* END OF ROUTES FOR ADMIN */}
-         
-
-
-
-
-
-
-
 
           {/* ROUTES FOR CLIENT */}
 
@@ -177,7 +188,10 @@ function App() {
             exact
             path="/clientBookableItems"
           >
+          <Route>
             <ClientBookableItems />
+          </Route>
+
           </ProtectedRoute>
 
           {/* ROUTE for specific client bookable items */}
@@ -240,6 +254,13 @@ function App() {
           {/* ROUTE for renter pontoon's */}
           <Route 
             exact
+            path="/detail/:id"
+          >
+            <BookableItemDetail />
+          </Route>
+
+          <Route 
+            exact
             path="/pontoon/:pontoonId"
           >
             <Pontoon />
@@ -293,6 +314,20 @@ function App() {
             }
           </Route>
       
+
+          <Route
+            exact
+            path="/renterReviewPage"
+          >
+            <RenterReviewPage />
+          </Route>
+
+          <Route 
+            exact
+            path="/thankyou"
+          >
+            <ThankYou />
+          </Route>
 
           <Route
             exact

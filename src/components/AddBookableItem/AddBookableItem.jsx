@@ -42,7 +42,6 @@ function addBookableItem () {
         categoryId: ''
     });
 
-    const [fileData, setFileData] = useState();
 
     const[ clientId, setClientId] = useState('');
     
@@ -81,7 +80,6 @@ function addBookableItem () {
                 clientId: clientId
             }
         })
-       
     }
 
     const goBack = () => {
@@ -223,7 +221,12 @@ function addBookableItem () {
                         text="SELECT CATEGORY HERE"
                         className="selectCategoryPlaceholder"
                         onChange= {event => setParentId(event.target.value)}
+                
                     >
+                        <br/>
+                        <br/>
+                        <br/>
+                 
                         {categoryList.map(category => (
                             <MenuItem value={category.id} key={category.id} onChange= {event => setParentId(event.target.value)}>{category.name}</MenuItem>
                         ))}
@@ -244,8 +247,6 @@ function addBookableItem () {
             >
                 Submit
             </Button>
-           
-            
                 </Grid>
             </Box>
             </Paper>
