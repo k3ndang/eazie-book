@@ -99,8 +99,14 @@ function ClientTable() {
         setBtnStatus(false);
     }
 
-    const bookableItem = () => {
-        history.push('/viewBookableItem')
+    const bookableItem = (client) => {
+
+        dispatch({
+            type: 'FETCH_CLIENT_BOOKABLE_ITEM',
+            payload: client.id
+        })
+
+        history.push(`/viewBookableItem/${client.id}`)
     }
 
     return (
@@ -263,7 +269,7 @@ function ClientTable() {
                                                 <TableCell align="right">{client.state}</TableCell>
                                                 <TableCell align="right">{client.zipcode}</TableCell>
                                                 <TableCell align="right">{client.websiteUrl}</TableCell>
-                                                <TableCell align="right"><button onClick={event => bookableItem()}>See Bookable Items</button></TableCell>
+                                                <TableCell align="right"><button onClick={event => bookableItem(client)}>See Bookable Items</button></TableCell>
                                                 <TableCell align="right"><button onClick={event => editClient(client)}>Edit</button></TableCell>
                                                 <TableCell align="right"><button onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
                                             </TableRow>

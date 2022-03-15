@@ -21,16 +21,17 @@ function ViewBookableItem() {
     const rows = useSelector((store) => store.bookableItem.bookableItemReducer);
     console.log('bookableItem list from store', rows)
 
+    const selectedClientItem = useSelector((store) => store.selectedClientItem);
 
-    const fetchBookableItem = () => {
+   /*  const fetchBookableItem = () => {
         dispatch({ 
             type: 'FETCH_BOOKABLE_ITEM' 
         })
-    };
+    }; */
 
-    useEffect(() => {
+    /* useEffect(() => {
         fetchBookableItem()
-    }, []);
+    }, []); */
 
     const addItem = () => {
         history.push('/addBookableItem')
@@ -60,26 +61,26 @@ function ViewBookableItem() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row, index) => (
+                    {selectedClientItem.map((item, index) => (
                         
                         <TableRow
                             key={index}
                             sx={{ border: 2, minWidth: 100 }}
                         >
                             <TableCell component="th" scope="row">
-                                {row.title}
+                                {item.title}
                             </TableCell>
-                            <TableCell align="center">{row.summary}</TableCell>
-                            <TableCell align="center">{row.detail}</TableCell>
-                            <TableCell align="center">{row.rate}</TableCell>
-                            <TableCell align="center">{row.unitTime}</TableCell>
-                            <TableCell align="center">{row.location}</TableCell>
-                            <TableCell align="center">{row.name}</TableCell>
-                            <TableCell align="center">{row.companyName}</TableCell>
-                            <TableCell align="center"><Link to={`/addPhotos/${row.id}`} >Add Photo</Link></TableCell>
+                            <TableCell align="center">{item.summary}</TableCell>
+                            <TableCell align="center">{item.detail}</TableCell>
+                            <TableCell align="center">{item.rate}</TableCell>
+                            <TableCell align="center">{item.unitTime}</TableCell>
+                            <TableCell align="center">{item.location}</TableCell>
+                            <TableCell align="center">{item.name}</TableCell>
+                            <TableCell align="center">{item.companyName}</TableCell>
+                            <TableCell align="center"><Link to={`/addPhotos/${item.id}`} >Add Photo</Link></TableCell>
                             <TableCell align="center">
                                 <Link 
-                                    to={`/editBookableItemForm/${row.id}`}
+                                    to={`/editBookableItemForm/${item.id}`}
                                 >
                                     Edit
                                 </Link>

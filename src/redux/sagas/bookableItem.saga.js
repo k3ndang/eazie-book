@@ -15,8 +15,22 @@ function* bookableItemSaga() {
     //we need a fetch photo saga will be implemented later down the road
     yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory);
     yield takeEvery('FETCH_ITEM_PHOTOS', fetchItemPhotos);
+    
 }
 
+function* clientBookableItem(action){
+    try{
+        const response = yield axios.get(`/api/bookableItem/${action.payload}`)
+
+        yield put({
+            type: 'SET_CLIENT_ITEM',
+            payload: response.data
+        })
+    }
+    catch(error) {
+        console.error('ERROR getting items for client', error);
+    }
+}
 
 function* fetchItemPhotos(action){
     try{
