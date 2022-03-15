@@ -2,8 +2,12 @@ import axios from 'axios';
 import { put, takeLatest, takeEvery } from 'redux-saga/effects';
 
 function* bookableItemSaga() {
+   
     yield takeEvery('FETCH_BOOKABLE_ITEM', fetchBookableItem);
+
+    //triggered in addBookableItem Form on pressing submit button:
     yield takeEvery('POST_BOOKABLE_ITEM', postBookableItem);
+    
     yield takeEvery('POST_PHOTO', postPhoto)
     yield takeEvery('RENTER_FETCH_BOOKABLE_ITEM', renterFetchBookableItem)
     yield takeEvery('FETCH_SELECTED_BOOKABLE_ITEM', fetchSelectedBookableItem);
@@ -113,6 +117,9 @@ function* saveEditBookableItem (action) {
     }
 }; // end saveEditBookableItem
 
+
+//called in the add bookable item component 
+//admin 
 function* postBookableItem(action) {
     console.log('post bookableItem saga clientId', action.payload.clientId);
 

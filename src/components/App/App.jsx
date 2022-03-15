@@ -12,7 +12,8 @@ import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import RenterHistory from '../RenterHistory/RenterHistory'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import CategoryInput from '../CategoryInput/CategoryInput'
+// moved CategoryInput into InviteClient.jsx
+// import CategoryInput from '../CategoryInput/CategoryInput'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -157,9 +158,9 @@ function App() {
             </ProtectedRoute>
           <ProtectedRoute
            exact
-            path="/categoryInput"
+            path="/admin/categoryInput"
           >
-            <CategoryInput />
+           
           </ProtectedRoute>
 
           <ProtectedRoute
