@@ -10,6 +10,9 @@ import Paper from '@mui/material/Paper';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import { useDispatch, useSelector } from 'react-redux';
+import './RenterHistory.css';
+
+
 
 function RenterHistory() {
 
