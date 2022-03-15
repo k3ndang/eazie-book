@@ -1,13 +1,162 @@
-.bookableForm {
+/* container holding all of the input fields (the MUI paper) */
+.addBookableItemContainer{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    width: 900px;
+    margin: auto;
+    align-items: center;
+    font-size: 5px;
+    font-variant: small-caps;
+    line-height: 1em;
+
+    background-color: rgb(132, 158, 156);
+}
+/* client name input field and title  */
+.selectCompanyName{
+    padding-top: 40px;
+    text-align: center;
+    font-size: 40px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: rgb(132, 158, 156);
+
 }
 
-/* .submitBtn {
+
+/* very small adjustment for company name input fields */
+.css-17i7n9v .MuiTextField-root{
+ 
     display: flex;
-    justify-content: flex-end;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    
+}
+.selectCompanyName .MuiOutlinedInput-input{
+    z-index: 999;
+    font-size: 20px;
+}
+
+/* input fields : title, summary, rate, unit time, details */
+.bookableItemsInput{
+    width: 615px;
+    height: 50px;
+    margin-left: 10px;
+    text-align: center;
+    display: flex;
+    background-color: rgb(205, 227, 255);
+    color: black;
+    font-weight: 400;
+    justify-content: center;
+    
+    font-size: 25px;
+}
+/* input field text-placeholders: title, summary, rate, unit time, details */
+.bookableItemsInput::placeholder{
+    color: rgba(39, 38, 38, 0.979);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    font-size: 30px;
+}
+
+/* sets the background color of the select category and select company name inputs */
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    background-color: rgb(205, 227, 255);
+}
+/* 
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline::placeholder{
+    color: rgba(39, 38, 38, 0.979);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
 } */
+
+
+/* The actual value of the MUI select form */
+.categoryAutocomplete .MuiSelect-select {
+    /* It gets hidden under something somehow...? */
+    z-index: 999;
+}
+.categoryAutocomplete .MuiSelect-select::placeholder{
+    background-color: red;
+}
+/* sets the font for input field labels */
+.InputFieldTitle{
+    margin-top: 10px;
+    margin: 5px;
+    font-size: 35px;
+}
+
+/* select category title  */
+.SelectCategoryTitle{
+    margin: 10px;
+    text-align: center;
+    font-size: 35px;
+}
+/* submit button  */
+.FormSubmitBtn{
+    width: 200px;
+}
+/* placeholder text for select category placeholder */
+.SelectCategoryTitlePlaceholder{
+    text-align: center;
+    margin-left: 250px;
+
+}
+
+/* select category input field  */
+.categoryAutocomplete{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    background-color: red;
+}
+
+/* client company name and select category input fields */
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    width: 600px;
+    display: flex;
+    justify-content: center;
+}
+/* spacing for each input section */
+.adminCategoryInputContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 650px;
+    margin-top: 10px;
+    margin: 0;
+    line-height: 1;
+    margin: 2px;
+    margin-top:10px;
+}
+
+
+.AutocompleteMapped{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    font-size: 20px;
+    color: black;
+}
+
+.AutocompleteMapped:hover{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    color: black;
+}
+.AutocompleteValues{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    font-size: 20px;
+    color: black;
+   
+}
+.selectCategoryPlaceholder{
+    background-color: red;
+}

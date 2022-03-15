@@ -21,7 +21,17 @@ const upload = multer({ storage: fileStorageEngine });
 //comes from the fetchBookable item saga
 router.get('/', rejectUnauthenticated, (req, res) => {
     const sqlText = `
-        SELECT * FROM bookable_items
+        SELECT 
+            "bookable_items"."id",
+            "bookable_items"."title",
+            "bookable_items"."summary",
+            "bookable_items"."detail",
+            "bookable_items"."rate",
+            "bookable_items"."unitTime",
+            "bookable_items"."location",
+            "categories"."name",
+            "user"."companyName"
+        FROM bookable_items
         JOIN "user" ON "bookable_items"."clientId" = "user"."id"
         JOIN "categories" ON "bookable_items"."categoryId" = "categories"."id"
     `;

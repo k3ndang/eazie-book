@@ -5,6 +5,8 @@ import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
+
+
 import './InviteClient.css'
 
 function InviteClient(){
@@ -225,6 +227,7 @@ function InviteClient(){
                 />
             </div> */}
              </div>
+         
              <br/>
             <div>
                 <Button

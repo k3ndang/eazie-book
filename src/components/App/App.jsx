@@ -12,7 +12,8 @@ import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import RenterHistory from '../RenterHistory/RenterHistory'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import CategoryInput from '../CategoryInput/CategoryInput'
+// moved CategoryInput into InviteClient.jsx
+// import CategoryInput from '../CategoryInput/CategoryInput'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -37,7 +38,9 @@ import RenterReviewPage from '../RenterReviewPage/RenterReviewPage';
 import ThankYou from '../ThankYou/ThankYou';
 import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
 import BookableItemList from '../BookableItemsList/BookableItemsList'
-import RenterInfo from '../RenterInfo/RenterInfo'
+import RenterInfo from '../RenterInfo/RenterInfo';
+import AddPhoto from '../AddPhoto/AddPhoto';
+import AcctInfo from '../AcctInfo/AcctInfo'
 
 import './App.css';
 
@@ -67,6 +70,12 @@ function App() {
             <AboutPage />
           </Route>
 
+          <Route
+          exact
+          path='/acctInfo'
+          >
+            <AcctInfo />
+          </Route>
 
           <Route
             // shows AboutPage at all times (logged in or not)
@@ -75,6 +84,7 @@ function App() {
           >
             <ViewBookableItem />
           </Route>
+
           <ProtectedRoute
           exact 
           path="/client/renterInfo"
@@ -137,17 +147,22 @@ function App() {
           >
             <EditBookableItemForm />
           </Route>
-          <Route
+
+            
+          <ProtectedRoute
+
             exact
             path='/renter/history'
             >
               <RenterHistory />
-            </Route>
+            </ProtectedRoute>
+  
+
           <ProtectedRoute
-           exact
-            path="/admin/categoryInput"
+            exact
+            path="/addPhotos/:id"
           >
-            <CategoryInput />
+            <AddPhoto />
           </ProtectedRoute>
 
           {/* ROUTE for info page */}

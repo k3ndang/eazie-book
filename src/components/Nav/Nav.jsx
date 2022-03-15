@@ -35,29 +35,29 @@ function Nav() {
         {!user.id && (
           // If there's no user, show login/registration links
           <>
-          <Link className="navLink" to="/login">
-            Login / Register
-          </Link>
-          <div className="dropdown">
-          <Link className="dropbtn" to="/about">
-           About
-          </Link>
-          </div>
+            <Link className="navLink" to="/login">
+              Login / Register
+            </Link>
+            <div className="dropdown">
+              <Link className="dropbtn" to="/about">
+                About
+              </Link>
+            </div>
           </>
         )}
 
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-            
+
             {/* <Link className="navLink" to="/info">
               Info Page
             </Link> */}
 
-            
+
           </>
         )}
-  {/* ADMIN === { Home, Client Table, LogOut}
+        {/* ADMIN === { Home, Client Table, LogOut}
       * Home links to admin landing page
       * Client Table links to client table page
       * LogOut links to the login page */}
@@ -81,30 +81,31 @@ function Nav() {
               <Link to="/admin/clients"> Client List </Link>
               {/* not sure if bookable items is a different page */}
               <Link to="/admin/viewBookableItem"> Bookable Items List </Link>
-            </div>
-            </div>
+
             {/* having an about and an info page seems redundant */}
-            <div className="dropdown"> 
-            <Link className="dropbtn" to="/about">
-             About
-            </Link>
+            
+            <div className="dropdown">
+              <Link className="dropbtn" to="/about">
+                About
+              </Link>
             </div>
             <LogOutButton className="dropbtn" />
           </>
         )}
 
-{/* RENTER === {Home, Reservations, LogOut}
+        {/* RENTER === {Home, Reservations, LogOut}
       * Home links to the renter landing page
       * Reservations links to the renter reservation info page
       * LogOut links to the login page */}
         {user.authLevel === 'renter' && (
           <>
-           
+
             <div className="dropdown">
-            <Link className="dropbtn" to="/user">
-              Home
-            </Link>
+              <Link className="dropbtn" to="/user">
+                Home
+              </Link>
             </div>
+          
               <div className="dropdown">
             <button className="dropbtn"> Reservations</button>
             <div className="dropdown-content">
@@ -112,23 +113,29 @@ function Nav() {
               {/* This should be the list of everyone that has rented bookable items  */}
               <Link to="/renter/history"> View Reservations </Link>
             </div>
-            </div>     
+      
+              <div className="dropdown">
+                <Link className="dropbtn" to="/acctInfo">
+                  Acct info
+                </Link>
+              </div>
             <div className="dropdown">
-          <Link className="dropbtn" to="/about">
-           About
-          </Link>
-          </div>       
-         
+              <Link className="dropbtn" to="/about">
+                About
+              </Link>
+            </div>
+    
+
             <LogOutButton className="dropbtn" />
           </>
         )}
-    
-  {/* CLIENT === { Home, LogOut}
+
+        {/* CLIENT === { Home, LogOut}
       * Home links to the client landing page
       * LogOut links to the login page */}
-         {user.authLevel === 'client' && (
+        {user.authLevel === 'client' && (
           <>
-           
+
             <div className="dropdown">
             <Link className="dropbtn" to="/user">
               Home
@@ -141,14 +148,26 @@ function Nav() {
               {/* This should be the list of everyone that has rented bookable items  */}
               <Link to="/client/renterInfo"> Renter Info </Link>
             </div>
+            <div className="dropdown">
+              <button className="dropbtn"> View List</button>
+              <div className="dropdown-content">
+                <Link to="/clientBookableItems"> Bookable Items  </Link>
+                {/* This should be the list of everyone that has rented bookable items  */}
+                <Link to="/renterInfo"> Renter Info </Link>
+              </div>
             </div>
             {/* having an about and an info page seems redundant */}
-            <div className="dropdown"> 
-            <Link className="dropbtn" to="/about">
-             About
-            </Link>
+            <div className="dropdown">
+              <Link className="dropbtn" to="/acctInfo">
+                Acct info
+              </Link>
             </div>
-         
+            <div className="dropdown">
+              <Link className="dropbtn" to="/about">
+                About
+              </Link>
+            </div>
+
             <LogOutButton className="dropbtn" />
           </>
         )}

@@ -2,16 +2,35 @@ import axios from 'axios';
 import { put, takeLatest, takeEvery } from 'redux-saga/effects';
 
 function* bookableItemSaga() {
+   
     yield takeEvery('FETCH_BOOKABLE_ITEM', fetchBookableItem);
+
+    //triggered in addBookableItem Form on pressing submit button:
     yield takeEvery('POST_BOOKABLE_ITEM', postBookableItem);
+    
     yield takeEvery('POST_PHOTO', postPhoto)
     yield takeEvery('RENTER_FETCH_BOOKABLE_ITEM', renterFetchBookableItem)
     yield takeEvery('FETCH_SELECTED_BOOKABLE_ITEM', fetchSelectedBookableItem);
     yield takeEvery('SAVE_BOOKABLE_ITEM', saveEditBookableItem);
     //we need a fetch photo saga will be implemented later down the road
     yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory);
+    yield takeEvery('FETCH_ITEM_PHOTOS', fetchItemPhotos);
 }
 
+
+function* fetchItemPhotos(action){
+    try{
+        const response = yield axios.get(`/api/photos/${action.payload}`);
+
+        yield put({
+            type: 'SET_ITEM_PHOTOS',
+            payload: response.data,
+        });
+    }
+    catch(error) {
+        console.error('ERROR getting photos for item', error);
+    }
+}
 
 function* renterFetchBookableItem (action) {
     try {
@@ -55,16 +74,17 @@ function* fetchBookableItem() {
 
 
 function* postPhoto(action) {
-    
-    console.log('');
-    
-    yield axios.post(`/api/photos`, action.payload.data)
-    
-    
-    
-    /* yield put({
-        type: 'FETCH_PHOTOS'
-    }) */
+    try{
+        const config = {
+            headers: {"Contents-Type": "application/json"},
+            withCredentials: true,
+        };
+        
+        yield axios.post(`/api/photos/:id`, action.payload, config);
+    }
+    catch (error) {
+        console.error('ADD photo failed', error);
+    }
 }
 
 
@@ -97,9 +117,11 @@ function* saveEditBookableItem (action) {
     }
 }; // end saveEditBookableItem
 
+
+//called in the add bookable item component 
+//admin 
 function* postBookableItem(action) {
     console.log('post bookableItem saga clientId', action.payload.clientId);
-    console.log('post bookableItem picture data', action.payload.data);
 
     try {
         yield axios.post(`/api/bookableItem`, action.payload);
