@@ -70,7 +70,7 @@ function Nav() {
                 <Link to="/admin/invite"> Add a Client  </Link>
                 {/* bring admin to category form */}
                 {/* Could also say "edit bookable categories" */}
-                <Link to="/categoryInput"> Edit Categories </Link>
+                <Link to="/addBookableItem"> Add a Bookable Item </Link>
                 {/* brings admin to list of clients, perhaps this is redundant */}
                 {/* <Link to="/"> Edit Clients </Link> */}
               </div>
