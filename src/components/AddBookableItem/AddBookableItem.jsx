@@ -42,7 +42,7 @@ function addBookableItem () {
         categoryId: '',
     });
 
-
+    console.log('here we go .categoryId', newBookableItem.categoryId);
     const[ clientId, setClientId] = useState('');
     
     //category input state variables 
@@ -61,6 +61,7 @@ function addBookableItem () {
     }, []);
     
     const handleChange = (evt, property) => {
+       console.log('lets see you newBookableItem', {...newBookableItem, [property]: evt.target.value});
         setNewBookableItem({...newBookableItem, [property]: evt.target.value})
     };
 
@@ -210,22 +211,21 @@ function addBookableItem () {
                 <FormControl >
                     <InputLabel id="demo-simple-select-label" className="SelectCategoryTitlePlaceholder">Category</InputLabel>
                     <Select
-                        labelId="demo-simple-select-label"
-                        sx={{ width: 400 }}
-                        id="demo-simple-select"
-                        text="Select Category Here"
-                        className="selectCategoryPlaceholder"
-                        label= "Category"
-                        value={categoryList.id}
-                        // value={newBookableItem.categoryId}
-                        // onChange= {(evt) => handleChange(evt, "categoryId")}
+                        // labelId="demo-simple-select-label"
+                        // sx={{ width: 400 }}
+                        // id="demo-simple-select"
+                        // text="Select Category Here"
+                        // className="selectCategoryPlaceholder"
+                        // label= "Category"
+                 
+                        value={newBookableItem.categoryId}
+                        onChange= {(evt) => handleChange(evt, "categoryId")}
                     >
-                        <br/>
-                        <div className="AutocompleteMapped">
+                    
                         {categoryList.map(category => (
-                            <MenuItem className="AutocompleteValues"  value={category} key={category.id} onChange= {evt => handleChange(evt, "categoryId")}>{category.name}</MenuItem>
+                            <MenuItem  value={category.id} key={category.id}> {category.name}</MenuItem>
                         ))}
-                        </div>
+
                     </Select>
                 </FormControl>
             </Box>  
