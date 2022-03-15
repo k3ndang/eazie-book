@@ -58,10 +58,6 @@ function addBookableItem () {
         dispatch({
             type: 'FETCH_CATEGORIES'
         });
-
-        dispatch({
-            type: 'FETCH_ITEM_LIST'
-            });
     }, []);
     
     const handleChange = (evt, property) => {
@@ -111,7 +107,7 @@ function addBookableItem () {
                     sx={{width:620}}
                     value={clients.label}
                     fontSize="20px"
-                    renderInput={(params) => <TextField {...params} label="Clients (Company Name)" />}
+                    renderInput={(params) => <TextField {...params} label="Company Name" />}
                     onChange={(event, newValue) => setClientId(newValue.id)}
                 />
                 </div>
@@ -217,15 +213,15 @@ function addBookableItem () {
                         labelId="demo-simple-select-label"
                         sx={{ width: 400 }}
                         id="demo-simple-select"
-                        text="SELECT CATEGORY HERE"
+                        text="Select Category Here"
                         className="selectCategoryPlaceholder"
-                        onChange= {event => setParentId(event.target.value)}
-                
+                        label= "Category"
+                        onChange= {(evt) => handleChange(evt, "categoryId")}
                     >
                         <br/>
                         <div className="AutocompleteMapped">
                         {categoryList.map(category => (
-                            <MenuItem className="AutocompleteValues" value={category.id} key={category.id} onChange= {event => setParentId(event.target.value)}>{category.name}</MenuItem>
+                            <MenuItem className="AutocompleteValues" value={category.id} key={category.id} onChange= {evt => handleChange(evt, "categoryId")}>{category.name}</MenuItem>
                         ))}
                         </div>
                     </Select>
