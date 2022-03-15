@@ -12,7 +12,6 @@ The page is divided into three basic auth levels listed Below
 ## ADMIN
 - The admin has primary control over the eazie-book network. An admin can invite a client (company) to rent their services, add bookable items for a given company, and add multiple photos to said item along with a description, pricing rate, detailed description, and item category. Admins also possess exclusive control over available rental dates for an item. To change this, the client simply needs to contact Hong and Dean!
 
-
 ## CLIENT
 - As a client, you represent a company providing a service and using Eaziebook as a middleman for said service. From your page you'll be able to view a list of your company's bookable items, as well as an info table for clients who've booked your items. 
 
