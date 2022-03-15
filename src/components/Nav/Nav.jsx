@@ -39,11 +39,6 @@ function Nav() {
               Login / Register
             </Link>
             <div className="dropdown">
-              <div className="dropdown">
-                <Link className="dropbtn" to="/acctInfo">
-                  Acct info
-                </Link>
-              </div>
               <Link className="dropbtn" to="/about">
                 About
               </Link>
@@ -89,11 +84,7 @@ function Nav() {
               </div>
             </div>
             {/* having an about and an info page seems redundant */}
-            <div className="dropdown">
-              <Link className="dropbtn" to="/acctInfo">
-                Acct info
-              </Link>
-            </div>
+            
             <div className="dropdown">
               <Link className="dropbtn" to="/about">
                 About
@@ -123,16 +114,18 @@ function Nav() {
                 <Link to="/renterHistory"> View Reservations </Link>
               </div>
             </div>
-            <div className="dropdown">
+      
               <div className="dropdown">
                 <Link className="dropbtn" to="/acctInfo">
                   Acct info
                 </Link>
               </div>
+            <div className="dropdown">
               <Link className="dropbtn" to="/about">
                 About
               </Link>
             </div>
+    
 
             <LogOutButton className="dropbtn" />
           </>
