@@ -39,6 +39,7 @@ import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
 import BookableItemList from '../BookableItemsList/BookableItemsList'
 import RenterInfo from '../RenterInfo/RenterInfo';
 import AddPhoto from '../AddPhoto/AddPhoto';
+import AcctInfo from '../AcctInfo/AcctInfo'
 
 import './App.css';
 
@@ -68,6 +69,12 @@ function App() {
             <AboutPage />
           </Route>
 
+          <Route
+          exact
+          path='/acctInfo'
+          >
+            <AcctInfo />
+          </Route>
 
           <Route
             // shows AboutPage at all times (logged in or not)
