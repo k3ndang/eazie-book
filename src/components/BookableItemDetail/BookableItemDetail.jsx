@@ -127,7 +127,7 @@ function BookableItemDetail () {
                 size="small"
                 onClick={(evt) => bookingNow(evt)}
             >
-                Book
+                Book Now
             </Button>
         </Grid>
         </>
