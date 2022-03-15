@@ -73,7 +73,7 @@ router.post('/', (req, res) => {
     let bookableItem = req.body.selectedItem;
     let clientId = req.body.clientId;
     let dateTime = req.body.date;
-    let bookingDuration = req.body.hourRenting;
+    let bookingDuration = req.body.hoursBook;
 
     const sqlText = `
         INSERT INTO "renter_booking"
@@ -97,6 +97,27 @@ router.post('/', (req, res) => {
             console.error('ERROR in confirming booking', err)
             res.sendStatus(500)
         })
-})
+});
+
+router.get('/confirm/:id', (req, res) => {
+    console.log('id', req.params.id)
+    
+    const sqlText = `
+        SELECT * FROM "renter_booking"
+        WHERE "renterId" = $1;
+    `;
+
+    const sqlParams = [req.params.id]
+
+    pool.query(sqlText, sqlParams)
+        .then(dbRes => {
+            console.log('renter confirmation', dbRes.rows)
+            res.send(dbRes.rows)
+        })
+        .catch (err => {
+            console.error('ERROR in renter fetching confirmation', err)
+            res.sendStatus(500)
+        })
+});
 
 module.exports = router;

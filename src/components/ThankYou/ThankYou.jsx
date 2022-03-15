@@ -5,8 +5,6 @@ import { useHistory, useParams }  from 'react-router-dom';
 function ThankYou () {
     const params = useParams();
     const dispatch = useDispatch();
-    
-
     useEffect(() => {
         dispatch({
             type: "FETCH_BOOKING_CONFIRM",
@@ -14,10 +12,16 @@ function ThankYou () {
         })
     }, [params.id])
 
+    const bookingConfirmation = useSelector(store => store.renterBooking)
+    console.log('confirmation code', bookingConfirmation)
 
     return (
         <>
-        <h3>Thank You For Using Eazie_Book</h3>
+        <h2>Thank You For Using Eazie_Book</h2>
+        <h4>Your Confirmation Code</h4>
+        {bookingConfirmation.map((code) =>
+            <p key={code.id}>{code.confirmationNumber}</p>
+        )}
         </>
     )
 }

@@ -316,7 +316,7 @@ function App() {
 
           <Route
             exact
-            path="/renterReviewPage"
+            path="/renterReviewPage/:id"
           >
             <RenterReviewPage />
           </Route>
