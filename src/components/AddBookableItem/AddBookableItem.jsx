@@ -39,7 +39,7 @@ function addBookableItem () {
         rate:     '',
         unitTime: '',
         location: '',
-        categoryId: ''
+        categoryId: '',
     });
 
 
@@ -216,12 +216,14 @@ function addBookableItem () {
                         text="Select Category Here"
                         className="selectCategoryPlaceholder"
                         label= "Category"
-                        onChange= {(evt) => handleChange(evt, "categoryId")}
+                        value={categoryList.id}
+                        // value={newBookableItem.categoryId}
+                        // onChange= {(evt) => handleChange(evt, "categoryId")}
                     >
                         <br/>
                         <div className="AutocompleteMapped">
                         {categoryList.map(category => (
-                            <MenuItem className="AutocompleteValues" value={category.id} key={category.id} onChange= {evt => handleChange(evt, "categoryId")}>{category.name}</MenuItem>
+                            <MenuItem className="AutocompleteValues"  value={category} key={category.id} onChange= {evt => handleChange(evt, "categoryId")}>{category.name}</MenuItem>
                         ))}
                         </div>
                     </Select>

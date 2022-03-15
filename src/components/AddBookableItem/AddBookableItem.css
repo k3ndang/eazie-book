@@ -94,7 +94,8 @@ font-size: larger ;
 /* placeholder text for select category placeholder */
 .SelectCategoryTitlePlaceholder{
     text-align: center;
-    margin-left: 250px;  
+    margin-left: 250px;
+
 }
 
 /* select category input field  */
@@ -131,18 +132,21 @@ font-size: larger ;
     flex-direction: column;
     margin: auto;
     font-size: 20px;
+    color: black;
 }
 
 .AutocompleteMapped:hover{
     display: flex;
     flex-direction: column;
     margin: auto;
+    color: black;
 }
 .AutocompleteValues{
     display: flex;
     flex-direction: column;
     margin: auto;
     font-size: 20px;
+    color: black;
    
 }
 .selectCategoryPlaceholder{
