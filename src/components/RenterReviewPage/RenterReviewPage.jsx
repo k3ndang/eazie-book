@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory }  from 'react-router-dom';
+import { useHistory, useParams }  from 'react-router-dom';
 import moment from 'moment';
 
 function RenterReviewPage () {
     const dispatch = useDispatch();
     const history = useHistory();
+    const params = useParams();
 
     const reviewBooking = useSelector(store => store.renterBooking);
     console.log('review booking', reviewBooking)
@@ -16,7 +17,7 @@ function RenterReviewPage () {
             type: "BOOKING_CONFIRM",
             payload: reviewBooking
         })
-        history.push('/thankyou')
+        history.push(`/thankyou/${params.id}`)
     }
 
     return(
@@ -29,7 +30,7 @@ function RenterReviewPage () {
         <p>Summary: {reviewBooking.selectedItem.summary}</p>
         <p>Detail: {reviewBooking.selectedItem.detail}</p>
         <p>Date/Time Selected: {moment(reviewBooking.date.toString()).format('MMMM Do YYYY, h:mm:ss a')}</p>
-        <p>Duration Booking: {reviewBooking.hourRenting === "All_Day" ? reviewBooking.hourRenting: `${reviewBooking.hourRenting} Hours`}</p>
+        <p>Duration Booking: {reviewBooking.hoursBook === "All_Day" ? reviewBooking.hoursBook: `${reviewBooking.hoursBook} Hours`}</p>
         <button onClick={confirming}>Confirm</button>
         </>
     )

@@ -324,14 +324,14 @@ function App() {
 
           <Route
             exact
-            path="/renterReviewPage"
+            path="/renterReviewPage/:id"
           >
             <RenterReviewPage />
           </Route>
 
           <Route 
             exact
-            path="/thankyou"
+            path="/thankyou/:id"
           >
             <ThankYou />
           </Route>
