@@ -1,0 +1,44 @@
+.ViewBookableItemTableContainer{
+    background-color: rgb(229, 233, 232);
+    margin-left: 206px;
+    border: 3px solid black;
+}
+.viewBookableItemButtons .MuiButton-root {
+    width: 25%;
+   border: 2px solid black;
+   margin-top: 10px;
+}
+.ButtonsTrial{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ButtonsTrial:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.viewBookableItemButtons .MuiTouchRipple-root {
+    border: 3px solid black;
+    display: flex;
+}
+
+
+.ViewBookableItemTableRowName{
+    border: 2px solid black;
+ 
+}
+
+.ViewBookableItemTableRowCompanyName{
+    width: 50px;
+    border: 2px solid black;
+}
+.ViewBookableItemTableCell{
+    width: 80px;
+    padding: 0px;
+}
+
+.ViewBookableItemTableCellSummary{
+    width: 200px;
+}
+

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useHistory, useParams }  from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Typography from '@mui/material/Typography';
 import { Grid, Button } from '@material-ui/core';
@@ -9,10 +9,11 @@ import { alpha } from '@material-ui/core/styles';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import moment from 'moment';
+import { Select, MenuItem, FormControl, InputLabel } from '@mui/material'
 
 
 
-function BookableItemDetail () {
+function BookableItemDetail() {
     const history = useHistory();
     const params = useParams();
     const dispatch = useDispatch();
@@ -21,62 +22,31 @@ function BookableItemDetail () {
     const user = useSelector(store => store.user)
     const [selectedDate, handleDateChange] = useState(new Date());
 
-
-
-    // // Time Slots
-    // const [timeSlots, setTimeSlots] = useState([]);
-    // console.log('time slots', timeSlots)
-    // const createTimeSlots = (fromTime, toTime) => {
-    //     // alert(fromTime);
-    //     let startTime = moment(fromTime, 'hh:mm A');
-    //     let endTime = moment(toTime, 'hh:mm A');
-    //     if (endTime.isBefore(startTime)) {
-    //         endTime.add(1, 'day');
-    //     }
-    //     let arr = [];
-    //     while (startTime <= endTime) {
-    //         arr.push(new moment(startTime).format('hh:mm A'));
-    //         startTime.add(30, 'minutes');
-    //     }
-    //     return arr;
-    // }
-
-
-
     const hours = [
-        {label: "1", id: 1},
-        {label: "2", id: 2},
-        {label: "3", id: 3},
-        {label: "4", id: 4},
-        {label: "5", id: 5},
-        {label: "6", id: 6},
-        {label: "7", id: 7},
-        {label: "8", id: 8},
-        {label: "9", id: 9},
-        {label: "10", id: 10},
-        {label: "11", id: 11},
-        {label: "12", id: 12},
-        {label: "All_Day", id: "All_Day"},
+        { label: "1", id: 1 },
+        { label: "2", id: 2 },
+        { label: "3", id: 3 },
+        { label: "4", id: 4 },
+        { label: "5", id: 5 },
+        { label: "6", id: 6 },
+        { label: "7", id: 7 },
+        { label: "8", id: 8 },
+        { label: "9", id: 9 },
+        { label: "10", id: 10 },
+        { label: "11", id: 11 },
+        { label: "12", id: 12 },
+        { label: "All_Day", id: "All_Day" },
     ]
 
-    const [checkoutTime, setCheckoutTime] = useState({
-        startTime: "",
-        endTime: "",
-    })
     const [hoursBook, setHoursBook] = useState("");
 
-    useEffect (() => {
-        // setTimeSlots(createTimeSlots('8:00 AM', '08:00 PM'));
+    useEffect(() => {
 
         dispatch({
             type: "FETCH_SELECTED_BOOKABLE_ITEM",
             payload: params.id
         });
     }, [params.id]);
-
-    // const handleChange = (evt, property) => {
-    //     setCheckoutTime({...checkoutTime, [property]: evt.target.value})
-    // };
 
     const bookingNow = (evt) => {
         evt.preventDefault();
