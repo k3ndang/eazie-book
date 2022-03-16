@@ -13,7 +13,8 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
-
+import Grid from '@mui/material/Grid';
+import './ViewBookableItem.css';
 
 function ViewBookableItem() {
     const dispatch = useDispatch();
@@ -49,23 +50,31 @@ function ViewBookableItem() {
 
     return (
         <>
-            <Button variant="outlined" color="primary" onClick={goBack}>Back</Button>
-            <Button variant="outlined" color="primary" onClick={addItem}>Add New Item</Button>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <div className="ButtonsTrial"> 
+            <Button variant="outlined" color="primary" onClick={goBack} className="viewBookableItemButtons" align="center">Back</Button>
+            <Button variant="outlined" color="primary" onClick={addItem} className="viewBookableItemButtons" align="center">Add New Item</Button>
+            </div>
+            <Grid container>
+                <Grid item>
+            <TableContainer component={Paper} sx={{ maxWidth: 8000 }} className="ViewBookableItemTableContainer">
+                <Table sx={{ minWidth: 500 }} aria-label="simple table">
+               
                     <TableHead>
-                        <TableRow>
-                            <TableCell>Item</TableCell>
-                            <TableCell align="center">Summary</TableCell>
-                            <TableCell align="center">Details</TableCell>
-                            <TableCell align="center">Rate</TableCell>
-                            <TableCell align="center">Time</TableCell>
-                            <TableCell align="center">Location</TableCell>
-                            <TableCell align="center">Category</TableCell>
-                            <TableCell align="center">Company Name</TableCell>
-                            <TableCell align="center"></TableCell>
+                        <TableRow className="ViewBookableItemTableRowHeading">
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Item</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Summary</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Details</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Rate</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Time</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Location</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Category</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowCompanyName">Company Name</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowButton">  </TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowButton">  </TableCell>
+
                         </TableRow>
                     </TableHead>
+              
                     <TableBody>
                         {selectedClientItem.map((item, index) => (
 
@@ -73,17 +82,17 @@ function ViewBookableItem() {
                                 key={index}
                                 sx={{ border: 2, minWidth: 100 }}
                             >
-                                <TableCell component="th" scope="row">
+                                <TableCell component="th" scope="row" className="ViewBookableItemTableCell">
                                     {item.title}
                                 </TableCell>
-                                <TableCell align="center">{item.summary}</TableCell>
-                                <TableCell align="center">{item.detail}</TableCell>
-                                <TableCell align="center">{item.rate}</TableCell>
-                                <TableCell align="center">{item.unitTime}</TableCell>
-                                <TableCell align="center">{item.location}</TableCell>
-                                <TableCell align="center">{item.name}</TableCell>
-                                <TableCell align="center">{item.companyName}</TableCell>
-                                <TableCell align="center"><Link to={`/addPhotos/${item.id}`} >Add Photo</Link></TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCellSummary">{item.summary}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCellSummary">{item.detail}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">${item.rate}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">per {item.unitTime}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">{item.location}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">{item.name}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">{item.companyName}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell"><Link to={`/addPhotos/${item.id}`} >Add Photo</Link></TableCell>
                                 <TableCell align="center">
                                     <Link
                                         to={`/editBookableItemForm/${item.id}`}
@@ -96,6 +105,8 @@ function ViewBookableItem() {
                     </TableBody>
                 </Table>
             </TableContainer>
+            </Grid>
+            </Grid>
         </>
     )
 
