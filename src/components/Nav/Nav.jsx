@@ -64,7 +64,7 @@ function Nav() {
       * LogOut links to the login page */}
         {user.authLevel === 'admin' && (
           <>
-          <Grid container spacing={5} direction='row' alignItems='right'>
+          
             <div className="dropdown">
               <button className="dropbtn"> Manage </button>
               <div className="dropdown-content">
@@ -77,6 +77,11 @@ function Nav() {
                 {/* <Link to="/"> Edit Clients </Link> */}
               </div>
             </div>
+              <div className="dropdown">
+                <Link className="dropbtn" to="/acctInfo">
+                  Acct info
+                </Link>
+              </div>
             <div className="dropdown">
               <button className="dropbtn"> View List</button>
               <div className="dropdown-content">
@@ -93,7 +98,7 @@ function Nav() {
               </Link>
             </div>
             <LogOutButton className="dropbtn" />
-            </Grid>
+           
           </>
         )}
 
@@ -120,11 +125,7 @@ function Nav() {
               </div>
             </div>
       
-              <div className="dropdown">
-                <Link className="dropbtn" to="/acctInfo">
-                  Acct info
-                </Link>
-              </div>
+              
             <div className="dropdown">
               <Link className="dropbtn" to="/about">
                 About
