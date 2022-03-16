@@ -13,7 +13,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
-
+import './ViewBookableItem.css';
 
 function ViewBookableItem() {
     const dispatch = useDispatch();
