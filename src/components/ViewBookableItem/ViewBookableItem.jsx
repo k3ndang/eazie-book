@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, Link } from 'react-router-dom';
+
+import {useEffect, useState} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import { useHistory, Link, useParams } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -17,6 +18,8 @@ import TextField from '@mui/material/TextField';
 function ViewBookableItem() {
     const dispatch = useDispatch();
     const history = useHistory();
+    const params = useParams();
+    console.log('client Id', params.id)
 
     const rows = useSelector((store) => store.bookableItem.bookableItemReducer);
     console.log('bookableItem list from store', rows)
@@ -29,9 +32,12 @@ function ViewBookableItem() {
          })
      }; */
 
-    /* useEffect(() => {
-        fetchBookableItem()
-    }, []); */
+    useEffect(() => {
+        dispatch({
+            type: "FETCH_CLIENT_BOOKABLE_ITEM",
+            payload: params.id
+        })
+    }, [params.id]);
 
     const addItem = () => {
         history.push('/addBookableItem')
