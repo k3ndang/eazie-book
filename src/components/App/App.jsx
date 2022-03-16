@@ -21,12 +21,14 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import InviteClient from '../InviteClient/InviteClient';
-import BookableItem from '../BookableItem/BookableItem'
+import BookableItem from '../BookableItem/BookableItem';
 import AddBookableItem from '../AddBookableItem/AddBookableItem'
 import EditBookableItemForm from '../EditBookableItemForm/EditBookableItemForm'
 import ViewBookableItem from '../ViewBookableItem/ViewBookableItem';
 import ClientTable from '../ClientTable/ClientTable';
 import AllTerrainVehicles from '../AllTerrainVehicles/AllTerrainVehicles';
+import SideBySide from '../AllTerrainVehicles/SideBySide/SideBySide';
+import ATV from '../AllTerrainVehicles/ATV/ATV';
 import Watercraft from '../Watercraft/Watercraft';
 import Jetski from '../Watercraft/Jetski/Jetski';
 import Boat from '../Watercraft/Boat/Boat';
@@ -36,11 +38,11 @@ import ClientDetailItem from '../ClientDetailItem/ClientDetailItem';
 import BookableItemDetail from "../BookableItemDetail/BookableItemDetail";
 import RenterReviewPage from '../RenterReviewPage/RenterReviewPage';
 import ThankYou from '../ThankYou/ThankYou';
-import SideBySide from '../AllTerrainVehicles/SideBySide.jsx/SideBySide';
-import BookableItemList from '../BookableItemsList/BookableItemsList'
+import BookableItemList from '../BookableItemsList/BookableItemsList';
 import RenterInfo from '../RenterInfo/RenterInfo';
 import AddPhoto from '../AddPhoto/AddPhoto';
 import AcctInfo from '../AcctInfo/AcctInfo'
+
 
 import './App.css';
 
@@ -255,7 +257,7 @@ function App() {
             exact 
             path='/bookableItemList'
             >
-
+              <BookableItemList />
             </ProtectedRoute>
 
           {/* ROUTE for renter pontoon's */}
@@ -284,9 +286,19 @@ function App() {
           {/* ROUTE for renter Side-By-Side's */}
           <Route
             exact
-            path='/sidebyside/:sidebysideId'
+            path='/sideBySide/:sideBySideId'
           >
             <SideBySide />
+          </Route>
+
+          {/* END OF ROUTES FOR RENTER */}
+
+          {/* ROUTE for renter ATV's */}
+          <Route
+            exact
+            path='/ATV/:ATV'
+          >
+            <ATV />
           </Route>
 
           {/* END OF ROUTES FOR RENTER */}
