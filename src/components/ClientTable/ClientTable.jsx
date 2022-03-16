@@ -112,13 +112,16 @@ function ClientTable() {
 
     return (
         <>
+            <br/>
+            <br/>
+            <br/>
             <div className="clientTable">
                 <TableContainer component={Paper}>
                     <Table>
                         {/* <TableHead>
                             <TableRow >
-                                <TableCell align="center" className="clientListTableHeadings"> <strong>First Name </strong></TableCell>
-                                <TableCell align="center" className="clientListTableHeadings"> <strong>Last Name  </strong></TableCell>
+                                <TableCell align="center" className="clientListTableHeadingsFirstName"> <strong>First Name </strong></TableCell>
+                                <TableCell align="center" className="clientListTableHeadingsLastName"> <strong>Last Name  </strong></TableCell>
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Username  </strong></TableCell>
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Email </strong></TableCell>
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Phone Number  </strong></TableCell>
@@ -137,16 +140,16 @@ function ClientTable() {
                                 <>  
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>First Name</TableCell>
-                                            <TableCell align="center">Last Name</TableCell>
-                                            <TableCell align="center">Email</TableCell>
-                                            <TableCell align="center">Phone Number</TableCell>
-                                            <TableCell align="center">Company Name</TableCell>
-                                            <TableCell align="center">Address</TableCell>
-                                            <TableCell align="center">City</TableCell>
-                                            <TableCell align="center">State</TableCell>
-                                            <TableCell align="center">Zip Code</TableCell>
-                                            <TableCell align="center">Website Url</TableCell>
+                                            <TableCell align="right">First Name</TableCell>
+                                            <TableCell align="right">Last Name</TableCell>
+                                            <TableCell align="right">Email</TableCell>
+                                            <TableCell align="right">Phone Number</TableCell>
+                                            <TableCell align="right">Company Name</TableCell>
+                                            <TableCell align="right">Address</TableCell>
+                                            <TableCell align="right">City</TableCell>
+                                            <TableCell align="right">State</TableCell>
+                                            <TableCell align="right">Zip Code</TableCell>
+                                            <TableCell align="right">Website Url</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -265,24 +268,24 @@ function ClientTable() {
                                             <TableCell align="center"></TableCell>
                                             <TableCell align="center"></TableCell>
                                         </TableRow>
-                                    </TableHead>
-                                    <TableBody>
+                                    </TableHead> 
+                                    <TableBody className="clientTableBody">
                                         {clients.map(client => (
                                             <TableRow key={client.id} id={client.id}>
                                                 <TableCell>{client.firstName}</TableCell>
-                                                <TableCell align="center">{client.lastName}</TableCell>
+                                                <TableCell align="center" className="clientTableBodyLastName">{client.lastName}</TableCell>
                                                 <TableCell align="center">{client.username}</TableCell>
                                                 <TableCell align="center">{client.email}</TableCell>
                                                 <TableCell align="center">{client.phoneNumber}</TableCell>
                                                 <TableCell align="center">{client.companyName}</TableCell>
-                                                <TableCell align="center">{client.address}</TableCell>
+                                                <TableCell align="center" className="clientTableBodyAddress">{client.address}</TableCell>
                                                 <TableCell align="center">{client.city}</TableCell>
                                                 <TableCell align="center">{client.state}</TableCell>
                                                 <TableCell align="center">{client.zipcode}</TableCell>
                                                 <TableCell align="center">{client.websiteUrl}</TableCell>
-                                                <TableCell align="center"><Button onClick={event => bookableItem(client)}>See Bookable Items</Button></TableCell>
-                                                <TableCell align="center"><Button onClick={event => editClient(client)}>Edit</Button></TableCell>
-                                                <TableCell align="center"><Button onClick={event => deleteClient(client.id)}>Delete</Button></TableCell>
+                                                <TableCell align="center" ><button className="clientTableOpenButtons" onClick={(event) => bookableItem(client)}>Open Bookable Items</button></TableCell>
+                                                <TableCell align="center" ><button className="clientTableEditButtons" onClick={event => editClient(client)}>Edit</button></TableCell>
+                                                <TableCell align="center" ><button className="clientTableDeleteButtons" onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>
