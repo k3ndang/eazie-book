@@ -6,23 +6,32 @@
     margin: auto;
     align-items: center;
     font-size: 5px;
-    font-variant: small-caps;
+    
     line-height: 1em;
 
-    background-color: rgb(132, 158, 156);
+    background-color: rgb(192, 217, 233);
 }
 /* client name input field and title  */
 .selectCompanyName{
     padding-top: 40px;
     text-align: center;
-    font-size: 40px;
-   display: flex;
-   flex-direction: column;
+    font-size: 10px;
+        width: 900px;
+   display: inline-flex;
+   flex-direction: row;
    align-items: center;
+   line-height: 1;
    background-color: rgb(132, 158, 156);
-
+    
 }
 
+.InputFieldTitle{
+    width: 425px;
+    line-height: 1s;
+}
+.MuiFormControl-root{
+    width: 400px;
+}
 
 /* very small adjustment for company name input fields */
 .css-17i7n9v .MuiTextField-root{
@@ -33,18 +42,29 @@
     
     
 }
+
+/* this is necessary to make sure the values chosen for client company name shows */
 .selectCompanyName .MuiOutlinedInput-input{
     z-index: 999;
     font-size: 20px;
+  
+    width: 1000px;
+}
+
+.selectCompanyName{
+    width: 880px;
+    background-color: rgb(192, 217, 233);
+    text-align: center;
+    padding-left: 20px;
+
 }
 
 /* input fields : title, summary, rate, unit time, details */
 .bookableItemsInput{
-    width: 615px;
+    width: 320px;
     height: 50px;
     margin-left: 10px;
     text-align: center;
-    display: flex;
     background-color: rgb(205, 227, 255);
     color: black;
     font-weight: 400;
@@ -73,11 +93,15 @@
     text-align: center;
 } */
 
-
 /* The actual value of the MUI select form */
 .categoryAutocomplete .MuiSelect-select {
     /* It gets hidden under something somehow...? */
     z-index: 999;
+  
+
+}
+.InputFieldTitle .MuiAutocomplete-root{
+    font-size: 100px;
 }
 .categoryAutocomplete .MuiSelect-select::placeholder{
     background-color: red;
@@ -86,61 +110,77 @@
 .InputFieldTitle{
     margin-top: 10px;
     margin: 5px;
-    font-size: 35px;
+    font-size: 25px;
+
 }
 
 /* select category title  */
 .SelectCategoryTitle{
     margin: 10px;
     text-align: center;
-    font-size: 35px;
+    font-size: 25px;
+    padding-left: 60px;
+    padding-right: 20px;
 }
+
+
 /* submit button  */
 .FormSubmitBtn{
     width: 200px;
+    border: 4px solid black;
+}
+
+/* the size of the select category dropdown */
+.MuiFormControl-root{
+    width: 150px;
+
 }
 /* placeholder text for select category placeholder */
 .SelectCategoryTitlePlaceholder{
     text-align: center;
-    margin-left: 250px;
-
+   margin-left: 110px;
+   
+    
+    
 }
 
 /* select category input field  */
 .categoryAutocomplete{
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-    background-color: red;
+    width: 500px;
+    
 }
 
-/* client company name and select category input fields */
+/* size of client company name input fields */
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
-    width: 600px;
-    display: flex;
-    justify-content: center;
+    width: 300px;
+ 
 }
 /* spacing for each input section */
 .adminCategoryInputContainer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
     align-items: center;
-    width: 650px;
-    margin-top: 10px;
     margin: 0;
     line-height: 1;
     margin: 2px;
-    margin-top:10px;
+    margin-top:20px;
+    border: 2px solid black;
 }
 
 
 .AutocompleteMapped{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: auto;
     font-size: 20px;
     color: black;
+    
+}
+
+.backButton{
+    background-color: red;
+    width: 900px;
 }
 
 .AutocompleteMapped:hover{
@@ -149,14 +189,13 @@
     margin: auto;
     color: black;
 }
+
 .AutocompleteValues{
     display: flex;
     flex-direction: column;
     margin: auto;
-    font-size: 20px;
+    font-size: 28px;
     color: black;
    
-}
-.selectCategoryPlaceholder{
-    background-color: red;
+   
 }

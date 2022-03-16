@@ -28,21 +28,21 @@ function PontoonList () {
         <>
         <h2>Pontoon</h2>
         <ImageList sx={{ width: 900, height: 750 }}>
-            {pontoonList.map((pontoon) => (
-                <Grid container key={pontoon.id}>
+            {pontoonList.map((item) => (
+                <Grid container key={item.id}>
                     <Grid item>
                         <ImageListItem>
                             <img 
                                 src="https://www.windsongboatrentals.com/images/boats/black-lexington/gallery_files/vlb_images1/dji_20200904_132131.jpg"
-                                alt={pontoon.title}
+                                alt={item.title}
                             />
                         </ImageListItem>
-                        <Typography variant='h4'>{pontoon.title}</Typography>
-                        <Typography variant='h6'>Summary: {pontoon.summary}</Typography>
-                        <Typography variant='h6'>Detail: {pontoon.detail}</Typography>
-                        <Typography variant='h6'>Rate: {pontoon.rate}</Typography>
+                        <Typography variant='h4'>{item.title}</Typography>
+                        <Typography variant='h6'>Summary: {item.summary}</Typography>
+                        <Typography variant='h6'>Detail: {item.detail}</Typography>
+                        <Typography variant='h6'>Rate: {item.rate}</Typography>
                     </Grid>
-                    <button onClick={(evt) => history.push(`/detail/${pontoon.id}`)}>Full Detail</button>
+                    <button onClick={(evt) => history.push(`/detail/${item.id}`)}>Full Detail</button>
                 </Grid>
             ))}
         </ImageList>

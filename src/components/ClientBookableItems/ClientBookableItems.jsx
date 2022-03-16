@@ -51,14 +51,14 @@ function ClientBookableItems() {
                     return (
                         <>
                             <Grid container key={item.img} className="clientListGridContainer">
-                                <Grid item className="clientListGridItem">
+                                <Grid item className="clientListGridItem" onClick={() => handleSelectedItem(item)}>
                                     <ImageListItem>
                                         <img
                                             src={`${item.url}?w=248&fit=crop&auto=format`}
                                             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                                             alt={item.title}
                                             loading='lazy'
-                                            onClick={() => handleSelectedItem(item)}
+                                            
                                         />
                                     </ImageListItem>
                                 

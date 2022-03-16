@@ -18,12 +18,10 @@ function SideBySide(){
 
     useEffect(() => { 
         dispatch({
-            type: 'FETCH_SIDEBYSIDE',
+            type: 'RENTER_FETCH_BOOKABLE_ITEM',
             payload: params.sideBySideId
         })
     }, [params.sideBySideId]);
-
-    const sideBySide = useSelector(store => store.sideBySide);
 
     return(
         <>
@@ -34,7 +32,7 @@ function SideBySide(){
                     <Grid item>
                         <ImageListItem>
                             <img
-                                src="https://www.windsongboatrentals.com/images/boats/black-lexington/gallery_files/vlb_images1/dji_20200904_132131.jpg"
+                                src="https://cdn.dealerspike.com/imglib/v1/800x600/imglib/trimsdb/14859321-0-97219301.jpg"
                                 alt={item.title}
                             />
                         </ImageListItem>
@@ -43,6 +41,7 @@ function SideBySide(){
                         <Typography variant="h6">Detail: {item.detail}</Typography>
                         <Typography variant="h6">Rate: {item.rate}</Typography>
                     </Grid>
+                    <button onClick={(evt) => history.push(`/detail/${item.id}`)}>Full Detail</button>
                 </Grid>
             ))}
         </ImageList>

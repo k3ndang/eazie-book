@@ -112,7 +112,7 @@ router.get('/confirm/:id', (req, res) => {
     pool.query(sqlText, sqlParams)
         .then(dbRes => {
             console.log('renter confirmation', dbRes.rows)
-            res.send(dbRes.rows)
+            res.send(dbRes.rows[0])
         })
         .catch (err => {
             console.error('ERROR in renter fetching confirmation', err)
