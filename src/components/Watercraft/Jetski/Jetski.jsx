@@ -26,21 +26,21 @@ function JetskiList () {
         <>
         <h2>Jetski</h2>
         <ImageList sx={{ width: 900, height: 750 }}>
-            {jetskiList.map((jetski) => (
-                <Grid container key={jetski.id}>
+            {jetskiList.map((item) => (
+                <Grid container key={item.id}>
                     <Grid item>
                         <ImageListItem>
                             <img 
                                 src="https://www.highsnobiety.com/static-assets/thumbor/9RQrT1s1Cz1fvE-9Rj2gqH5IG4E=/1600x1067/www.highsnobiety.com/static-assets/wp-content/uploads/2021/06/09114326/supreme-jetski-release-main.jpg"
-                                alt={jetski.title}
+                                alt={item.title}
                             />
                         </ImageListItem>
-                        <Typography variant='h4'>{jetski.title}</Typography>
-                        <Typography variant='h6'>Summary: {jetski.summary}</Typography>
-                        <Typography variant='h6'>Detail: {jetski.detail}</Typography>
-                        <Typography variant='h6'>Rate: {jetski.rate}</Typography>
+                        <Typography variant='h4'>{item.title}</Typography>
+                        <Typography variant='h6'>Summary: {item.summary}</Typography>
+                        <Typography variant='h6'>Detail: {item.detail}</Typography>
+                        <Typography variant='h6'>Rate: {item.rate}</Typography>
                     </Grid>
-                    <button onClick={(evt) => history.push(`/detail/${jetski.id}`)}>Full Detail</button>
+                    <button onClick={(evt) => history.push(`/detail/${item.id}`)}>Full Detail</button>
                 </Grid>
             ))}
 
