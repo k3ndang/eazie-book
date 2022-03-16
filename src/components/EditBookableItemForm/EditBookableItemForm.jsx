@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 import Box from '@mui/material/Box';
 import { Button, Grid } from "@material-ui/core";
-
+import './EditBookableItemForm.css'
 
 // import { useParams } from 'react-router-dom';
 // import Cancel from './CancelBtn'
@@ -112,6 +112,8 @@ function EditBookableItemForm () {
             >
                 Update
             </Button>
+
+
         </form>
 
         

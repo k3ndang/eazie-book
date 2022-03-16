@@ -1,21 +1,38 @@
 .clientListTableHeadings{
     width: 1000px;
-    font-variant: small-caps ;
     justify-content: center;    
     border: 2px solid black;
     flex-direction: row;
-    font-size: 25px;
-
+    font-size: 35px;
+    padding-bottom: 10px;
+   
 }
 
 .clientListTableRow{
     width: 500px;
     border: 2px solid black;
-    text-align: center;
+
+    
 }
 
 .clientListButton{
     display: flex;
     justify-content: space-around;
     padding: 20px;
+}
+/* the border of the whole table */
+.MuiTableBody-root{
+    border: 2px solid black;
+   
+}
+
+.clientTableOpenButtons{
+    font-weight: 900;
+    border: 3px solid black;
+}
+
+.clientTableOpenButtons:hover{
+    font-weight: 900;
+    border: 3px solid black;
+    background-color: rgb(146, 183, 230);
 }
