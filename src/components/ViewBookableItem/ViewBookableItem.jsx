@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -23,11 +23,11 @@ function ViewBookableItem() {
 
     const selectedClientItem = useSelector((store) => store.selectedClientItem);
 
-   /*  const fetchBookableItem = () => {
-        dispatch({ 
-            type: 'FETCH_BOOKABLE_ITEM' 
-        })
-    }; */
+    /*  const fetchBookableItem = () => {
+         dispatch({ 
+             type: 'FETCH_BOOKABLE_ITEM' 
+         })
+     }; */
 
     /* useEffect(() => {
         fetchBookableItem()
@@ -41,55 +41,55 @@ function ViewBookableItem() {
         history.push('/clients');
     }
 
-    return(
+    return (
         <>
-        <Button onClick={goBack}>Back</Button>
-        <Button onClick={addItem}>Add New Item</Button>
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Item</TableCell>
-                        <TableCell align="center">Summary</TableCell>
-                        <TableCell align="center">Details</TableCell>
-                        <TableCell align="center">Rate</TableCell>
-                        <TableCell align="center">Time</TableCell>
-                        <TableCell align="center">Location</TableCell>
-                        <TableCell align="center">Category</TableCell>
-                        <TableCell align="center">Company Name</TableCell>
-                        <TableCell align="center"></TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {selectedClientItem.map((item, index) => (
-                        
-                        <TableRow
-                            key={index}
-                            sx={{ border: 2, minWidth: 100 }}
-                        >
-                            <TableCell component="th" scope="row">
-                                {item.title}
-                            </TableCell>
-                            <TableCell align="center">{item.summary}</TableCell>
-                            <TableCell align="center">{item.detail}</TableCell>
-                            <TableCell align="center">{item.rate}</TableCell>
-                            <TableCell align="center">{item.unitTime}</TableCell>
-                            <TableCell align="center">{item.location}</TableCell>
-                            <TableCell align="center">{item.name}</TableCell>
-                            <TableCell align="center">{item.companyName}</TableCell>
-                            <TableCell align="center"><Link to={`/addPhotos/${item.id}`} >Add Photo</Link></TableCell>
-                            <TableCell align="center">
-                                <Link 
-                                    to={`/editBookableItemForm/${item.id}`}
-                                >
-                                    Edit
-                                </Link>
-                            </TableCell> 
+            <Button variant="outlined" color="primary" onClick={goBack}>Back</Button>
+            <Button variant="outlined" color="primary" onClick={addItem}>Add New Item</Button>
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Item</TableCell>
+                            <TableCell align="center">Summary</TableCell>
+                            <TableCell align="center">Details</TableCell>
+                            <TableCell align="center">Rate</TableCell>
+                            <TableCell align="center">Time</TableCell>
+                            <TableCell align="center">Location</TableCell>
+                            <TableCell align="center">Category</TableCell>
+                            <TableCell align="center">Company Name</TableCell>
+                            <TableCell align="center"></TableCell>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                        {selectedClientItem.map((item, index) => (
+
+                            <TableRow
+                                key={index}
+                                sx={{ border: 2, minWidth: 100 }}
+                            >
+                                <TableCell component="th" scope="row">
+                                    {item.title}
+                                </TableCell>
+                                <TableCell align="center">{item.summary}</TableCell>
+                                <TableCell align="center">{item.detail}</TableCell>
+                                <TableCell align="center">{item.rate}</TableCell>
+                                <TableCell align="center">{item.unitTime}</TableCell>
+                                <TableCell align="center">{item.location}</TableCell>
+                                <TableCell align="center">{item.name}</TableCell>
+                                <TableCell align="center">{item.companyName}</TableCell>
+                                <TableCell align="center"><Link to={`/addPhotos/${item.id}`} >Add Photo</Link></TableCell>
+                                <TableCell align="center">
+                                    <Link
+                                        to={`/editBookableItemForm/${item.id}`}
+                                    >
+                                        Edit
+                                    </Link>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </>
     )
 

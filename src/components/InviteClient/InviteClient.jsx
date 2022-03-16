@@ -67,6 +67,7 @@ function InviteClient(){
 
 
         /* need history.push here */
+        history.push('/clients')
     
     }
 
