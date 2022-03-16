@@ -13,6 +13,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
 import './ViewBookableItem.css';
 
 function ViewBookableItem() {
@@ -49,10 +50,13 @@ function ViewBookableItem() {
 
     return (
         <>
-            <Button variant="outlined" color="primary" onClick={goBack}>Back</Button>
-            <Button variant="outlined" color="primary" onClick={addItem}>Add New Item</Button>
-           
-            <TableContainer component={Paper} sx={{ maxWidth: 1000 }} className="ViewBookableItemTableContainer">
+            <div className="ButtonsTrial"> 
+            <Button variant="outlined" color="primary" onClick={goBack} className="viewBookableItemButtons" align="center">Back</Button>
+            <Button variant="outlined" color="primary" onClick={addItem} className="viewBookableItemButtons" align="center">Add New Item</Button>
+            </div>
+            <Grid container>
+                <Grid item>
+            <TableContainer component={Paper} sx={{ maxWidth: 8000 }} className="ViewBookableItemTableContainer">
                 <Table sx={{ minWidth: 500 }} aria-label="simple table">
                
                     <TableHead>
@@ -78,16 +82,16 @@ function ViewBookableItem() {
                                 key={index}
                                 sx={{ border: 2, minWidth: 100 }}
                             >
-                                <TableCell component="th" scope="row">
+                                <TableCell component="th" scope="row" className="ViewBookableItemTableCell">
                                     {item.title}
                                 </TableCell>
-                                <TableCell align="center">{item.summary}</TableCell>
-                                <TableCell align="center">{item.detail}</TableCell>
-                                <TableCell align="center">${item.rate}</TableCell>
-                                <TableCell align="center">per {item.unitTime}</TableCell>
-                                <TableCell align="center">{item.location}</TableCell>
-                                <TableCell align="center">{item.name}</TableCell>
-                                <TableCell align="center">{item.companyName}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCellSummary">{item.summary}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCellSummary">{item.detail}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">${item.rate}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">per {item.unitTime}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">{item.location}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">{item.name}</TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell">{item.companyName}</TableCell>
                                 <TableCell align="center" className="ViewBookableItemTableCell"><Link to={`/addPhotos/${item.id}`} >Add Photo</Link></TableCell>
                                 <TableCell align="center">
                                     <Link
@@ -101,6 +105,8 @@ function ViewBookableItem() {
                     </TableBody>
                 </Table>
             </TableContainer>
+            </Grid>
+            </Grid>
         </>
     )
 

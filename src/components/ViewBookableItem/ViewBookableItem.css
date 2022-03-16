@@ -1,15 +1,25 @@
 .ViewBookableItemTableContainer{
     background-color: rgb(229, 233, 232);
-    width: 75%;
-    margin-left: 25%;
+    margin-left: 206px;
     border: 3px solid black;
 }
-
-
-.ViewBookableItemTableRowHeading{
-    width: 700px;
-
+.viewBookableItemButtons .MuiButton-root {
+    width: 25%;
+   border: 3px solid black;
+   margin-top: 10px;
 }
+.ButtonsTrial{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.viewBookableItemButtons .MuiTouchRipple-root {
+    border: 3px solid black;
+    display: flex;
+   
+ 
+}
+
 
 .ViewBookableItemTableRowName{
     border: 2px solid black;
@@ -22,5 +32,8 @@
 .ViewBookableItemTableCell{
     width: 80px;
 }
-/* make the table less width, and then add table scrollability  */
+
+.ViewBookableItemTableCellSummary{
+    width: 200px;
+}
 
