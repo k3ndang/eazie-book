@@ -87,7 +87,7 @@ function Nav() {
               <div className="dropdown-content">
                 <Link to="/clients"> Client List </Link>
                 {/* not sure if bookable items is a different page */}
-                <Link to="/viewBookableItem"> Bookable Items List </Link>
+                {/* <Link to="/viewBookableItem"> Bookable Items List </Link> */}
               </div>
             </div>
             {/* having an about and an info page seems redundant */}
@@ -119,7 +119,7 @@ function Nav() {
             <div className="dropdown">
               <button className="dropbtn"> Reservations</button>
               <div className="dropdown-content">
-                <Link to="/watercraft"> Make A Reservation </Link>
+                <Link to="/makeAReservation"> Make A Reservation </Link>
                 {/* This should be the list of everyone that has rented bookable items  */}
                 <Link to="/renterHistory"> View Reservations </Link>
               </div>
