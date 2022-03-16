@@ -88,7 +88,7 @@ function ViewBookableItem() {
                                 <TableCell align="center">{item.location}</TableCell>
                                 <TableCell align="center">{item.name}</TableCell>
                                 <TableCell align="center">{item.companyName}</TableCell>
-                                <TableCell align="center"><Link to={`/addPhotos/${item.id}`} >Add Photo</Link></TableCell>
+                                <TableCell align="center" className="ViewBookableItemTableCell"><Link to={`/addPhotos/${item.id}`} >Add Photo</Link></TableCell>
                                 <TableCell align="center">
                                     <Link
                                         to={`/editBookableItemForm/${item.id}`}

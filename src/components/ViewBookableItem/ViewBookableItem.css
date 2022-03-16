@@ -18,8 +18,9 @@
 .ViewBookableItemTableRowCompanyName{
     width: 50px;
     border: 2px solid black;
-
-
+}
+.ViewBookableItemTableCell{
+    width: 80px;
 }
 /* make the table less width, and then add table scrollability  */
 
