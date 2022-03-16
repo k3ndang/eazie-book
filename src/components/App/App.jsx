@@ -361,7 +361,12 @@ function App() {
               <LandingPage />
             }
           </Route>
-
+            <ProtectedRoute
+            exact 
+            path='/makeAReservation'
+            >
+              <LandingPage />
+            </ProtectedRoute>
           
 
           {/* If none of the other routes matched, we will show a 404. */}
