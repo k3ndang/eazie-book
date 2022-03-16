@@ -15,8 +15,8 @@ function AllTerrainVehicles(){
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const categoryList = useSelector(store => store.categoryList);
-    console.log('categoryList', categoryList);
+    const category = useSelector(store => store.categoryList);
+    console.log('categoryList', category);
 
     useEffect(() => {
         dispatch({
@@ -50,7 +50,7 @@ function AllTerrainVehicles(){
             <CardActions>
                 <Button 
                     size="small"
-                    onClick={(evt) => history.push(`/atv/${categoryList[5]?.id}`)}
+                    onClick={(evt) => history.push(`/atv/${category[6]?.id}`)}
                 >
                     See More
                 </Button>
@@ -79,7 +79,7 @@ function AllTerrainVehicles(){
             <CardActions>
                 <Button 
                     size="small"
-                    onClick={(evt) => history.push(`/sidebyside/${categoryList[6]?.id}`)}
+                    onClick={(evt) => history.push(`/sidebyside/${category[5]?.id}`)}
                 >
                     See More
                 </Button>
