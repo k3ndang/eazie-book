@@ -156,11 +156,6 @@ function Nav() {
             </div>
             {/* having an about and an info page seems redundant */}
             <div className="dropdown">
-              <Link className="dropbtn" to="/acctInfo">
-                Acct info
-              </Link>
-            </div>
-            <div className="dropdown">
               <Link className="dropbtn" to="/about">
                 About
               </Link>
