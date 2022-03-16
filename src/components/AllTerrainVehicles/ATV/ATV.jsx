@@ -31,7 +31,7 @@ function ATV(){
                     <Grid item>
                         <ImageListItem>
                             <img 
-                                src="https://powersports.honda.com/-/media/products/segment/atv/atv-assets/trx90x-750x750.jpg"
+                                src={item.url[0]}
                                 alt={item.title}
                             />
                         </ImageListItem>

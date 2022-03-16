@@ -98,10 +98,14 @@ function BookableItemDetail () {
         <>
         <Grid>
         <h2>Item Details</h2>
-        <img 
-            src="https://www.amfam.com/-/media/images/amfam/products/boat/product-page-speed-and-power-boats---m.jpg"
-            alt={selectedItem.title}
-        />
+        
+            {selectedItem.url?.map((photo, i) => (
+            <img
+                key={i}
+                src={photo}
+            />
+            ))}
+
         <Typography variant="h4">Title: {selectedItem.title}</Typography>
         <Typography variant="h6">Summary: {selectedItem.summary}</Typography>
         <Typography variant="h6">Detail: {selectedItem.detail}</Typography>

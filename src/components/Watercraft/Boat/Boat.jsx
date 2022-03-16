@@ -34,7 +34,7 @@ function BoatList () {
                         
                         <ImageListItem>
                             <img 
-                                src="https://www.amfam.com/-/media/images/amfam/products/boat/product-page-speed-and-power-boats---m.jpg"
+                                src={item.url[0]}
                                 alt={item.title}
                             />
                         </ImageListItem>
