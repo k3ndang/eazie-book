@@ -25,7 +25,7 @@ function ViewBookableItem() {
     console.log('bookableItem list from store', rows)
 
     const selectedClientItem = useSelector((store) => store.selectedClientItem);
-
+    
     /*  const fetchBookableItem = () => {
          dispatch({ 
              type: 'FETCH_BOOKABLE_ITEM' 

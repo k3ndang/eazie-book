@@ -92,31 +92,11 @@ router.post('/:id', upload.single('selectedFile'), rejectUnauthenticated, (req, 
     })
 
     
-    
-    
-    /* let filePath = req.file.path;
-    //chops off the first 7 characters 
-    let file = filePath.slice(7)
-    console.log('file is', file);
-    let id = req.body.id
-    
-    let queryText = `
-    INSERT INTO photos (url, "itemId")
-    VALUES ($1, $2)
-    `;
-
-    let queryParams = [
-        file, id
-    ]
-
-
-    
-    pool.query(queryText, queryParams)
-    .then(() => res.sendStatus(200))
-    .catch ((err) => {
-        console.log('upload failed', err);
-        res.sendStatus(500)
-    }) */
+    router.get('/', (req, res) => {
+        const queryText = `
+        SELECT * FROM "photos";
+        `;
+    })     
 })
 
 module.exports = router;

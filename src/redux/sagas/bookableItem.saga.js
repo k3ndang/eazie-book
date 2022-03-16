@@ -15,9 +15,19 @@ function* bookableItemSaga() {
     //we need a fetch photo saga will be implemented later down the road
     yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory);
     yield takeEvery('FETCH_ITEM_PHOTOS', fetchItemPhotos);
+    yield takeEvery('FETCH_PHOTOS', fetchPhotos);
     
 }
 
+
+function* fetchPhotos(action){
+    let photos = yield axios.get('/api/photos');
+
+    yield put({
+        type: 'SET_PHOTOS',
+        payload: photos.data
+    })
+}
 
 // WHERE IS THIS BEING USE????
 // THERE IS THE SAME FUNCTION IN clientItems.saga????
