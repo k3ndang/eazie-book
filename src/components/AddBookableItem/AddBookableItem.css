@@ -178,6 +178,11 @@
     
 }
 
+.backButton{
+    background-color: red;
+    width: 900px;
+}
+
 .AutocompleteMapped:hover{
     display: flex;
     flex-direction: column;
