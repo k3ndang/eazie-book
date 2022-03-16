@@ -83,8 +83,8 @@ function ViewBookableItem() {
                                 </TableCell>
                                 <TableCell align="center">{item.summary}</TableCell>
                                 <TableCell align="center">{item.detail}</TableCell>
-                                <TableCell align="center">{item.rate}</TableCell>
-                                <TableCell align="center">{item.unitTime}</TableCell>
+                                <TableCell align="center">${item.rate}</TableCell>
+                                <TableCell align="center">per {item.unitTime}</TableCell>
                                 <TableCell align="center">{item.location}</TableCell>
                                 <TableCell align="center">{item.name}</TableCell>
                                 <TableCell align="center">{item.companyName}</TableCell>
