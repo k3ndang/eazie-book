@@ -79,7 +79,7 @@ function AllTerrainVehicles(){
             <CardActions>
                 <Button 
                     size="small"
-                    onClick={(evt) => history.push(`/sidebyside/${category[5]?.id}`)}
+                    onClick={(evt) => history.push(`/sidebyside/${category[2]?.id}`)}
                 >
                     See More
                 </Button>

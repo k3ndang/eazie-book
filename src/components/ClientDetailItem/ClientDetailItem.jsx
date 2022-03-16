@@ -2,12 +2,28 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
-import './ClientDetailItem.css'
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import './ClientDetailItem.css';
 
 function ClientDetailItem(){
     // retrieve selected client item from store
     const selectedItem = useSelector((store)=> store.clientSelectedItem)
      console.log('selectedItem is', selectedItem.url);
+    //carousel
+    const urls = selectedItem.url;
+    console.log('urls is', urls);
+    const [current, setCurrent] = useState(0);
+    const length = urls?.length;
+
+    const prevSlide = () => {
+        setCurrent(current === 0 ? length - 1 : current - 1);
+    }
+
+    const nextSlide = () => {
+        setCurrent(current === length - 1 ? 0 : current + 1);
+    }
+    console.log(current);
+
     //Hooks
      const dispatch = useDispatch();
      const params = useParams(); 
@@ -39,14 +55,28 @@ function ClientDetailItem(){
         <br/>
         <br/>
         
-       <div>
-        {selectedItem.url?.map((photo, i) => (
-          <img
-            key={i}
-            src={photo}
-          />
-        ))}
-      </div>
+        <section className="slider">
+            <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
+            <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
+            {selectedItem.url?.map((photo, i) => {
+                return (
+                    <div 
+                        className={i === current ? 'slide active' : 'slide'}
+                        key={i}
+                    >
+                        {i === current && (
+                            <img
+                            className="image"
+                            key={i}
+                            src={photo}
+                            onClick={nextSlide}
+                        />
+                        )}
+                    </div>
+                )
+            
+                })}
+        </section>
       
        
          <div className="ClientDetailItemInfo"> 

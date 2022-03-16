@@ -9,8 +9,11 @@ import { alpha } from '@material-ui/core/styles';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import moment from 'moment';
-import { Select, MenuItem, FormControl, InputLabel } from '@mui/material'
+import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import Carousel from 'react-bootstrap/Carousel';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
+import './BookableItemDetail';
 
 
 function BookableItemDetail() {
@@ -21,6 +24,24 @@ function BookableItemDetail() {
     console.log('bookItem', selectedItem)
     const user = useSelector(store => store.user)
     const [selectedDate, handleDateChange] = useState(new Date());
+
+    const urls = selectedItem.url;
+    console.log('urls is', urls);
+    const [current, setCurrent] = useState(0);
+    const length = urls?.length;
+
+    const prevSlide = () => {
+        setCurrent(current === 0 ? length - 1 : current - 1);
+    }
+
+    const nextSlide = () => {
+        setCurrent(current === length - 1 ? 0 : current + 1);
+    }
+    console.log(current);
+
+   /*  if (Array.isArray(selectedItem.url) || urls.length <= 0){
+        return null;
+    } */
 
     const hours = [
         { label: "1", id: 1 },
@@ -69,12 +90,28 @@ function BookableItemDetail() {
         <Grid>
         <h2>Item Details</h2>
         
-            {selectedItem.url?.map((photo, i) => (
-            <img
-                key={i}
-                src={photo}
-            />
-            ))}
+        <section className="slider">
+            <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
+            <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
+            {selectedItem.url?.map((photo, i) => {
+                return (
+                    <div 
+                        className={i === current ? 'slide active' : 'slide'}
+                        key={i}
+                    >
+                        {i === current && (
+                            <img
+                            className="image"
+                            key={i}
+                            src={photo}
+                            onClick={nextSlide}
+                        />
+                        )}
+                    </div>
+                )
+            
+                })}
+        </section>
 
         <Typography variant="h4">Title: {selectedItem.title}</Typography>
         <Typography variant="h6">Summary: {selectedItem.summary}</Typography>
