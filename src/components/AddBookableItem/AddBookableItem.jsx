@@ -80,13 +80,13 @@ function addBookableItem () {
     }
 
     const goBack = () => {
-        history.push('/viewBookableItem')
+        history.push('/user')
     }
 
 
     return(
         <>
-        <button onClick={goBack}>Back</button>
+        <Button onClick={goBack}>Back</Button>
 
         <Paper className="addBookableItemContainer">
             

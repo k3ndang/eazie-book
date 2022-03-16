@@ -114,7 +114,7 @@ function ClientTable() {
             <div className="clientTable">
                 <TableContainer component={Paper}>
                     <Table>
-                        <TableHead>
+                        {/* <TableHead>
                             <TableRow >
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>First Name </strong></TableCell>
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Last Name  </strong></TableCell>
@@ -129,107 +129,117 @@ function ClientTable() {
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Website URL </strong></TableCell>
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Bookable Items </strong></TableCell>
                             </TableRow>
-                        </TableHead>
+                        </TableHead> */}
 
                         {
                             btnStatus ?
-                                <>
+                                <>  
                                     <TableHead>
                                         <TableRow>
                                             <TableCell>First Name</TableCell>
-                                            <TableCell align="right">Last Name</TableCell>
-                                            <TableCell align="right">Email</TableCell>
-                                            <TableCell align="right">Phone Number</TableCell>
-                                            <TableCell align="right">Company Name</TableCell>
-                                            <TableCell align="right">Address</TableCell>
-                                            <TableCell align="right">City</TableCell>
-                                            <TableCell align="right">State</TableCell>
-                                            <TableCell align="right">Zip Code</TableCell>
-                                            <TableCell align="right">Website Url</TableCell>
+                                            <TableCell align="center">Last Name</TableCell>
+                                            <TableCell align="center">Email</TableCell>
+                                            <TableCell align="center">Phone Number</TableCell>
+                                            <TableCell align="center">Company Name</TableCell>
+                                            <TableCell align="center">Address</TableCell>
+                                            <TableCell align="center">City</TableCell>
+                                            <TableCell align="center">State</TableCell>
+                                            <TableCell align="center">Zip Code</TableCell>
+                                            <TableCell align="center">Website Url</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
                                         <TableRow>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
-                                                    size="small"
+                                                    id="standard-basic"
+                                                    variant="standard"
+                                                    size="large"
                                                     value={newFirstName}
                                                     onChange={(event) => setFirstName(event.target.value)} />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newLastName}
                                                     onChange={(event) => setLastName(event.target.value)} />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newEmail}
                                                     onChange={(event) => setEmail(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newPhoneNumber}
                                                     onChange={(event) => setPhoneNumber(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newCompanyName}
                                                     onChange={(event) => setCompanyName(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newAddress}
                                                     onChange={(event) => setAddress(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newCity}
                                                     onChange={(event) => setCity(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newState}
                                                     onChange={(event) => setState(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newZipCode}
                                                     onChange={(event) => setZipCode(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell align="center">
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="standard-basic"
+                                                    variant="standard"
                                                     size="small"
                                                     value={newWebsiteUrl}
                                                     onChange={(event) => setWebsiteUrl(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="right"><button onClick={handleSave}>Save</button></TableCell>
-                                            <TableCell align="right"><button onClick={cancelChanges}>Cancel</button></TableCell>
+                                            <TableCell align="center"><button onClick={handleSave}>Save</button></TableCell>
+                                            <TableCell align="center"><button onClick={cancelChanges}>Cancel</button></TableCell>
                                         </TableRow>
                                     </TableBody>
                                 </>
@@ -237,41 +247,41 @@ function ClientTable() {
                                 :
 
                                 <>
-                                   {/*  <TableHead>
+                                    <TableHead>
                                         <TableRow>
-                                            <TableCell>First Name</TableCell>
-                                            <TableCell align="right">Last Name</TableCell>
-                                            <TableCell align="right">Username</TableCell>
-                                            <TableCell align="right">Email</TableCell>
-                                            <TableCell align="right">Phone Number</TableCell>
-                                            <TableCell align="right">Company Name</TableCell>
-                                            <TableCell align="right">Address</TableCell>
-                                            <TableCell align="right">City</TableCell>
-                                            <TableCell align="right">State</TableCell>
-                                            <TableCell align="right">Zip Code</TableCell>
-                                            <TableCell align="right">Website URL</TableCell>
-                                            <TableCell align="right">Bookable Items</TableCell>
-                                            <TableCell align="right"></TableCell>
-                                            <TableCell align="right"></TableCell>
+                                            <TableCell className="clientListTableHeadings"><strong>First Name</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Last Name</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Username</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Email</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Phone Number</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Company Name</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Address</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>City</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>State</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Zip Code</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Website URL</strong></TableCell>
+                                            <TableCell align="center" className="clientListTableHeadings"><strong>Bookable Items</strong></TableCell>
+                                            <TableCell align="center"></TableCell>
+                                            <TableCell align="center"></TableCell>
                                         </TableRow>
-                                    </TableHead> */}
+                                    </TableHead>
                                     <TableBody>
                                         {clients.map(client => (
                                             <TableRow key={client.id} id={client.id}>
                                                 <TableCell>{client.firstName}</TableCell>
-                                                <TableCell align="right">{client.lastName}</TableCell>
-                                                <TableCell align="right">{client.username}</TableCell>
-                                                <TableCell align="right">{client.email}</TableCell>
-                                                <TableCell align="right">{client.phoneNumber}</TableCell>
-                                                <TableCell align="right">{client.companyName}</TableCell>
-                                                <TableCell align="right">{client.address}</TableCell>
-                                                <TableCell align="right">{client.city}</TableCell>
-                                                <TableCell align="right">{client.state}</TableCell>
-                                                <TableCell align="right">{client.zipcode}</TableCell>
-                                                <TableCell align="right">{client.websiteUrl}</TableCell>
-                                                <TableCell align="right"><button onClick={event => bookableItem(client)}>See Bookable Items</button></TableCell>
-                                                <TableCell align="right"><button onClick={event => editClient(client)}>Edit</button></TableCell>
-                                                <TableCell align="right"><button onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
+                                                <TableCell align="center">{client.lastName}</TableCell>
+                                                <TableCell align="center">{client.username}</TableCell>
+                                                <TableCell align="center">{client.email}</TableCell>
+                                                <TableCell align="center">{client.phoneNumber}</TableCell>
+                                                <TableCell align="center">{client.companyName}</TableCell>
+                                                <TableCell align="center">{client.address}</TableCell>
+                                                <TableCell align="center">{client.city}</TableCell>
+                                                <TableCell align="center">{client.state}</TableCell>
+                                                <TableCell align="center">{client.zipcode}</TableCell>
+                                                <TableCell align="center">{client.websiteUrl}</TableCell>
+                                                <TableCell align="center"><button onClick={event => bookableItem(client)}>See Bookable Items</button></TableCell>
+                                                <TableCell align="center"><button onClick={event => editClient(client)}>Edit</button></TableCell>
+                                                <TableCell align="center"><button onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>

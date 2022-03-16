@@ -38,7 +38,7 @@ function ViewBookableItem() {
     }
 
     const goBack = () => {
-        history.push('/user');
+        history.push('/clients');
     }
 
     return(
