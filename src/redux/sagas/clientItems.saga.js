@@ -16,6 +16,7 @@ function* clientBookableItem(action){
     }
 }
 
+
 function* clientItems(){
     yield takeEvery('FETCH_CLIENT_BOOKABLE_ITEM', clientBookableItem);
 }

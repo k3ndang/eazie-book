@@ -16,6 +16,7 @@ import renter from './renter.reducer';
 import photos from './photos.reducer';
 import renterBooking from './renterBooking.reducer';
 import selectedClientItem from './selectedClientItem.reducer';
+import singleItemPhoto from './singleItemPhoto.reducer';
 
 
 
@@ -44,7 +45,8 @@ const rootReducer = combineReducers({
   renterBooking,
   renter,
   photos,
-  selectedClientItem
+  selectedClientItem,
+  singleItemPhoto
 });
 
 export default rootReducer;

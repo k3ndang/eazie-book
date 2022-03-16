@@ -37,7 +37,7 @@ function AddPhoto(){
     console.log('id param is', params.id);
 
     async function handleSubmit(event){
-        event.preventDefault();
+
 
         const formData = new FormData();
         formData.append('selectedFile', selectedFile);

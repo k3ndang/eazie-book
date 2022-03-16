@@ -26,6 +26,11 @@ function ClientDetailItem(){
       function goToClientList(){
         history.push('/clientBookableItems')
       }
+
+      /* function pagination(num){
+        setPage(num);
+
+      } */
     return(
         <>
         <div className="ClientDetailContainer"> 
@@ -37,8 +42,8 @@ function ClientDetailItem(){
        <div> 
         <img 
             src= {selectedItem.url}
-            width= {400}
-            height={400}
+            /* width= {400}
+            height={400} */
         />
       </div>
       
