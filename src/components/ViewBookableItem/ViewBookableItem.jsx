@@ -51,11 +51,11 @@ function ViewBookableItem() {
         <>
             <Button variant="outlined" color="primary" onClick={goBack}>Back</Button>
             <Button variant="outlined" color="primary" onClick={addItem}>Add New Item</Button>
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} className="ViewBookableItemTableContainer">
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Item</TableCell>
+                            <TableCell align="center">Item</TableCell>
                             <TableCell align="center">Summary</TableCell>
                             <TableCell align="center">Details</TableCell>
                             <TableCell align="center">Rate</TableCell>
