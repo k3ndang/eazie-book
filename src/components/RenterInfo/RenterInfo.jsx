@@ -43,11 +43,11 @@ function RenterInfo() {
                             <TableCell component="th" scope='row'>
                             {row.username}
                             </TableCell>
-                            <TableCell align='right'>{row.email}</TableCell>
-                            <TableCell align='right'>{row.phoneNumber}</TableCell>
-                            <TableCell align='right'>{row.item_name}</TableCell>
-                            <TableCell align='right'>{row.unitTime}</TableCell>
-                            <TableCell align='right'>{row.time_booked}</TableCell>
+                            <TableCell align='center'>{row.email}</TableCell>
+                            <TableCell align='center'>{row.phoneNumber}</TableCell>
+                            <TableCell align='center'>{row.item_name}</TableCell>
+                            <TableCell align='center'>{row.unitTime}</TableCell>
+                            <TableCell align='center'>{row.time_booked}</TableCell>
                         </TableRow>
                     )
                 })}
