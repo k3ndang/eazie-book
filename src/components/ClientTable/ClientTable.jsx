@@ -119,8 +119,8 @@ function ClientTable() {
                     <Table>
                         <TableHead>
                             <TableRow >
-                                <TableCell align="center" className="clientListTableHeadings"> <strong>First Name </strong></TableCell>
-                                <TableCell align="center" className="clientListTableHeadings"> <strong>Last Name  </strong></TableCell>
+                                <TableCell align="center" className="clientListTableHeadingsFirstName"> <strong>First Name </strong></TableCell>
+                                <TableCell align="center" className="clientListTableHeadingsLastName"> <strong>Last Name  </strong></TableCell>
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Username  </strong></TableCell>
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Email </strong></TableCell>
                                 <TableCell align="center" className="clientListTableHeadings"> <strong>Phone Number  </strong></TableCell>

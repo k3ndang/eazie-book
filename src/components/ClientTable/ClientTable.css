@@ -5,10 +5,25 @@
     flex-direction: row;
     font-size: 20px;
     padding-bottom: 10px;
-    
+
    
 }
-
+.clientListTableHeadingsFirstName{
+    width: 8%;
+    justify-content: center;    
+    border: 2px solid black;
+    flex-direction: row;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.clientListTableHeadingsLastName{
+    width: 8%;
+    justify-content: center;    
+    border: 2px solid black;
+    flex-direction: row;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
 .clientListTableRow{
     width: 500px;
     border: 2px solid black;
@@ -25,6 +40,10 @@
 .MuiTableBody-root{
     border: 2px solid black;
    
+}
+
+.clientListTableFirstName{
+    background-color: red;
 }
 
 .clientTableOpenButtons{
