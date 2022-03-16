@@ -35,7 +35,7 @@ function ClientBookableItems() {
      useEffect(()=> {
         dispatch({
           type: 'FETCH_CLIENT_LIST'
-        });
+        })
       }, []);
    
     return (
@@ -45,8 +45,6 @@ function ClientBookableItems() {
 
         <h1 className="BookableItemsTitle"> List of Bookable items</h1>
             <ImageList sx={{ width: 1300, height: 750 }} className="imageContainer">
-
-
                  {itemData.map(item => {
                     return (
                         <>
@@ -54,8 +52,8 @@ function ClientBookableItems() {
                                 <Grid item className="clientListGridItem" onClick={() => handleSelectedItem(item)}>
                                     <ImageListItem>
                                         <img
-                                            src={`${item.url}?w=248&fit=crop&auto=format`}
-                                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                            src={item.url[0]}
+                                            
                                             alt={item.title}
                                             loading='lazy'
                                             

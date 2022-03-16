@@ -8,6 +8,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     
     const queryText = `
         SELECT 
+            "bookable_items"."id",
             "bookable_items"."title",
             "bookable_items"."summary",
             "bookable_items"."detail",
