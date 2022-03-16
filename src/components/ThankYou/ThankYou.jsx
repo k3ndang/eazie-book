@@ -12,16 +12,14 @@ function ThankYou () {
         })
     }, [params.id])
 
-    const bookingConfirmation = useSelector(store => store.renterBooking)
-    console.log('confirmation code', bookingConfirmation)
+    const confirmationCode = useSelector(store => store.renterBooking)
+    console.log('confirmation code', confirmationCode)
 
     return (
         <>
         <h2>Thank You For Using Eazie_Book</h2>
         <h4>Your Confirmation Code</h4>
-        {bookingConfirmation.map((code) =>
-            <p key={code.id}>{code.confirmationNumber}</p>
-        )}
+        <p>{confirmationCode.confirmationNumber}</p>
         </>
     )
 }
