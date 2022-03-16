@@ -18,19 +18,22 @@ function* bookableItemSaga() {
     
 }
 
-function* clientBookableItem(action){
-    try{
-        const response = yield axios.get(`/api/bookableItem/${action.payload}`)
 
-        yield put({
-            type: 'SET_CLIENT_ITEM',
-            payload: response.data
-        })
-    }
-    catch(error) {
-        console.error('ERROR getting items for client', error);
-    }
-}
+// WHERE IS THIS BEING USE????
+// THERE IS THE SAME FUNCTION IN clientItems.saga????
+// function* clientBookableItem(action){
+//     try{
+//         const response = yield axios.get(`/api/bookableItem/${action.payload}`)
+
+//         yield put({
+//             type: 'SET_CLIENT_ITEM',
+//             payload: response.data
+//         })
+//     }
+//     catch(error) {
+//         console.error('ERROR getting items for client', error);
+//     }
+// }
 
 function* fetchItemPhotos(action){
     try{
