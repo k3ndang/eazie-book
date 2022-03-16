@@ -11,6 +11,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button'
 import './ClientTable.css'
 function ClientTable() {
 
@@ -238,8 +239,8 @@ function ClientTable() {
                                                     onChange={(event) => setWebsiteUrl(event.target.value)}
                                                 />
                                             </TableCell>
-                                            <TableCell align="center"><button onClick={handleSave}>Save</button></TableCell>
-                                            <TableCell align="center"><button onClick={cancelChanges}>Cancel</button></TableCell>
+                                            <TableCell align="center"><Button onClick={handleSave}>Save</Button></TableCell>
+                                            <TableCell align="center"><Button onClick={cancelChanges}>Cancel</Button></TableCell>
                                         </TableRow>
                                     </TableBody>
                                 </>
@@ -279,9 +280,9 @@ function ClientTable() {
                                                 <TableCell align="center">{client.state}</TableCell>
                                                 <TableCell align="center">{client.zipcode}</TableCell>
                                                 <TableCell align="center">{client.websiteUrl}</TableCell>
-                                                <TableCell align="center"><button onClick={event => bookableItem(client)}>See Bookable Items</button></TableCell>
-                                                <TableCell align="center"><button onClick={event => editClient(client)}>Edit</button></TableCell>
-                                                <TableCell align="center"><button onClick={event => deleteClient(client.id)}>Delete</button></TableCell>
+                                                <TableCell align="center"><Button onClick={event => bookableItem(client)}>See Bookable Items</Button></TableCell>
+                                                <TableCell align="center"><Button onClick={event => editClient(client)}>Edit</Button></TableCell>
+                                                <TableCell align="center"><Button onClick={event => deleteClient(client.id)}>Delete</Button></TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>
