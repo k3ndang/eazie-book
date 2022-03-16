@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import { Grid, Button } from '@material-ui/core';
 
 function Nav() {
   const user = useSelector((store) => store.user);
 
 
   /* 
-  Links we think we will use
+  Links we think we will use 
   ADMIN === { Home, Client Table, LogOut}
       * Home links to admin landing page
       * Client Table links to client table page
@@ -63,6 +64,7 @@ function Nav() {
       * LogOut links to the login page */}
         {user.authLevel === 'admin' && (
           <>
+          
             <div className="dropdown">
               <button className="dropbtn"> Manage </button>
               <div className="dropdown-content">
@@ -75,6 +77,11 @@ function Nav() {
                 {/* <Link to="/"> Edit Clients </Link> */}
               </div>
             </div>
+              <div className="dropdown">
+                <Link className="dropbtn" to="/acctInfo">
+                  Acct info
+                </Link>
+              </div>
             <div className="dropdown">
               <button className="dropbtn"> View List</button>
               <div className="dropdown-content">
@@ -91,6 +98,7 @@ function Nav() {
               </Link>
             </div>
             <LogOutButton className="dropbtn" />
+           
           </>
         )}
 
@@ -98,9 +106,11 @@ function Nav() {
       * Home links to the renter landing page
       * Reservations links to the renter reservation info page
       * LogOut links to the login page */}
+        
+        
         {user.authLevel === 'renter' && (
           <>
-
+          
             <div className="dropdown">
               <Link className="dropbtn" to="/user">
                 Home
@@ -115,18 +125,12 @@ function Nav() {
               </div>
             </div>
       
-              <div className="dropdown">
-                <Link className="dropbtn" to="/acctInfo">
-                  Acct info
-                </Link>
-              </div>
+              
             <div className="dropdown">
               <Link className="dropbtn" to="/about">
                 About
               </Link>
             </div>
-    
-
             <LogOutButton className="dropbtn" />
           </>
         )}
