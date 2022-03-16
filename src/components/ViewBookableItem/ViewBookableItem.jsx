@@ -51,21 +51,26 @@ function ViewBookableItem() {
         <>
             <Button variant="outlined" color="primary" onClick={goBack}>Back</Button>
             <Button variant="outlined" color="primary" onClick={addItem}>Add New Item</Button>
-            <TableContainer component={Paper} className="ViewBookableItemTableContainer">
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+           
+            <TableContainer component={Paper} sx={{ maxWidth: 1000 }} className="ViewBookableItemTableContainer">
+                <Table sx={{ minWidth: 500 }} aria-label="simple table">
+               
                     <TableHead>
-                        <TableRow>
-                            <TableCell align="center">Item</TableCell>
-                            <TableCell align="center">Summary</TableCell>
-                            <TableCell align="center">Details</TableCell>
-                            <TableCell align="center">Rate</TableCell>
-                            <TableCell align="center">Time</TableCell>
-                            <TableCell align="center">Location</TableCell>
-                            <TableCell align="center">Category</TableCell>
-                            <TableCell align="center">Company Name</TableCell>
-                            <TableCell align="center"></TableCell>
+                        <TableRow className="ViewBookableItemTableRowHeading">
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Item</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Summary</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Details</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Rate</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Time</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Location</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowName">Category</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowCompanyName">Company Name</TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowButton">  </TableCell>
+                            <TableCell align="center" className="ViewBookableItemTableRowButton">  </TableCell>
+
                         </TableRow>
                     </TableHead>
+              
                     <TableBody>
                         {selectedClientItem.map((item, index) => (
 
