@@ -117,9 +117,10 @@ function BookableItemDetail () {
             options= {hours}
             sx={{ width: 350 }}
             value= {hours.id}
+            fontSize="20px"
             renderInput={(params) => <TextField {...params} label="How Many Hours?" />}
             onChange={(event, newValue) => setHoursBook(newValue.id)}
-            /> 
+            />
             <Button 
                 type="submit"
                 variant="outlined"

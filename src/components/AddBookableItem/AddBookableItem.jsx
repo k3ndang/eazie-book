@@ -80,7 +80,7 @@ function addBookableItem() {
     }
 
     const goBack = () => {
-        history.push('/viewBookableItem')
+        history.push('/user')
     }
 
 
