@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import moment from 'moment';
+import { Button } from '@mui/material'
 import { Grid } from '@material-ui/core'
 function RenterReviewPage() {
     const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function RenterReviewPage() {
                 <p>Detail: {reviewBooking.selectedItem.detail}</p>
                 <p>Date/Time Selected: {moment(reviewBooking.date.toString()).format('MMMM Do YYYY, h:mm:ss a')}</p>
                 <p>Duration Booking: {reviewBooking.hoursBook === "All_Day" ? reviewBooking.hoursBook : `${reviewBooking.hoursBook} Hours`}</p>
-                <button onClick={confirming}>Confirm</button>
+                <Button onClick={confirming}>Confirm</Button>
             </Grid>
         </>
     )

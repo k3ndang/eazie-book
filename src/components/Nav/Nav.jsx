@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import { Grid, Button } from '@material-ui/core';
 
 function Nav() {
   const user = useSelector((store) => store.user);
 
 
   /* 
-  Links we think we will use
+  Links we think we will use 
   ADMIN === { Home, Client Table, LogOut}
       * Home links to admin landing page
       * Client Table links to client table page
@@ -63,6 +64,7 @@ function Nav() {
       * LogOut links to the login page */}
         {user.authLevel === 'admin' && (
           <>
+          <Grid container spacing={5} direction='row' alignItems='right'>
             <div className="dropdown">
               <button className="dropbtn"> Manage </button>
               <div className="dropdown-content">
@@ -91,6 +93,7 @@ function Nav() {
               </Link>
             </div>
             <LogOutButton className="dropbtn" />
+            </Grid>
           </>
         )}
 
@@ -98,9 +101,11 @@ function Nav() {
       * Home links to the renter landing page
       * Reservations links to the renter reservation info page
       * LogOut links to the login page */}
+        
+        
         {user.authLevel === 'renter' && (
           <>
-
+          
             <div className="dropdown">
               <Link className="dropbtn" to="/user">
                 Home
@@ -125,8 +130,6 @@ function Nav() {
                 About
               </Link>
             </div>
-    
-
             <LogOutButton className="dropbtn" />
           </>
         )}
