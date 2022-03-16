@@ -36,3 +36,27 @@
     border: 3px solid black;
     background-color: rgb(146, 183, 230);
 }
+
+.clientTableEditButtons{
+    font-weight: 900;
+    border: 3px solid black;
+    width: 60px;
+}
+
+.clientTableEditButtons:hover{
+    font-weight: 900;
+    border: 3px solid black;
+    background-color: rgb(146, 183, 230);
+}
+
+.clientTableDeleteButtons{
+    font-weight: 900;
+    border: 3px solid black;
+    width: 70px;
+}
+
+.clientTableDeleteButtons:hover{
+    font-weight: 900;
+    border: 3px solid black;
+    background-color: rgb(146, 183, 230);
+}
