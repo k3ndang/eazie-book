@@ -97,17 +97,16 @@ function addBookableItem () {
                     '& .MuiTextField-root': { m: 2, width: '25ch' },
                 }}
                 noValidate
-                autoComplete="off"
+            
             >
 
                 <div className="selectCompanyName">  
                 <h3 className="InputFieldTitle">  Client Company Name </h3>
                 <Autocomplete
-                    
+                    className="autocompleteBox"
                     options={clients}
                     sx={{width:620}}
                     value={clients.label}
-                    fontSize="20px"
                     renderInput={(params) => <TextField {...params} label="Company Name" />}
                     onChange={(event, newValue) => setClientId(newValue.id)}
                 />

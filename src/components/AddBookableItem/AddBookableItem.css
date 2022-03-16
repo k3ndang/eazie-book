@@ -6,10 +6,10 @@
     margin: auto;
     align-items: center;
     font-size: 5px;
-    font-variant: small-caps;
+    
     line-height: 1em;
 
-    background-color: rgb(132, 158, 156);
+    background-color: rgb(192, 217, 233);
 }
 /* client name input field and title  */
 .selectCompanyName{
@@ -42,10 +42,21 @@
     
     
 }
+
+/* this is necessary to make sure the values chosen for client company name shows */
 .selectCompanyName .MuiOutlinedInput-input{
     z-index: 999;
     font-size: 20px;
   
+    width: 1000px;
+}
+
+.selectCompanyName{
+    width: 880px;
+    background-color: rgb(192, 217, 233);
+    text-align: center;
+    padding-left: 20px;
+
 }
 
 /* input fields : title, summary, rate, unit time, details */
@@ -81,7 +92,6 @@
     font-size: 30px;
     text-align: center;
 } */
-.
 
 /* The actual value of the MUI select form */
 .categoryAutocomplete .MuiSelect-select {
@@ -92,7 +102,6 @@
 }
 .InputFieldTitle .MuiAutocomplete-root{
     font-size: 100px;
-    
 }
 .categoryAutocomplete .MuiSelect-select::placeholder{
     background-color: red;
@@ -101,7 +110,7 @@
 .InputFieldTitle{
     margin-top: 10px;
     margin: 5px;
-    font-size: 35px;
+    font-size: 25px;
 
 }
 
@@ -109,15 +118,28 @@
 .SelectCategoryTitle{
     margin: 10px;
     text-align: center;
-    font-size: 35px;
+    font-size: 25px;
+    padding-left: 60px;
+    padding-right: 20px;
 }
+
+
 /* submit button  */
 .FormSubmitBtn{
     width: 200px;
+    border: 4px solid black;
+}
+
+/* the size of the select category dropdown */
+.MuiFormControl-root{
+    width: 150px;
+
 }
 /* placeholder text for select category placeholder */
 .SelectCategoryTitlePlaceholder{
     text-align: center;
+   margin-left: 110px;
+   
     
     
 }
@@ -167,11 +189,8 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    font-size: 20px;
+    font-size: 28px;
     color: black;
    
    
-}
-.selectCategoryPlaceholder{
-    background-color: red;
 }
