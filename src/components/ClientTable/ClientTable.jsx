@@ -111,6 +111,9 @@ function ClientTable() {
 
     return (
         <>
+            <br/>
+            <br/>
+            <br/>
             <div className="clientTable">
                 <TableContainer component={Paper}>
                     <Table>
@@ -136,7 +139,7 @@ function ClientTable() {
                                 <>
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>First Name</TableCell>
+                                            <TableCell align="right">First Name</TableCell>
                                             <TableCell align="right">Last Name</TableCell>
                                             <TableCell align="right">Email</TableCell>
                                             <TableCell align="right">Phone Number</TableCell>
@@ -255,16 +258,16 @@ function ClientTable() {
                                             <TableCell align="right"></TableCell>
                                         </TableRow>
                                     </TableHead> */}
-                                    <TableBody>
+                                    <TableBody className="clientTableBody">
                                         {clients.map(client => (
                                             <TableRow key={client.id} id={client.id}>
                                                 <TableCell>{client.firstName}</TableCell>
-                                                <TableCell align="center">{client.lastName}</TableCell>
+                                                <TableCell align="center" className="clientTableBodyLastName">{client.lastName}</TableCell>
                                                 <TableCell align="center">{client.username}</TableCell>
                                                 <TableCell align="center">{client.email}</TableCell>
                                                 <TableCell align="center">{client.phoneNumber}</TableCell>
                                                 <TableCell align="center">{client.companyName}</TableCell>
-                                                <TableCell align="center">{client.address}</TableCell>
+                                                <TableCell align="center" className="clientTableBodyAddress">{client.address}</TableCell>
                                                 <TableCell align="center">{client.city}</TableCell>
                                                 <TableCell align="center">{client.state}</TableCell>
                                                 <TableCell align="center">{client.zipcode}</TableCell>

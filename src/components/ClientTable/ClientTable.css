@@ -3,8 +3,9 @@
     justify-content: center;    
     border: 2px solid black;
     flex-direction: row;
-    font-size: 35px;
+    font-size: 20px;
     padding-bottom: 10px;
+    
    
 }
 
@@ -59,4 +60,12 @@
     font-weight: 900;
     border: 3px solid black;
     background-color: rgb(146, 183, 230);
+}
+
+.clientTableBodyAddress{
+    width: 2000px;
+}
+
+.clientTableBody{
+    background-color: rgb(229, 233, 232);
 }
