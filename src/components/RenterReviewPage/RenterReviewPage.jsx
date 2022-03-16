@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams }  from 'react-router-dom';
 import moment from 'moment';
-
+import { Grid } from '@material-ui/core'
 function RenterReviewPage () {
     const dispatch = useDispatch();
     const history = useHistory();
