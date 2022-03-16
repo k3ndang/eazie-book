@@ -32,7 +32,7 @@ function SideBySide(){
                     <Grid item>
                         <ImageListItem>
                             <img
-                                src="https://cdn.dealerspike.com/imglib/v1/800x600/imglib/trimsdb/14859321-0-97219301.jpg"
+                                src={item.url[0]}
                                 alt={item.title}
                             />
                         </ImageListItem>

@@ -33,7 +33,7 @@ function PontoonList () {
                     <Grid item>
                         <ImageListItem>
                             <img 
-                                src="https://www.windsongboatrentals.com/images/boats/black-lexington/gallery_files/vlb_images1/dji_20200904_132131.jpg"
+                                src={item.url[0]}
                                 alt={item.title}
                             />
                         </ImageListItem>

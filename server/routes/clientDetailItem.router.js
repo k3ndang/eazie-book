@@ -61,7 +61,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
                         "bookable_items"."unitTime", 
                         "bookable_items"."location",
                         "categories"."name", 
-                        "photos"."url", 
+                        ARRAY_AGG("photos"."url") AS "url", 
                         "user"."email",
                         "user"."phoneNumber", 
                         "user"."companyName", 
@@ -72,7 +72,8 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
                         LEFT JOIN "categories" ON "categories"."id"="bookable_items"."categoryId"
                         LEFT JOIN "photos" ON "photos"."itemId"="bookable_items"."id"  
                         LEFT JOIN "user" ON "user"."id"="bookable_items"."clientId" 
-                        WHERE "user".id= $1 AND "bookable_items"."id"= $2;
+                        WHERE "user".id= $1 AND "bookable_items"."id"= $2
+                        GROUP BY "bookable_items"."id", "categories"."id", "user"."id";
                         `;
     const queryParams = [req.user.id, req.params.id]
     pool.query(queryText, queryParams)

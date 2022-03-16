@@ -59,7 +59,7 @@ function* fetchItemPhotos(action){
     }
 }
 
-function* renterFetchBookableItem (action) {
+function* renterFetchBookableItem (action) { 
     try {
         const result = yield axios.get(`/api/bookableItem/renterReq/${action.payload}`)
         console.log('result from renter fetch', result.data)

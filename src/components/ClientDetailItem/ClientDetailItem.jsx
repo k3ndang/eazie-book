@@ -7,7 +7,7 @@ import './ClientDetailItem.css'
 function ClientDetailItem(){
     // retrieve selected client item from store
     const selectedItem = useSelector((store)=> store.clientSelectedItem)
-     console.log('selectedItem is', selectedItem.id);
+     console.log('selectedItem is', selectedItem.url);
     //Hooks
      const dispatch = useDispatch();
      const params = useParams(); 
@@ -39,12 +39,13 @@ function ClientDetailItem(){
         <br/>
         <br/>
         
-       <div> 
-        <img 
-            src= {selectedItem.url}
-            /* width= {400}
-            height={400} */
-        />
+       <div>
+        {selectedItem.url?.map((photo, i) => (
+          <img
+            key={i}
+            src={photo}
+          />
+        ))}
       </div>
       
        

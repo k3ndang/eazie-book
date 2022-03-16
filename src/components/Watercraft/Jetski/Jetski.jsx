@@ -31,7 +31,7 @@ function JetskiList () {
                     <Grid item>
                         <ImageListItem>
                             <img 
-                                src="https://www.highsnobiety.com/static-assets/thumbor/9RQrT1s1Cz1fvE-9Rj2gqH5IG4E=/1600x1067/www.highsnobiety.com/static-assets/wp-content/uploads/2021/06/09114326/supreme-jetski-release-main.jpg"
+                                src={item.url[0]}
                                 alt={item.title}
                             />
                         </ImageListItem>
