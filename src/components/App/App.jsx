@@ -5,7 +5,6 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
@@ -43,10 +42,9 @@ import RenterInfo from '../RenterInfo/RenterInfo';
 import AddPhoto from '../AddPhoto/AddPhoto';
 import AcctInfo from '../AcctInfo/AcctInfo'
 
-
 import './App.css';
 
-function App() {
+export default function App() {
   const dispatch = useDispatch();
 
   const user = useSelector(store => store.user);
@@ -56,328 +54,192 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Router>
-      <div>
-        <Nav />
+    <div>
+      <Router>
+      <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
-          <Route
-            // shows AboutPage at all times (logged in or not)
-            exact
-            path="/about"
-          >
+          {/* shows AboutPage at all times (logged in or not) */}
+          <Route exact path="/about">
             <AboutPage />
           </Route>
 
-          <Route
-          exact
-          path='/acctInfo'
-          >
+          <Route exact path='/acctInfo'>
             <AcctInfo />
           </Route>
 
-          <Route
-            // shows AboutPage at all times (logged in or not)
-            exact
-            path="/viewBookableItem/:id"
-          >
+          {/* shows AboutPage at all times (logged in or not) */}
+          <Route exact path="/viewBookableItem/:id">
             <ViewBookableItem />
           </Route>
 
-          <ProtectedRoute
-          exact 
-          path="/renterInfo"
-          >
+          <ProtectedRoute exact path="/renterInfo">
             <RenterInfo />
           </ProtectedRoute>
 
-
           {/* ROUTES FOR ADMIN */}
 
-
-          {/* For protected routes, the view could show one of several things on the same route.
-            Visiting localhost:3000/user will show the UserPage if the user is logged in.
-            If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
-            Even though it seems like they are different pages, the user is always on localhost:3000/user */}
-          <ProtectedRoute
-            // logged in shows UserPage else shows LoginPage
-            exact
-            path="/user"
-          >
+          {/*
+            For protected routes, the view could show one of several things on
+            the same route.  Visiting localhost:3000/user will show the UserPage
+            if the user is logged in.  If the user is not logged in, the
+            ProtectedRoute will show the LoginPage (component).  Even though it
+            seems like they are different pages, the user is always on
+            localhost:3000/user 
+          */}
+          {/* logged in shows UserPage else shows LoginPage */}
+          <ProtectedRoute exact path="/user">
             <UserPage />
           </ProtectedRoute>
 
           {/* ROUTE for client invite page */}
-          <ProtectedRoute 
-            exact
-            path='/admin/invite'
-          >
-            <InviteClient />  
+          <ProtectedRoute exact path='/admin/invite'>
+            <InviteClient />
           </ProtectedRoute>
 
           {/* ROUTE for client table */}
-          <ProtectedRoute
-            exact 
-            path="/clients"
-          >
-            <ClientTable />  
+          <ProtectedRoute exact path="/clients">
+            <ClientTable />
           </ProtectedRoute>
 
           {/* ROUTE for bookableItem page */}
-          <ProtectedRoute
-            exact
-            path="/viewBookableItem"
-          >
+          <ProtectedRoute exact path="/viewBookableItem">
             <ViewBookableItem />
           </ProtectedRoute>
 
           {/* ROUTE for add bookable item */}
-          <Route
-            exact
-            path="/addBookableItem"
-          >
+          <Route exact path="/addBookableItem">
             <AddBookableItem />
           </Route>
 
           {/* ROUTE for editing an item */}
-          <Route
-            exact
-            path="/editBookableItemForm/:id"
-          >
+          <Route exact path="/editBookableItemForm/:id">
             <EditBookableItemForm />
           </Route>
 
-            
-          <ProtectedRoute
+          <ProtectedRoute exact path='/renterHistory'>
+            <RenterHistory />
 
-            exact
-            path='/renterHistory'
-          >
-              <RenterHistory />
-            </ProtectedRoute>
-          <ProtectedRoute
-           exact
-            path="/admin/categoryInput"
-          >
-           
           </ProtectedRoute>
 
-          <ProtectedRoute
-            exact
-            path="/addPhotos/:id"
-          >
+          <ProtectedRoute exact path="/admin/categoryInput">
+            {/* <CategoryInput /> */}
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/addPhotos/:id">
             <AddPhoto />
           </ProtectedRoute>
 
-          {/* ROUTE for info page */}
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/info"
-          >
-          <Route>
-            <EditBookableItemForm />
-          </Route>
+          {/* logged in shows InfoPage else shows LoginPage */}
+          <ProtectedRoute exact path="/info">
+            <Route>
+              <EditBookableItemForm />
+            </Route>
 
-          <Route>
-            <InfoPage />
-          </Route>
-            
+            <Route>
+              <InfoPage />
+            </Route>
           </ProtectedRoute>
-
-          {/* END OF ROUTES FOR ADMIN */}
 
           {/* ROUTES FOR CLIENT */}
 
-          {/* ROUTE for client bookable items */}
-          <ProtectedRoute
-            exact
-            path="/clientBookableItems"
-          >
-          <Route>
-            <ClientBookableItems />
-          </Route>
-
+          <ProtectedRoute exact path="/clientBookableItems">
+            <Route>
+              <ClientBookableItems />
+            </Route>
           </ProtectedRoute>
 
           {/* ROUTE for specific client bookable items */}
-          <ProtectedRoute
-            exact 
-            path="/clientBookableItems/:id"
-          >
+          <ProtectedRoute exact path="/clientBookableItems/:id">
             <ClientDetailItem />
           </ProtectedRoute>
 
-          {/* END OF ROUTES FOR CLIENT */}
-
-
-
-
-
-
-
-
           {/* ROUTES FOR RENTER */}
 
-          {/* ROUTE for renter history */}
-          <Route
-            exact
-            path='/renterHistory'
-          >
-              <RenterHistory />
+          <Route exact path='/renterHistory'>
+            <RenterHistory />
           </Route>
 
-          {/* ROUTE for renter watercraft */}
-          <Route
-            exact
-            path="/watercraft"
-          >
+          <Route exact path="/watercraft">
             <Watercraft />
           </Route>
 
           {/* ROUTE for renter jetski's */}
-          <Route 
-            exact
-            path="/jetski/:jetskiId"
-          >
+          <Route exact path="/jetski/:jetskiId">
             <Jetski />
           </Route>
 
           {/* ROUTE for renter boat's */}
-          <Route 
-            exact
-            path="/boat/:boatId"
-          >
+          <Route exact path="/boat/:boatId">
             <Boat />
           </Route>
-            <ProtectedRoute
-            exact 
-            path='/bookableItemList'
-            >
-              <BookableItemList />
-            </ProtectedRoute>
 
-          {/* ROUTE for renter pontoon's */}
-          <Route 
-            exact
-            path="/detail/:id"
-          >
+          <ProtectedRoute exact path='/bookableItemList'>
+            <BookableItemList />
+          </ProtectedRoute>
+
+          <Route exact path="/detail/:id">
             <BookableItemDetail />
           </Route>
 
-          <Route 
-            exact
-            path="/pontoon/:pontoonId"
-          >
+          <Route exact path="/pontoon/:pontoonId">
             <Pontoon />
           </Route>
 
-          {/* ROUTE for renter all terrain vehicles */}
-          <Route
-            exact
-            path='/allTerrain'
-          >
-            <AllTerrainVehicles />  
+          <Route exact path='/allTerrain'>
+            <AllTerrainVehicles />
           </Route>
 
-          {/* ROUTE for renter Side-By-Side's */}
-          <Route
-            exact
-            path='/sideBySide/:sideBySideId'
-          >
+          <Route exact path='/sideBySide/:sideBySideId'>
             <SideBySide />
           </Route>
 
-          {/* END OF ROUTES FOR RENTER */}
-
           {/* ROUTE for renter ATV's */}
-          <Route
-            exact
-            path='/ATV/:ATV'
-          >
+          <Route exact path='/ATV/:ATV'>
             <ATV />
           </Route>
 
           {/* END OF ROUTES FOR RENTER */}
 
-          
-
-          <Route
-            exact
-            path="/login"
-          >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the login page
-              <LoginPage />
-            }
+          {/*  If the user is already logged in, redirect to the /user page
+              Otherwise, show the login page */}
+          <Route exact path="/login" >
+            {user.id ? <Redirect to="/user" /> : <LoginPage />}
           </Route>
 
-          <Route
-            exact
-            path="/registration"
-          >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the registration page
-              <RegisterPage />
-            }
+          {/* If the user is already logged in, redirect them to the /user
+               page Otherwise, show the registration page */}
+          <Route exact path="/registration">
+            {user.id ? <Redirect to="/user" /> : <RegisterPage />}
           </Route>
-      
 
-          <Route
-            exact
-            path="/renterReviewPage/:id"
-          >
+
+          <Route exact path="/renterReviewPage/:id">
             <RenterReviewPage />
           </Route>
 
-          <Route 
-            exact
-            path="/thankyou/:id"
-          >
+          <Route exact path="/thankyou/:id">
             <ThankYou />
           </Route>
 
-          <Route
-            exact
-            path="/home"
-          >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the Landing page
-              <LandingPage />
-            }
+          <Route exact path="/home">
+            {user.id ? <Redirect to="/user" /> : <LandingPage />}
           </Route>
-            <ProtectedRoute
-            exact 
-            path='/makeAReservation'
-            >
-              <LandingPage />
-            </ProtectedRoute>
-          
+          <ProtectedRoute exact path='/makeAReservation'>
+            <LandingPage />
+          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
           </Route>
+
         </Switch>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+      <Footer />
+    </div>
   );
 }
-
-export default App;
