@@ -31,12 +31,12 @@ function PontoonList () {
             {pontoonList.map((item) => (
                 <Grid container key={item.id}>
                     <Grid item>
-                        <ImageListItem>
                             <img 
                                 src={item.url[0]}
                                 alt={item.title}
+                                width="5000px"
+                                height="400px"
                             />
-                        </ImageListItem>
                         <Typography variant='h4'>{item.title}</Typography>
                         <Typography variant='h6'>Summary: {item.summary}</Typography>
                         <Typography variant='h6'>Detail: {item.detail}</Typography>

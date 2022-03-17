@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams }  from 'react-router-dom';
 
+import './ThankYou.css';
+
 function ThankYou () {
     const params = useParams();
     const dispatch = useDispatch();
@@ -19,7 +21,7 @@ function ThankYou () {
         <>
         <h2>Thank You For Using Eazie_Book</h2>
         <h4>Your Confirmation Code</h4>
-        <p>{confirmationCode.confirmationNumber}</p>
+        <p><strong><i>{confirmationCode.confirmationNumber}</i></strong></p>
         </>
     )
 }

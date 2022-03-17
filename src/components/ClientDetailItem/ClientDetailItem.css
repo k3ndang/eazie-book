@@ -3,6 +3,7 @@
     
 }
 
+
 .ClientDetailPageCompanyName{
     display: inline-block; 
     font-size: 30px;
@@ -14,12 +15,12 @@
 }
 
 .ClientDetailInfoTitle{
-    font-variant: small-caps;
     font-size: 30px;
     text-decoration: underline;
     margin-bottom: 0.5em;
-
+    text-align: center;
 }
+
 .ClientDetailContactInfo{
     display: inline; 
     font-size: 24px;
@@ -41,12 +42,13 @@
     align-items: center;
     font-size: 24px;
 
+
 }
 
 .ClientDetailContainer{
     align-items: center;
     margin-top: 20px;
-    margin-left: 25%;
+
 } 
 
 .ClientDetailInfo{

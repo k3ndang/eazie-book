@@ -54,6 +54,8 @@ function ClientBookableItems() {
                                         <img
                                             src={item.url[0]}
                                             alt={item.title}
+                                            width="5000px"
+                                            height="400px"
                                             loading='lazy'
                                             
                                         />

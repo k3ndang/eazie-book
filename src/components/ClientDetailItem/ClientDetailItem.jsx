@@ -51,7 +51,7 @@ function ClientDetailItem(){
         <>
         <div className="ClientDetailContainer"> 
 
-        <h2 className="ClientDetailInfoTitle"> Company Name: </h2> <div className= "ClientDetailInfo"> {selectedItem.companyName} </div>
+        <h2 className="ClientDetailInfoTitle"> Company Name: </h2> <div className= "ClientDetailInfoTitle"> {selectedItem.companyName} </div>
         <br/>
         <br/>
         
