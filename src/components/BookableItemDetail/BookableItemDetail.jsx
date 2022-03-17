@@ -87,61 +87,81 @@ function BookableItemDetail() {
 
     return (
         <>
-        <Grid>
-        <h2>Item Details</h2>
-        
-        <section className="slider">
-            <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
-            <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
-            {selectedItem.url?.map((photo, i) => {
-                return (
-                    <div 
-                        className={i === current ? 'slide active' : 'slide'}
-                        key={i}
-                    >
-                        {i === current && (
-                            <img
-                            className="image"
+        <Grid container spacing={4} direction='column' alignItems='center>
+          <h2>Item Details</h2>
+        <Grid item>
+            <section className="slider">
+                <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
+                <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
+                {selectedItem.url?.map((photo, i) => {
+                    return (
+                        <div 
+                            className={i === current ? 'slide active' : 'slide'}
                             key={i}
-                            src={photo}
-                            onClick={nextSlide}
-                        />
+                        >
+                            {i === current && (
+                                <img
+                                className="image"
+                                key={i}
+                                src={photo}
+                                onClick={nextSlide}
+                            />
+                            )}
+                        </div>
+                    )
+
+                    })}
+            </section>
+            </Grid>
+                <Typography variant="h4">Title: {selectedItem.title}</Typography>
+                <Typography variant="h6">Summary: {selectedItem.summary}</Typography>
+                <Typography variant="h6">Detail: {selectedItem.detail}</Typography>
+                <Typography variant="h6">Rate: {selectedItem.rate}</Typography>
+                <Grid item>
+                    <h4>Click below to select date</h4>
+                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                        <DateTimePicker value={selectedDate} onChange={handleDateChange} />
+                    </MuiPickersUtilsProvider>
+                    <h4>Renting Hours</h4>
+                    <Autocomplete
+                        ListboxProps={{
+                            style: {
+                                position: "absolute",
+                                top: 10,
+                                bottom: 0,
+                                right: 0,
+                                left: 0,
+                                height: 300,
+                                width: "100%",
+                                overflowY: "auto",
+                                backgroundColor: "white",
+                            },
+                        }}
+                        options={hours}
+                        // sx={{ width: 350 }}
+                        value={hours.id}
+                        fontSize="20px"
+                        renderInput={(params) => (
+                            <TextField
+                                {...params}
+                                variant="standard"
+                                label="Hours"
+                            />
                         )}
-                    </div>
-                )
-            
-                })}
-        </section>
+                        onChange={(event, newValue) => setHoursBook(newValue.id)}
+                    />
+                </Grid>
+                <Button
+                    type="submit"
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                    onClick={(evt) => bookingNow(evt)}
+                >
+                    Book Now
+                </Button>
 
-        <Typography variant="h4">Title: {selectedItem.title}</Typography>
-        <Typography variant="h6">Summary: {selectedItem.summary}</Typography>
-        <Typography variant="h6">Detail: {selectedItem.detail}</Typography>
-        <Typography variant="h6">Rate: {selectedItem.rate}</Typography>
-
-        <h4>Select Date</h4>
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                {/* <DatePicker value={selectedDate} onChange={handleDateChange} /> */}
-                <DateTimePicker value={selectedDate} onChange={handleDateChange} />
-            </MuiPickersUtilsProvider>
-        <h4>Renting Hours</h4>
-        <Autocomplete
-            options= {hours}
-            sx={{ width: 350 }}
-            value= {hours.id}
-            fontSize="20px"
-            renderInput={(params) => <TextField {...params} label="How Many Hours?" />}
-            onChange={(event, newValue) => setHoursBook(newValue.id)}
-            />
-            <Button 
-                type="submit"
-                variant="outlined"
-                color="primary"
-                size="small"
-                onClick={(evt) => bookingNow(evt)}
-            >
-                Book Now
-            </Button>
-        </Grid>
+            </Grid>
         </>
     )
 }
