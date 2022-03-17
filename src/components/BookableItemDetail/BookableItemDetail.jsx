@@ -9,8 +9,11 @@ import { alpha } from '@material-ui/core/styles';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import moment from 'moment';
-import { Select, MenuItem, FormControl, InputLabel } from '@mui/material'
+import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import Carousel from 'react-bootstrap/Carousel';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
+import './BookableItemDetail';
 
 
 function BookableItemDetail() {
@@ -21,6 +24,24 @@ function BookableItemDetail() {
     console.log('bookItem', selectedItem)
     const user = useSelector(store => store.user)
     const [selectedDate, handleDateChange] = useState(new Date());
+
+    const urls = selectedItem.url;
+    console.log('urls is', urls);
+    const [current, setCurrent] = useState(0);
+    const length = urls?.length;
+
+    const prevSlide = () => {
+        setCurrent(current === 0 ? length - 1 : current - 1);
+    }
+
+    const nextSlide = () => {
+        setCurrent(current === length - 1 ? 0 : current + 1);
+    }
+    console.log(current);
+
+   /*  if (Array.isArray(selectedItem.url) || urls.length <= 0){
+        return null;
+    } */
 
     const hours = [
         { label: "1", id: 1 },
@@ -66,12 +87,32 @@ function BookableItemDetail() {
 
     return (
         <>
-            <Grid container spacing={4} direction='column' alignItems='center'>
-                <h2>Item Details</h2>
-                <img
-                    src="https://www.amfam.com/-/media/images/amfam/products/boat/product-page-speed-and-power-boats---m.jpg"
-                    alt={selectedItem.title}
-                />
+        <Grid container spacing={4} direction='column' alignItems='center>
+          <h2>Item Details</h2>
+        <Grid item>
+            <section className="slider">
+                <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
+                <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
+                {selectedItem.url?.map((photo, i) => {
+                    return (
+                        <div 
+                            className={i === current ? 'slide active' : 'slide'}
+                            key={i}
+                        >
+                            {i === current && (
+                                <img
+                                className="image"
+                                key={i}
+                                src={photo}
+                                onClick={nextSlide}
+                            />
+                            )}
+                        </div>
+                    )
+
+                    })}
+            </section>
+            </Grid>
                 <Typography variant="h4">Title: {selectedItem.title}</Typography>
                 <Typography variant="h6">Summary: {selectedItem.summary}</Typography>
                 <Typography variant="h6">Detail: {selectedItem.detail}</Typography>
@@ -79,7 +120,6 @@ function BookableItemDetail() {
                 <Grid item>
                     <h4>Click below to select date</h4>
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        {/* <DatePicker value={selectedDate} onChange={handleDateChange} /> */}
                         <DateTimePicker value={selectedDate} onChange={handleDateChange} />
                     </MuiPickersUtilsProvider>
                     <h4>Renting Hours</h4>
@@ -106,29 +146,11 @@ function BookableItemDetail() {
                                 {...params}
                                 variant="standard"
                                 label="Hours"
-
                             />
                         )}
                         onChange={(event, newValue) => setHoursBook(newValue.id)}
                     />
                 </Grid>
-
-                {/* <Grid item>
-                    <Select 
-                        onChange={(event, newValue) => setHoursBook(newValue.id)}
-                        name='hours' id='hours'
-                    >
-                        <MenuItem value="1">1</MenuItem>
-                        <MenuItem value="2">2</MenuItem>
-                        <MenuItem value="3">3</MenuItem>
-                        <MenuItem value="4">4</MenuItem>
-                        <MenuItem value="5">5</MenuItem>
-                        <MenuItem value="6">6</MenuItem>
-                        <MenuItem value="7">7</MenuItem>
-                        <MenuItem value="8">8</MenuItem>
- 
-                    </Select>
-                </Grid> */}
                 <Button
                     type="submit"
                     variant="outlined"
