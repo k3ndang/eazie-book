@@ -87,7 +87,7 @@ function BookableItemDetail() {
 
     return (
         <>
-        <Grid container spacing={4} direction='column' alignItems='center>
+        <Grid container spacing={4} direction='column' alignItems='center'>
           <h2>Item Details</h2>
         <Grid item>
             <section className="slider">

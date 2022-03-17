@@ -53,7 +53,6 @@ function ClientBookableItems() {
                                     <ImageListItem>
                                         <img
                                             src={item.url[0]}
-                                            
                                             alt={item.title}
                                             loading='lazy'
                                             
