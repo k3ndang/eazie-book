@@ -41,7 +41,7 @@ function ViewBookableItem() {
     }, [params.id]);
 
     const addItem = () => {
-        history.push('/addBookableItem')
+        history.push(`/addBookableItem/${params.id}`)
     }
 
     const goBack = () => {

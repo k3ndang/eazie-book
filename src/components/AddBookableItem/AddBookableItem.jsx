@@ -79,11 +79,11 @@ function addBookableItem() {
             }
         })
 
-        history.push(`/clients`);
+        history.push(`/viewBookableItem/${params.id}`);
     }
 
     const goBack = () => {
-        history.push(`/clients`);
+        history.push(`/viewBookableItem/${params.id}`);
     }
 
     return (

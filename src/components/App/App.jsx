@@ -106,12 +106,12 @@ export default function App() {
           </ProtectedRoute>
 
           {/* ROUTE for bookableItem page */}
-          <ProtectedRoute exact path="/viewBookableItem">
+          <ProtectedRoute exact path="/viewBookableItem/:id">
             <ViewBookableItem />
           </ProtectedRoute>
 
           {/* ROUTE for add bookable item */}
-          <Route exact path="/addBookableItem">
+          <Route exact path="/addBookableItem/:id">
             <AddBookableItem />
           </Route>
 
