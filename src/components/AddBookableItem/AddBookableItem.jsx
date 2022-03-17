@@ -80,9 +80,12 @@ function addBookableItem() {
     }
 
     const goBack = () => {
-        history.push('/user')
+        history.push('/viewBookableItem')
     }
 
+    const link = () => {
+        history.push('/viewBookableItem');
+    }
 
     return (
         <>
@@ -241,6 +244,7 @@ function addBookableItem() {
                             variant="outlined"
                             size="large"
                             className="FormSubmitBtn"
+                            onClick={link}
                         >
                             Submit
                         </Button>
