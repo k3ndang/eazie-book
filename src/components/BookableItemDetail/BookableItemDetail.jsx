@@ -13,7 +13,7 @@ import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Carousel from 'react-bootstrap/Carousel';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
-import './BookableItemDetail';
+import './BookableItemDetail.css';
 
 
 function BookableItemDetail() {
@@ -101,10 +101,10 @@ function BookableItemDetail() {
                         >
                             {i === current && (
                                 <img
-                                className="image"
-                                key={i}
-                                src={photo}
-                                onClick={nextSlide}
+                                    className="image"
+                                    key={i}
+                                    src={photo}
+                                    onClick={nextSlide}
                             />
                             )}
                         </div>

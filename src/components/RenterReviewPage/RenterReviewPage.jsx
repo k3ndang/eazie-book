@@ -26,7 +26,9 @@ function RenterReviewPage() {
             <Grid container spacing={4} direction='column' alignItems='center'>
                 <h2>Review Reservation</h2>
                 <img
-                    src="https://www.amfam.com/-/media/images/amfam/products/boat/product-page-speed-and-power-boats---m.jpg"
+                    src={reviewBooking.selectedItem.url[0]}
+                    width="5000px"
+                    height="400px"
                 />
                 <p>Title: {reviewBooking.selectedItem.title}</p>
                 <p>Summary: {reviewBooking.selectedItem.summary}</p>

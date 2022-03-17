@@ -72,9 +72,9 @@ export default function App() {
           </Route>
 
           {/* shows AboutPage at all times (logged in or not) */}
-          <Route exact path="/viewBookableItem/:id">
+          {/* <Route exact path="/viewBookableItem/:id">
             <ViewBookableItem />
-          </Route>
+          </Route> */}
 
           <ProtectedRoute exact path="/renterInfo">
             <RenterInfo />
@@ -111,14 +111,14 @@ export default function App() {
           </ProtectedRoute>
 
           {/* ROUTE for add bookable item */}
-          <Route exact path="/addBookableItem/:id">
+          <ProtectedRoute exact path="/addBookableItem/:id">
             <AddBookableItem />
-          </Route>
+          </ProtectedRoute>
 
           {/* ROUTE for editing an item */}
-          <Route exact path="/editBookableItemForm/:id">
+          <ProtectedRoute exact path="/editBookableItemForm/:id">
             <EditBookableItemForm />
-          </Route>
+          </ProtectedRoute>
 
           <ProtectedRoute exact path='/renterHistory'>
             <RenterHistory />
@@ -147,9 +147,7 @@ export default function App() {
           {/* ROUTES FOR CLIENT */}
 
           <ProtectedRoute exact path="/clientBookableItems">
-            <Route>
               <ClientBookableItems />
-            </Route>
           </ProtectedRoute>
 
           {/* ROUTE for specific client bookable items */}
@@ -160,49 +158,126 @@ export default function App() {
           {/* ROUTES FOR RENTER */}
 
           <Route exact path='/renterHistory'>
+          {user.authLevel === 'renter' ?
+            
             <RenterHistory />
+            :
+
+            <Redirect to ='/user'/>
+          }
+            
           </Route>
 
           <Route exact path="/watercraft">
+          {user.authLevel === 'renter' ?
+            
             <Watercraft />
+            :
+            
+            <Redirect to ='/user'/>
+          }
+            
           </Route>
 
           {/* ROUTE for renter jetski's */}
           <Route exact path="/jetski/:jetskiId">
+          {user.authLevel === 'renter' ?
+            
             <Jetski />
+            :
+            <Redirect to ='/user'/>
+            
+          }
+            
           </Route>
 
           {/* ROUTE for renter boat's */}
           <Route exact path="/boat/:boatId">
+          {user.authLevel === 'renter' ?
+            
             <Boat />
+            :
+            <Redirect to ='/user'/>
+            
+          }
+            
           </Route>
 
           <ProtectedRoute exact path='/bookableItemList'>
+          {user.authLevel === 'renter' ?
+            
             <BookableItemList />
+            :
+            <Redirect to ='/user'/>
+            
+          }
+            
           </ProtectedRoute>
 
           <Route exact path="/detail/:id">
+          {user.authLevel === 'renter' ?
             <BookableItemDetail />
+
+            :
+            <Redirect to ='/user'/>
+            
+          }
+            
           </Route>
 
           <Route exact path="/pontoon/:pontoonId">
+          {user.authLevel === 'renter' ?
+            
             <Pontoon />
+            :
+
+            <Redirect to ='/user'/>
+          }
+            
           </Route>
 
           <Route exact path='/allTerrain'>
+          {user.authLevel === 'renter' ?
+            
             <AllTerrainVehicles />
+            :
+
+            <Redirect to ='/user'/>
+          }
+            
           </Route>
 
           <Route exact path='/sideBySide/:sideBySideId'>
-            <SideBySide />
+          {user.authLevel === 'renter' ?
+            
+            <SideBySide /> 
+            :
+            <Redirect to ='/user'/>
+                       
+          }
+           
           </Route>
 
           {/* ROUTE for renter ATV's */}
           <Route exact path='/ATV/:ATV'>
+          {user.authLevel === 'renter' ?
+            
             <ATV />
+            :
+
+            <Redirect to ='/user'/>           
+          }
+            
           </Route>
 
           {/* END OF ROUTES FOR RENTER */}
+          {/* {user.authLevel === 'renter' ?
+            <Redirect to ='/user'/>
+
+            :
+
+            
+          } */}
 
           {/*  If the user is already logged in, redirect to the /user page
               Otherwise, show the login page */}
@@ -218,11 +293,21 @@ export default function App() {
 
 
           <Route exact path="/renterReviewPage/:id">
-            <RenterReviewPage />
+          {user.authLevel === 'renter' ?
+             <RenterReviewPage />
+            :
+            <Redirect to ='/user'/>
+           
+          }
           </Route>
 
           <Route exact path="/thankyou/:id">
-            <ThankYou />
+          {user.authLevel === 'renter' ?
+             <ThankYou /> 
+            :
+            <Redirect to ='/user'/>
+             
+          }
           </Route>
 
           <Route exact path="/home">

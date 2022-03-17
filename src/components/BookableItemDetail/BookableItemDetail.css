@@ -1,20 +1,20 @@
 .slider{
     position: relative;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .image{
     width: 1000px;
-    height: 600px;
+    height:600px;
     border-radius: 10px;
 }
 
 .right-arrow{
     position: absolute;
-    top: 50%;
+    top: 10%;
     right: 32px;
     font-size: 3rem;
     color: black;
@@ -22,15 +22,10 @@
 
 .left-arrow{
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 32px;
     font-size: 3rem;
     color: black;
-}
-
-.slide{
-    opacity: 0;
-    transition-duration: 1s ease;
 }
 
 .slide-active{
