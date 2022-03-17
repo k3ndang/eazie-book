@@ -76,13 +76,17 @@ function InviteClient(){
         history.push("/user");
     }
 
+    const demoData = () => {
+
+    }
+
     return(
         <>
        
         <Paper onSubmit={inviteClient} className="ClientInviteContainer">
            
             <Button variant="outlined" onClick={goBack} className="ClientInviteBackButton">Back</Button>
-            <h2 className="ClientInviteTitle">Invite Client</h2>
+            <h2 className="ClientInviteTitle" onClick={demoData}>Invite Client</h2>
             <div className="ClientInviteInputFields">
             <div className="ClientInviteIndividualInput">
                 <Input
