@@ -27,6 +27,7 @@ function addBookableItem() {
     const history = useHistory();
 
     const clients = useSelector(store => store.companyName);
+    console.log('clients is', clients);
     const categoryList = useSelector(store => store.categoryList);
     //grab the list of item names from the reducer 
     const itemList = useSelector(store => store.itemList);
@@ -46,8 +47,8 @@ function addBookableItem() {
     const [clientId, setClientId] = useState('');
 
     //category input state variables 
-    const [parentId, setParentId] = useState('');
-    const [newItem, setNewItem] = useState('');
+    /* const [parentId, setParentId] = useState('');
+    const [newItem, setNewItem] = useState(''); */
 
 
     useEffect(() => {
@@ -77,14 +78,12 @@ function addBookableItem() {
                 clientId: clientId
             }
         })
+
+        history.push(`/clients`);
     }
 
     const goBack = () => {
-        history.push('/viewBookableItem')
-    }
-
-    const link = () => {
-        history.push('/viewBookableItem');
+        history.push(`/clients`);
     }
 
     return (
@@ -244,7 +243,6 @@ function addBookableItem() {
                             variant="outlined"
                             size="large"
                             className="FormSubmitBtn"
-                            onClick={link}
                         >
                             Submit
                         </Button>
