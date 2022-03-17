@@ -14,6 +14,8 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Stack from "@mui/material/Stack";
 
+import './AddPhoto.css';
+
 function AddPhoto(){
     const dispatch = useDispatch();
     const params = useParams();
@@ -65,23 +67,23 @@ function AddPhoto(){
                 />
 
             <Stack direction="row" spacing={2}>
-                <Button
+                <button
                     id="photoSubmit"
                     type="submit"
                     value="Add new Photo"
-                    variant="contained"
                 >
                 Add Photo
-                </Button>
+                </button>
             </Stack>
             </div>
         </form>    
         {photos.map((photo) => (
             <>
-            <Card sx={{maxWidth : 300}}>
+            <Card sx={{display : 'flex', flexDirection: {xs: 'column', md: 'row'}, alignItems : 'center',maxWidth : 300  }}>
                 <CardMedia 
+                    display="flex"
                     component="img"
-                    height="200"
+                    height="175"
                     image={`${photo.url}`}
                 />
             </Card>

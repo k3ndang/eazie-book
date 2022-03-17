@@ -77,7 +77,18 @@ function InviteClient(){
     }
 
     const demoData = () => {
-
+        setFirstName('Jimmy');
+        setLastName('John');
+        setUsername('JimmyJohn');
+        setPassword('john');
+        setEmail('jimmyjohn@johnjimmy.io');
+        setPhoneNumber('(256) 567 - 2345');
+        setCompanyName('Jimmy John\'s');
+        setAddress('123 4th St');
+        setCity('Minneapolis');
+        setState('Minnesota');
+        setZipCode('55403');
+        setWebsiteUrl('jimmyjohns.com');
     }
 
     return(
