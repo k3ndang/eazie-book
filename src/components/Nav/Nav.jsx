@@ -77,11 +77,7 @@ function Nav() {
                 {/* <Link to="/"> Edit Clients </Link> */}
               </div>
             </div>
-              <div className="dropdown">
-                <Link className="dropbtn" to="/acctInfo">
-                  Acct info
-                </Link>
-              </div>
+          
             <div className="dropdown">
               <button className="dropbtn"> View List</button>
               <div className="dropdown-content">
@@ -90,13 +86,18 @@ function Nav() {
                 {/* <Link to="/viewBookableItem"> Bookable Items List </Link> */}
               </div>
             </div>
+
+            <div className="dropdown">
+              <button className="dropbtn"> About</button>
+              <div className="dropdown-content">
+                <Link to="/clientBookableItems"> About Page </Link>
+                {/* This should be the list of everyone that has rented bookable items  */}
+                <Link to="/about"> Acct Info </Link>
+              </div>
+            </div>
             {/* having an about and an info page seems redundant */}
             
-            <div className="dropdown">
-              <Link className="dropbtn" to="/about">
-                About
-              </Link>
-            </div>
+            
             <LogOutButton className="dropbtn" />
            
           </>
