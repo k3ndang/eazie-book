@@ -39,7 +39,7 @@ function SideBySide(){
                         <Typography variant="h4">{item.title}</Typography>
                         <Typography variant="h6">Summary: {item.summary}</Typography>
                         <Typography variant="h6">Detail: {item.detail}</Typography>
-                        <Typography variant="h6">Rate: {item.rate}</Typography>
+                        <Typography variant="h6">Rate: ${item.rate}</Typography>
                     </Grid>
                     <button onClick={(evt) => history.push(`/detail/${item.id}`)}>Full Detail</button>
                 </Grid>
