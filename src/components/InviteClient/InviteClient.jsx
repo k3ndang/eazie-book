@@ -105,7 +105,7 @@ function InviteClient(){
                     type="text"
                     name="firstName"
                     value={firstName}
-                    placeholder="FIRST NAME"
+                    placeholder="First Name"
                     required
                     onChange={(event) => setFirstName(event.target.value)}
                 />
@@ -116,7 +116,7 @@ function InviteClient(){
                     type="text"
                     name="lastName"
                     value={lastName}
-                    placeholder="LAST NAME"
+                    placeholder="Last Name"
                     required
                     onChange={(event) => setLastName(event.target.value)}
                 />
@@ -127,7 +127,7 @@ function InviteClient(){
                     type="text"
                     name="username"
                     value={username}
-                    placeholder="USERNAME"
+                    placeholder="Username"
                     required
                     onChange={(event) => setUsername(event.target.value)}
                 />
@@ -138,7 +138,7 @@ function InviteClient(){
                     type="password"
                     name="password"
                     value={password}
-                    placeholder="PASSWORD"
+                    placeholder="Password"
                     required
                     onChange={(event) => setPassword(event.target.value)}
                 />
@@ -149,7 +149,7 @@ function InviteClient(){
                     type="text"
                     name="email"
                     value={email}
-                    placeholder="EMAIL"
+                    placeholder="Email"
                     required
                     onChange={(event) => setEmail(event.target.value)}
                 />
@@ -160,7 +160,7 @@ function InviteClient(){
                     type="text"
                     name="phoneNumber"
                     value={phoneNumber}
-                    placeholder="PHONE NUMBER"
+                    placeholder="Phone Number"
                     required
                     onChange={(event) => setPhoneNumber(event.target.value)}
                 />
@@ -171,7 +171,7 @@ function InviteClient(){
                     type="text"
                     name="companyName"
                     value={companyName}
-                    placeholder="COMPANY NAME"
+                    placeholder="Company Name"
                     required
                     onChange={(event) => setCompanyName(event.target.value)}
                 />
@@ -182,7 +182,7 @@ function InviteClient(){
                     type="text"
                     name="address"
                     value={address}
-                    placeholder="ADDRESS"
+                    placeholder="Address"
                     required
                     onChange={(event) => setAddress(event.target.value)}
                 />
@@ -193,7 +193,7 @@ function InviteClient(){
                     type="text"
                     name="city"
                     value={city}
-                    placeholder="CITY"
+                    placeholder="City"
                     required
                     onChange={(event) => setCity(event.target.value)}
                 />
@@ -204,7 +204,7 @@ function InviteClient(){
                     type="text"
                     name="state"
                     value={state}
-                    placeholder="STATE"
+                    placeholder="State"
                     required
                     onChange={(event) => setState(event.target.value)}
                 />
@@ -215,7 +215,7 @@ function InviteClient(){
                     type="number"
                     name="zipCode"
                     value={zipCode}
-                    placeholder="ZIP CODE"
+                    placeholder="Zip Code"
                     required
                     onChange={(event) => setZipCode(event.target.value)}
                 />
@@ -226,7 +226,7 @@ function InviteClient(){
                     type="text"
                     name="websiteUrl"
                     value={websiteUrl}
-                    placeholder="WEBSITE URL"
+                    placeholder="Website Url"
                     required
                     onChange={(event) => setWebsiteUrl(event.target.value)}
                     
