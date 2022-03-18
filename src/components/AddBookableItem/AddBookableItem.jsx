@@ -104,12 +104,10 @@ function addBookableItem() {
                     
                    
                     <div className="selectCompanyName">
-                        
                         <h3 className="InputFieldTitle">  Client Company Name </h3>
                         <Autocomplete
-                            className="autocompleteBox"
                             options={clients}
-                            sx={{ width: 620 }}
+                            sx={{ minWidth: 400 }}
                             value={clients.label}
                             renderInput={(params) => <TextField {...params} label="Company Name" />}
                             onChange={(event, newValue) => setClientId(newValue.id)}
