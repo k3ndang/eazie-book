@@ -276,7 +276,7 @@ function ClientTable() {
                                                 <TableCell align="center" className="clientTableBodyLastName">{client.lastName}</TableCell>
                                                 <TableCell align="center">{client.username}</TableCell>
                                                 <TableCell align="center">{client.email}</TableCell>
-                                                <TableCell align="center">{client.phoneNumber}</TableCell>
+                                                <TableCell align="center" className="clientTableBodyAddress">{client.phoneNumber}</TableCell>
                                                 <TableCell align="center">{client.companyName}</TableCell>
                                                 <TableCell align="center" className="clientTableBodyAddress">{client.address}</TableCell>
                                                 <TableCell align="center">{client.city}</TableCell>
