@@ -90,9 +90,9 @@ function Nav() {
             <div className="dropdown">
               <button className="dropbtn"> About</button>
               <div className="dropdown-content">
-                <Link to="/clientBookableItems"> About Page </Link>
+                <Link to="/about"> About Page </Link>
                 {/* This should be the list of everyone that has rented bookable items  */}
-                <Link to="/about"> Acct Info </Link>
+                <Link to="/acctInfo"> Acct Info </Link>
               </div>
             </div>
             {/* having an about and an info page seems redundant */}
