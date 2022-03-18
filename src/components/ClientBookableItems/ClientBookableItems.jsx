@@ -44,7 +44,7 @@ function ClientBookableItems() {
            {/* Category name not properly rendering  */}
 
         <h1 className="BookableItemsTitle"> List of Bookable items</h1>
-            <ImageList sx={{ width: 1300, height: 750 }} className="imageContainer">
+            <ImageList sx={{ width: 1300, height: 850 }} className="imageContainer">
                  {itemData.map(item => {
                     return (
                         <>
