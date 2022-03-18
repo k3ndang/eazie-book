@@ -68,6 +68,7 @@ function AddPhoto(){
 
             <Stack direction="row" spacing={2}>
                 <button
+                    className="photoSubmitButton"
                     id="photoSubmit"
                     type="submit"
                     value="Add new Photo"
