@@ -100,16 +100,16 @@ function addBookableItem() {
                     noValidate
 
                 >
-                    
-                    
+                     <Grid className="addBookableItemContainer">
+                    <div className="BookableItemInfoTitle"> <strong> Enter Bookable Item Information:</strong></div>
                    
                     <div className="selectCompanyName">
-                        <h3 className="InputFieldTitle">  Client Company Name </h3>
+                        <h3 className="InputFieldTitle">   Company Name: </h3>
                         <Autocomplete
                             options={clients}
-                            sx={{ minWidth: 400 }}
+                            className="autocompleteCompanyName"
                             value={clients.label}
-                            renderInput={(params) => <TextField {...params} label="Company Name" />}
+                            renderInput={(params) => <TextField {...params} label="" />}
                             onChange={(event, newValue) => setClientId(newValue.id)}
                         />
                     </div>
@@ -131,23 +131,23 @@ function addBookableItem() {
                                   
                             </Box></label> */}
 
-                    <Grid className="addBookableItemContainer">
+                   
                         <div className="adminCategoryInputContainer">
-                            <h3 className="InputFieldTitle"> Enter Bookable Item Title:</h3>
+                            <h3 className="InputFieldTitle">  Bookable Item Title:</h3>
                             <input
                                 required
                                 className="bookableItemsInput"
                                 type="text"
-                                placeholder="Title"
+                                
                                 value={newBookableItem.title}
                                 onChange={(evt) => handleChange(evt, "title")}
                             />
                         </div>
 
                         <div className="adminCategoryInputContainer">
-                            <h3 className="InputFieldTitle"> Enter Summary of Item: </h3>
+                            <h3 className="InputFieldTitle">  Summary of Item: </h3>
                             <textarea
-                                placeholder="Enter Summary Here"
+                                
                                 className='bookableItemsInput'
                                 required
                                 type="text"
@@ -160,12 +160,12 @@ function addBookableItem() {
                         </div>
 
                         <div className="adminCategoryInputContainer">
-                            <h3 className="InputFieldTitle"> Enter Street Address of Equipment:</h3>
+                            <h3 className="InputFieldTitle">  Street Address of Equipment:</h3>
                             <input
                                 className='bookableItemsInput'
                                 required
                                 type="text"
-                                placeholder="Location"
+                                
                                 value={newBookableItem.location}
                                 onChange={(evt) => handleChange(evt, "location")}
                             />
@@ -176,28 +176,28 @@ function addBookableItem() {
                                 className='bookableItemsInput'
                                 required
                                 type="integer"
-                                placeholder="Rate"
+                                
                                 value={newBookableItem.rate}
                                 onChange={(evt) => handleChange(evt, "rate")}
                             />
                         </div>
 
                         <div className="adminCategoryInputContainer">
-                            <h3 className="InputFieldTitle"> Select Unit of Time: </h3>
+                            <h3 className="InputFieldTitle">  Unit of Time: </h3>
                             <input
                                 className='bookableItemsInput'
                                 required
                                 type="text"
-                                placeholder="Unit of Time"
+                           
                                 value={newBookableItem.unitTime}
                                 onChange={(evt) => handleChange(evt, "unitTime")}
                             />
                         </div>
                         <div className="adminCategoryInputContainer">
-                            <h3 className="InputFieldTitle"> Enter Details of Bookable Item:</h3>
+                            <h3 className="InputFieldTitle">  Details of Bookable Item:</h3>
                             <textarea
                                 className="bookableItemsInput"
-                                placeholder='Enter Details Here'
+                            
                                 required
                                 type="text"
                                 rows={2}
@@ -207,10 +207,10 @@ function addBookableItem() {
                         </div>
 
                         <div className="adminCategoryInputContainer">
-                            <h3 className="SelectCategoryTitle"> Select Category </h3>
+                            <h3 className="SelectCategoryTitle"> Select Category: </h3>
                             <Box sx={{ minWidth: 200 }} className="categoryAutocomplete">
                                 <FormControl >
-                                    <InputLabel id="demo-simple-select-label" className="SelectCategoryTitlePlaceholder">Category</InputLabel>
+                                    <InputLabel id="demo-simple-select-label" className="SelectCategoryTitlePlaceholder"></InputLabel>
                                     <Select
                                         // labelId="demo-simple-select-label"
                                         // sx={{ width: 400 }}
