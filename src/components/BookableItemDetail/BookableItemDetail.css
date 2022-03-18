@@ -51,3 +51,8 @@
     align-items: center;
     margin: auto;
 }
+
+.descriptionBoxDetail{
+    display: inline-flex;
+    flex-direction: row;
+}
