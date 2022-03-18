@@ -87,8 +87,9 @@ function BookableItemDetail() {
 
     return (
         <>
+         <h2>Item Detail</h2>
         <Grid container spacing={4} direction='column' alignItems='center'>
-          <h2>Item Detail</h2>
+         
         <Grid item>
             <section className="slider">
                 <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
