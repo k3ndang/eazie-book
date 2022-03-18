@@ -54,5 +54,7 @@
 
 .descriptionBoxDetail{
     display: inline-flex;
-    flex-direction: row;
+    line-height: 2;
+    justify-content: flex-start;
+    align-items: flex-start;
 }

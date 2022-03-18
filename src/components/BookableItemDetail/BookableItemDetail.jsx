@@ -117,7 +117,7 @@ function BookableItemDetail() {
                 <Typography variant="h4"> <div className="descriptionBoxDetail"> {selectedItem.title}</div></Typography>
                 <Typography variant="h6"> <div className="descriptionBoxDetail"><strong> Summary: </strong> </div> <div className="descriptionBoxDetail"> {selectedItem.summary}  </div></Typography>
                 <Typography variant="h6">  <div className="descriptionBoxDetail"> <strong> Detail: </strong> </div> <div className="descriptionBoxDetail"> {selectedItem.detail} </div></Typography>
-                <Typography variant="h6">Rate: ${selectedItem.rate}</Typography>
+                <Typography variant="h6"> <div className="descriptionBoxDetail"> <strong>  Rate: </strong> </div> ${selectedItem.rate}</Typography>
                 </div>
                 <Grid item>
                     <h4>Select Date Below:</h4>
