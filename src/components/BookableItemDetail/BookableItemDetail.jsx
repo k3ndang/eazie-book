@@ -44,18 +44,18 @@ function BookableItemDetail() {
     } */
 
     const hours = [
-        { label: "1", id: 1 },
-        { label: "2", id: 2 },
-        { label: "3", id: 3 },
-        { label: "4", id: 4 },
-        { label: "5", id: 5 },
-        { label: "6", id: 6 },
-        { label: "7", id: 7 },
-        { label: "8", id: 8 },
-        { label: "9", id: 9 },
-        { label: "10", id: 10 },
-        { label: "11", id: 11 },
-        { label: "12", id: 12 },
+        { label: "1 hour", id: 1 },
+        { label: "2 hour", id: 2 },
+        { label: "3 hour", id: 3 },
+        { label: "4 hour", id: 4 },
+        { label: "5 hour", id: 5 },
+        { label: "6 hour", id: 6 },
+        { label: "7 hour", id: 7 },
+        { label: "8 hour", id: 8 },
+        { label: "9 hour", id: 9 },
+        { label: "10 hour", id: 10 },
+        { label: "11 hour", id: 11 },
+        { label: "12 hour", id: 12 },
         { label: "All_Day", id: "All_Day" },
     ]
 
@@ -113,17 +113,16 @@ function BookableItemDetail() {
                     })}
             </section>
             </Grid>
-                <Typography variant="h4">Title: {selectedItem.title}</Typography>
                 <Typography variant="h6">Summary: {selectedItem.summary}</Typography>
                 <Typography variant="h6">Detail: {selectedItem.detail}</Typography>
                 <Typography variant="h6">Rate: ${selectedItem.rate}</Typography>
                 <Grid item>
-                    <h4>Click below to select date</h4>
-                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <DateTimePicker value={selectedDate} onChange={handleDateChange} />
+                    <h4>Select Date Below:</h4>
+                    <MuiPickersUtilsProvider utils={DateFnsUtils} >
+                        <DateTimePicker value={selectedDate} onChange={handleDateChange} className="datePickersNosePickers" />
                     </MuiPickersUtilsProvider>
-                    <h4>Renting Hours</h4>
-                    <Autocomplete
+                    <h4>Renting Hours:</h4>
+                    <Autocomplete className="autocompleteHereChange"
                         ListboxProps={{
                             style: {
                                 position: "absolute",
@@ -132,15 +131,13 @@ function BookableItemDetail() {
                                 right: 0,
                                 left: 0,
                                 height: 300,
-                                width: "100%",
-                                overflowY: "auto",
                                 backgroundColor: "white",
                             },
                         }}
                         options={hours}
                         // sx={{ width: 350 }}
                         value={hours.id}
-                        fontSize="20px"
+                        fontSize="40px"
                         renderInput={(params) => (
                             <TextField
                                 {...params}
