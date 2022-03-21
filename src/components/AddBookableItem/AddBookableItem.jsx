@@ -87,8 +87,7 @@ function addBookableItem() {
     }
 
     const demoData = () => {
-        newBookableItem.title('Test');
-        newBookableItem.summary('Test');
+       setNewBookableItem('test');
     }
 
     return (
@@ -106,7 +105,7 @@ function addBookableItem() {
 
                 >
                      <Grid className="addBookableItemContainer">
-                    <div className="BookableItemInfoTitle"> <strong> Enter Bookable Item Information:</strong></div>
+                    <div className="BookableItemInfoTitle" onClick={demoData}> <strong> Enter Bookable Item Information:</strong></div>
                    
                     <div className="selectCompanyName">
                         <h3 className="InputFieldTitle" onClick={demoData}>Company Name </h3>

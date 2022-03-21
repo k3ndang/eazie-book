@@ -12,6 +12,7 @@ import Paper from '@mui/material/Paper';
 import moment from 'moment';
 
 function RenterInfo() {
+    const moment = require('moment-timezone');
     const info = useSelector(store => store.renter.renterInfo)
     console.log('info is ', info);
     useEffect(() => {
@@ -50,7 +51,7 @@ function RenterInfo() {
                             <TableCell align='center'>{row.email}</TableCell>
                             <TableCell align='center'>{row.phoneNumber}</TableCell>
                             <TableCell align='center'>{row.item_name}</TableCell>
-                            <TableCell align='center'>{moment(row.date).format('MMMM Do YYYY, h:mm:ss a')}</TableCell>
+                            <TableCell align='center'>{moment(row.date).tz("Pacific/Tahiti").format('MMMM Do YYYY, h:mm  a')}</TableCell>
                             <TableCell align='center'>{row.unitTime}</TableCell>
                             <TableCell align='center'>{row.time_booked}</TableCell>
                             

@@ -133,9 +133,9 @@ function ClientTable() {
 
     return (
         <>
+            {/* <br/>
             <br/>
-            <br/>
-            <br/>
+            <br/> */}
             <div className="clientTable">
                 <TableContainer component={Paper}>
                     <Table>

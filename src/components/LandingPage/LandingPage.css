@@ -5,10 +5,10 @@ Grid
 .grid {
   display: flex;
   flex: 0 1 auto;
-  margin-left: 65px;/* might need to change for projector */
+  margin-left: 25px;/* might need to change for projector */
   /* defaults to 'row' */
-  flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
   /* defaults to 'flex-start' */
   justify-content: flex-start;
   align-items: flex-start;
