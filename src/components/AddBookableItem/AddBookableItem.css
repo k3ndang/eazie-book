@@ -39,9 +39,7 @@
     width: 425px;
     line-height: 1s;
 }
-.MuiFormControl-root{
-    width: 400px;
-}
+
 
 /* very small adjustment for company name input fields */
 .css-17i7n9v .MuiTextField-root{
@@ -144,7 +142,8 @@
 
 /* the size of the select category dropdown */
 .MuiFormControl-root{
-    width: 150px;
+    width: 350px;
+
 
 }
 /* placeholder text for select category placeholder */
@@ -164,7 +163,7 @@
 
 /* size of client company name input fields */
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
-    width: 300px;
+    /* width: 300px; */
  
 }
 /* spacing for each input section */
@@ -190,7 +189,7 @@
     
 }
 .autocompleteCompanyName{
-    width: 900px;
+
     margin-left: 10px;
 }
 
@@ -222,3 +221,18 @@
    
    
 }
+
+.MuiOutlinedInput-input{
+    z-index: 999;
+}
+
+.MuiOutlinedInput-root .MuiInputBase-root{
+    z-index: 999;
+}
+.MuiAutocomplete-hasPopupIcon.css-l99mm1-MuiAutocomplete-root .MuiOutlinedInput-root{
+    width: 350px;
+}
+.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-l99mm1-MuiAutocomplete-root .MuiOutlinedInput-root{
+    width: 350px;
+}
+

@@ -109,8 +109,9 @@ function addBookableItem() {
                             options={clients}
                             className="autocompleteCompanyName"
                             value={clients.label}
-                            renderInput={(params) => <TextField {...params} label="" />}
+                            renderInput={(params) => <TextField {...params}  />}
                             onChange={(event, newValue) => setClientId(newValue.id)}
+                            sx={{width: '1000px'}}
                         />
                     </div>
 
