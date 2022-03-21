@@ -108,10 +108,10 @@ function* postPhoto(action) {
         };
         
         yield axios.post(`/api/photos/:id`, action.payload, config);
-        yield put({
+        /* yield put({
             type: 'FETCH_ITEM_PHOTOS',
             payload: action.itemId
-        })
+        }) */
     }
     catch (error) {
         console.error('ADD photo failed', error);
