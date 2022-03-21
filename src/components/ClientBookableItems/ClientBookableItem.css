@@ -53,8 +53,7 @@ img{
 }
 
 .clientListGridItem:hover{
-    background-color: rgb(158, 216, 189);
-    width: 600px;
+    background-color: rgb(179, 199, 218);
     font-size: 20px;
     border: 5px black solid;
 }
