@@ -15,7 +15,7 @@ import './RenterHistory.css';
 
 
 function RenterHistory() {
-
+    const moment = require('moment-timezone');
     const renterReducer = useSelector(store => store.renter.renterHistory)
 
     // console.log('renterReducer is', renterReducer);
@@ -36,11 +36,13 @@ function RenterHistory() {
                     <TableHead>
                         <TableRow>
                             <TableCell>Company Name</TableCell>
-                            <TableCell align="right">Company Email</TableCell>
-                            <TableCell align="right">Company Number</TableCell>
-                            <TableCell align="right">Item Name</TableCell>
-                            <TableCell align="right">Unit Time</TableCell>
-                            <TableCell align="right">Time Booked</TableCell>
+                            <TableCell align="center">Company Email</TableCell>
+                            <TableCell align="center">Company Number</TableCell>
+                            <TableCell align="center">Item Name</TableCell>
+                            <TableCell align="center">Confirmation Number</TableCell>
+                            <TableCell align="center">Date</TableCell>
+                            <TableCell align="center">Unit Time</TableCell>
+                            <TableCell align="center">Time Booked</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -54,11 +56,13 @@ function RenterHistory() {
                                     <TableCell component="th" scope="row">
                                         {row.companyName}
                                     </TableCell>
-                                    <TableCell align="right">{row.email}</TableCell>
-                                    <TableCell align="right">{row.phoneNumber}</TableCell>
-                                    <TableCell align="right">{row.companyName}</TableCell>
-                                    <TableCell align="right">{row.unitTime}</TableCell>
-                                    <TableCell align="right">{row.hours_book}</TableCell>
+                                    <TableCell align="center">{row.email}</TableCell>
+                                    <TableCell align="center">{row.phoneNumber}</TableCell>
+                                    <TableCell align="center">{row.item_name}</TableCell>
+                                    <TableCell align="center">{row.confirmationNumber}</TableCell>
+                                    <TableCell align="center">{moment(row.startDate).tz("Pacific/Tahiti").format('MMMM Do YYYY, h:mm  a')}</TableCell>
+                                    <TableCell align="center">{row.unitTime}</TableCell>
+                                    <TableCell align="center">{row.hours_book}</TableCell>
                                 </TableRow>
                             )
                         })}
