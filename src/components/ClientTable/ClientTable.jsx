@@ -11,7 +11,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button'
+import Button from '@mui/material/Button';
+import swal from 'sweetalert';
 import './ClientTable.css'
 function ClientTable() {
 
@@ -43,13 +44,33 @@ function ClientTable() {
     const clients = useSelector(store => store.clients);
 
     const deleteClient = (id) => {
-        /* still need sweet alerts */
-        dispatch({
-            type: 'DELETE_SELECTED_CLIENT',
-            payload: { id: id }
-        });
 
-        history.push('/user');
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this row of information",
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if(willDelete){
+                swal("POOF! The row has been deleted!"), {
+                    icon: "success",
+                }
+                dispatch({
+                    type: 'DELETE_SELECTED_CLIENT',
+                    payload: { id: id }
+                });
+
+                history.push('/user');
+            } else {
+                swal("The row of information is safe!")
+            }
+        })
+        /* still need sweet alerts */
+       
+
+
         console.log('delete button pressed');
     }
 

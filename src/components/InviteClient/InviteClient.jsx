@@ -78,17 +78,17 @@ function InviteClient(){
 
     const demoData = () => {
         setFirstName('Jimmy');
-        setLastName('John');
-        setUsername('JimmyJohn');
-        setPassword('john');
-        setEmail('jimmyjohn@johnjimmy.io');
+        setLastName('Zwielfhopher');
+        setUsername('jimmyz');
+        setPassword('jimmy');
+        setEmail('jimmyz@johnjimmy.io');
         setPhoneNumber('(256) 567 - 2345');
-        setCompanyName('Jimmy John\'s');
+        setCompanyName('Family Fun');
         setAddress('123 4th St');
         setCity('Minneapolis');
         setState('Minnesota');
         setZipCode('55403');
-        setWebsiteUrl('jimmyjohns.com');
+        setWebsiteUrl('familyfun.com');
     }
 
     return(
