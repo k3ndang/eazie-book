@@ -13,7 +13,9 @@ SELECT
 	"user"."phoneNumber",
 	"bookable_items"."unitTime",
 	"bookable_items"."title" AS "item_name",
-	"renter_booking"."hours_book"
+	"renter_booking"."hours_book",
+    "renter_booking"."confirmationNumber",
+    "renter_booking"."startDate"
 FROM "user"
 LEFT JOIN "bookable_items"
 	ON "bookable_items"."clientId" = "user"."id"
