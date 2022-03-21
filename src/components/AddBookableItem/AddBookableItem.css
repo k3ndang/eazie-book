@@ -193,13 +193,13 @@
 }
 
 .backButton{
-    width: 900px;
+    width: 1300px;
     border: 2px solid black;
     margin-top: 10px;
 }
 
 .backButton:hover{
-    width: 900px;
+    width: 1300px;
     border: 4px solid black;
     background-color: rgb(158, 216, 189);
 
