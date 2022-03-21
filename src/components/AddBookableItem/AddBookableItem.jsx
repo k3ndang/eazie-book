@@ -209,7 +209,7 @@ function addBookableItem() {
 
                         <div className="adminCategoryInputContainer">
                             <h3 className="SelectCategoryTitle"> Select Category: </h3>
-                            <Box sx={{ minWidth: 200 }} className="categoryAutocomplete">
+                            <Box sx={{ minWidth: 300 }} className="categoryAutocomplete">
                                 <FormControl >
                                     <InputLabel id="demo-simple-select-label" className="SelectCategoryTitlePlaceholder"></InputLabel>
                                     <Select
