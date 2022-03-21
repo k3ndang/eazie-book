@@ -13,11 +13,13 @@ import Select from '@mui/material/Select';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Stack from "@mui/material/Stack";
+import swal from 'sweetalert';
 
 import './AddPhoto.css';
 
 function AddPhoto(){
     const dispatch = useDispatch();
+    const history = useHistory();
     const params = useParams();
     console.log('param is', params);
     const photos = useSelector(store => store.photos);
@@ -44,7 +46,7 @@ function AddPhoto(){
         const formData = new FormData();
         formData.append('selectedFile', selectedFile);
         formData.append('itemId', params.id)
-        /* let imageDataToSend = {
+         /* let imageDataToSend = {
             formData: formData,
             itemId: params.id
         } */
@@ -53,6 +55,9 @@ function AddPhoto(){
             type: 'POST_PHOTO',
             payload: formData,
         });
+        swal("Added!", "The photo has been uploaded!", "success");
+
+        history.push(`/addPhotos/${params.id}`);
     }
 
     return(

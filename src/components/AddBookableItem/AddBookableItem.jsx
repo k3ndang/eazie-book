@@ -86,6 +86,10 @@ function addBookableItem() {
         history.push(`/viewBookableItem/${params.id}`);
     }
 
+    const demoData = () => {
+       setNewBookableItem('test');
+    }
+
     return (
         <>
             
@@ -95,16 +99,16 @@ function addBookableItem() {
                     onSubmit={addNewBookableItem}
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': { m: 2, width: '25ch' },
+                        '& .MuiTextField-root': { m: 4, width: '25ch' },
                     }}
                     noValidate
 
                 >
                      <Grid className="addBookableItemContainer">
-                    <div className="BookableItemInfoTitle"> <strong> Enter Bookable Item Information:</strong></div>
+                    <div className="BookableItemInfoTitle" onClick={demoData}> <strong> Enter Bookable Item Information:</strong></div>
                    
                     <div className="selectCompanyName">
-                        <h3 className="InputFieldTitle">   Company Name: </h3>
+                        <h3 className="InputFieldTitle" onClick={demoData}>Company Name </h3>
                         <Autocomplete
                             options={clients}
                             className="autocompleteCompanyName"

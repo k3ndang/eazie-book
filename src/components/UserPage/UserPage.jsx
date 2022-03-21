@@ -3,7 +3,8 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import ClientTable from '../ClientTable/ClientTable';
-import ClientBookableItems from '../ClientBookableItems/ClientBookableItems'
+import ClientBookableItems from '../ClientBookableItems/ClientBookableItems';
+import LandingPage from '../LandingPage/LandingPage';
 import './UserPage.css'
 
 
@@ -18,22 +19,14 @@ function UserPage() {
   return (
     <>
     <div className="containerBtn">
-      <div className="adminHeader"> 
-      <div className="welcomeBox">
-      <h2>Welcome, {user.username}!</h2>
-      <p className="idBox">Your ID is: {user.id}</p>
-      <p className= "idBox"> Your Auth-Level is: {user.authLevel}</p>
-      <LogOutButton className="btn" />
-      </div>
-      </div>
-
+      <h2>Welcome to Eazie Book!</h2>
       {user.authLevel === 'admin' && (
           <>
-            {/* <div className='adminTableContainer'> 
+            <div className='adminTableContainer'> 
             <div className="table-responsive">
                 <ClientTable />
               </div>
-              </div> */}
+              </div>
           </>
         )}
     </div>
@@ -48,6 +41,14 @@ function UserPage() {
           </>
         )}
         </div>
+      <div>
+        {user.authLevel === 'renter' && (
+          <>
+          <div className='renterLandingPage'>
+            <LandingPage />
+          </div></>
+        )}
+      </div>
 
     </>
   );

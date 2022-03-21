@@ -44,7 +44,7 @@ function ClientTable() {
     const clients = useSelector(store => store.clients);
 
     const deleteClient = (id) => {
-
+        console.log('selected id is', id);
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this row of information",
@@ -133,9 +133,9 @@ function ClientTable() {
 
     return (
         <>
+            {/* <br/>
             <br/>
-            <br/>
-            <br/>
+            <br/> */}
             <div className="clientTable">
                 <TableContainer component={Paper}>
                     <Table>

@@ -1,4 +1,4 @@
-.clientListTableHeadings{
+/* .clientListTableHeadings{
     width: 1000px;
     justify-content: center;    
     border: 2px solid black;
@@ -41,7 +41,7 @@
     justify-content: space-around;
     padding: 20px;
 }
-/* the border of the whole table */
+the border of the whole table
 .MuiTableBody-root{
     border: 2px solid black;
    
@@ -91,4 +91,4 @@
 
 .clientTableBody{
     background-color: rgb(229, 233, 232);
-}
+} */
