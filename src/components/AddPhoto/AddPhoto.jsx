@@ -53,6 +53,8 @@ function AddPhoto(){
             type: 'POST_PHOTO',
             payload: formData,
         });
+
+        history.push(`/addPhotos/${params.id}`);
     }
 
     return(

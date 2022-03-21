@@ -86,6 +86,11 @@ function addBookableItem() {
         history.push(`/viewBookableItem/${params.id}`);
     }
 
+    const demoData = () => {
+        newBookableItem.title('Test');
+        newBookableItem.summary('Test');
+    }
+
     return (
         <>
             
@@ -104,7 +109,7 @@ function addBookableItem() {
                     
                    
                     <div className="selectCompanyName">
-                        <h3 className="InputFieldTitle">  Client Company Name </h3>
+                        <h3 className="InputFieldTitle" onClick={demoData}>  Client Company Name </h3>
                         <Autocomplete
                             options={clients}
                             sx={{ minWidth: 400 }}
