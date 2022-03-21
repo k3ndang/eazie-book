@@ -57,6 +57,9 @@ function AddPhoto(){
 
     return(
         <>
+        <div>
+            <h2> <u> Add Photos Here:</u></h2>
+        </div>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <Input
