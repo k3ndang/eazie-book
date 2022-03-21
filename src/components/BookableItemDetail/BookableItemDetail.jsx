@@ -87,8 +87,9 @@ function BookableItemDetail() {
 
     return (
         <>
+         <h2>Item Detail</h2>
         <Grid container spacing={4} direction='column' alignItems='center'>
-          <h2>Item Details</h2>
+         
         <Grid item>
             <section className="slider">
                 <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
@@ -113,12 +114,9 @@ function BookableItemDetail() {
                     })}
             </section>
             </Grid>
-                <div className="descriptionBoxDetailItem">
-                <Typography variant="h4"> <div className="descriptionBoxDetail"> {selectedItem.title}</div></Typography>
-                <Typography variant="h6"> <div className="descriptionBoxDetail"><strong> Summary: </strong> </div> <div className="descriptionBoxDetail"> {selectedItem.summary}  </div></Typography>
-                <Typography variant="h6">  <div className="descriptionBoxDetail"> <strong> Detail: </strong> </div> <div className="descriptionBoxDetail"> {selectedItem.detail} </div></Typography>
-                <Typography variant="h6"> <div className="descriptionBoxDetail"> <strong>  Rate: </strong> </div> ${selectedItem.rate}</Typography>
-                </div>
+                <Typography variant="h6">Summary: {selectedItem.summary}</Typography>
+                <Typography variant="h6">Detail: {selectedItem.detail}</Typography>
+                <Typography variant="h6">Rate: ${selectedItem.rate}</Typography>
                 <Grid item>
                     <h4>Select Date Below:</h4>
                     <MuiPickersUtilsProvider utils={DateFnsUtils} >

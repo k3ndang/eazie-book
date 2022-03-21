@@ -9,9 +9,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import moment from 'moment';
 
 function RenterInfo() {
     const info = useSelector(store => store.renter.renterInfo)
+    console.log('info is ', info);
     useEffect(() => {
         dispatch({
             type: 'FETCH_RENTER_INFO'
@@ -29,8 +31,10 @@ function RenterInfo() {
                             <TableCell align="center" className="clientListTableHeadings"> <strong>Email</strong></TableCell>
                             <TableCell align="center" className="clientListTableHeadings"> <strong>Phone Number</strong></TableCell>
                             <TableCell align="center" className="clientListTableHeadings"> <strong>Item Name </strong></TableCell>
+                            <TableCell align="center" className="clientListTableHeadings"><strong>Start Date</strong></TableCell>
                             <TableCell align="center" className="clientListTableHeadings"> <strong>Unit Time</strong></TableCell>
-                            <TableCell align="center" className="clientListTableHeadings"> <strong>Time Booked</strong></TableCell>
+                            <TableCell align="center" className="clientListTableHeadings"> <strong>Duration</strong></TableCell>
+                            <TableCell></TableCell>
                         </TableRow>
                     </TableHead>
             <TableBody>
@@ -46,8 +50,10 @@ function RenterInfo() {
                             <TableCell align='center'>{row.email}</TableCell>
                             <TableCell align='center'>{row.phoneNumber}</TableCell>
                             <TableCell align='center'>{row.item_name}</TableCell>
+                            <TableCell align='center'>{moment(row.date).format('MMMM Do YYYY, h:mm:ss a')}</TableCell>
                             <TableCell align='center'>{row.unitTime}</TableCell>
                             <TableCell align='center'>{row.time_booked}</TableCell>
+                            
                         </TableRow>
                     )
                 })}

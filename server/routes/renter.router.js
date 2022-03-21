@@ -45,7 +45,9 @@ router.get('/info', (req, res) => {
         "user"."phoneNumber",
         "bookable_items"."title" AS item_name,
         "bookable_items"."unitTime", 
-        "renter_booking"."hours_book" AS time_booked
+        "renter_booking"."hours_book" AS time_booked,
+        "renter_booking"."startDate" AS date,
+        "renter_booking"."confirmationNumber"
         FROM "user" 
 LEFT JOIN "renter_booking"
 	ON "renter_booking"."renterId" = "user"."id"
