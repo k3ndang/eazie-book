@@ -80,7 +80,7 @@ function AddPhoto(){
         </form>    
         {photos.map((photo) => (
             <>
-            <Card sx={{display : 'flex', flexDirection: {xs: 'column', md: 'row'}, alignItems : 'center',maxWidth : 300  }}>
+            <Card className="cardBox"sx={{display : 'flex', flexDirection: {xs: 'column', md: 'row'}, alignItems : 'center',maxWidth : 300  }}>
                 <CardMedia 
                     display="flex"
                     component="img"
