@@ -108,7 +108,7 @@ function addBookableItem() {
                     <div className="BookableItemInfoTitle" onClick={demoData}> <strong> Enter Bookable Item Information:</strong></div>
                    
                     <div className="selectCompanyName">
-                        <h3 className="InputFieldTitle" onClick={demoData}>Company Name </h3>
+                        <h3 className="CompanyName" onClick={demoData}>Company Name: </h3>
                         <Autocomplete
                             options={clients}
                             className="autocompleteCompanyName"
