@@ -78,7 +78,7 @@ function addBookableItem() {
         history.push(`/viewBookableItem/${params.id}`);
     }
 
-    
+
     return (
         <>
             
@@ -94,10 +94,10 @@ function addBookableItem() {
 
                 >
                      <Grid className="addBookableItemContainer">
-                    <div className="BookableItemInfoTitle" onClick={demoData}> <strong> Enter Bookable Item Information:</strong></div>
+                    <div className="BookableItemInfoTitle" > <strong> Enter Bookable Item Information:</strong></div>
                    
                     <div className="selectCompanyName">
-                        <h3 className="CompanyName" onClick={demoData}>Company Name: </h3>
+                        <h3 className="CompanyName">Company Name: </h3>
                         <Autocomplete
                             options={clients}
                             className="autocompleteCompanyName"
