@@ -26,12 +26,12 @@ function addBookableItem() {
 
 
     const [newBookableItem, setNewBookableItem] = useState({
-        title: 'Kawasaki Jet Ski',
-        summary: '*Fun on the water',
-        details: '*Life Jackets are provided *Must have a valid drivers license *Sun screen is recommended',
-        rate: '120',
-        unitTime: 'hour',
-        location: 'Orlando',
+        title: '',
+        summary: '',
+        details: '',
+        rate: '',
+        unitTime: '',
+        location: '',
         categoryId: '',
     });
 
