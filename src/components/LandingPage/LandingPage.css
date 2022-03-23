@@ -5,7 +5,7 @@ Grid
 .grid {
   display: flex;
   flex: 0 1 auto;
-  margin-left: 25px;/* might need to change for projector */
+  margin-left: 60px;/* might need to change for projector */
   /* defaults to 'row' */
   /* flex-direction: row;
   flex-wrap: wrap; */

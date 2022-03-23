@@ -39,7 +39,7 @@ function EditBookableItemForm() {
             payload: selectedBookableItem
         })
 
-        history.push(`/viewBookableItem`);
+        history.push(`/clients`);
     };
 
 
