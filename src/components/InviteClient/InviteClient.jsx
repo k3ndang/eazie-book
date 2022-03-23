@@ -76,28 +76,13 @@ function InviteClient(){
         history.push("/user");
     }
 
-    const demoData = () => {
-        setFirstName('Jimmy');
-        setLastName('Zwielfhopher');
-        setUsername('jimmyz');
-        setPassword('jimmy');
-        setEmail('jimmyz@johnjimmy.io');
-        setPhoneNumber('(256) 567 - 2345');
-        setCompanyName('Family Fun');
-        setAddress('123 4th St');
-        setCity('Minneapolis');
-        setState('Minnesota');
-        setZipCode('55403');
-        setWebsiteUrl('familyfun.com');
-    }
-
     return(
         <>
        
         <Paper onSubmit={inviteClient} className="ClientInviteContainer">
            
             <Button variant="outlined" onClick={goBack} className="ClientInviteBackButton">Back</Button>
-            <h2 className="ClientInviteTitle" onClick={demoData}>Invite Client</h2>
+            <h2 className="ClientInviteTitle">Invite Client</h2>
             <div className="ClientInviteInputFields">
             <div className="ClientInviteIndividualInput">
                 <Input
