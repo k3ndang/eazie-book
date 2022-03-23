@@ -16,7 +16,18 @@ function* bookableItemSaga() {
     yield takeEvery('FETCH_RENTER_HISTORY', fetchRenterHistory);
     yield takeEvery('FETCH_ITEM_PHOTOS', fetchItemPhotos);
     yield takeEvery('FETCH_PHOTOS', fetchPhotos);
+    yield takeEvery('DELETE_SELECTED_ITEM', deleteSelectedItem);
     
+}
+
+function* deleteSelectedItem(action){
+    console.log('action.payload is', action.payload)
+    try{
+        yield axios.delete(`/api/bookableItem/${action.payload}`)
+    }
+    catch(error) {
+        console.error('ERROR deleting selected item', error);
+    }
 }
 
 

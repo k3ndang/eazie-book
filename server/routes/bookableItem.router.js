@@ -205,5 +205,23 @@ router.put('/', rejectUnauthenticated, (req, res) => {
         })
 }); // end of PUT bookableItem
 
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+    console.log('in delete router');
+    
+    const queryText = `
+        DELETE FROM "bookable_items"
+        WHERE "id" = $1
+    `
+
+    pool.query(queryText, [req.params.id])
+    .then((result) => {
+        res.sendStatus(200);
+    })
+    .catch((err) => {
+        console.error('ERROR deleting item in router', err);
+        res.sendStatus(500);
+    })
+})
+
 
 module.exports = router

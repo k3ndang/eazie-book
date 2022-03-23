@@ -42,6 +42,15 @@ function EditBookableItemForm() {
         history.push(`/clients`);
     };
 
+    const deleteItem = () => {
+        dispatch({
+            type: "DELETE_SELECTED_ITEM",
+            payload: params.id
+        })
+
+        history.push(`/clients`);
+    }
+
 
     return (
         <>
@@ -137,6 +146,14 @@ function EditBookableItemForm() {
                         size="small"
                     >
                         Update
+                    </Button>
+                    <Button
+                        onClick={deleteItem}
+                        variant="outlined"
+                        color="primary"
+                        size="small"
+                    >
+                        Delete
                     </Button>
                     
                 </form>
