@@ -1,3 +1,6 @@
+![License](https://img.shields.io/github/license/K3ndang/eazie-book.svg?style=for-the-badge) ![Repo Size](https://img.shields.io/github/languages/code-size/K3ndang/eazie-book.svg?style=for-the-badge) ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/K3ndang/eazie-book.svg?style=for-the-badge) ![FORKS](https://img.shields.io/github/forks/K3ndang/eazie-book.svg?style=for-the-badge&social) ![Stars](https://img.shields.io/github/stars/K3ndang/eazie-book.svg?style=for-the-badge)
+
+
 # EazieBook
 
 [https://yourapp.herokuapp.com/](https://yourapp.herokuapp.com/)
