@@ -29,7 +29,7 @@ To see the fully functional site, please visit: https://eaziebook.herokuapp.com/
   <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" width="100" height="40px" alt="AWS">
 </a>
 <a href="https://momentjs.com/">
-  <img src="https://avatars.githubusercontent.com/u/4129662?s=280&v=4" width="100" height="40px" alt="moment.js">
+  <img src="https://avatars.githubusercontent.com/u/4129662?s=280&v=4" width="50" height="40px" alt="moment.js">
 </a>
 
 - [multerS3] (https://www.npmjs.com/package/multer-s3)
