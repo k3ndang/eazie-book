@@ -77,6 +77,9 @@ This application uses the following technologies:
  <a href="https://momentjs.com/">
   <img src="https://avatars.githubusercontent.com/u/4129662?s=280&v=4" width="50" height="40px" alt="moment.js">
 </a>
+<a href="https://www.npmjs.com/package/multer-s3">
+  <img src="https://miro.medium.com/max/400/1*CIolkR8u5UuZp5aJRPVzBg.png" width="50" height="40px" alt="multer-S3">
+</a>
 
 (a full list of dependencies can be found in `package.json`)
 
