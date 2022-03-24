@@ -23,13 +23,13 @@ To see the fully functional site, please visit: https://eaziebook.herokuapp.com/
 <a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" height="40px" width="40px" /></a>
 <a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a><a href="https://redux.js.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" height="40px" width="40px" /></a>
 <a href="https://sweetalert2.github.io/">
-  <img src="https://sweetalert2.github.io/images/SweetAlert2.png" width="200" alt="SweetAlert2">
+  <img src="https://sweetalert2.github.io/images/SweetAlert2.png" width="200" height="40px" alt="SweetAlert2">
 </a>
 <a href="https://aws.amazon.com/">
-  <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" width="100" alt="AWS">
+  <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" width="100" height="40px" alt="AWS">
 </a>
 <a href="https://momentjs.com/">
-  <img src="https://avatars.githubusercontent.com/u/4129662?s=280&v=4" width="100" alt="moment.js">
+  <img src="https://avatars.githubusercontent.com/u/4129662?s=280&v=4" width="100" height="40px" alt="moment.js">
 </a>
 
 - [multerS3] (https://www.npmjs.com/package/multer-s3)
