@@ -73,7 +73,10 @@ This application uses the following technologies:
   <img src="https://sweetalert2.github.io/images/SweetAlert2.png" width="150" height="40px" alt="SweetAlert2">
 </a>
 <a href="https://aws.amazon.com/">
-  <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" width="100" height="40px" alt="AWS">
+  <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" width="100" height="40px" alt="AWS"> 
+ <a href="https://momentjs.com/">
+  <img src="https://avatars.githubusercontent.com/u/4129662?s=280&v=4" width="50" height="40px" alt="moment.js">
+</a>
 
 (a full list of dependencies can be found in `package.json`)
 
