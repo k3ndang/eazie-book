@@ -19,11 +19,13 @@ To see the fully functional site, please visit: https://eaziebook.herokuapp.com/
 - [moment.js] (https://momentjs.com/)
 - [multerS3] (https://www.npmjs.com/package/multer-s3)
 - [AWS] (https://aws.amazon.com/)
-- [ReactJs] (https://reactjs.org/)
+
 - [MaterialUi] (https://mui.com/)
-- [Redux] (https://redux.js.org/)
+
 - [SweetAlert2] (https://sweetalert2.github.io/)
-- [PostgreSQL]  (https://www.postgresql.org/) 
+- [PostgreSQL]  (https://www.postgresql.org/)
+-  
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a><a href="https://material-ui.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg" height="40px" width="40px" /></a><a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a><a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" height="40px" width="40px" /></a><a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a><a href="https://redux.js.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" height="40px" width="40px" /></a>
 
 ## Installation
 
