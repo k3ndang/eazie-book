@@ -27,9 +27,7 @@ To see the fully functional site, please visit: https://eaziebook.herokuapp.com/
 
 ## Installation
 
-How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
-
-If your application has secret keys (for example --  Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the `.env` file.
+Comprehensive guide to installation of the EazieBook application
 
 1. Create a database named `eazie_book`,
 2. The queries in the `database.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries, 
@@ -50,16 +48,17 @@ If your application has secret keys (for example --  Twilio), make sure you tell
 7. Navigate back to the home page to book another item!
 
 - Client
-1. Log in with your auth information provided by hong and dean 
+1. Log in with the login information provided by Hong and Dean 
 2. View a list of your bookable items upon logging in, click your desired item to view its details
-3. Once on the detail page, click the right and left arrows to cycle through photos of your specified bookable items, or click return to bookable item list to navigate back to the home page. 
-4. Click View List > Renter Info to see a list of everyone who's rented your bookable items. 
+3. Once on the detail page, browse through photos of your specified bookable items, or click return to bookable item list to navigate back to the home page. 
+4. Should anything be updated, contact Hong. 
+5. On the View List Nav Link -> Renter Info will bring the client to see a list of all renters that have rented your bookable items. 
 
 - Admin (Hong and Dean only)
-1. Upon logging in you'll see a complete list of every client in the database as well as their contact info and website url. For each client, there's also a button which allows you to see all their associated bookable items, edit the client's info, or delete the client from the database altogether. 
-2. Select Manage > Add a Client to invoke the invite client form, which allows you to input client info and add it to the database. 
-3. Select Manage > Add bookable item to invoke the bookable item which allows you to add a bookable item to the database and assign it to a specific category. 
-4. Select open bookable items, and click add photo to add multiple photos to a specific bookable item. 
+1. Upon logging in, the admin will view a complete list of every client in the database as well as their contact info and website url. For each client, the admin can delete or edit the credentials of any company. There is also a button on the row of each company name that brings the admin to a list view of all the assciated bookable items. 
+2. Upon Hovering over Manage from the Nav Bar > and selecting 'Add a Client', the admin will be brought to the invite client form.
+3. Upon Hovering over Manage from the Nav Bar > selection of 'Add bookable Item' the admin will be brought to a form for addition a new bookable item. This will add the corresponding item to the database. 
+4. Select 'Open Bookable Items', and click 'Add Photo' to add multiple photos for a specific bookable item. 
 
 
 ## Acknowledgement
